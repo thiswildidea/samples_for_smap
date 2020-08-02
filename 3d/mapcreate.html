@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>上海测绘院地图API调用</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../jquery-2.2.3.min.js"></script>
+    <script type="module">
+        let smap
+        import SMap from '../esm/SMap.js'
+        smap = new SMap.Map('mapcontainer', {
+        viewMode: '2D',
+        center: [-20135, -48456],
+        zoom: 5,
+        zooms: [1, 12],
+        pitch: 60,
+        mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
+        showBuildingBlock: true
+        })
+      $(function () {
+         $("#btnmaptest").click(function () {
+            smap.setZoomAndCenter(8,[100,100,0])
+         })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer" class="calcite-map calcite-map-absolute calcite-widgets-dark"></div>
+    <div class="mapbuttoncontainer">
+        <button class="mapbutton" id="btnmaptest"> 测试按钮</button>
+    </div>
+</body>
+
+</html>

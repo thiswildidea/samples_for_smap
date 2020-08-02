@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>上海测绘院地图API调用</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../jquery-2.2.3.min.js"></script>
+    <script type="module">
+        let smap
+        import SMap from '../esm/SMap.js'
+            smap = new SMap.Map('mapcontainer', {
+            viewMode: '2D',
+            center: [-20135, -48456],
+            zoom: 1,
+            zooms: [1, 9]
+        })
+        smap.on(SMap.MapEvent.click, function(map, event) {
+        console.log(event.mapPoint)
+      })
+      $(function () {
+         $("#setmaskBoundary").click(function () {
+           const par = {
+               boundaryType: 'qx',
+               boundaryDefinition: "name like '%金山%'", // qxcode like '%01%
+               boundarydistance: 150,
+               bounarycount: 5,
+               boundaryColor: 'blue',
+               maskColor: [0, 17, 33, 0.9],
+               symbol: {
+               size: 20
+           }
+          }
+          smap.setmaskboundary(par)
+         })
+      })
+    </script>
+</head>
+
+<body>
+    <!-- <div id="mapcontainer" class="calcite-map calcite-map-absolute calcite-widgets-dark"></div> -->
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainer">
+        <button class="mapbutton" id="setmaskBoundary"> 设置边框</button>
+    </div>
+</body>
+
+</html>
