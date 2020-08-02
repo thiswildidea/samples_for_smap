@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>地图平移</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script type="module">
+        let smap
+         import SMap from '../library/smap/chy/SMap.js'
+            smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+             zoom: 3,
+             zooms: [0, 11],
+             pitch: 60,
+             mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
+             showBuildingBlock: true
+        })
+       smap.on(SMap.MapEvent.maploaded, function(view) {
+        console.log('当前缩放级别' + smap.getZoom())
+      })
+      smap.on(SMap.MapEvent.extentchanged, function(extent) {
+        console.log(extent)
+      })
+      smap.on(SMap.MapEvent.centerchanged, function(center) {
+        console.log(center)
+      })
+      smap.on(SMap.MapEvent.popupvisible, function(visible) {
+        console.log(visible)
+      })
+      smap.on(SMap.MapEvent.click, function(view, eventParamter) {
+        view.hitTest(eventParamter).then(async function(response) {
+          if (response.results.length) {
+            if (!response.results[0].length) {
+              view.popup.defaultPopupTemplateEnabled = true
+              view.popup.autoOpenEnabled = false
+              view.popup.open({
+                location: response.results[0].graphic.geometry,
+                content: 'wo shi dian1'
+              })
+            }
+          }
+        })
+      })
+      smap.on(SMap.MapEvent.doubleclick, function(view, eventParamter) {
+        view.hitTest(eventParamter).then(async function(response) {
+          console.log(response)
+        })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+</body>
+
+</html>
