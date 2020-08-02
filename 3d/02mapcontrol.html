@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
-    <title>上海测绘院地图API调用</title>
+    <title>地图控件</title>
     <style>
         html,
         body,
@@ -33,40 +33,20 @@
             float: left;
         }
     </style>
-    <script src="../jquery-2.2.3.min.js"></script>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
     <script type="module">
+        import SMap from '../library/smap/chy/SMap.js'
         let smap
-        import SMap from '../esm/SMap.js'
             smap = new SMap.Map('mapcontainer', {
-           viewMode: '2D',
-           center: [-20135, -48456],
-           zoom: 5,
-           zooms: [1, 12],
+           viewMode: '3D',
+           center: [0, 0],
+           zoom: 3,
+           zooms: [0, 11],
            pitch: 60,
            mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
            showBuildingBlock: true
         })
-         smap.on(SMap.MapEvent.maploaded, function(view) {
-         console.log('当前缩放级别' + this.getZoom())
-         })
-        smap.on(SMap.MapEvent.extentchanged, function(extent) {
-         console.log(extent)
-         })
-         smap.on(SMap.MapEvent.centerchanged, function(center) {
-         console.log(center)
-         })
-        smap.on(SMap.MapEvent.click, function(map, event) {
-         map.hitTest(event).then(async function(response) {
-         if (!response.results[0].length) {
-         map.popup.defaultPopupTemplateEnabled = true
-         map.popup.autoOpenEnabled = false
-         map.popup.open({
-         location: response.results[0].graphic.geometry,
-         content: 'wo shi dian1'
-         })
-         }
-         })
-         })
+        
       $(function () {
          $("#addlayercontrol").click(function () {
            const layerListControl = new SMap.LayerListControl({
@@ -132,36 +112,12 @@
          })
          smap.addControl(undergroundSwitch)
          })
-
-          $("#addmark").click(function () {
-        const mark = new SMap.Marker({
-         icon: new SMap.Icon({
-         size: new SMap.Size(40, 40),
-         image: 'http://powergis.smi.sh.cegn.cn/smi/smap-shsmi-html/blue.gif'
-         }),
-        attributes: {
-        '名称': '点1',
-        '类型': '点1'
-        },
-         label: new SMap.Label({
-         text: '点1',
-         size: 22,
-         color: 'blue',
-         xoffset: 10,
-         yoffset: 10,
-         horizontalAlignment: 'left',
-         verticalAlignment: 'top'
-         }),
-         position: [100, 100, 1000]
-         })
-         smap.add(mark)
-          })
       })
     </script>
 </head>
 
 <body>
-    <div id="mapcontainer" class="calcite-map calcite-map-absolute calcite-widgets-dark"></div>
+    <div id="mapcontainer"></div>
     <div class="mapbuttoncontainer">
         <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
         <button class="mapbutton" id="addzoomcontrol"> 添加缩放控件</button>
@@ -172,7 +128,6 @@
         <button class="mapbutton" id="addmeasurearea"> 添加面测量</button>
         <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
         <button class="mapbutton" id="addUndergroundSwitch"> 添加地上地下切换控件</button>
-        <button class="mapbutton" id="addmark"> 添加点</button>
     </div>
 </body>
 

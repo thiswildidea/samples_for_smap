@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>设置边界</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+      .mapbuttoncontainergroup {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script type="module">
+        let smap
+         import SMap from '../library/smap/chy/SMap.js'
+         import Plugins from '../library/plugins/Plugins.js'
+            smap = new SMap.Map('mapcontainer', {
+            viewMode: '2D',
+            center: [0, 0],
+             zoom: 3,
+             zooms: [0, 11],
+              mapStyle: 'smap://styles/dark',
+        })
+      let xqboundary=null
+      let jdboundary=null
+      let jwhboundary=null
+      $(function () {
+         $("#btnaddxqboundary").click(function () {
+            const par = {
+            boundaryType: 'qx_boundary',
+            boundaryDefinition: "name like '%黄浦%'", // qxcode like '%01%
+            symbol: {
+               type: 'simple-fill',
+               color: [255, 255, 255, 0],
+               outline: {
+               color: [255, 255, 0, 1],
+               width: '5px'
+              }
+              }
+            }
+            xqboundary = new Plugins.Boundary(smap.view)
+            xqboundary.add(par)
+     
+       })
+       $("#btnhidexqboundary").click(function () {
+         xqboundary.hide()
+         })
+        $("#btnshowxqboundary").click(function () {
+           xqboundary.show()
+        })
+          $("#btndeletexqboundary").click(function () {
+          xqboundary.remove()
+          })
+
+       $("#btnaddjdboundary").click(function () {
+            const par = {
+            boundaryType: 'jd_boundary',
+            boundaryDefinition: "name like '%上钢新村街道%'", // jd_code like '%3509%
+            symbol: {
+               type: 'simple-fill',
+               color: [255, 255, 255, 0],
+               outline: {
+               color: [0, 255, 0, 1],
+               width: '5px'
+              }
+              }
+            }
+            jdboundary = new Plugins.Boundary(smap.view)
+            jdboundary.add(par)
+     
+       })
+        $("#btnhidejdboundary").click(function () {
+           jdboundary.hide()
+        })
+        $("#btnshowjdboundary").click(function () {
+           jdboundary.show()
+        })
+        $("#btndeletejdboundary").click(function () {
+           jdboundary.remove()
+        })
+
+      $("#btnaddjwhboundary").click(function () {
+            const par = {
+            boundaryType: 'jwh_boundary',
+            boundaryDefinition: "jwhcode like '%072128%'", // name like '%曹杨新苑%
+            symbol: {
+               type: 'simple-fill',
+               color: [255, 255, 255, 0],
+               outline: {
+               color: [255, 0, 0, 1],
+               width: '5px'
+              }
+              }
+            }
+            jwhboundary = new Plugins.Boundary(smap.view)
+            jwhboundary.add(par)
+     
+       })
+        $("#btnhidejwhboundary").click(function () {
+           jwhboundary.hide()
+        })
+        $("#btnshowjwhboundary").click(function () {
+           jwhboundary.show()
+        })
+        $("#btndeletejwhboundary").click(function () {
+           jwhboundary.remove()
+        })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+      <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddxqboundary"> add xq boundary</button>
+            <button class="mapbutton" id="btnhidexqboundary"> hide xq boundary</button>
+            <button class="mapbutton" id="btnshowxqboundary"> show xq boundary</button>
+            <button class="mapbutton" id="btndeletexqboundary"> delete xq boundary</button>
+
+        </div>
+         <div class="mapbuttoncontainer">
+           <button class="mapbutton" id="btnaddjdboundary"> add jd boundary</button>
+           <button class="mapbutton" id="btnhidejdboundary"> hide jd boundary</button>
+           <button class="mapbutton" id="btnshowjdboundary"> show jd boundary</button>
+           <button class="mapbutton" id="btndeletejdboundary"> delete jd boundary</button>
+        </div>
+         <div class="mapbuttoncontainer">
+           <button class="mapbutton" id="btnaddjwhboundary"> add jwh boundary</button>
+           <button class="mapbutton" id="btnhidejwhboundary"> hide jwh boundary</button>
+           <button class="mapbutton" id="btnshowjwhboundary"> show jwh boundary</button>
+           <button class="mapbutton" id="btndeletejwhboundary"> delete jwh boundary</button>
+        </div>
+      </div>
+</body>
+
+</html>

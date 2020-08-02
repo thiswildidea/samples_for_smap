@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>地图覆盖物-线类型</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 20%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            /* float: left; */
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script type="module">
+        let smap
+         import SMap from '../library/smap/chy/SMap.js'
+            smap = new SMap.Map('mapcontainer', {
+            viewMode: '2D',
+            center: [0, 0],
+             zoom: 3,
+             zooms: [0, 11],
+             mapStyle: 'smap://styles/dark',
+        })
+        let onePolyline = null
+        let sencondPolyline = null
+        let threePolyline = null
+        let fourPolyline = null
+        let OverlayGroup =null
+        
+      $(function () {
+         $("#btnaddPolyline").click(function () {
+         onePolyline = new SMap.Polyline({
+                path: [
+                new SMap.LngLat(0, 0),
+                new SMap.LngLat(10, 10),
+                new SMap.LngLat(50, 50)
+                ],
+                cap: 'square',
+                strokeColor: 'red',
+                style: 'solid',
+                lineJoin: 'round',
+                label: new SMap.Label({
+                text: '线一',
+                color: 'red',
+                visible: true,
+                size: 22,
+                weight: 'normal',
+                angle: 0,
+                backgroundColor: 'red',
+                borderLineColor: 'blue',
+                borderLineSize: 10,
+                haloColor: '[51, 204, 51, 0.2]',
+                haloSize: 0,
+                horizontalAlignment: 'left',
+                verticalAlignment: 'top',
+                kerning: true,
+                lineHeight: 25,
+                lineWidth: 200,
+                rotated: false,
+                xoffset: 10,
+                yoffset: 10
+                })
+        })
+        smap.add(onePolyline)
+
+        sencondPolyline = new SMap.Polyline({
+              path: [
+              new SMap.LngLat(100, 100),
+              new SMap.LngLat(200, 200),
+              new SMap.LngLat(300, 300)
+              ],
+              cap: 'square',
+              strokeColor: 'red',
+              style: 'solid',
+              lineJoin: 'round',
+              label: new SMap.Label({
+              text: '线二',
+              size: 22,
+              color: 'blue',
+              xoffset: 10,
+              yoffset: 10,
+              horizontalAlignment: 'left',
+              verticalAlignment: 'top'
+           })
+        })
+          smap.add(sencondPolyline)
+         })
+         $("#btnupdatePolyline").click(function () {
+            onePolyline.path = [
+               new SMap.LngLat(0, 0),
+               new SMap.LngLat(20, 20),
+               new SMap.LngLat(80, 80)
+          ]
+          onePolyline.label.text = '线一更新',
+          onePolyline.label.color = 'yellow',
+          smap.update(onePolyline)
+         })
+
+         $("#btndeletPolyline").click(function () {
+            smap.remove(onePolyline)
+         })
+
+         $("#btnaddmanyPolyline").click(function () {
+            threePolyline = new SMap.Polyline({
+                  path: [
+                  new SMap.LngLat(400, 400),
+                  new SMap.LngLat(420, 420),
+                  new SMap.LngLat(450, 450)
+                  ],
+                  cap: 'square',
+                  strokeColor: 'red',
+                  style: 'solid',
+                  lineJoin: 'round',
+                  label: new SMap.Label({
+                  text: '线三',
+                  size: 22,
+                  color: 'blue',
+                  xoffset: 10,
+                  yoffset: 10,
+                  horizontalAlignment: 'left',
+                  verticalAlignment: 'top'
+                  })
+            })
+            fourPolyline = new SMap.Polyline({
+                  path: [
+                  new SMap.LngLat(600, 600),
+                  new SMap.LngLat(620, 620),
+                  new SMap.LngLat(650, 650)
+                  ],
+                  cap: 'square',
+                  strokeColor: 'red',
+                  style: 'solid',
+                  lineJoin: 'round',
+                  label: new SMap.Label({
+                  text: '线四',
+                  size: 22,
+                  color: 'blue',
+                  xoffset: 10,
+                  yoffset: 10,
+                  horizontalAlignment: 'left',
+                  verticalAlignment: 'top'
+                  })
+            })
+            smap.add([threePolyline, fourPolyline])
+         })
+
+          $("#btnupdatemanyPolyline").click(function () {
+             threePolyline.label.text = '线三更新'
+             fourPolyline.label.text = '线四更新'
+             smap.update([threePolyline, fourPolyline])
+          })
+
+            $("#btndeletemanyPolyline").click(function () {
+             smap.remove([threePolyline, fourPolyline])
+            })
+
+           $("#btnaddPolylinegroup").click(function () {
+               const polyline1 = new SMap.Polyline({
+                      path: [
+                      new SMap.LngLat(400, 400),
+                      new SMap.LngLat(420, 420),
+                      new SMap.LngLat(450, 450)
+                      ],
+                      cap: 'square',
+                      strokeColor: 'red',
+                      style: 'solid',
+                      lineJoin: 'round',
+                      label: new SMap.Label({
+                      text: '线6',
+                      size: 22,
+                      color: 'blue',
+                      xoffset: 10,
+                      yoffset: 10,
+                      horizontalAlignment: 'left',
+                      verticalAlignment: 'top'
+                      })
+               })
+               const polyline2 = new SMap.Polyline({
+                     path: [
+                     new SMap.LngLat(300, 300),
+                     new SMap.LngLat(320, 320),
+                     new SMap.LngLat(350, 350)
+                     ],
+                     cap: 'square',
+                     strokeColor: 'red',
+                     style: 'solid',
+                     lineJoin: 'round',
+                     label: new SMap.Label({
+                     text: '线6',
+                     size: 22,
+                     color: 'blue',
+                     xoffset: 10,
+                     yoffset: 10,
+                     horizontalAlignment: 'left',
+                     verticalAlignment: 'top'
+                     })
+               })
+               OverlayGroup = new SMap.OverlayGroup([polyline1, polyline2],{
+                 overlaytype: 'polyline'
+               })
+               smap.add(OverlayGroup)
+           })
+
+           $("#btnupdatePolylinegroup").click(function () {
+              OverlayGroup.overlayers[0].label.text = '线5更新'
+              OverlayGroup.overlayers[1].label.text = '线6更新'
+              smap.update(OverlayGroup)
+           })
+
+           $("#btndeletePolylinegroup").click(function () {
+              smap.remove(OverlayGroup)
+           })
+            $("#btncleanall").click(function () {
+                smap.clearMap()
+            })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddPolyline"> add one Polyline </button>
+            <button class="mapbutton" id="btnupdatePolyline"> update one Polyline</button>
+            <button class="mapbutton" id="btndeletPolyline"> delete one Polyline</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddmanyPolyline"> add many Polyline </button>
+            <button class="mapbutton" id="btnupdatemanyPolyline"> update many Polylines</button>
+            <button class="mapbutton" id="btndeletemanyPolyline"> delete many Polylines</button>
+        </div>
+
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddPolylinegroup"> add Polyline group</button>
+            <button class="mapbutton" id="btnupdatePolylinegroup"> update Polyline group</button>
+            <button class="mapbutton" id="btndeletePolylinegroup"> delete Polyline group</button>
+        </div>
+        <div class="mapbuttoncontainer">
+             <button class="mapbutton" id="btncleanall">clear all</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>地图缩放</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script type="module">
+        let smap
+         import SMap from '../library/smap/chy/SMap.js'
+            smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
+            showBuildingBlock: true
+        })
+      $(function () {
+         $("#btnZoomIn").click(function () {
+            smap.zoomIn()
+         })
+          $("#btnZoomOut").click(function () {
+           smap.zoomOut()
+          })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainer">
+        <button class="mapbutton" id="btnZoomIn">ZoomIn</button>
+        <button class="mapbutton" id="btnZoomOut">ZoomOut</button>
+    </div>
+</body>
+
+</html>

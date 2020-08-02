@@ -1940,7 +1940,7 @@ var Map = /** @class */ (function (_super) {
                             };
                         }
                         var rs_5 = [];
-                        overlayers.paths.forEach(function (item) {
+                        overelement.paths.forEach(function (item) {
                             rs_5.push([item.X, item.Y, item.Z]);
                         });
                         var polygonattributes = overelement.attributes;

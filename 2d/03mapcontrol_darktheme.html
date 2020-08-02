@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>地图控件-暗色主题</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script type="module">
+        let smap
+        import SMap from '../library/smap/chy/SMap.js'
+            smap = new SMap.Map('mapcontainer', {
+            viewMode: '2D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+             mapStyle: 'smap://styles/dark',
+        })
+        smap.on(SMap.MapEvent.click, function(map, event) {
+        console.log(event.mapPoint)
+      })
+      $(function () {
+         $("#addlayercontrol").click(function () {
+           const layerListControl = new SMap.LayerListControl({
+           visible: true,
+           position: 'top-right',
+           collapse: true
+           })
+           smap.addControl(layerListControl)
+         }),
+          $("#addzoomcontrol").click(function () {
+          const zoom = new SMap.Zoom({
+             visible: true,
+             position: 'top-right'
+             })
+            smap.addControl(zoom)
+          }),
+         $("#addhomecontrol").click(function () {
+             const home = new SMap.Home({
+               visible: true,
+              position: 'top-right'
+             })
+            smap.addControl(home)
+         }),
+        $("#addcompasscontrol").click(function () {
+           const compass = new SMap.Compass({
+               visible: true,
+               position: 'top-right'
+           })
+           smap.addControl(compass)
+        }),
+        $("#addfullscreencontrol").click(function () {
+             const fullscreen = new SMap.Fullscreen({
+                visible: true,
+                position: 'top-right'
+             })
+             smap.addControl(fullscreen)
+             }),
+        $("#addmeasureline").click(function () {
+             const measureLine = new SMap.MeasureLine({
+                visible: true,
+                position: 'top-right'
+          })
+            smap.addControl(measureLine)
+        }),
+        $("#addmeasurearea").click(function () {
+             const measureArea = new SMap.MeasureArea({
+                 visible: true,
+                position: 'top-right'
+              })
+              smap.addControl(measureArea)
+              }),
+         $("#addbasemaptoggle").click(function () {
+             const basemapToggle = new SMap.BasemapToggle({
+             visible: true,
+             position: 'top-right'
+         })
+             smap.addControl(basemapToggle)
+         })
+      })
+    </script>
+</head>
+
+<body>
+    <!-- <div id="mapcontainer" class="calcite-map calcite-map-absolute calcite-widgets-dark"></div> -->
+    <div id="mapcontainer" class="calcite-map calcite-map-absolute calcite-widgets-dark"></div>
+    <div class="mapbuttoncontainer">
+        <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+        <button class="mapbutton" id="addzoomcontrol"> 添加缩放控件</button>
+        <button class="mapbutton" id="addhomecontrol"> 添加主页控件</button>
+        <button class="mapbutton" id="addcompasscontrol"> 添加罗盘控件</button>
+        <button class="mapbutton" id="addfullscreencontrol"> 添加全屏控件</button>
+        <button class="mapbutton" id="addmeasureline"> 添加线测量</button>
+        <button class="mapbutton" id="addmeasurearea"> 添加面测量</button>
+        <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
+    </div>
+</body>
+
+</html>

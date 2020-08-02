@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>featurelayer查询</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            position: relative;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script type="module">
+        let smap
+         import SMap from '../library/smap/chy/SMap.js'
+         import GeoTask from '../library/geotask/GeoTask.js'
+            smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+             zoom: 3,
+             zooms: [0, 11],
+             pitch: 60,
+             mapStyle: 'smap://styles/dark',
+             showBuildingBlock: true
+        })
+      let flqueryTask=null
+      $(function () {
+         $("#btnqueryfeaturelayer").click(function () {
+           const param = {
+           layerUniqueId: 'qx_boundary',
+           queryDefinition: "name like '%黄浦%'", // qxcode like '%01%
+           displayed: true,
+           outFields: ['*'],
+           type: 'polygon',
+           symbol: {
+               type: 'simple-fill',
+               color: [255, 255, 255, 1],
+               outline: {
+               color: [255, 255, 0, 1],
+               width: '5px'
+              }
+              }
+           }
+           flqueryTask = new GeoTask.Query(smap.view)
+           flqueryTask.featureLayer(param).then((result) => {
+           console.log(result)
+           })
+     
+       })
+        $("#btnclearn").click(function () {
+           flqueryTask.remove()
+        })
+         $("#btnhide").click(function () {
+         flqueryTask.hide()
+         })
+          $("#btnshow").click(function () {
+          flqueryTask.show()
+          })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnqueryfeaturelayer"> query featurelayer</button>
+            <button class="mapbutton" id="btnhide"> hide results</button>
+            <button class="mapbutton" id="btnshow"> show results</button>
+            <button class="mapbutton" id="btnclearn"> clean results</button>
+        </div>
+</body>
+
+</html>

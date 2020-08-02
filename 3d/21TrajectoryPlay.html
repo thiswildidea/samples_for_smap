@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>轨迹播放</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script type="module">
+        let smap
+         import SMap from '../library/smap/chy/SMap.js'
+         import Plugins from '../library/plugins/Plugins.js'
+            smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+      let trajectory=null
+      $(function () {
+         $("#btnaddtrajectoryPlay").click(function () {
+          
+        var routedata = [
+             {
+               x: 358.5185,
+               y: -77.2235
+             },
+             {
+               x: 267.4522,
+               y: 99.1188
+             },
+             {
+               x: 234.90484,
+               y: 212.834811
+             },
+             {
+               x: 181.7233,
+               y: 381.1000
+             },
+             {
+               x: 138.1169,
+               y: 527.79151
+             },
+             {
+               x: 88.0071,
+               y: 647.4898
+             },
+             {
+               x: 63.1774,
+               y: 692.2989
+             },
+             {
+               x: 94.5310,
+               y: 706.0872
+             },
+             {
+               x: 143.59157,
+               y: 595.3354
+             },
+             {
+               x: 182.1127,
+               y: 481.7369
+             },
+             {
+               x: 223.4553,
+               y: 323.6532
+             },
+             {
+               x: 248.4933,
+               y: 203.5321
+             },
+             {
+               x: 325.065,
+               y: 31.37497
+             },
+             {
+               x: 546.1844,
+               y: -355.09700
+             }
+      ]
+          trajectory = new Plugins.Trajectory(smap.view)
+          trajectory.play({
+           coords: routedata,
+           showtrail: true,
+           trailsymbol: {
+             type: 'simple-line',
+             color: [255, 255, 255, 0.5],
+             width: '10px',
+             style: 'solid'
+           },
+           mobilesymbol: {
+             type: 'point-3d',
+             symbolLayers: [{
+               type: 'icon',
+               size: '50px',
+               resource: {
+                 href: 'http://127.0.0.1:5500/resources/images/car.png'
+               }
+             }],
+             verticalOffset: {
+               screenLength: 50,
+               maxWorldLength: 2000,
+               minWorldLength: 20
+             },
+             callout: {
+               type: 'line',
+               color: [0, 0, 0],
+               size: 2,
+               border: {
+                 color: [255, 255, 255]
+               }
+             }
+           }
+          })
+       })
+          $("#btndeletetrajectoryPlay").click(function () {
+            trajectory.remove()
+          })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainer">
+        <button class="mapbutton" id="btnaddtrajectoryPlay"> add trajectoryPlay</button>
+        <button class="mapbutton" id="btndeletetrajectoryPlay"> delete trajectoryPlay</button>
+    </div>
+</body>
+
+</html>
