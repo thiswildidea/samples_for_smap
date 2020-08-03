@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>热力图</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width:40%;
+            position: relative;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/common/heatmap.js"></script>
+    <script type="module">
+        let smap
+         import SMap from '../library/smap/shsmi/SMap.js'
+         import Plugins from '../library/plugins/Plugins.js'
+            smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+      let HeatMap=null
+      $(function () {
+         $("#btnaddheatmap").click(function () {
+           const param = {
+               id: 'heatmap',
+               h337: h337,
+               container: 'container',
+               radius: 30,
+               maxOpacity: 0.8,
+               minOpacity: 0,
+               blur: 0.7,
+               gradient: {
+                   0: 'rgb(0,0,0)',
+                   0.3: 'rgb(0,0,255)',
+                   0.8: 'rgb(0,255,0)',
+                   0.98: 'rgb(255,255,0)',
+                   1: 'rgb(255,0,0)'
+               },
+               datas: [
+                   [-3020, -5200],
+                   [-3020, -5200],
+                   [-3120, -5200],
+                   [-3120, -5100],
+                   [-3220, -5200],
+                   [-3220, -5200],
+                   [-3220, -5200],
+                   [-3120, -5200],
+                   [-3220, -5200]
+               ]
+           }
+           HeatMap = new Plugins.HeatMap(smap.view)
+           HeatMap.add(param)
+         })
+          $("#btnupdateheatmap").click(function () {
+            const heatmapDataArray2 = [
+            [-3020, -6200, 500],
+            [-3120, -6200, 500],
+            [-3120, -6100, 500],
+            [-3220, -6200, 1000]
+            ]
+            HeatMap.refreshdata(heatmapDataArray2)
+          })
+         $("#btnhideheatmap").click(function () {
+           HeatMap.hide()
+         })
+         $("#btnshowheatmap").click(function () {
+           HeatMap.show()
+          })
+          $("#btndeleteheatmap").click(function () {
+             HeatMap.remove('heatmap')
+          })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddheatmap"> add heatmap</button>
+            <button class="mapbutton" id="btnupdateheatmap"> update heatmap</button>
+            <button class="mapbutton" id="btnhideheatmap"> hide heatmap</button>
+            <button class="mapbutton" id="btnshowheatmap"> show heatmap</button>
+             <button class="mapbutton" id="btndeleteheatmap"> delete heatmap</button>
+
+        </div>
+
+</body>
+</html>

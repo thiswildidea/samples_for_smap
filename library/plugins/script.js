@@ -5,7 +5,7 @@ import { getCdnUrl } from './utils/url.js';
 var defaultOptions = {};
 function createScript(url) {
     var script = document.createElement('script');
-    script.type = 'text/javascript.js';
+    script.type = 'text/javascript';
     script.src = url;
     script.setAttribute('data-shsmi', 'loading');
     return script;
