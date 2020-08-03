@@ -50,16 +50,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 import EventEmitter from './mod.js';
 import { load } from './modules.js';
 import Guid from './utils/Guid.js';
-var Boundary = /** @class */ (function (_super) {
-    __extends(Boundary, _super);
-    function Boundary(view) {
+var MaskBoundary = /** @class */ (function (_super) {
+    __extends(MaskBoundary, _super);
+    function MaskBoundary(view) {
         var _this = _super.call(this) || this;
         _this.displayedLayerid = "";
         _this.view = null;
         _this.init(view);
         return _this;
     }
-    Boundary.prototype.add = function (maskOptions) {
+    MaskBoundary.prototype.add = function (maskOptions) {
         var _this = this;
         load(['esri/Graphic', 'esri/layers/GraphicsLayer', 'esri/geometry/Polygon', 'esri/geometry/geometryEngineAsync',
             'esri/geometry/SpatialReference', 'esri/Color'])
@@ -350,25 +350,25 @@ var Boundary = /** @class */ (function (_super) {
             }
         });
     };
-    Boundary.prototype.remove = function () {
+    MaskBoundary.prototype.remove = function () {
         var boundaryResultLayer = this.view.map.findLayerById(this.displayedLayerid);
         if (boundaryResultLayer) {
             this.view.map.remove(boundaryResultLayer);
         }
     };
-    Boundary.prototype.show = function () {
+    MaskBoundary.prototype.show = function () {
         var boundaryResultLayer = this.view.map.findLayerById(this.displayedLayerid);
         if (boundaryResultLayer) {
             boundaryResultLayer.visible = true;
         }
     };
-    Boundary.prototype.hide = function () {
+    MaskBoundary.prototype.hide = function () {
         var boundaryResultLayer = this.view.map.findLayerById(this.displayedLayerid);
         if (boundaryResultLayer) {
             boundaryResultLayer.visible = false;
         }
     };
-    Boundary.prototype.init = function (view) {
+    MaskBoundary.prototype.init = function (view) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 this.displayedLayerid = new Guid().uuid;
@@ -377,6 +377,6 @@ var Boundary = /** @class */ (function (_super) {
             });
         });
     };
-    return Boundary;
+    return MaskBoundary;
 }(EventEmitter));
-export default Boundary;
+export default MaskBoundary;
