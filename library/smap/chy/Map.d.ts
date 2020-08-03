@@ -1,5 +1,6 @@
 import Bounds from './Bounds.js';
 import IBounds from './interface/IBounds.js';
+import ILayerOptions from './interface/ILayerOptions.js';
 import IMapOptions from './interface/IMapOptions.js';
 import IMaskOptions from './interface/IMaskOptions.js';
 import IOverlayers from './interface/IOverlayers.js';
@@ -17,11 +18,14 @@ export default class Map extends EventEmitter implements IOverlayers {
     private mapProxys;
     private mapextent;
     private view;
+    private maptoken;
     private mapControl;
     private mapoverlayers;
     private mapoverlayersflayer;
     private watchHandles;
     constructor(container: string, options?: IMapOptions);
+    setlayerRenderer(layerid: string, renderer: any): void;
+    addLayer(layeroption: ILayerOptions): void;
     getZoom(): number;
     setZoom(zoomlevel: number): void;
     panTo(targetpoint: number[]): void;
@@ -54,6 +58,5 @@ export default class Map extends EventEmitter implements IOverlayers {
     clearMap(): void;
     setmaskboundary(maskOptions: IMaskOptions): void;
     private init;
-    private init1;
     private initEvent;
 }

@@ -334,3 +334,161 @@ export function initiallayers(addlayer, layers, maptoken, viewMode) {
         });
     });
 }
+export function addLayer(layerOptions, view, maptoken) {
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            // tslint:disable-next-line:variable-name
+            load(["esri/layers/TileLayer",
+                "esri/layers/SceneLayer",
+                "esri/layers/FeatureLayer",
+                "esri/layers/MapImageLayer",
+                "esri/layers/SHCTiledMapServiceLayer",
+                // "esri/layers/SHCMapServiceLayer",
+                // "esri/layers/VectorTileLayer",
+                // "esri/layers/IntegratedMeshLayer",
+                // "esri/layers/PointCloudLayer",
+                // "esri/layers/BuildingSceneLayer",
+                "esri/layers/GraphicsLayer",
+                "esri/geometry/Extent",
+                "esri/geometry/SpatialReference"])
+                // tslint:disable-next-line:variable-name
+                .then(function (_a) {
+                var TileLayer = _a[0], SceneLayer = _a[1], FeatureLayer = _a[2], MapImageLayer = _a[3], SHCTiledMapServiceLayer = _a[4], 
+                // SHCMapServiceLayer,
+                // tslint:disable-next-line:variable-name
+                // VectorTileLayer, IntegratedMeshLayer, PointCloudLayer, BuildingSceneLayer,
+                // tslint:disable-next-line:variable-name
+                GraphicsLayer = _a[5], Extent = _a[6], 
+                // tslint:disable-next-line:variable-name
+                SpatialReference = _a[7];
+                switch (layerOptions.layerType) {
+                    case 'TileLayer':
+                        view.map.add(new TileLayer({
+                            url: layerOptions.layerUrl,
+                            id: layerOptions.layerLayerId,
+                            visible: layerOptions.layerVisible !== undefined ? layerOptions.layerVisible : true,
+                            opacity: layerOptions.layerOpacity !== undefined ? layerOptions.layerOpacity : 1,
+                            title: layerOptions.layerTitle
+                        }));
+                        break;
+                    case 'FeatureLayer':
+                        var flayer = new SceneLayer({
+                            url: layerOptions.layerUrl,
+                            id: layerOptions.layerLayerId,
+                            visible: layerOptions.layerVisible !== undefined ? layerOptions.layerVisible : true,
+                            opacity: layerOptions.layerOpacity !== undefined ? layerOptions.layerOpacity : 1,
+                            title: layerOptions.layerTitle,
+                            popupEnabled: layerOptions.layerPopupEnabled !== undefined ?
+                                layerOptions.layerPopupEnabled : true
+                        });
+                        if (layerOptions.layerPopupTemplate) {
+                            flayer.popupTemplate = layerOptions.layerPopupTemplate;
+                        }
+                        if (layerOptions.layerRenderer) {
+                            flayer.renderer = layerOptions.layerRenderer;
+                        }
+                        if (layerOptions.layerMaxScale) {
+                            flayer.maxScale = layerOptions.layerMaxScale;
+                        }
+                        if (layerOptions.layerMinScale) {
+                            flayer.minScale = layerOptions.layerMinScale;
+                        }
+                        if (layerOptions.layerLabelingInfo) {
+                            flayer.labelingInfo = layerOptions.layerLabelingInfo;
+                        }
+                        if (layerOptions.layerLabelsVisible) {
+                            flayer.labelsVisible = layerOptions.layerLabelsVisible;
+                        }
+                        view.map.add(flayer);
+                        break;
+                    case 'SceneLayer':
+                        var slayer = new SceneLayer({
+                            url: layerOptions.layerUrl,
+                            id: layerOptions.layerLayerId,
+                            visible: layerOptions.layerVisible !== undefined ? layerOptions.layerVisible : true,
+                            opacity: layerOptions.layerOpacity !== undefined ? layerOptions.layerOpacity : 1,
+                            title: layerOptions.layerTitle,
+                            popupEnabled: layerOptions.layerPopupEnabled !== undefined ?
+                                layerOptions.layerPopupEnabled : true
+                        });
+                        if (layerOptions.layerPopupTemplate) {
+                            slayer.popupTemplate = layerOptions.layerPopupTemplate;
+                        }
+                        if (layerOptions.layerRenderer) {
+                            slayer.renderer = layerOptions.layerRenderer;
+                        }
+                        if (layerOptions.layerMaxScale) {
+                            slayer.maxScale = layerOptions.layerMaxScale;
+                        }
+                        if (layerOptions.layerMinScale) {
+                            slayer.minScale = layerOptions.layerMinScale;
+                        }
+                        view.map.add(slayer);
+                        break;
+                    case 'MapImageLayer':
+                        var mlayer = new MapImageLayer({
+                            url: layerOptions.layerUrl,
+                            id: layerOptions.layerLayerId,
+                            visible: layerOptions.layerVisible !== undefined ? layerOptions.layerVisible : true,
+                            opacity: layerOptions.layerOpacity !== undefined ? layerOptions.layerOpacity : 1,
+                            title: layerOptions.layerTitle
+                        });
+                        if (layerOptions.layerMaxScale) {
+                            mlayer.maxScale = layerOptions.layerMaxScale;
+                        }
+                        if (layerOptions.layerMinScale) {
+                            mlayer.minScale = layerOptions.layerMinScale;
+                        }
+                        if (layerOptions.layerSublayers) {
+                            mlayer.sublayers = layerOptions.layerSublayers;
+                        }
+                        view.map.add(mlayer);
+                        break;
+                    case 'SHCTiledMapServiceLayer':
+                        // eslint-disable-next-line no-case-declarations
+                        var fExtent = new Extent({
+                            xmin: -65000,
+                            ymin: -76000,
+                            xmax: 75000.00000000003,
+                            ymax: 72000.00000000003,
+                            spatialReference: SpatialReference.WebMercator
+                        });
+                        if (layerOptions.isToken === true) {
+                            view.map.add(new SHCTiledMapServiceLayer({
+                                url: layerOptions.layerUrl,
+                                token: maptoken,
+                                fullExtent: fExtent,
+                                title: layerOptions.layerTitle,
+                                opacity: layerOptions.layerOpacity !== undefined ? layerOptions.layerOpacity : 1,
+                                id: layerOptions.layerLayerId,
+                                visible: layerOptions.layerVisible !== undefined ? layerOptions.layerVisible : true
+                            }));
+                        }
+                        else {
+                            view.map.add(new SHCTiledMapServiceLayer({
+                                url: layerOptions.layerUrl,
+                                fullExtent: fExtent,
+                                opacity: layerOptions.layerOpacity !== undefined ? layerOptions.layerOpacity : 1,
+                                title: layerOptions.layerTitle,
+                                id: layerOptions.layerLayerId,
+                                visible: layerOptions.layerVisible !== undefined ? layerOptions.layerVisible : true
+                            }));
+                        }
+                        break;
+                    case 'GraphicsLayer':
+                        view.map.add(new GraphicsLayer({
+                            id: layerOptions.layerLayerId,
+                            visible: layerOptions.layerVisible !== undefined ? layerOptions.layerVisible : true,
+                            opacity: layerOptions.layerOpacity !== undefined ? layerOptions.layerOpacity : 1,
+                            title: layerOptions.layerTitle
+                        }));
+                        break;
+                }
+            })
+                .catch(function (err) {
+                console.error(err);
+            });
+            return [2 /*return*/];
+        });
+    });
+}
