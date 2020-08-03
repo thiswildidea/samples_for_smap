@@ -37,62 +37,60 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 import { load } from '../modules.js';
 export function init3DBaseMaplayers(layers, maptoken) {
     return __awaiter(this, void 0, void 0, function () {
-        var 
+        var _a, 
         // tslint:disable-next-line:variable-name
-        TileLayer, layerscollection;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+        Extent, SHCTiledMapServiceLayer, SpatialReference, layerscollection;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
                 case 0: return [4 /*yield*/, load([
-                        // 'esri/geometry/Extent',
-                        // 'esri/layers/SHCTiledMapServiceLayer',
-                        // 'esri/layers/SceneLayer',
-                        'esri/layers/TileLayer'
-                        // 'esri/layers/MapImageLayer',
-                        // 'esri/layers/GroupLayer',
-                        // 'esri/geometry/SpatialReference'
+                        'esri/geometry/Extent',
+                        'esri/layers/SHCTiledMapServiceLayer',
+                        'esri/geometry/SpatialReference'
+                        // 'esri/layers/TileLayer'
                     ])];
                 case 1:
-                    TileLayer = (_a.sent())[0];
+                    _a = _b.sent(), Extent = _a[0], SHCTiledMapServiceLayer = _a[1], SpatialReference = _a[2];
                     layerscollection = [];
                     layers.forEach(function (item) {
                         switch (item.mapType) {
-                            // case 'SHCTiledMapServiceLayer':
-                            //     // eslint-disable-next-line no-case-declarations
-                            //     const fExtent = new Extent({
-                            //         xmin: -65000,
-                            //         ymin: -76000,
-                            //         xmax: 75000.00000000003,
-                            //         ymax: 72000.00000000003,
-                            //         spatialReference: SpatialReference.WebMercator
-                            //     });
-                            //     if (parseFloat(item.isToken) === 1) {
-                            //         return new SHCTiledMapServiceLayer({
-                            //             url: item.url,
-                            //             token: maptoken,
-                            //             fullExtent: fExtent,
-                            //             opacity: item.opacity,
-                            //             title: item.layerCName,
+                            case 'SHCTiledMapServiceLayer':
+                                // eslint-disable-next-line no-case-declarations
+                                var fExtent = new Extent({
+                                    xmin: -65000,
+                                    ymin: -76000,
+                                    xmax: 75000.00000000003,
+                                    ymax: 72000.00000000003,
+                                    spatialReference: SpatialReference.WebMercator
+                                });
+                                if (parseFloat(item.isToken) === 1) {
+                                    layerscollection.push(new SHCTiledMapServiceLayer({
+                                        url: item.url,
+                                        token: maptoken,
+                                        fullExtent: fExtent,
+                                        opacity: item.opacity,
+                                        title: item.layerCName,
+                                        id: item.layerEName,
+                                        visible: parseFloat(item.isVisible)
+                                    }));
+                                }
+                                else {
+                                    layerscollection.push(new SHCTiledMapServiceLayer({
+                                        url: item.url,
+                                        fullExtent: fExtent,
+                                        opacity: item.opacity,
+                                        title: item.layerCName,
+                                        id: item.layerEName,
+                                        visible: parseFloat(item.isVisible)
+                                    }));
+                                }
+                            // case 'TileLayer':
+                            //     layerscollection.push(new TileLayer(item.url, {
                             //             id: item.layerEName,
-                            //             visible: parseFloat(item.isVisible)
-                            //         });
-                            //     } else {
-                            //         return new SHCTiledMapServiceLayer({
-                            //             url: item.url,
-                            //             fullExtent: fExtent,
+                            //             visible: parseFloat(item.isVisible),
                             //             opacity: item.opacity,
-                            //             title: item.layerCName,
-                            //             id: item.layerEName,
-                            //             visible: parseFloat(item.isVisible)
-                            //         });
-                            //     }
-                            case 'TileLayer':
-                                layerscollection.push(new TileLayer(item.url, {
-                                    id: item.layerEName,
-                                    visible: parseFloat(item.isVisible),
-                                    opacity: item.opacity,
-                                    // listMode: item.listMode,
-                                    title: item.layerCName
-                                }));
+                            //             // listMode: item.listMode,
+                            //             title: item.layerCName
+                            //     })) ;
                         }
                     });
                     return [2 /*return*/, layerscollection];
@@ -102,13 +100,15 @@ export function init3DBaseMaplayers(layers, maptoken) {
 }
 export function init2DBaseMaplayers(layers, maptoken) {
     return __awaiter(this, void 0, void 0, function () {
-        var 
+        var _a, 
         // tslint:disable-next-line:variable-name
-        TileLayer, layerscollection;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+        Extent, SHCTiledMapServiceLayer, SpatialReference, TileLayer, layerscollection;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
                 case 0: return [4 /*yield*/, load([
-                        // 'esri/geometry/Extent',
+                        'esri/geometry/Extent',
+                        'esri/layers/SHCTiledMapServiceLayer',
+                        'esri/geometry/SpatialReference',
                         'esri/layers/TileLayer'
                         // 'esri/layers/SceneLayer',
                         // 'esri/layers/MapImageLayer',
@@ -116,19 +116,48 @@ export function init2DBaseMaplayers(layers, maptoken) {
                         // 'esri/geometry/SpatialReference'
                     ])];
                 case 1:
-                    TileLayer = (_a.sent())[0];
+                    _a = _b.sent(), Extent = _a[0], SHCTiledMapServiceLayer = _a[1], SpatialReference = _a[2], TileLayer = _a[3];
                     layerscollection = [];
                     layers.map(function (item) {
                         switch (item.mapType) {
-                            // case 'SHCTiledMapServiceLayer':
-                            case 'TileLayer':
-                                layerscollection.push(new TileLayer(item.url, {
-                                    id: item.layerEName,
-                                    visible: parseFloat(item.isVisible),
-                                    opacity: item.opacity,
-                                    listMode: item.listMode,
-                                    title: item.layerCName
-                                }));
+                            case 'SHCTiledMapServiceLayer':
+                                // eslint-disable-next-line no-case-declarations
+                                var fExtent = new Extent({
+                                    xmin: -65000,
+                                    ymin: -76000,
+                                    xmax: 75000.00000000003,
+                                    ymax: 72000.00000000003,
+                                    spatialReference: SpatialReference.WebMercator
+                                });
+                                if (parseFloat(item.isToken) === 1) {
+                                    layerscollection.push(new SHCTiledMapServiceLayer({
+                                        url: item.url,
+                                        token: maptoken,
+                                        fullExtent: fExtent,
+                                        opacity: item.opacity,
+                                        title: item.layerCName,
+                                        id: item.layerEName,
+                                        visible: parseFloat(item.isVisible)
+                                    }));
+                                }
+                                else {
+                                    layerscollection.push(new SHCTiledMapServiceLayer({
+                                        url: item.url,
+                                        fullExtent: fExtent,
+                                        opacity: item.opacity,
+                                        title: item.layerCName,
+                                        id: item.layerEName,
+                                        visible: parseFloat(item.isVisible)
+                                    }));
+                                }
+                            // case 'TileLayer':
+                            //     layerscollection.push(new TileLayer(item.url, {
+                            //         id: item.layerEName,
+                            //         visible: parseFloat(item.isVisible),
+                            //         opacity: item.opacity,
+                            //         listMode: item.listMode,
+                            //         title: item.layerCName
+                            //     }));
                         }
                     });
                     return [2 /*return*/, layerscollection];

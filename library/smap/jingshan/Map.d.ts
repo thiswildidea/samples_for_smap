@@ -17,8 +17,8 @@ export default class Map extends EventEmitter implements IOverlayers {
     private mapwidgets;
     private mapProxys;
     private mapextent;
-    private view;
     private maptoken;
+    private view;
     private mapControl;
     private mapoverlayers;
     private mapoverlayersflayer;

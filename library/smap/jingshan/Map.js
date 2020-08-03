@@ -60,8 +60,8 @@ var Map = /** @class */ (function (_super) {
         var _this = _super.call(this) || this;
         _this.viewMode = '2D' || '3D';
         _this.showBuildingBlock = false;
-        _this.view = null;
         _this.maptoken = '';
+        _this.view = null;
         _this.mapControl = [];
         _this.mapoverlayers = [];
         _this.mapoverlayersflayer = [];
@@ -93,25 +93,24 @@ var Map = /** @class */ (function (_super) {
     };
     Map.prototype.panTo = function (targetpoint) {
         var _this = this;
-        if (this.view === null) {
-            return;
-        }
-        // tslint:disable-next-line:variable-name
-        load(['esri/geometry/Point'])
-            // tslint:disable-next-line:no-shadowed-variable
-            .then(function (_a) {
-            var point = _a[0];
-            var mappoint = new point({
-                x: targetpoint[0],
-                y: targetpoint[1],
-                z: targetpoint[2] !== undefined ? targetpoint[2] : 0,
-                spatialReference: _this.view.spatialReference
+        if (this.view) {
+            // tslint:disable-next-line:variable-name
+            load(['esri/geometry/Point'])
+                // tslint:disable-next-line:no-shadowed-variable
+                .then(function (_a) {
+                var point = _a[0];
+                var mappoint = new point({
+                    x: targetpoint[0],
+                    y: targetpoint[1],
+                    z: targetpoint[2] !== undefined ? targetpoint[2] : 0,
+                    spatialReference: _this.view.spatialReference
+                });
+                _this.view.center = mappoint;
+            })
+                .catch(function (err) {
+                console.error(err);
             });
-            _this.view.center = mappoint;
-        })
-            .catch(function (err) {
-            console.error(err);
-        });
+        }
     };
     Map.prototype.panBy = function (offsetx, offsety) {
         if (this.view) {
@@ -246,7 +245,7 @@ var Map = /** @class */ (function (_super) {
                                 heading: this.view.camera.heading
                             });
                         }
-                        _b.label = 2;
+                        return [2 /*return*/];
                     case 2: return [2 /*return*/];
                 }
             });
@@ -1366,7 +1365,8 @@ var Map = /** @class */ (function (_super) {
                         symbol: lineSymbol,
                         attributes: polylineattributes
                     });
-                    _this.mapoverlayers.push(['smap-default', overlayers.uuid, polylineGraphic]);
+                    _this.mapoverlayers.push(['smap-default',
+                        overlayers.uuid, polylineGraphic]);
                     _this.view.graphics.add(polylineGraphic);
                     if (overlayers.label.visible) {
                         var graphictext = new Graphic({
@@ -1398,7 +1398,8 @@ var Map = /** @class */ (function (_super) {
                             attributes: polylineattributes
                         });
                         _this.view.graphics.add(graphictext);
-                        _this.mapoverlayers.push(['smap-default', overlayers.uuid, graphictext]);
+                        _this.mapoverlayers.push(['smap-default',
+                            overlayers.uuid, graphictext]);
                     }
                 }
                 else if (overlayers.overlaytype.toLowerCase() === 'polygon') {
@@ -1445,7 +1446,8 @@ var Map = /** @class */ (function (_super) {
                         symbol: fillSymbol,
                         attributes: polygonattributes
                     });
-                    _this.mapoverlayers.push(['smap-default', overlayers.uuid, polygonGraphic]);
+                    _this.mapoverlayers.push(['smap-default',
+                        overlayers.uuid, polygonGraphic]);
                     _this.view.graphics.add(polygonGraphic);
                     if (overlayers.label.visible) {
                         var graphictext = new Graphic({
@@ -1477,7 +1479,8 @@ var Map = /** @class */ (function (_super) {
                             attributes: polygonattributes
                         });
                         _this.view.graphics.add(graphictext);
-                        _this.mapoverlayers.push(['smap-default', overlayers.uuid, graphictext]);
+                        _this.mapoverlayers.push(['smap-default',
+                            overlayers.uuid, graphictext]);
                     }
                 }
             }
@@ -1714,7 +1717,8 @@ var Map = /** @class */ (function (_super) {
                             symbol: fillSymbol,
                             attributes: polygonattributes
                         });
-                        _this.mapoverlayers.push(['smap-default', overelement.uuid, polygonGraphic]);
+                        _this.mapoverlayers.push(['smap-default',
+                            overelement.uuid, polygonGraphic]);
                         _this.view.graphics.add(polygonGraphic);
                         if (overelement.label.visible) {
                             var graphictext = new Graphic({
@@ -1746,7 +1750,8 @@ var Map = /** @class */ (function (_super) {
                                 attributes: polygonattributes
                             });
                             _this.view.graphics.add(graphictext);
-                            _this.mapoverlayers.push(['smap-default', overelement.uuid, graphictext]);
+                            _this.mapoverlayers.push(['smap-default',
+                                overelement.uuid, graphictext]);
                         }
                     }
                 });
@@ -1950,7 +1955,8 @@ var Map = /** @class */ (function (_super) {
                             symbol: fillSymbol,
                             attributes: polygonattributes
                         });
-                        _this.mapoverlayers.push(['smap-default', overlayers.uuid, polygonGraphic]);
+                        _this.mapoverlayers.push(['smap-default',
+                            overlayers.uuid, polygonGraphic]);
                         _this.view.graphics.add(polygonGraphic);
                         if (overlayers.label.visible) {
                             var graphictext = new Graphic({
@@ -1982,7 +1988,8 @@ var Map = /** @class */ (function (_super) {
                                 attributes: polygonattributes
                             });
                             _this.view.graphics.add(graphictext);
-                            _this.mapoverlayers.push(['smap-default', overlayers.uuid, graphictext]);
+                            _this.mapoverlayers.push(['smap-default',
+                                overlayers.uuid, graphictext]);
                         }
                     }
                 });
@@ -2099,7 +2106,8 @@ var Map = /** @class */ (function (_super) {
                         symbol: lineSymbol,
                         attributes: polylineattributes
                     });
-                    _this.mapoverlayers.push(['smap-default', overlayers.uuid, polylineGraphic]);
+                    _this.mapoverlayers.push(['smap-default',
+                        overlayers.uuid, polylineGraphic]);
                     _this.view.graphics.add(polylineGraphic);
                     if (overlayers.label.visible) {
                         var graphictext = new Graphic({
@@ -2131,7 +2139,8 @@ var Map = /** @class */ (function (_super) {
                             attributes: polylineattributes
                         });
                         _this.view.graphics.add(graphictext);
-                        _this.mapoverlayers.push(['smap-default', overlayers.uuid, graphictext]);
+                        _this.mapoverlayers.push(['smap-default',
+                            overlayers.uuid, graphictext]);
                     }
                 }
                 else if (overlayers.overlaytype.toLowerCase() === 'polygon') {
@@ -2178,7 +2187,8 @@ var Map = /** @class */ (function (_super) {
                         symbol: fillSymbol,
                         attributes: polygonattributes
                     });
-                    _this.mapoverlayers.push(['smap-default', overlayers.uuid, polygonGraphic]);
+                    _this.mapoverlayers.push(['smap-default',
+                        overlayers.uuid, polygonGraphic]);
                     _this.view.graphics.add(polygonGraphic);
                     if (overlayers.label.visible) {
                         var graphictext = new Graphic({
@@ -2210,7 +2220,8 @@ var Map = /** @class */ (function (_super) {
                             attributes: polygonattributes
                         });
                         _this.view.graphics.add(graphictext);
-                        _this.mapoverlayers.push(['smap-default', overlayers.uuid, graphictext]);
+                        _this.mapoverlayers.push(['smap-default',
+                            overlayers.uuid, graphictext]);
                     }
                 }
             }
@@ -2297,7 +2308,8 @@ var Map = /** @class */ (function (_super) {
                         });
                         clientoperateLayer.source.add(graphic);
                         _this.view.map.add(clientoperateLayer);
-                        _this.mapoverlayersflayer.push([overelement.uuid, overelement.uuid, graphic]);
+                        _this.mapoverlayersflayer.push([overelement.uuid, overelement.uuid,
+                            graphic]);
                         if (overelement.label.visible) {
                             var labelsymbol = void 0;
                             if (_this.viewMode === '2D') {
@@ -2439,7 +2451,8 @@ var Map = /** @class */ (function (_super) {
                         });
                         clientoperateLayer_1.source.add(graphic);
                         _this.mapoverlayersflayer.push([overlayers.uuid,
-                            overelement.uuid, graphic]);
+                            overelement.uuid,
+                            graphic]);
                     });
                     if (clientoperateLayer_1.source.items.length > 100) {
                         if (overlayers.frreduction != null) {
@@ -2577,7 +2590,8 @@ var Map = /** @class */ (function (_super) {
                     });
                     clientoperateLayer.source.add(graphic);
                     _this.view.map.add(clientoperateLayer);
-                    _this.mapoverlayersflayer.push([overlayers.uuid, overlayers.uuid, graphic]);
+                    _this.mapoverlayersflayer.push([overlayers.uuid, overlayers.uuid,
+                        graphic]);
                     if (overlayers.label.visible) {
                         var labelsymbol = void 0;
                         if (_this.viewMode === '2D') {
@@ -3419,8 +3433,7 @@ var Map = /** @class */ (function (_super) {
                                     this.initEvent();
                                     return [3 /*break*/, 7];
                                 case 6:
-                                    xhrutils.maptoken_front(this.mapconfig.fronttokenUrl, Mapcofig.tokenUser, Mapcofig.tokenPassword)
-                                        .then(function (maptokenResult) { return __awaiter(_this, void 0, void 0, function () {
+                                    xhrutils.maptoken_front(this.mapconfig.fronttokenUrl, Mapcofig.tokenUser, Mapcofig.tokenPassword).then(function (maptokenResult) { return __awaiter(_this, void 0, void 0, function () {
                                         var response, response;
                                         return __generator(this, function (_a) {
                                             switch (_a.label) {

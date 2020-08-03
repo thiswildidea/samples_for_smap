@@ -167,7 +167,9 @@ export function init3Dmap(containerv, mapconfig, maplayers, mapwidgets, mapProxy
                                         ['model_white_zw', 'model_air_real', 'model_white_as'].forEach(function (layname) {
                                             var buildingmodel = mapv.findLayerById(layname);
                                             if (mapoptions.showBuildingBlock === false) {
-                                                buildingmodel.visible = false;
+                                                if (buildingmodel) {
+                                                    buildingmodel.visible = false;
+                                                }
                                             }
                                             else {
                                                 if (buildingmodel) {
