@@ -17,7 +17,7 @@ var BasemapToggle = /** @class */ (function (_super) {
     // tslint:disable-next-line:no-empty
     function BasemapToggle(mapoptons) {
         var _this = _super.call(this, mapoptons) || this;
-        _this.controlName = 'basemaptoggle';
+        _this.controlName = 'basemaptoggle.js';
         return _this;
     }
     return BasemapToggle;

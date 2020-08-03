@@ -1,4 +1,4 @@
-import ILabelOption from '../interface/ILabelOption.js';
+import ILabelOption from '../interface/ILabelOption';
 export default class Label {
     type: string;
     text: string;

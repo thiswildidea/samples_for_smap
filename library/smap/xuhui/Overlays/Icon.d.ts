@@ -1,5 +1,5 @@
-import IConOption from '../interface/IConOption.js';
-import Size from '../Overlays/Size.js';
+import IConOption from '../interface/IConOption';
+import Size from '../Overlays/Size';
 export default class Icon {
     size: Size;
     image: string;
