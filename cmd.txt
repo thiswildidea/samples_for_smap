@@ -3,3 +3,7 @@
 
 
 金山   center: [-20135, -48456],
+git branch
+git checkout master 
+git checkout jingshan
+git checkout xuhui
