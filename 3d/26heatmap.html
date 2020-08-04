@@ -34,12 +34,11 @@
         }
     </style>
     <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/smap/jingshan/Plugins.min.js"></script>
     <script src="../library/common/heatmap.js"></script>
-    <script type="module">
-        let smap
-         import SMap from '../library/smap/jingshan/SMap.js'
-         import Plugins from '../library/plugins/Plugins.js'
-            smap = new SMap.Map('mapcontainer', {
+    <script src="../library/smap/jingshan/SMap.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
             viewMode: '3D',
             center: [0, 0],
             zoom: 3,

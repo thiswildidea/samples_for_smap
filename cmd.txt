@@ -4,4 +4,10 @@
 git branch
 git checkout master 
 git checkout jingshan
-git checkout xuhui
+git checkout jingshan
+
+
+
+http://31.8.11.75/smiapi/smap/SMap.min.js
+http://31.8.11.75/smiapi/smap/Plugins.min.js
+http://31.8.11.75/smiapi/smap/GeoTask.min.js
