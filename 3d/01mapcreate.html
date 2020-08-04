@@ -45,6 +45,9 @@
         mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
         showBuildingBlock: true
         })
+         smap.on(SMap.MapEvent.maploaded, function(view) {
+            console.log(smap.maplayers)
+         })
     </script>
 </head>
 
