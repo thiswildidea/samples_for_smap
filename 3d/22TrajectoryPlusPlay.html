@@ -34,11 +34,10 @@
         }
     </style>
     <script src="../library/common/jquery-2.2.3.min.js"></script>
-    <script type="module">
-        let smap
-         import SMap from '../library/smap/shsmi/SMap.js'
-         import Plugins from '../library/plugins/Plugins.js'
-            smap = new SMap.Map('mapcontainer', {
+    <script src="../library/smap/shsmi/Plugins.min.js"></script>
+    <script src="../library/smap/shsmi/SMap.min.js"></script>
+    <script>
+      const smap = new SMap.Map('mapcontainer', {
             viewMode: '3D',
             center: [0, 0],
              zoom: 3,
