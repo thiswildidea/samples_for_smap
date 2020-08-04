@@ -33,11 +33,10 @@
             float: left;
         }
     </style>
-    <script src="../library/common/jquery-2.2.3.min.js"></script>
-    <script type="module">
-        let smap
-        import SMap from '../library/smap/xuhui/SMap.js'
-            smap = new SMap.Map('mapcontainer', {
+     <script src="../library/common/jquery-2.2.3.min.js"></script>
+     <script src="../library/smap/xuhui/SMap.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
             viewMode: '2D',
             center: [0, 0],
             zoom: 3,
