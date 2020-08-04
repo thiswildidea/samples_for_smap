@@ -15,15 +15,22 @@
             height: 100%;
         }
 
-        .mapbuttoncontainer {
-            width:40%;
-            position: relative;
-            display: flex;
-            flex-flow: row;
-            top: 5px;
-            left: 10px;
-            display: block;
-        }
+       .mapbuttoncontainergroup {
+          width: 40%;
+          height: 50%;
+          position: absolute;
+          display: flex;
+          flex-flow: column;
+       }
+
+       .mapbuttoncontainer {
+           width: 100%;
+           display: flex;
+           flex-flow: row;
+           top: 5px;
+           left: 10px;
+           display: block;
+       }
 
         .mapbuttoncontainer .mapbutton {
             width: 200px;
@@ -32,12 +39,14 @@
             margin-bottom: 15px;
             float: left;
         }
-        .esri-popup__content .tdlabel{
-           width: 200px;
+
+        .esri-popup__content .tdlabel {
+            width: 200px;
         }
-        .esri-popup__content .tdvalue{
-           width:200px;
-         }
+
+        .esri-popup__content .tdvalue {
+            width: 200px;
+        }
     </style>
     <script src="../library/common/jquery-2.2.3.min.js"></script>
     <script src="../library/common/heatmap.js"></script>
@@ -54,7 +63,7 @@
             mapStyle: 'smap://styles/dark',
             showBuildingBlock: true
         })
-      let fashPoint3DLayer=null
+      
       function createContentpopup(data) {
           let htmlstring = '';
           htmlstring += "<table>"
@@ -76,7 +85,8 @@
               htmlstring += "</table>"
           return htmlstring;
       }
-    
+    let fashPoint3DLayer=null
+    let fashPoint3DLayer1=null
       $(function () {
          $("#btnaddfashPoint3DLayer").click(function () {
           const samples = [{
@@ -128,19 +138,78 @@
                 }
             })
          })
-          $("#btnremovefashPoint3DLayer").click(function () {
+         $("#btnremovefashPoint3DLayer").click(function () {
               fashPoint3DLayer.remove()
-          })
-        
+         })
+         $("#btnaddfashPoint3DLayer1").click(function () {
+         const samples = [{
+                 x: 200,
+                 y: 200,
+                 z: 1,
+              attributes: {
+                 name: '报警点4',
+                 address: '广场附近'
+              }
+              },
+              {
+                 x: 300,
+                 y: 300,
+                 z: 1,
+              attributes: {
+                 name: '报警点5',
+                 address: '广场附近1'
+              }
+              },
+              {
+                 x: 350,
+                 y: 300,
+                 z: 1,
+              attributes: {
+                name: '报警点6',
+                address: '广场附近2'
+              }
+              }
+         ]
+         const param = {
+            color: [255, 255, 0, 1],
+            nring: 0.5,
+            spead: 1.5,
+            view: smap.view,
+            points: samples
+         }
+         fashPoint3DLayer1 = new Plugins.FlashPoint3DLayer(smap.view)
+         fashPoint3DLayer1.add(param)
+         fashPoint3DLayer1.on('click', function(result, geometry) {
+             if (geometry) {
+                 smap.view.popup.defaultPopupTemplateEnabled = true
+                 smap.view.popup.autoOpenEnabled = false
+                 smap.view.popup.open({
+                 location: geometry,
+                 title: result.attributes.name,
+                 content: createContentpopup(result.attributes)
+                })
+             }
+         })
+         })
+         $("#btnremovefashPoint3DLayer1").click(function () {
+             fashPoint3DLayer1.remove()
+         })
       })
     </script>
 </head>
 
 <body>
     <div id="mapcontainer"></div>
+     <div class="mapbuttoncontainergroup">
         <div class="mapbuttoncontainer">
-            <button class="mapbutton" id="btnaddfashPoint3DLayer"> add fashPoint3DLayer</button>
+            <button class="mapbutton" id="btnaddfashPoint3DLayer"> add fashPoint3DLayer </button>
             <button class="mapbutton" id="btnremovefashPoint3DLayer"> remove fashPoint3DLayer</button>
         </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddfashPoint3DLayer1"> add fashPoint3DLayer1</button>
+            <button class="mapbutton" id="btnremovefashPoint3DLayer1"> remove fashPoint3DLayer1</button>
+        </div>
+    </div>
 </body>
+
 </html>
