@@ -16,7 +16,7 @@
         }
     </style>
     <script src="../library/common/jquery-2.2.3.min.js"></script>
-    <script src="../library/smap/xuhui/SMap.min.js"></script>
+    <script src="http://10.201.37.225:8080/smiapi/smap/SMap.min.js"></script>
     <script >
         const smap= new SMap.Map('mapcontainer', {
             viewMode: '2D',
@@ -25,11 +25,9 @@
             zooms: [0, 11],
             mapStyle: 'smap://styles/dark'
         })
-      $(function () {
-         $("#btnmaptest").click(function () {
-            smap.setZoomAndCenter(8,[100,100])
-         })
-      })
+     smap.on(SMap.MapEvent.maploaded, function(view) {
+        console.log(smap.maplayers)
+     })
     </script>
 </head>
 
