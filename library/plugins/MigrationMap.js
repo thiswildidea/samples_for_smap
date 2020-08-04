@@ -218,7 +218,7 @@ var MigrationMap = /** @class */ (function (_super) {
     };
     MigrationMap.prototype.createScript = function (name, url) {
         var script = document.createElement('script');
-        script.type = 'text/javascript';
+        script.type = 'text/javascript.js';
         script.src = url;
         script.setAttribute(name, 'loading');
         return script;
