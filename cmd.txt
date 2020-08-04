@@ -6,7 +6,7 @@
 git branch
 git checkout master 
 git checkout jingshan
-git checkout shsmi
+git checkout xuhui
 
 http://10.108.3.16/smiapi/smap/SMap.min.js
 http://10.108.3.16/smiapi/smap/Plugins.min.js
