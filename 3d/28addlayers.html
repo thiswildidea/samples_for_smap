@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>Identify</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            position: relative;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/smap/xuhui/SMap.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+             zoom: 3,
+             zooms: [0, 11],
+             pitch: 60,
+             mapStyle: 'smap://styles/dark',
+             showBuildingBlock: true
+        })
+      
+      $(function () {
+           $("#addlayercontrol").click(function () {
+              const layerListControl = new SMap.LayerListControl({
+                 visible: true,
+                 position: 'top-right',
+                 collapse: true
+              })
+              smap.addControl(layerListControl)
+           }),
+          $("#btnaddMapImageLayer").click(function () {
+            const MapImageLayerparam = {
+              layerType: 'MapImageLayer',
+              layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
+              layerTitle: "徐汇区街道V2",
+              layerLayerId: "XH_JD_V2",
+              layerOpacity:1,
+              layerVisible:true,
+              layerMaxScale:1000,
+              layerMinScale:10000000,
+              layerPopupEnabled:true,
+              layerPopupTemplate:"",
+              layerLabelsVisible:false,
+              layerRenderer: {
+                  type: 'simple',
+                  symbol: {
+                  type: 'simple-fill',
+                  color: [36, 241, 254, 0.1],
+                  outline: {
+                       color: [36, 241, 254, 1],
+                        width: 4
+                     }
+                  }
+               }
+             }
+             smap.addLayer(MapImageLayerparam)
+        })
+
+         $("#btnaddFeatureLayer").click(function () {
+            const FeatureLayerparam = {
+              layerType: 'FeatureLayer',
+              layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_PIPELINE/FeatureServer/1",
+              layerTitle: "雨水管点",
+              layerLayerId: "XH_PIPELINE_YSGD",
+              layerOpacity:1,
+              layerVisible:true,
+              layerMaxScale:10,
+              layerMinScale:10000000,
+              layerPopupEnabled:true,
+              layerPopupTemplate: {
+                  title: '{exp_no}',
+                  content: [{
+                      type: 'fields',
+                      fieldInfos: [{
+                              fieldName: 'exp_no',
+                              label: '物探点号'
+                          },
+                          {
+                              fieldName: 'feature',
+                              label: '特征'
+                          },
+                          {
+                              fieldName: 'subsid',
+                              label: '附属物'
+                          },
+                          {
+                              fieldName: 'dlmc',
+                              label: '道路名称'
+                          },
+                          {
+                              fieldName: 'jjcc',
+                              label: '窨井尺寸'
+                          }
+                      ]
+                  }]
+              },
+              layerLabelsVisible:false,
+              layerRenderer: {
+                  type: 'simple',
+                  symbol: {
+                  type: 'simple-fill',
+                  color: [36, 241, 254, 0.1],
+                  outline: {
+                       color: [36, 241, 254, 1],
+                        width: 4
+                     }
+                  }
+               }
+             }
+             smap.addLayer(FeatureLayerparam)
+         })
+        $("#btnaddSceneLayer").click(function () {
+            const SceneLayerparam = {
+              layerType: 'SceneLayer',
+              layerUrl: "http://10.201.37.220/server/rest/services/Hosted/LBJZ_ORIGIN/SceneServer",
+              layerTitle: "历保建筑原貌",
+              layerLayerId: "LBJZ_ORIGIN",
+              layerOpacity:1,
+              layerVisible:true,
+              layerMaxScale:1000,
+              layerMinScale:10000000,
+              layerPopupEnabled:true,
+              elevationInfo: {
+                             mode: 'absolute-height',
+                            offset: -2.5
+                    }
+             }
+             smap.addLayer(SceneLayerparam)
+         })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+            <button class="mapbutton" id="btnaddMapImageLayer"> add MapImageLayer</button>
+            <button class="mapbutton" id="btnaddFeatureLayer"> add FeatureLayer</button>
+            <button class="mapbutton" id="btnaddSceneLayer"> add SceneLayer</button>
+        </div>
+</body>
+
+</html>
