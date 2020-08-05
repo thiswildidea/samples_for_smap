@@ -63,7 +63,10 @@
            }
            flqueryTask = new GeoTask.Query(smap.view)
            flqueryTask.featureLayer(param).then((result) => {
-           console.log(result)
+              console.log(result)
+           })
+           flqueryTask.on('click', function(result, geometry) {
+               console.log(result,geometry)
            })
      
        })
