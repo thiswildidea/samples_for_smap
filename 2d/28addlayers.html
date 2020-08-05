@@ -14,15 +14,23 @@
             width: 100%;
             height: 100%;
         }
+        .mapbuttoncontainergroup {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
         .mapbuttoncontainer {
             width: 100%;
             display: flex;
             flex-flow: row;
-            position: relative;
             top: 5px;
             left: 10px;
             display: block;
         }
+
 
         .mapbuttoncontainer .mapbutton {
             width: 100px;
@@ -40,7 +48,7 @@
             center: [0, 0],
              zoom: 3,
              zooms: [0, 11],
-             mapStyle: 'smap://styles/dark',
+             mapStyle: 'smap://styles/dark'
         })
       
       $(function () {
@@ -79,6 +87,9 @@
              }
              smap.addLayer(MapImageLayerparam)
         })
+          $("#btremoveMapImageLayer").click(function () {
+              smap.removeLayer('XH_JD_V2')
+           }),
 
          $("#btnaddFeatureLayer").click(function () {
             const FeatureLayerparam = {
@@ -88,7 +99,7 @@
               layerLayerId: "XH_PIPELINE_YSGD",
               layerOpacity:1,
               layerVisible:true,
-              layerMaxScale:1000,
+              layerMaxScale:10,
               layerMinScale:10000000,
               layerPopupEnabled:true,
               layerPopupTemplate: {
@@ -133,17 +144,26 @@
              }
              smap.addLayer(FeatureLayerparam)
          })
+           $("#btremoveFeatureLayer").click(function () {
+              smap.removeLayer('XH_PIPELINE_YSGD')
+           })
       })
     </script>
 </head>
 
 <body>
     <div id="mapcontainer"></div>
+      <div class="mapbuttoncontainergroup">
         <div class="mapbuttoncontainer">
             <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
             <button class="mapbutton" id="btnaddMapImageLayer"> add MapImageLayer</button>
-            <button class="mapbutton" id="btnaddFeatureLayer"> add FeatureLayer</button>
+             <button class="mapbutton" id="btremoveMapImageLayer"> remove MapImageLayer</button>
         </div>
+         <div class="mapbuttoncontainer">
+             <button class="mapbutton" id="btnaddFeatureLayer"> add FeatureLayer</button>
+             <button class="mapbutton" id="btremoveFeatureLayer"> remove FeatureLayer</button>
+         </div>
+    </div>
 </body>
 
 </html>
