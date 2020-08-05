@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>Identify</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            position: relative;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/smap/shsmi/GeoTask.min.js"></script>
+    <script src="../library/smap/shsmi/SMap.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+             zoom: 3,
+             zooms: [0, 11],
+             pitch: 60,
+             mapStyle: 'smap://styles/dark',
+             showBuildingBlock: true
+        })
+     let identifytask=null
+      smap.on(SMap.MapEvent.maploaded, function(view, eventParamter) {
+         identifytask = new GeoTask.Identify(smap.view)
+         identifytask.on('click', function(result, geometry) {
+            console.log(result,geometry)
+         })
+    })
+      smap.on(SMap.MapEvent.click, function(view, eventParamter) {
+          const param = {
+              url:"http://10.108.3.16/arcgis/rest/services/boundary/sh_jd_boundary/MapServer",
+              displayed: true, //查询接口是否在地图上显示
+              layerIds:[0],
+              type: 'polygon',
+              tolerance:1,
+              geometry:eventParamter.mapPoint
+          }
+          identifytask.MapService(param).then((result) => {
+            console.log(result)
+          })
+      })
+      
+      $(function () {
+          $("#btnaddlayer").click(function () {
+            const param = {
+              layerType: 'MapImageLayer',
+              layerUrl: "http://10.108.3.16/arcgis/rest/services/boundary/sh_jd_boundary/MapServer",
+              layerTitle: "sh_jd_boundary",
+              layerLayerId: "sh_jd_boundary1",
+              layerOpacity:1,
+              layerOpacity:1,
+              layerMaxScale:1000,
+              layerMinScale:10000000,
+              layerPopupEnabled:true,
+              layerPopupTemplate:"",
+              layerLabelsVisible:false,
+              layerRenderer: {
+                  type: 'simple',
+                  symbol: {
+                  type: 'simple-fill',
+                  color: [36, 241, 254, 0.1],
+                  outline: {
+                     color: [36, 241, 254, 1],
+                     width: 4
+                     }
+                  }
+               }
+        }
+        smap.addLayer(param)
+          })
+         $("#btnhide").click(function () {
+            identifytask.hide()
+         })
+         $("#btnshow").click(function () {
+            identifytask.show()
+         })
+         $("#btnclearn").click(function () {
+           identifytask.remove()
+         })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddlayer"> btnaddlayer</button>
+            <button class="mapbutton" id="btnhide"> hide Identify result</button>
+            <button class="mapbutton" id="btnshow"> show Identify result</button>
+            <button class="mapbutton" id="btnclearn"> clean Identify result</button>
+        </div>
+</body>
+
+</html>
