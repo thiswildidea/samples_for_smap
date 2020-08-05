@@ -51,7 +51,7 @@
            const param = {
            layerUniqueId: 'qx_boundary',
            queryDefinition: "name like '%黄浦%'", // qxcode like '%01%
-           displayed: true,
+           displayed: true, //查询接口是否在地图上显示
            outFields: ['*'],
            type: 'polygon',
            symbol: {
@@ -65,7 +65,10 @@
            }
            flqueryTask = new GeoTask.Query(smap.view)
            flqueryTask.featureLayer(param).then((result) => {
-           console.log(result)
+               console.log(result)
+           })
+           flqueryTask.on('click', function(result, geometry) {
+              console.log(result,geometry)
            })
      
        })
@@ -73,11 +76,11 @@
            flqueryTask.remove()
         })
          $("#btnhide").click(function () {
-         flqueryTask.hide()
+            flqueryTask.hide()
          })
-          $("#btnshow").click(function () {
-          flqueryTask.show()
-          })
+         $("#btnshow").click(function () {
+            flqueryTask.show()
+         })
       })
     </script>
 </head>
