@@ -72,6 +72,9 @@
             }
             xqboundary = new Plugins.Boundary(smap.view)
             xqboundary.add(par)
+            xqboundary.on('click', function(result, geometry) {
+              console.log(result,geometry)
+            })
      
        })
        $("#btnhidexqboundary").click(function () {
@@ -81,7 +84,7 @@
            xqboundary.show()
         })
           $("#btndeletexqboundary").click(function () {
-          xqboundary.remove()
+             xqboundary.remove()
           })
 
        $("#btnaddjdboundary").click(function () {
@@ -99,6 +102,9 @@
             }
             jdboundary = new Plugins.Boundary(smap.view)
             jdboundary.add(par)
+            jdboundary.on('click', function(result, geometry) {
+              console.log(result,geometry)
+            })
      
        })
         $("#btnhidejdboundary").click(function () {
@@ -126,6 +132,9 @@
             }
             jwhboundary = new Plugins.Boundary(smap.view)
             jwhboundary.add(par)
+            jwhboundary.on('click', function(result, geometry) {
+             console.log(result,geometry)
+             })
      
        })
         $("#btnhidejwhboundary").click(function () {
