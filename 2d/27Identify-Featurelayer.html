@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>Identify</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            position: relative;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/smap/xuhui/GeoTask.min.js"></script>
+    <script src="../library/smap/xuhui/SMap.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '2D',
+            center: [0, 0],
+             zoom: 3,
+             zooms: [0, 11],
+             mapStyle: 'smap://styles/dark',
+
+        })
+     let identifytask=null
+      smap.on(SMap.MapEvent.maploaded, function(view, eventParamter) {
+         identifytask = new GeoTask.Identify(smap.view)
+         identifytask.on('click', function(result, geometry) {
+            console.log(result,geometry)
+         })
+    })
+      smap.on(SMap.MapEvent.click, function(view, eventParamter) {
+          const param = {
+              layerUniqueId:'XH_JD_V2',
+              url:"http://10.201.37.222/arcgis/rest/services/XH_JD_V2/FeatureServer",
+              displayed: true, //查询接口是否在地图上显示
+              layerIds:[0],
+              tolerance:100,
+              geometry:eventParamter.mapPoint
+          }
+          identifytask.FeatureService(param).then((result) => {
+            console.log(result)
+          })
+      })
+      
+      $(function () {
+          $("#btnaddlayer").click(function () {
+            const param = {
+              layerType: 'FeatureLayer',
+              layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/FeatureServer",
+              layerTitle: "XH_JD_V2",
+              LayerId: "XH_JD_V2",
+              layerOpacity:1,
+              layerVisible:true,
+              layerMaxScale:10,
+              layerMinScale:10000000,
+        }
+        smap.addLayer(param)
+          })
+         $("#btnhide").click(function () {
+            identifytask.hide()
+         })
+         $("#btnshow").click(function () {
+            identifytask.show()
+         })
+         $("#btnclearn").click(function () {
+           identifytask.remove()
+         })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddlayer"> btnaddlayer</button>
+            <button class="mapbutton" id="btnhide"> hide Identify result</button>
+            <button class="mapbutton" id="btnshow"> show Identify result</button>
+            <button class="mapbutton" id="btnclearn"> clean Identify result</button>
+        </div>
+</body>
+
+</html>

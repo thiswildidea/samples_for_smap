@@ -44,11 +44,13 @@
     <script src="../library/smap/xuhui/SMap.min.js"></script>
     <script>
         const smap = new SMap.Map('mapcontainer', {
-            viewMode: '2D',
+            viewMode: '3D',
             center: [0, 0],
              zoom: 3,
              zooms: [0, 11],
-             mapStyle: 'smap://styles/dark'
+             pitch: 60,
+             mapStyle: 'smap://styles/dark',
+             showBuildingBlock: true
         })
       
       $(function () {
@@ -68,22 +70,8 @@
               layerId: "XH_JD_V2",
               layerOpacity:1,
               layerVisible:true,
-              layerMaxScale:1000,
-              layerMinScale:10000000,
-              layerPopupEnabled:true,
-              layerPopupTemplate:"",
-              layerLabelsVisible:false,
-              layerRenderer: {
-                  type: 'simple',
-                  symbol: {
-                  type: 'simple-fill',
-                  color: [36, 241, 254, 0.1],
-                  outline: {
-                       color: [36, 241, 254, 1],
-                        width: 4
-                     }
-                  }
-               }
+              layerMaxScale:10,
+              layerMinScale:10000000
              }
              smap.addLayer(MapImageLayerparam)
         })
@@ -135,6 +123,42 @@
          })
            $("#btremoveFeatureLayer").click(function () {
               smap.removeLayer('XH_PIPELINE_YSGD')
+           }),
+        $("#btnaddSceneLayer").click(function () {
+            const SceneLayerparam = {
+                layerType: 'SceneLayer',
+                 layerUrl: "http://10.201.37.220/server/rest/services/Hosted/LBJZ_ORIGIN/SceneServer",
+                 layerTitle: "历保建筑原貌",
+                 layerId: "LBJZ_ORIGIN",
+                 layerOpacity:1,
+                 layerVisible:true,
+                 layerMaxScale:1000,
+                 layerMinScale:10000000,
+                 layerPopupEnabled:true,
+                 elevationInfo: {
+                 mode: 'absolute-height',
+                 offset: -2.5
+                }
+             }
+             smap.addLayer(SceneLayerparam)
+         })
+           $("#btremoveSceneLayer").click(function () {
+             smap.removeLayer('LBJZ_ORIGIN')
+           })
+
+           $("#btnaddSHCTiledMapServiceLayer").click(function () {
+                 const SHCTiledMapServiceLayerparam = {
+                     layerType: 'SHCTiledMapServiceLayer',
+                     layerUrl: "http://10.201.37.222/arcgis/rest/services/Air1948/MapServer",
+                     layerTitle: "Air1948",
+                     layerId: "Air1948",
+                     layerOpacity:1,
+                     layerVisible:true
+                 }
+                 smap.addLayer(SHCTiledMapServiceLayerparam)
+           })
+           $("#btremoveSHCTiledMapServiceLayer").click(function () {
+              smap.removeLayer('LBJZ_ORIGIN')
            })
       })
     </script>
@@ -152,6 +176,15 @@
              <button class="mapbutton" id="btnaddFeatureLayer"> add FeatureLayer</button>
              <button class="mapbutton" id="btremoveFeatureLayer"> remove FeatureLayer</button>
          </div>
+          <div class="mapbuttoncontainer">
+              <button class="mapbutton" id="btnaddSceneLayer"> add SceneLayer</button>
+              <button class="mapbutton" id="btremoveSceneLayer"> remove SceneLayer</button>
+          </div>
+
+           <div class="mapbuttoncontainer">
+               <button class="mapbutton" id="btnaddSHCTiledMapServiceLayer"> add SHCTiledMapServiceLayer</button>
+               <button class="mapbutton" id="btremoveSHCTiledMapServiceLayer"> remove SHCTiledMapServiceLayer</button>
+           </div>
     </div>
 </body>
 

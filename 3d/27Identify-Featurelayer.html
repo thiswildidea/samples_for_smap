@@ -38,34 +38,15 @@
     <script>
         const smap = new SMap.Map('mapcontainer', {
             viewMode: '3D',
-             center: [-1520, -9132, 0],
-             zoom: 5,
-             zooms: [4, 11],
+            center: [0, 0],
+             zoom: 3,
+             zooms: [0, 11],
              pitch: 60,
              mapStyle: 'smap://styles/dark',
              showBuildingBlock: true
         })
-
-      smap.on(SMap.MapEvent.extentchanged, function(extent) {
-        //   console.log(smap.view.camera)
-        //   console.log(smap.view.center)
-        //   console.log(smap.view.zoom)
-      })
      let identifytask=null
       smap.on(SMap.MapEvent.maploaded, function(view, eventParamter) {
-           smap.setRotation(303)
-        //   smap.view.goTo({
-        //        fov: 55,
-        //        heading: 303,
-        //         position: {
-        //               x: 16908.553204123655,
-        //               y: -19483.163579664666,
-        //               z: 12029.675031845449,
-        //               spatialReference: 102100
-        //          },
-        //         tilt: 61.4946725090369
-        //   })
-        
          identifytask = new GeoTask.Identify(smap.view)
          identifytask.on('click', function(result, geometry) {
             console.log(result,geometry)
@@ -73,14 +54,14 @@
     })
       smap.on(SMap.MapEvent.click, function(view, eventParamter) {
           const param = {
-              url:"http://10.81.71.181/arcgis/rest/services/xh/XH_04_DT/MapServer",
+              layerUniqueId:'XH_JD_V2',
+              url:"http://10.201.37.222/arcgis/rest/services/XH_JD_V2/FeatureServer",
               displayed: true, //查询接口是否在地图上显示
-              layerIds: [25,26,29,30],
-              type: 'polygon',
-              tolerance:1,
+              layerIds:[0],
+              tolerance:100,
               geometry:eventParamter.mapPoint
           }
-          identifytask.MapService(param).then((result) => {
+          identifytask.FeatureService(param).then((result) => {
             console.log(result)
           })
       })
@@ -88,41 +69,14 @@
       $(function () {
           $("#btnaddlayer").click(function () {
             const param = {
-              layerType: 'SHCDMapImageLayer',
-              layerUrl: "http://10.81.71.181/arcgis/rest/services/xh/XH_04_DT/MapServer",
-              layerTitle: "城市部件",
-              layerLayerId: "XH_04_DT",
+              layerType: 'FeatureLayer',
+              layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/FeatureServer",
+              layerTitle: "XH_JD_V2",
+              LayerId: "XH_JD_V2",
               layerOpacity:1,
-              layerSublayers: [
-              {
-                id: 24,
-                title: '燃气站点',
-                sublayers: [
-                  {
-                    id: 25,
-                    title: '燃气站点',
-                  },
-                  {
-                    id: 26,
-                    title: '燃气站点1',
-                  },
-                ],
-              },
-              {
-                id: 28,
-                title: '行道树',
-                sublayers: [
-                  {
-                    id: 29,
-                    title: '行道树1',
-                  },
-                  {
-                    id: 30,
-                    title: '行道树2',
-                  },
-                ],
-              },
-            ]
+              layerVisible:true,
+              layerMaxScale:10,
+              layerMinScale:10000000,
         }
         smap.addLayer(param)
           })
