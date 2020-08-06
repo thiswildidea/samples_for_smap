@@ -54,10 +54,10 @@
     })
       smap.on(SMap.MapEvent.click, function(view, eventParamter) {
           const param = {
+              layerUniqueId:'XH_JD_V2',
               url:"http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
               displayed: true, //查询接口是否在地图上显示
               layerIds:[0],
-              type: 'polygon',
               tolerance:1,
               geometry:eventParamter.mapPoint
           }
@@ -72,9 +72,9 @@
               layerType: 'MapImageLayer',
               layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
               layerTitle: "XH_JD_V2",
-              layerLayerId: "XH_JD_V2",
+              LayerId: "XH_JD_V2",
               layerOpacity:1,
-              layerOpacity:1,
+              layerVisible:true,
               layerMaxScale:1000,
               layerMinScale:10000000,
               layerPopupEnabled:true,

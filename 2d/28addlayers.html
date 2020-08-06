@@ -65,7 +65,7 @@
               layerType: 'MapImageLayer',
               layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
               layerTitle: "徐汇区街道V2",
-              layerLayerId: "XH_JD_V2",
+              layerId: "XH_JD_V2",
               layerOpacity:1,
               layerVisible:true,
               layerMaxScale:1000,
@@ -96,7 +96,7 @@
               layerType: 'FeatureLayer',
               layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_PIPELINE/FeatureServer/1",
               layerTitle: "雨水管点",
-              layerLayerId: "XH_PIPELINE_YSGD",
+              layerId: "XH_PIPELINE_YSGD",
               layerOpacity:1,
               layerVisible:true,
               layerMaxScale:10,
@@ -129,18 +129,7 @@
                       ]
                   }]
               },
-              layerLabelsVisible:false,
-              layerRenderer: {
-                  type: 'simple',
-                  symbol: {
-                  type: 'simple-fill',
-                  color: [36, 241, 254, 0.1],
-                  outline: {
-                       color: [36, 241, 254, 1],
-                        width: 4
-                     }
-                  }
-               }
+              layerLabelsVisible:false
              }
              smap.addLayer(FeatureLayerparam)
          })

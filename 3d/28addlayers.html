@@ -67,7 +67,7 @@
               layerType: 'MapImageLayer',
               layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
               layerTitle: "徐汇区街道V2",
-              layerLayerId: "XH_JD_V2",
+              LayerId: "XH_JD_V2",
               layerOpacity:1,
               layerVisible:true,
               layerMaxScale:1000,
@@ -98,7 +98,7 @@
               layerType: 'FeatureLayer',
               layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_PIPELINE/FeatureServer/1",
               layerTitle: "雨水管点",
-              layerLayerId: "XH_PIPELINE_YSGD",
+              LayerId: "XH_PIPELINE_YSGD",
               layerOpacity:1,
               layerVisible:true,
               layerMaxScale:10,
@@ -131,18 +131,7 @@
                       ]
                   }]
               },
-              layerLabelsVisible:false,
-              layerRenderer: {
-                  type: 'simple',
-                  symbol: {
-                  type: 'simple-fill',
-                  color: [36, 241, 254, 0.1],
-                  outline: {
-                       color: [36, 241, 254, 1],
-                        width: 4
-                     }
-                  }
-               }
+              layerLabelsVisible:false
              }
              smap.addLayer(FeatureLayerparam)
          })
@@ -151,24 +140,39 @@
            }),
         $("#btnaddSceneLayer").click(function () {
             const SceneLayerparam = {
-              layerType: 'SceneLayer',
-              layerUrl: "http://10.201.37.220/server/rest/services/Hosted/LBJZ_ORIGIN/SceneServer",
-              layerTitle: "历保建筑原貌",
-              layerLayerId: "LBJZ_ORIGIN",
-              layerOpacity:1,
-              layerVisible:true,
-              layerMaxScale:1000,
-              layerMinScale:10000000,
-              layerPopupEnabled:true,
-              elevationInfo: {
-                             mode: 'absolute-height',
-                            offset: -2.5
-                    }
+                layerType: 'SceneLayer',
+                 layerUrl: "http://10.201.37.220/server/rest/services/Hosted/LBJZ_ORIGIN/SceneServer",
+                 layerTitle: "历保建筑原貌",
+                 LayerId: "LBJZ_ORIGIN",
+                 layerOpacity:1,
+                 layerVisible:true,
+                 layerMaxScale:1000,
+                 layerMinScale:10000000,
+                 layerPopupEnabled:true,
+                 elevationInfo: {
+                 mode: 'absolute-height',
+                 offset: -2.5
+                }
              }
              smap.addLayer(SceneLayerparam)
          })
            $("#btremoveSceneLayer").click(function () {
              smap.removeLayer('LBJZ_ORIGIN')
+           })
+
+           $("#btnaddSHCTiledMapServiceLayer").click(function () {
+                 const SHCTiledMapServiceLayerparam = {
+                     layerType: 'SHCTiledMapServiceLayer',
+                     layerUrl: "http://10.201.37.222/arcgis/rest/services/Air1948/MapServer",
+                     layerTitle: "Air1948",
+                     LayerId: "Air1948",
+                     layerOpacity:1,
+                     layerVisible:true
+                 }
+                 smap.addLayer(SHCTiledMapServiceLayerparam)
+           })
+           $("#btremoveSHCTiledMapServiceLayer").click(function () {
+              smap.removeLayer('LBJZ_ORIGIN')
            })
       })
     </script>
@@ -190,6 +194,11 @@
               <button class="mapbutton" id="btnaddSceneLayer"> add SceneLayer</button>
               <button class="mapbutton" id="btremoveSceneLayer"> remove SceneLayer</button>
           </div>
+
+           <div class="mapbuttoncontainer">
+               <button class="mapbutton" id="btnaddSHCTiledMapServiceLayer"> add SHCTiledMapServiceLayer</button>
+               <button class="mapbutton" id="btremoveSHCTiledMapServiceLayer"> remove SHCTiledMapServiceLayer</button>
+           </div>
     </div>
 </body>
 

@@ -61,6 +61,7 @@
             const par = {
             boundaryType: 'qx_boundary',
             boundaryDefinition: "name like '%黄浦%'", // qxcode like '%01%
+            url:'http://10.201.37.220/server/rest/services/Hosted/sh_qx_boundary/FeatureServer',
             symbol: {
                type: 'simple-fill',
                color: [255, 255, 255, 0],
@@ -91,6 +92,7 @@
             const par = {
             boundaryType: 'jd_boundary',
             boundaryDefinition: "name like '%上钢新村街道%'", // jd_code like '%3509%
+            url:'http://10.201.37.220/server/rest/services/Hosted/sh_jd_boundary/FeatureServer',
             symbol: {
                type: 'simple-fill',
                color: [255, 255, 255, 0],
@@ -121,6 +123,7 @@
             const par = {
             boundaryType: 'jwh_boundary',
             boundaryDefinition: "jwhcode like '%072128%'", // name like '%曹杨新苑%
+            url:'http://10.201.37.220/server/rest/services/Hosted/sh_jwh_boundary/FeatureServer',
             symbol: {
                type: 'simple-fill',
                color: [255, 255, 255, 0],
@@ -157,7 +160,7 @@
             <button class="mapbutton" id="btnaddxqboundary"> add xq boundary</button>
             <button class="mapbutton" id="btnhidexqboundary"> hide xq boundary</button>
             <button class="mapbutton" id="btnshowxqboundary"> show xq boundary</button>
-            <button class="mapbutton" id="btndeletexqboundary""> delete xq boundary</button>
+            <button class="mapbutton" id="btndeletexqboundary"> delete xq boundary</button>
 
         </div>
          <div class="mapbuttoncontainer">
