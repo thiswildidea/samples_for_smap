@@ -80,11 +80,30 @@
           console.log(response)
         })
       })
+     $(function () {
+        $("#btnaddlayer").click(function () {
+              const param = {
+                layerType: 'FeatureLayer',
+                layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/FeatureServer",
+                layerTitle: "XH_JD_V2",
+                layerId: "XH_JD_V2",
+                layerOpacity:1,
+                layerVisible:true,
+                layerMaxScale:10,
+                layerMinScale:10000000,
+          }
+          smap.addLayer(param)
+          })
+
+        })
     </script>
 </head>
 
 <body>
     <div id="mapcontainer"></div>
+     <div class="mapbuttoncontainer">
+        <button class="mapbutton" id="btnaddlayer"> btnaddlayer</button>
+       </div>
 </body>
 
 </html>
