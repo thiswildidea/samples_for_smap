@@ -45,8 +45,8 @@
     <script>
         const smap = new SMap.Map('mapcontainer', {
             viewMode: '2D',
-            center: [0, 0],
-             zoom: 3,
+            center: [-20135, -48456],
+             zoom: 1,
              zooms: [0, 11],
              mapStyle: 'smap://styles/dark'
         })
@@ -77,7 +77,7 @@
            const param = {
            layerUniqueId: 'qx_boundary',
            url:'http://31.8.11.71:6080/arcgis/rest/services/Hosted/sh_qx_boundary/FeatureServer',
-           queryDefinition: "name like '%黄浦%'", // qxcode like '%01%
+           queryDefinition: "name like '%金山%'", // qxcode like '%16%
            displayed: true, //查询接口是否在地图上显示
            outFields: ['*'],
            type: 'polygon',

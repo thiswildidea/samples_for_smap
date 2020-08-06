@@ -40,18 +40,18 @@
             float: left;
         }
     </style>
-   <script src="../library/common/jquery-2.2.3.min.js"></script>
-   <script src="../library/smap/jingshan/Plugins.min.js"></script>
-   <script src="../library/smap/jingshan/SMap.min.js"></script>
-   <script>
-      const smap = new SMap.Map('mapcontainer', {
-            viewMode: '3D',
-            center: [0, 0],
-             zoom: 3,
-             zooms: [0, 11],
-             pitch: 60,
-             mapStyle: 'smap://styles/dark',
-             showBuildingBlock: true
+     <script src="../library/common/jquery-2.2.3.min.js"></script>
+     <script src="../library/smap/jingshan/Plugins.min.js"></script>
+     <script src="../library/smap/jingshan/SMap.min.js"></script>
+     <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '2D',
+            center: [-20135, -48456],
+             zoom: 1,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
         })
       let xqmaskBoundary=null
       let jdmaskBoundary=null
@@ -60,7 +60,7 @@
          $("#btnaddxqboundary").click(function () {
            const param = {
            boundaryType: 'qx_boundary',
-           boundaryDefinition: "name like '%黄浦%'", // qxcode like '%01%
+           boundaryDefinition: "name like '%金山%'", // qxcode like '%16%
            boundarydistance: 150,
            bounarycount: 5,
            boundaryColor: 'blue',
@@ -85,7 +85,7 @@
         $("#btnaddjdboundary").click(function () {
              const param = {
                  boundaryType: 'jd_boundary',
-                 boundaryDefinition: "name like '%上钢新村街道%'", // jd_code like '%3509%
+                 boundaryDefinition: "name like '%亭林镇%'", // jd_code like '%1605%
                  boundarydistance: 150,
                  bounarycount: 5,
                  boundaryColor: 'blue',
@@ -110,7 +110,7 @@
       $("#btnaddjwhboundary").click(function () {
             const param = {
                boundaryType: 'jwh_boundary',
-               boundaryDefinition: "jwhcode like '%072128%'", // name like '%曹杨新苑%
+               boundaryDefinition: "jwhcode like '%161313%'", // name like '%金悦居委会%
                boundarydistance: 150,
                bounarycount: 5,
                boundaryColor: 'blue',

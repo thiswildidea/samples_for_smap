@@ -46,8 +46,8 @@
     <script>
        const smap = new SMap.Map('mapcontainer', {
             viewMode: '2D',
-            center: [0, 0],
-             zoom: 3,
+            center: [-20135, -48456],
+             zoom: 1,
              zooms: [0, 11],
              mapStyle: 'smap://styles/dark',
 
@@ -60,7 +60,7 @@
             const par = {
             boundaryType: 'qx_boundary',
             url:'http://31.8.11.71:6080/arcgis/rest/services/Hosted/sh_qx_boundary/FeatureServer',
-            boundaryDefinition: "name like '%黄浦%'", // qxcode like '%01%
+            boundaryDefinition: "name like '%金山%'", // qxcode like '%01%
             symbol: {
                type: 'simple-fill',
                color: [255, 255, 255, 0],
@@ -91,7 +91,7 @@
             const par = {
             boundaryType: 'jd_boundary',
             url:'http://31.8.11.71:6080/arcgis/rest/services/Hosted/sh_jd_boundary/FeatureServer',
-            boundaryDefinition: "name like '%上钢新村街道%'", // jd_code like '%3509%
+            boundaryDefinition: "name like '%亭林镇%'", // jd_code like '%1605%
             symbol: {
                type: 'simple-fill',
                color: [255, 255, 255, 0],
@@ -122,7 +122,7 @@
             const par = {
             boundaryType: 'jwh_boundary',
             url:'http://31.8.11.71:6080/arcgis/rest/services/Hosted/sh_jwh_boundary/FeatureServer',
-            boundaryDefinition: "jwhcode like '%072128%'", // name like '%曹杨新苑%
+            boundaryDefinition: "jwhcode like '%161313%'", // name like '%金悦居委会%
             symbol: {
                type: 'simple-fill',
                color: [255, 255, 255, 0],
