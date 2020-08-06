@@ -54,10 +54,9 @@
     })
       smap.on(SMap.MapEvent.click, function(view, eventParamter) {
           const param = {
-              url:"http://10.108.3.16/arcgis/rest/services/boundary/sh_jd_boundary/MapServer",
+              url:"http://31.8.11.71:6080/arcgis/rest/services/Hosted/sh_jd_boundary/FeatureServer",
               displayed: true, //查询接口是否在地图上显示
               layerIds:[0],
-              type: 'polygon',
               tolerance:1,
               geometry:eventParamter.mapPoint
           }
@@ -70,9 +69,9 @@
           $("#btnaddlayer").click(function () {
             const param = {
               layerType: 'MapImageLayer',
-              layerUrl: "http://10.108.3.16/arcgis/rest/services/boundary/sh_jd_boundary/MapServer",
+              layerUrl: "http://31.8.11.71:6080/arcgis/rest/services/Hosted/sh_jd_boundary/FeatureServer",
               layerTitle: "sh_jd_boundary",
-              layerLayerId: "sh_jd_boundary1",
+              layerId: "sh_jd_boundary",
               layerOpacity:1,
               layerOpacity:1,
               layerMaxScale:1000,
