@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>Identify</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .mapbuttoncontainergroup {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/smap/shsmi/SMap.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+             zoom: 3,
+             zooms: [0, 11],
+             pitch: 60,
+             mapStyle: 'smap://styles/dark',
+             showBuildingBlock: true
+        })
+      
+      $(function () {
+           $("#addlayercontrol").click(function () {
+              const layerListControl = new SMap.LayerListControl({
+                 visible: true,
+                 position: 'top-right',
+                 collapse: true
+              })
+              smap.addControl(layerListControl)
+           }),
+          $("#btnaddMapImageLayer").click(function () {
+            const MapImageLayerparam = {
+              layerType: 'MapImageLayer',
+              layerUrl: "http://10.108.3.16/arcgis/rest/services/boundary/sh_jd_boundary/MapServer",
+              layerTitle: "上海街道",
+              layerId: "sh_jd_boundary",
+              layerOpacity:1,
+              layerVisible:true,
+              layerMaxScale:1000,
+              layerMinScale:10000000,
+              layerPopupEnabled:true,
+              layerPopupTemplate:"",
+              layerLabelsVisible:false,
+              layerRenderer: {
+                  type: 'simple',
+                  symbol: {
+                  type: 'simple-fill',
+                  color: [36, 241, 254, 0.1],
+                  outline: {
+                       color: [36, 241, 254, 1],
+                        width: 4
+                     }
+                  }
+               }
+             }
+             smap.addLayer(MapImageLayerparam)
+        })
+          $("#btremoveMapImageLayer").click(function () {
+              smap.removeLayer('sh_jd_boundary')
+           }),
+
+         $("#btnaddFeatureLayer").click(function () {
+            const FeatureLayerparam = {
+              layerType: 'FeatureLayer',
+              layerUrl: "http://10.108.3.16/arcgis/rest/services/boundary/sh_qx_boundary/FeatureServer",
+              layerTitle: "上海区县",
+              layerId: "sh_qx_boundary",
+              layerOpacity:1,
+              layerVisible:true,
+              layerMaxScale:10,
+              layerMinScale:10000000,
+              layerPopupEnabled:true,
+              layerPopupTemplate: {
+                  title: '{exp_no}',
+                  content: [{
+                      type: 'fields',
+                      fieldInfos: [{
+                              fieldName: 'exp_no',
+                              label: '物探点号'
+                          },
+                          {
+                              fieldName: 'feature',
+                              label: '特征'
+                          },
+                          {
+                              fieldName: 'subsid',
+                              label: '附属物'
+                          },
+                          {
+                              fieldName: 'dlmc',
+                              label: '道路名称'
+                          },
+                          {
+                              fieldName: 'jjcc',
+                              label: '窨井尺寸'
+                          }
+                      ]
+                  }]
+              },
+              layerLabelsVisible:false
+             }
+             smap.addLayer(FeatureLayerparam)
+         })
+           $("#btremoveFeatureLayer").click(function () {
+              smap.removeLayer('sh_qx_boundary')
+           }),
+        $("#btnaddSceneLayer").click(function () {
+            const SceneLayerparam = {
+                layerType: 'SceneLayer',
+                 layerUrl:"http://http://mapserver.smi.sh.cegn.cn/:8080/OneMapServer/rest/services/Hosted_buildingwhite/SceneServer",
+                 layerTitle: "白模",
+                 layerId: "Hbuildingwhite",
+                 layerOpacity:1,
+                 layerVisible:true,
+                 layerMaxScale:1000,
+                 layerMinScale:10000000,
+                 layerPopupEnabled:true,
+                 elevationInfo: {
+                 mode: 'absolute-height',
+                 offset: -2.5
+                }
+             }
+             smap.addLayer(SceneLayerparam)
+         })
+           $("#btremoveSceneLayer").click(function () {
+             smap.removeLayer('Hbuildingwhite')
+           })
+
+           $("#btnaddSHCTiledMapServiceLayer").click(function () {
+                 const SHCTiledMapServiceLayerparam = {
+                     layerType: 'SHCTiledMapServiceLayer',
+                     layerUrl: "http://mapserver.smi.sh.cegn.cn:8080/OneMapServer/rest/services/ZY3_2013/MapServer",
+                     layerTitle: "ZY3_2013",
+                     layerId: "ZY3_2013",
+                     layerOpacity:1,
+                     layerVisible:true
+                 }
+                 smap.addLayer(SHCTiledMapServiceLayerparam)
+           })
+           $("#btremoveSHCTiledMapServiceLayer").click(function () {
+              smap.removeLayer('LBJZ_ORIGIN')
+           })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+      <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+            <button class="mapbutton" id="btnaddMapImageLayer"> add MapImageLayer</button>
+             <button class="mapbutton" id="btremoveMapImageLayer"> remove MapImageLayer</button>
+        </div>
+         <div class="mapbuttoncontainer">
+             <button class="mapbutton" id="btnaddFeatureLayer"> add FeatureLayer</button>
+             <button class="mapbutton" id="btremoveFeatureLayer"> remove FeatureLayer</button>
+         </div>
+          <div class="mapbuttoncontainer">
+              <button class="mapbutton" id="btnaddSceneLayer"> add SceneLayer</button>
+              <button class="mapbutton" id="btremoveSceneLayer"> remove SceneLayer</button>
+          </div>
+
+           <div class="mapbuttoncontainer">
+               <button class="mapbutton" id="btnaddSHCTiledMapServiceLayer"> add SHCTiledMapServiceLayer</button>
+               <button class="mapbutton" id="btremoveSHCTiledMapServiceLayer"> remove SHCTiledMapServiceLayer</button>
+           </div>
+    </div>
+</body>
+
+</html>

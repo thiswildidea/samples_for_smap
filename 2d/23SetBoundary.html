@@ -40,16 +40,17 @@
             float: left;
         }
     </style>
-   <script src="../library/common/jquery-2.2.3.min.js"></script>
-   <script src="../library/smap/shsmi/Plugins.min.js"></script>
-   <script src="../library/smap/shsmi/SMap.min.js"></script>
-   <script>
-     const smap = new SMap.Map('mapcontainer', {
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/smap/shsmi/Plugins.min.js"></script>
+    <script src="../library/smap/shsmi/SMap.min.js"></script>
+    <script>
+       const smap = new SMap.Map('mapcontainer', {
             viewMode: '2D',
             center: [0, 0],
              zoom: 3,
              zooms: [0, 11],
-              mapStyle: 'smap://styles/dark',
+             mapStyle: 'smap://styles/dark'
+
         })
       let xqboundary=null
       let jdboundary=null
@@ -58,6 +59,7 @@
          $("#btnaddxqboundary").click(function () {
             const par = {
             boundaryType: 'qx_boundary',
+            url:'http://10.108.3.16/arcgis/rest/services/boundary/sh_qx_boundary/FeatureServer',
             boundaryDefinition: "name like '%黄浦%'", // qxcode like '%01%
             symbol: {
                type: 'simple-fill',
@@ -73,7 +75,7 @@
             xqboundary.on('click', function(result, geometry) {
               console.log(result,geometry)
             })
-     
+           
        })
        $("#btnhidexqboundary").click(function () {
          xqboundary.hide()
@@ -88,6 +90,7 @@
        $("#btnaddjdboundary").click(function () {
             const par = {
             boundaryType: 'jd_boundary',
+            url:'http://10.108.3.16/arcgis/rest/services/boundary/sh_jd_boundary/FeatureServer',
             boundaryDefinition: "name like '%上钢新村街道%'", // jd_code like '%3509%
             symbol: {
                type: 'simple-fill',
@@ -118,6 +121,7 @@
       $("#btnaddjwhboundary").click(function () {
             const par = {
             boundaryType: 'jwh_boundary',
+            url:'http://10.108.3.16/arcgis/rest/services/boundary/sh_jd_boundary/FeatureServer',
             boundaryDefinition: "jwhcode like '%072128%'", // name like '%曹杨新苑%
             symbol: {
                type: 'simple-fill',
@@ -155,7 +159,7 @@
             <button class="mapbutton" id="btnaddxqboundary"> add xq boundary</button>
             <button class="mapbutton" id="btnhidexqboundary"> hide xq boundary</button>
             <button class="mapbutton" id="btnshowxqboundary"> show xq boundary</button>
-            <button class="mapbutton" id="btndeletexqboundary"> delete xq boundary</button>
+            <button class="mapbutton" id="btndeletexqboundary""> delete xq boundary</button>
 
         </div>
          <div class="mapbuttoncontainer">

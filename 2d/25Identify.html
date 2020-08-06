@@ -37,11 +37,12 @@
     <script src="../library/smap/shsmi/SMap.min.js"></script>
     <script>
         const smap = new SMap.Map('mapcontainer', {
-            viewMode: '2D',
+            viewMode: '3D',
             center: [0, 0],
              zoom: 3,
              zooms: [0, 11],
-              mapStyle: 'smap://styles/dark',
+             mapStyle: 'smap://styles/dark'
+    
         })
      let identifytask=null
       smap.on(SMap.MapEvent.maploaded, function(view, eventParamter) {
@@ -52,10 +53,10 @@
     })
       smap.on(SMap.MapEvent.click, function(view, eventParamter) {
           const param = {
+              layerUniqueId:'sh_jd_boundary',
               url:"http://10.108.3.16/arcgis/rest/services/boundary/sh_jd_boundary/MapServer",
               displayed: true, //查询接口是否在地图上显示
               layerIds:[0],
-              type: 'polygon',
               tolerance:1,
               geometry:eventParamter.mapPoint
           }
@@ -70,7 +71,7 @@
               layerType: 'MapImageLayer',
               layerUrl: "http://10.108.3.16/arcgis/rest/services/boundary/sh_jd_boundary/MapServer",
               layerTitle: "sh_jd_boundary",
-              layerLayerId: "sh_jd_boundary1",
+              layerId: "sh_jd_boundary",
               layerOpacity:1,
               layerOpacity:1,
               layerMaxScale:1000,
