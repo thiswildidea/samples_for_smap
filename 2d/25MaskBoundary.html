@@ -40,16 +40,16 @@
             float: left;
         }
     </style>
-     <script src="../library/common/jquery-2.2.3.min.js"></script>
-     <script src="../library/smap/xuhui/Plugins.min.js"></script>
-     <script src="../library/smap/xuhui/SMap.min.js"></script>
-     <script>
-        const smap = new SMap.Map('mapcontainer', {
+   <script src="../library/common/jquery-2.2.3.min.js"></script>
+   <script src="../library/smap/xuhui/Plugins.min.js"></script>
+   <script src="../library/smap/xuhui/SMap.min.js"></script>
+   <script>
+      const smap = new SMap.Map('mapcontainer', {
             viewMode: '2D',
             center: [0, 0],
              zoom: 3,
              zooms: [0, 11],
-              mapStyle: 'smap://styles/dark',
+             mapStyle: 'smap://styles/dark'
         })
       let xqmaskBoundary=null
       let jdmaskBoundary=null
@@ -58,7 +58,7 @@
          $("#btnaddxqboundary").click(function () {
            const param = {
            boundaryType: 'qx_boundary',
-           boundaryDefinition: "name like '%黄浦%'", // qxcode like '%01%
+           boundaryDefinition: "name like '%徐汇%'", // qxcode like '%4%
            boundarydistance: 150,
            bounarycount: 5,
            boundaryColor: 'blue',
@@ -83,7 +83,7 @@
         $("#btnaddjdboundary").click(function () {
              const param = {
                  boundaryType: 'jd_boundary',
-                 boundaryDefinition: "name like '%上钢新村街道%'", // jd_code like '%3509%
+                 boundaryDefinition: "name like '%徐家汇街道%'", // jd_code like '%414%
                  boundarydistance: 150,
                  bounarycount: 5,
                  boundaryColor: 'blue',
@@ -108,7 +108,7 @@
       $("#btnaddjwhboundary").click(function () {
             const param = {
                boundaryType: 'jwh_boundary',
-               boundaryDefinition: "jwhcode like '%072128%'", // name like '%曹杨新苑%
+               boundaryDefinition: "jwhcode like '%41517%'", // name like '%和平居委%
                boundarydistance: 150,
                bounarycount: 5,
                boundaryColor: 'blue',

@@ -160,6 +160,21 @@
            $("#btremoveSHCTiledMapServiceLayer").click(function () {
               smap.removeLayer('LBJZ_ORIGIN')
            })
+
+             $("#btnaddTilelayer").click(function () {
+                 const SHCTiledMapServiceLayerparam = {
+                     layerType: 'TileLayer',
+                     layerUrl: "http://10.201.37.222/arcgis/rest/services/XHGQ/MapServer",
+                     layerTitle: "XHGQ",
+                     layerId: "XHGQ",
+                     layerOpacity:1,
+                     layerVisible:true
+                 }
+                 smap.addLayer(SHCTiledMapServiceLayerparam)
+           })
+           $("#btremoveTilelayerr").click(function () {
+              smap.removeLayer('LBJZ_ORIGIN')
+           })
       })
     </script>
 </head>
@@ -185,6 +200,11 @@
                <button class="mapbutton" id="btnaddSHCTiledMapServiceLayer"> add SHCTiledMapServiceLayer</button>
                <button class="mapbutton" id="btremoveSHCTiledMapServiceLayer"> remove SHCTiledMapServiceLayer</button>
            </div>
+
+            <div class="mapbuttoncontainer">
+                <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
+                <button class="mapbutton" id="btremoveTilelayerr"> remove Tilelayer</button>
+            </div>
     </div>
 </body>
 

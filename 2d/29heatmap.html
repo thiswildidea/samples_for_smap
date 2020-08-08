@@ -33,17 +33,17 @@
             float: left;
         }
     </style>
-   <script src="../library/common/jquery-2.2.3.min.js"></script>
-   <script src="../library/common/heatmap.js"></script>
-   <script src="../library/smap/xuhui/Plugins.min.js"></script>
-   <script src="../library/smap/xuhui/SMap.min.js"></script>
-   <script>
-       const smap = new SMap.Map('mapcontainer', {
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/common/heatmap.js"></script>
+    <script src="../library/smap/xuhui/Plugins.min.js"></script>
+    <script src="../library/smap/xuhui/SMap.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
             viewMode: '2D',
             center: [0, 0],
-             zoom: 3,
-             zooms: [0, 11],
-              mapStyle: 'smap://styles/dark',
+            zoom: 3,
+            zooms: [0, 11],
+            mapStyle: 'smap://styles/dark'
         })
       let HeatMap=null
       $(function () {

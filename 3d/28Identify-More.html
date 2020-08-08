@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>Identify</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            position: relative;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/smap/xuhui/GeoTask.min.js"></script>
+    <script src="../library/smap/xuhui/SMap.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+             zoom: 3,
+             zooms: [0, 11],
+             pitch: 60,
+             mapStyle: 'smap://styles/dark',
+             showBuildingBlock: true
+        })
+     let identifytask=null
+     let identifytaskf=null
+      smap.on(SMap.MapEvent.maploaded, function(view, eventParamter) {
+         identifytask = new GeoTask.Identify(smap.view)
+         identifytaskf = new GeoTask.Identify(smap.view)
+    })
+      smap.on(SMap.MapEvent.click, function(view, eventParamter) {
+          const param1 = {
+              layerUniqueId:'XH_RiverLine',
+              url:"http://10.201.37.222/arcgis/rest/services/XH_RiverLine/MapServer",
+              displayed: true, //查询接口是否在地图上显示
+              layerIds:[0, 1, 2],
+              tolerance:10,
+              geometry:eventParamter.mapPoint,
+              marksymbol:{
+                     type: "simple-marker",
+                     style: "square",
+                     color: [255, 0, 0, 0.2],
+                     size: "8px",
+                     outline: {
+                         color: [255, 0, 0, 1],
+                         width: 1
+                     }
+                },
+              linesymbol: {
+                type: "simple-line",
+                color: [255, 0, 0, 1],
+                width: "2px",
+                style: "short-dot"
+            },
+               polygonsymbol:{
+                  type: "simple-fill",
+                  color: [255, 255, 255, 0.2],
+                  outline: {
+                  color: [255, 0, 0, 1],
+                  width: "5px"
+                  }
+               }
+          }
+          identifytask.MapService(param1).then((result) => {
+            console.log(result)
+          })
+
+
+          const param2 = {
+              layerUniqueId:'XH_JD_V2',
+              url:"http://10.201.37.222/arcgis/rest/services/XH_JD_V2/FeatureServer",
+              displayed: true, //查询接口是否在地图上显示
+              geometry:eventParamter.mapPoint,
+               marksymbol:{
+                     type: "simple-marker",
+                     style: "square",
+                     color: [255, 0, 0, 0.2],
+                     size: "8px",
+                     outline: {
+                         color: [255, 0, 0, 1],
+                         width: 1
+                     }
+                },
+              linesymbol: {
+                type: "simple-line",
+                color: [255, 0, 0, 1],
+                width: "2px",
+                style: "short-dot"
+            },
+               polygonsymbol:{
+                  type: "simple-fill",
+                  color: [255, 0, 255, 1],
+                  outline: {
+                  color: [255, 255, 0, 1],
+                  width: "5px"
+                  }
+               }
+              
+          }
+           identifytaskf.FeatureService(param2).then((result) => {
+              console.log(result)
+           })
+      })
+      
+      $(function () {
+          $("#btnaddlayer1").click(function () {
+            const param = {
+              layerType: 'FeatureLayer',
+              layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/FeatureServer",
+              layerTitle: "徐汇街道",
+              layerId: "XH_JD_V2"
+        }
+        smap.addLayer(param)
+          })
+
+        $("#btnaddlayer2").click(function () {
+             const param = {
+              layerType: 'MapImageLayer',
+              layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_RiverLine/MapServer",
+              layerTitle: "XH_RiverLine",
+              layerId: "XH_RiverLine",
+         }
+              smap.addLayer(param)
+          })
+         $("#btnhide").click(function () {
+            identifytask.hide()
+            identifytaskf.hide()
+         })
+         $("#btnshow").click(function () {
+            identifytask.show()
+            identifytaskf.show()
+         })
+         $("#btnclearn").click(function () {
+           identifytask.remove()
+           identifytaskf.remove()
+         })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddlayer1"> btnaddlayer1</button>
+            <button class="mapbutton" id="btnaddlayer2"> btnaddlayer2</button>
+            <button class="mapbutton" id="btnhide"> hide Identify result</button>
+            <button class="mapbutton" id="btnshow"> show Identify result</button>
+            <button class="mapbutton" id="btnclearn"> clean Identify result</button>
+        </div>
+</body>
+
+</html>

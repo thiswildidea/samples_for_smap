@@ -60,7 +60,7 @@
          $("#btnaddxqboundary").click(function () {
             const par = {
             boundaryType: 'qx_boundary',
-            boundaryDefinition: "name like '%黄浦%'", // qxcode like '%01%
+            boundaryDefinition: "name like '%徐汇%'", // qxcode like '%4%
             url:'http://10.201.37.220/server/rest/services/Hosted/sh_qx_boundary/FeatureServer',
             symbol: {
                type: 'simple-fill',
@@ -73,10 +73,13 @@
             }
             xqboundary = new Plugins.Boundary(smap.view)
             xqboundary.add(par)
-            xqboundary.on('click', function(result, geometry) {
+
+            xqboundary.on(SMap.MapEvent.click, function(result, geometry) {
               console.log(result,geometry)
             })
-     
+            xqboundary.on(SMap.MapEvent.pointermove, function(result, geometry) {
+              console.log(result,geometry)
+            })
        })
        $("#btnhidexqboundary").click(function () {
          xqboundary.hide()
@@ -91,7 +94,7 @@
        $("#btnaddjdboundary").click(function () {
             const par = {
             boundaryType: 'jd_boundary',
-            boundaryDefinition: "name like '%上钢新村街道%'", // jd_code like '%3509%
+            boundaryDefinition: "name like '%徐家汇街道%'", // jd_code like '%414%
             url:'http://10.201.37.220/server/rest/services/Hosted/sh_jd_boundary/FeatureServer',
             symbol: {
                type: 'simple-fill',
@@ -104,8 +107,11 @@
             }
             jdboundary = new Plugins.Boundary(smap.view)
             jdboundary.add(par)
-            jdboundary.on('click', function(result, geometry) {
+            jdboundary.on(SMap.MapEvent.click, function(result, geometry) {
                console.log(result,geometry)
+            })
+            jdboundary.on(SMap.MapEvent.pointermove, function(result, geometry) {
+              console.log(result,geometry)
             })
      
        })
@@ -122,7 +128,7 @@
       $("#btnaddjwhboundary").click(function () {
             const par = {
             boundaryType: 'jwh_boundary',
-            boundaryDefinition: "jwhcode like '%072128%'", // name like '%曹杨新苑%
+            boundaryDefinition: "jwhcode like '%41517%'", // name like '%和平居委%
             url:'http://10.201.37.220/server/rest/services/Hosted/sh_jwh_boundary/FeatureServer',
             symbol: {
                type: 'simple-fill',
@@ -135,7 +141,10 @@
             }
             jwhboundary = new Plugins.Boundary(smap.view)
             jwhboundary.add(par)
-            jwhboundary.on('click', function(result, geometry) {
+            jwhboundary.on(SMap.MapEvent.click, function(result, geometry) {
+              console.log(result,geometry)
+            })
+            jwhboundary.on(SMap.MapEvent.pointermove, function(result, geometry) {
               console.log(result,geometry)
             })
      

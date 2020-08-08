@@ -124,7 +124,18 @@
               }
                fashPoint3DLayer = new Plugins.FlashPoint3DLayer(smap.view)
                fashPoint3DLayer.add(param)
-               fashPoint3DLayer.on('click', function(result, geometry) {
+               fashPoint3DLayer.on(SMap.MapEvent.click, function(result, geometry) {
+                if (geometry) {
+                   smap.view.popup.defaultPopupTemplateEnabled = true
+                   smap.view.popup.autoOpenEnabled = false
+                   smap.view.popup.open({
+                        location: geometry,
+                        title: result.attributes.name,
+                        content: createContentpopup(result.attributes)
+                   })
+                }
+            })
+            fashPoint3DLayer.on(SMap.MapEvent.pointermove, function(result, geometry) {
                 if (geometry) {
                    smap.view.popup.defaultPopupTemplateEnabled = true
                    smap.view.popup.autoOpenEnabled = false
@@ -177,7 +188,19 @@
          }
          fashPoint3DLayer1 = new Plugins.FlashPoint3DLayer(smap.view)
          fashPoint3DLayer1.add(param)
-         fashPoint3DLayer1.on('click', function(result, geometry) {
+         fashPoint3DLayer1.on(SMap.MapEvent.click, function(result, geometry) {
+             if (geometry) {
+                 smap.view.popup.defaultPopupTemplateEnabled = true
+                 smap.view.popup.autoOpenEnabled = false
+                 smap.view.popup.open({
+                 location: geometry,
+                 title: result.attributes.name,
+                 content: createContentpopup(result.attributes)
+                })
+             }
+         })
+
+         fashPoint3DLayer1.on(SMap.MapEvent.pointermove, function(result, geometry) {
              if (geometry) {
                  smap.view.popup.defaultPopupTemplateEnabled = true
                  smap.view.popup.autoOpenEnabled = false

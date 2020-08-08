@@ -48,35 +48,35 @@
             center: [0, 0],
              zoom: 3,
              zooms: [0, 11],
-             mapStyle: 'smap://styles/dark',
+             mapStyle: 'smap://styles/dark'
         })
       function createContentpopup(data) {
-          let htmlstring = '';
-          htmlstring += "<table>"
-              for (let key in data) {
-              htmlstring += "<tr>";
-                  htmlstring += '<td class="tdlabel">';
-                      htmlstring += "<span>";
-                          htmlstring += key;
-                          htmlstring += " :";
-                          htmlstring += "</span>";
-                      htmlstring += "</td>";
-                  htmlstring += '<td class="tdvalue">';
-                      htmlstring += "<span>";
-                          htmlstring += data[key] != null ? data[key] : "";
-                          htmlstring += "</span>";
-                      htmlstring += "</td>";
-                  htmlstring += "</tr>";
-              }
-              htmlstring += "</table>"
-          return htmlstring;
+      let htmlstring = '';
+      htmlstring += "<table>"
+          for (let key in data) {
+          htmlstring += "<tr>";
+              htmlstring += '<td class="tdlabel">';
+                  htmlstring += "<span>";
+                      htmlstring += key;
+                      htmlstring += " :";
+                      htmlstring += "</span>";
+                  htmlstring += "</td>";
+              htmlstring += '<td class="tdvalue">';
+                  htmlstring += "<span>";
+                      htmlstring += data[key] != null ? data[key] : "";
+                      htmlstring += "</span>";
+                  htmlstring += "</td>";
+              htmlstring += "</tr>";
+          }
+          htmlstring += "</table>"
+      return htmlstring;
       }
       let flqueryTask=null
       $(function () {
          $("#btnqueryfeaturelayer").click(function () {
            const param = {
            layerUniqueId: 'qx_boundary',
-           queryDefinition: "name like '%黄浦%'", // qxcode like '%01%
+           queryDefinition: "name like '%徐汇%'", // qxcode like '%4%'
            url:'http://10.201.37.220/server/rest/services/Hosted/sh_qx_boundary/FeatureServer',
            displayed: true,
            outFields: ['*'],
@@ -94,7 +94,7 @@
            flqueryTask.featureLayer(param).then((result) => {
               console.log(result)
            })
-           flqueryTask.on('click', function(result, geometry) {
+           flqueryTask.on(SMap.MapEvent.click, function(result, geometry) {
              if (geometry) {
                    smap.view.popup.defaultPopupTemplateEnabled = true
                    smap.view.popup.autoOpenEnabled = false
@@ -105,6 +105,17 @@
                    })
                 }
            })
+          flqueryTask.on(SMap.MapEvent.pointermove, function (result, geometry) {
+                 if (geometry) {
+                     smap.view.popup.defaultPopupTemplateEnabled = true
+                     smap.view.popup.autoOpenEnabled = false
+                     smap.view.popup.open({
+                         location: geometry,
+                         title: result.attributes.name,
+                         content: createContentpopup(result.attributes),
+                     })
+                 }
+             })
      
        })
         $("#btnclearn").click(function () {
