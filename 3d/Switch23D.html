@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>三维地图初始化</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+     <script src="../library/common/jquery-2.2.3.min.js"></script>
+     <script src="../library/smap/xuhui/SMap.min.js"></script>
+     <script>
+        const smap = new SMap.Map('mapcontainer', {
+        viewMode: '3D',
+        center: [-20135, -48456],
+        zoom: 3,
+        zooms: [0, 11],
+        pitch: 60,
+        mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
+        showBuildingBlock: true
+        })
+         smap.on(SMap.MapEvent.maploaded, function(view) {
+           console.log(smap.maplayers)
+         })
+        $(function () {
+        $("#addlayercontrol").click(function () {
+           const layerListControl = new SMap.LayerListControl({
+           visible: true,
+           position: 'top-right',
+           collapse: true
+           })
+           smap.addControl(layerListControl)
+         }),
+         $("#swithc2d").click(function () {
+            // smap.view.goTo({
+            //    heading: 0,
+            //    tilt: 0,
+            // })
+            smap.switchMode('2d')
+           })
+         $("#swithc3d").click(function () {
+            // smap.view.goTo({
+            //     heading: 0,
+            //     tilt: 60,
+            //    })
+    
+            smap.switchMode('3d')
+        })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+     <div class="mapbuttoncontainer">
+          <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+          <button class="mapbutton" id="swithc2d"> 切换2D</button>
+          <button class="mapbutton" id="swithc3d"> 切换3D</button>
+     </div>
+</body>
+
+</html>

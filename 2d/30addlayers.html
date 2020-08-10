@@ -41,16 +41,14 @@
         }
     </style>
     <script src="../library/common/jquery-2.2.3.min.js"></script>
-    <script src="../library/smap/xuhui/SMap.min.js"></script>
+    <script src="../library/smap/jingshan/SMap.min.js"></script>
     <script>
         const smap = new SMap.Map('mapcontainer', {
-            viewMode: '3D',
-            center: [-20135, -48456],
-             zoom: 1,
+             viewMode: '2D',
+             center: [-20135, -48456],
+             zoom: 3,
              zooms: [0, 11],
-             pitch: 60,
-             mapStyle: 'smap://styles/dark',
-             showBuildingBlock: true
+             mapStyle: 'smap://styles/dark'
         })
       
       $(function () {
@@ -65,9 +63,9 @@
           $("#btnaddMapImageLayer").click(function () {
             const MapImageLayerparam = {
               layerType: 'MapImageLayer',
-              layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
-              layerTitle: "徐汇区街道V2",
-              LayerId: "XH_JD_V2",
+              layerUrl: "http://31.8.11.69:6080/arcgis/rest/services/wb_sh_sx/MapServer",
+              layerTitle: "金山水系",
+              layerId: "sh_sx_js",
               layerOpacity:1,
               layerVisible:true,
               layerMaxScale:1000,
@@ -79,7 +77,7 @@
              smap.addLayer(MapImageLayerparam)
         })
           $("#btremoveMapImageLayer").click(function () {
-              smap.removeLayer('XH_JD_V2')
+              smap.removeLayer('sh_sx_js')
            }),
 
          $("#btnaddFeatureLayer").click(function () {
@@ -112,28 +110,6 @@
            $("#btremoveFeatureLayer").click(function () {
               smap.removeLayer('sh_jd_boundary')
            }),
-        $("#btnaddSceneLayer").click(function () {
-            const SceneLayerparam = {
-                layerType: 'SceneLayer',
-                 layerUrl: "http://31.8.11.71:6080/arcgis/rest/services/Hosted/jsbaimo/SceneServer",
-                 layerTitle: "jsbaimo",
-                 layerId: "jsbaimo",
-                 layerOpacity:1,
-                 layerVisible:true,
-                 layerMaxScale:1000,
-                 layerMinScale:10000000,
-                 layerPopupEnabled:true,
-                 elevationInfo: {
-                 mode: 'absolute-height',
-                 offset: -2.5
-                }
-             }
-             smap.addLayer(SceneLayerparam)
-         })
-           $("#btremoveSceneLayer").click(function () {
-             smap.removeLayer('jsbaimo')
-           })
-
            $("#btnaddSHCTiledMapServiceLayer").click(function () {
                  const SHCTiledMapServiceLayerparam = {
                      layerType: 'SHCTiledMapServiceLayer',
@@ -164,10 +140,6 @@
              <button class="mapbutton" id="btnaddFeatureLayer"> add FeatureLayer</button>
              <button class="mapbutton" id="btremoveFeatureLayer"> remove FeatureLayer</button>
          </div>
-          <div class="mapbuttoncontainer">
-              <button class="mapbutton" id="btnaddSceneLayer"> add SceneLayer</button>
-              <button class="mapbutton" id="btremoveSceneLayer"> remove SceneLayer</button>
-          </div>
 
            <div class="mapbuttoncontainer">
                <button class="mapbutton" id="btnaddSHCTiledMapServiceLayer"> add SHCTiledMapServiceLayer</button>

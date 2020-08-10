@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>echartflashpoint3d</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+        .esri-popup__content .tdlabel {
+            width: 200px;
+        }
+
+        .esri-popup__content .tdvalue {
+            width: 200px;
+        }
+    </style>
+     <script src="../library/common/jquery-2.2.3.min.js"></script>
+      <script src="../library/common/echarts.min.js"></script>
+      <script src="../library/smap/jingshan/Plugins.min.js"></script>
+     <script src="../library/smap/jingshan/SMap.min.js"></script>
+     <script>
+         const smap = new SMap.Map('mapcontainer', {
+           viewMode: '3D',
+           center: [-20135, -48456],
+           zoom: 3,
+           zooms: [0, 11],
+           pitch: 60,
+           mapStyle: 'smap://styles/dark',
+           showBuildingBlock: true
+        })
+         function createContentpopup(data) {
+         let htmlstring = '';
+         htmlstring += "<table>"
+             for (let key in data) {
+             htmlstring += "<tr>";
+                 htmlstring += '<td class="tdlabel">';
+                     htmlstring += "<span>";
+                         htmlstring += key;
+                         htmlstring += " :";
+                         htmlstring += "</span>";
+                     htmlstring += "</td>";
+                 htmlstring += '<td class="tdvalue">';
+                     htmlstring += "<span>";
+                         htmlstring += data[key] != null ? data[key] : "";
+                         htmlstring += "</span>";
+                     htmlstring += "</td>";
+                 htmlstring += "</tr>";
+             }
+             htmlstring += "</table>"
+         return htmlstring;
+         }
+      let echartfalshpoint=null
+      $(function () {
+         $("#btnaddechartflashpoint").click(function () {
+             echartfalshpoint = new Plugins.EchartFlashPointLayer(smap.view)
+             echartfalshpoint.on(SMap.MapEvent.click, function(result, geometry) {
+             if (geometry) {
+                  smap.view.popup.defaultPopupTemplateEnabled = true
+                  smap.view.popup.autoOpenEnabled = false
+                  smap.view.popup.open({
+                  location: geometry,
+                  title: result.attributes.name,
+                  content: createContentpopup(result.attributes),
+               })
+             }
+            })
+            echartfalshpoint.on(SMap.MapEvent.pointermove, function(result, geometry) {
+            
+          })
+            echartfalshpoint.on(SMap.MapEvent.doubleclick, function(result, geometry) {
+            
+          })
+             const paramter ={
+                 datas: [{
+                            name: '徐汇区',
+                            value: 200,
+                            x:-2719.02,
+                            y:-6646.5,
+                            attributes:{
+                             name: '徐汇区',
+                             code: '1'
+                            },
+                            color: '#00FA9A',
+                            symbol: 'diamond'
+                        }, {
+                            name: '杨浦区',
+                            value: 100,
+                            x:5488.4,
+                            y:7804.6,
+                            attributes:{
+                             name: '杨浦区',
+                             code: '2'
+                            },
+                            color: '#FFFF00',
+                            symbol: 'diamond'
+                        }, {
+                            name: '崇明区',
+                            value: 100,
+                            x:4225.73,
+                            y:46675.1,
+                             attributes:{
+                             name: '崇明区',
+                             code: '3'
+                             },
+                            color: '#00BFFF',
+                            symbol: 'diamond'
+                        }, {
+                            name: '虹口区',
+                            value: 100,
+                            x:1913.39,
+                            y:4128.88,
+                            attributes:{
+                               name: '虹口区',
+                               code: '4'
+                               },
+                            color: '#00FF00',
+                            symbol: 'diamond'
+                        }, {
+                            name: '长宁区',
+                            value: 100,
+                            x:-8459.18,
+                            y:-3172.19,
+                            attributes:{
+                               name: '长宁区',
+                               code: '5'
+                              },
+                            color: '#00FFFF',
+                            symbol: 'diamond'
+                        }, {
+                            name: '普陀区',
+                            value: 100,
+                            x:-6344.38,
+                            y:2719.02,
+                            attributes:{
+                            name: '普陀区',
+                            code: '6'
+                            },
+                            color: '#D2691E',
+                            symbol:'path://M30.9,53.2C16.8,53.2,5.3,41.7,5.3,27.6S16.8,2,30.9,2C45,2,56.4,13.5,56.4,27.6S45,53.2,30.9,53.2zM30.9,3.5C17.6,3.5,6.8,14.4,6.8,27.6c0,13.3,10.8,24.1,24.101,24.1C44.2,51.7,55,40.9,55,27.6C54.9,14.4,44.1,3.5,30.9,3.5zM36.9,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H36c0.5,0,0.9,0.4,0.9,1V35.8zM27.8,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H27c0.5,0,0.9,0.4,0.9,1L27.8,35.8L27.8,35.8z',
+                        }, {
+                             name: '青浦区',
+                             value: 100,
+                             x:-34189.99,
+                             y:-7491.07,
+                             attributes:{
+                              name: '青浦区',
+                              code: '7'
+                              },
+                            color: '#a6c84c',
+                            symbol: 'diamond'
+                        }]
+             }
+              //   symbol:'image://http://31.0.37.225:8080/images/pin_blue.png',
+             //   symbol: 'diamond', //'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow',
+            //    symbol:'image://data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7'
+            //   symbol:'path://M30.9,53.2C16.8,53.2,5.3,41.7,5.3,27.6S16.8,2,30.9,2C45,2,56.4,13.5,56.4,27.6S45,53.2,30.9,53.2zM30.9,3.5C17.6,3.5,6.8,14.4,6.8,27.6c0,13.3,10.8,24.1,24.101,24.1C44.2,51.7,55,40.9,55,27.6C54.9,14.4,44.1,3.5,30.9,3.5zM36.9,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H36c0.5,0,0.9,0.4,0.9,1V35.8zM27.8,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H27c0.5,0,0.9,0.4,0.9,1L27.8,35.8L27.8,35.8z',
+            //  labelposition: 'right' // 'top' 'left' 'right' 'bottom' 'inside' 'insideLeft' 'insideRight' insideTop'insideBottom' 'insideTopLeft' 'insideBottomLeft' 'insideTopRight' 'insideBottomRight'
+            
+            echartfalshpoint.add(paramter)
+         })
+
+         $("#btnupdateechartflashpoint").click(function () {
+             const paramter ={
+                 datas: [{
+                            name: '徐汇区',
+                            value: 200,
+                            x:-2719.02,
+                            y:-6646.5,
+                             attributes:{
+                             name: '徐汇区',
+                             code: '111'
+                             },
+                            color: '#00FA9A',
+                            symbol: 'roundRect'
+                        }, {
+                            name: '杨浦区',
+                            value: 100,
+                            x:5488.4,
+                            y:7804.6,
+                              attributes:{
+                              name: '杨浦区',
+                              code: '222'
+                              },
+                            color: '#FFFF00',
+                            symbol: 'diamond'
+                        }, {
+                            name: '崇明区',
+                            value: 100,
+                            x:4225.73,
+                            y:46675.1,
+                             attributes:{
+                             name: '崇明区',
+                             code: '333'
+                             },
+                            color: '#00BFFF',
+                            symbol: 'diamond'
+                        }, {
+                            name: '虹口区',
+                            value: 100,
+                            x:1913.39,
+                            y:4128.88,
+                             attributes:{
+                             name: '虹口区',
+                             code: '444'
+                             },
+                            color: '#00FF00',
+                            symbol: 'triangle'
+                        }, {
+                            name: '长宁区',
+                            value: 100,
+                            x:-8459.18,
+                            y:-3172.19,
+                             attributes:{
+                             name: '长宁区',
+                             code: '555'
+                             },
+                            color: '#00FFFF',
+                            symbol: 'circle'
+                        }, {
+                            name: '普陀区',
+                            value: 100,
+                            x:-6344.38,
+                            y:2719.02,
+                             attributes:{
+                             name: '普陀区',
+                             code: '666'
+                             },
+                            color: '#D2691E',
+                            symbol: 'arrow'
+                        }, {
+                            name: '青浦区',
+                            value: 100,
+                             x:-34189.99,
+                             y:-7491.07,
+                               attributes:{
+                               name: '青浦区',
+                               code: '777'
+                               },
+                            color: '#a6c84c',
+                            symbol: 'pin'
+                        }]
+             }
+              //   symbol:'image://http://31.0.37.225:8080/images/pin_blue.png',
+             //   symbol: 'diamond', //'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow',
+            //    symbol:'image://data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7'
+            //   symbol:'path://M30.9,53.2C16.8,53.2,5.3,41.7,5.3,27.6S16.8,2,30.9,2C45,2,56.4,13.5,56.4,27.6S45,53.2,30.9,53.2zM30.9,3.5C17.6,3.5,6.8,14.4,6.8,27.6c0,13.3,10.8,24.1,24.101,24.1C44.2,51.7,55,40.9,55,27.6C54.9,14.4,44.1,3.5,30.9,3.5zM36.9,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H36c0.5,0,0.9,0.4,0.9,1V35.8zM27.8,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H27c0.5,0,0.9,0.4,0.9,1L27.8,35.8L27.8,35.8z',
+            //  labelposition: 'right' // 'top' 'left' 'right' 'bottom' 'inside' 'insideLeft' 'insideRight' insideTop'insideBottom' 'insideTopLeft' 'insideBottomLeft' 'insideTopRight' 'insideBottomRight'
+            
+            echartfalshpoint.update(paramter)
+         })
+          $("#btndeleteechartflashpoint").click(function () {
+             echartfalshpoint.delete()
+          })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainer">
+        <button class="mapbutton" id="btnaddechartflashpoint"> add chartflashpoint</button>
+        <button class="mapbutton" id="btnupdateechartflashpoint"> updtate chartflashpoint</button>
+        <button class="mapbutton" id="btndeleteechartflashpoint"> delete echartflashpoint</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>Identify</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            position: relative;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+        .esri-popup__content .tdlabel {
+            width: 200px;
+        }
+
+        .esri-popup__content .tdvalue {
+            width: 200px;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/smap/jingshan/GeoTask.min.js"></script>
+    <script src="../library/smap/jingshan/SMap.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '2D',
+            center: [-20135, -48456],
+            zoom: 3,
+            zooms: [0, 11],
+            mapStyle: 'smap://styles/dark'
+        })
+         function createContentpopup(data) {
+         let htmlstring = '';
+         htmlstring += "<table>"
+             for (let key in data) {
+             htmlstring += "<tr>";
+                 htmlstring += '<td class="tdlabel">';
+                     htmlstring += "<span>";
+                         htmlstring += key;
+                         htmlstring += " :";
+                         htmlstring += "</span>";
+                     htmlstring += "</td>";
+                 htmlstring += '<td class="tdvalue">';
+                     htmlstring += "<span>";
+                         htmlstring += data[key] != null ? data[key] : "";
+                         htmlstring += "</span>";
+                     htmlstring += "</td>";
+                 htmlstring += "</tr>";
+             }
+             htmlstring += "</table>"
+         return htmlstring;
+         }
+     let identifytask=null
+      smap.on(SMap.MapEvent.maploaded, function(view, eventParamter) {
+         identifytask = new GeoTask.Identify(smap.view)
+          identifytask.on(SMap.MapEvent.pointermove, function(result, geometry) {
+             if (geometry) {
+                  smap.view.popup.defaultPopupTemplateEnabled = true
+                  smap.view.popup.autoOpenEnabled = false
+                  smap.view.popup.open({
+                  location: geometry,
+                  title: result.attributes.name,
+                  content: createContentpopup(result.attributes),
+               })
+             }
+          })
+    })
+      smap.on(SMap.MapEvent.click, function(view, eventParamter) {
+          const param = {
+              layerUniqueId:'jingshanlake',
+              url:"http://31.8.11.69:6080/arcgis/rest/services/wb_sh_sx/MapServer/3",
+              displayed: true, //查询接口是否在地图上显示
+              tolerance:100,
+              geometry:eventParamter.mapPoint
+          }
+          identifytask.FeatureService(param).then((result) => {
+            console.log(result)
+          })
+      })
+      
+      $(function () {
+          $("#btnaddlayer").click(function () {
+            const param = {
+              layerType: 'FeatureLayer',
+              layerUrl: "http://31.8.11.69:6080/arcgis/rest/services/wb_sh_sx/MapServer/3",
+              layerTitle: "jingshanlake",
+              layerId: "jingshanlake",
+              layerOpacity:1,
+              layerVisible:true,
+              layerMaxScale:10,
+              layerMinScale:10000000,
+        }
+        smap.addLayer(param)
+          })
+         $("#btnhide").click(function () {
+            identifytask.hide()
+         })
+         $("#btnshow").click(function () {
+            identifytask.show()
+         })
+         $("#btnclearn").click(function () {
+           identifytask.remove()
+         })
+      })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddlayer"> btnaddlayer</button>
+            <button class="mapbutton" id="btnhide"> hide Identify result</button>
+            <button class="mapbutton" id="btnshow"> show Identify result</button>
+            <button class="mapbutton" id="btnclearn"> clean Identify result</button>
+        </div>
+</body>
+
+</html>

@@ -46,9 +46,9 @@
         const smap = new SMap.Map('mapcontainer', {
             viewMode: '2D',
             center: [-20135, -48456],
-             zoom: 1,
-             zooms: [0, 11],
-             mapStyle: 'smap://styles/dark'
+            zoom: 3,
+            zooms: [0, 11],
+            mapStyle: 'smap://styles/dark'
         })
        function createContentpopup(data) {
        let htmlstring = '';
@@ -94,8 +94,8 @@
            flqueryTask.featureLayer(param).then((result) => {
              console.log(result)
            })
-           flqueryTask.on('click', function(result, geometry) {
-            if (geometry) {
+           flqueryTask.on(SMap.MapEvent.click, function(result, geometry) {
+             if (geometry) {
                    smap.view.popup.defaultPopupTemplateEnabled = true
                    smap.view.popup.autoOpenEnabled = false
                    smap.view.popup.open({
@@ -104,8 +104,18 @@
                         content: createContentpopup(result.attributes),
                    })
                 }
-            })
-     
+           })
+          flqueryTask.on(SMap.MapEvent.pointermove, function (result, geometry) {
+                 if (geometry) {
+                     smap.view.popup.defaultPopupTemplateEnabled = true
+                     smap.view.popup.autoOpenEnabled = false
+                     smap.view.popup.open({
+                         location: geometry,
+                         title: result.attributes.name,
+                         content: createContentpopup(result.attributes),
+                     })
+                 }
+             })
        })
         $("#btnclearn").click(function () {
            flqueryTask.remove()

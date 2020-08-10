@@ -28,10 +28,8 @@
          smap.on(SMap.MapEvent.maploaded, function(view) {
              console.log(smap.maplayers)
          })
-      $(function () {
-         $("#btnmaptest").click(function () {
-            smap.setZoomAndCenter(8,[100,100])
-         })
+      smap.on(SMap.MapEvent.maploaded, function(view) {
+          console.log(smap.maplayers)
       })
     </script>
 </head>

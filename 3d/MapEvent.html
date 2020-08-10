@@ -39,10 +39,10 @@
       const smap = new SMap.Map('mapcontainer', {
             viewMode: '3D',
             center: [-20135, -48456],
-             zoom: 1,
+             zoom: 3,
              zooms: [0, 11],
              pitch: 60,
-             mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
+             mapStyle: 'smap://styles/dark',
              showBuildingBlock: true
         })
        smap.on(SMap.MapEvent.maploaded, function(view) {
@@ -60,13 +60,18 @@
       smap.on(SMap.MapEvent.click, function(view, eventParamter) {
         view.hitTest(eventParamter).then(async function(response) {
           if (response.results.length) {
-            if (!response.results[0].length) {
-              view.popup.defaultPopupTemplateEnabled = true
-              view.popup.autoOpenEnabled = false
-              view.popup.open({
-                location: response.results[0].graphic.geometry,
-                content: 'wo shi dian1'
-              })
+            if (response.results.length > 0) {
+                 const layerid = response.results[0].graphic.layer.id;
+                  if (layerid == "sh_jd_boundary"){
+                        objectid = response.results[0].graphic.attributes.objectid
+                       const query = response.results[0].graphic.layer.createQuery();
+                        query.where = "objectid =" + objectid;
+                       response.results[0].graphic.layer.queryFeatures(query).then(function (response) {
+                       if (response.features.length > 0) {
+                          console.log(response.features)
+                         }
+                       });
+                  }
             }
           }
         })
@@ -76,11 +81,30 @@
           console.log(response)
         })
       })
+     $(function () {
+        $("#btnaddlayer").click(function () {
+              const param = {
+                layerType: 'FeatureLayer',
+                layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/FeatureServer",
+                layerTitle: "XH_JD_V2",
+                layerId: "XH_JD_V2",
+                layerOpacity:1,
+                layerVisible:true,
+                layerMaxScale:10,
+                layerMinScale:10000000,
+          }
+          smap.addLayer(param)
+          })
+
+        })
     </script>
 </head>
 
 <body>
     <div id="mapcontainer"></div>
+     <div class="mapbuttoncontainer">
+        <button class="mapbutton" id="btnaddlayer"> btnaddlayer</button>
+       </div>
 </body>
 
 </html>

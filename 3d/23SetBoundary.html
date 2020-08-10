@@ -45,14 +45,13 @@
     <script src="../library/smap/jingshan/SMap.min.js"></script>
     <script>
        const smap = new SMap.Map('mapcontainer', {
-            viewMode: '2D',
-            center: [-20135, -48456],
-             zoom: 1,
-            zooms: [0, 11],
-            pitch: 60,
-            mapStyle: 'smap://styles/dark',
-            showBuildingBlock: true
-
+           viewMode: '3D',
+           center: [-20135, -48456],
+           zoom: 3,
+           zooms: [0, 11],
+           pitch: 60,
+           mapStyle: 'smap://styles/dark',
+           showBuildingBlock: true
         })
       let xqboundary=null
       let jdboundary=null
@@ -74,7 +73,10 @@
             }
             xqboundary = new Plugins.Boundary(smap.view)
             xqboundary.add(par)
-            xqboundary.on('click', function(result, geometry) {
+           xqboundary.on(SMap.MapEvent.click, function(result, geometry) {
+              console.log(result,geometry)
+            })
+            xqboundary.on(SMap.MapEvent.pointermove, function(result, geometry) {
               console.log(result,geometry)
             })
      
@@ -105,7 +107,10 @@
             }
             jdboundary = new Plugins.Boundary(smap.view)
             jdboundary.add(par)
-            jdboundary.on('click', function(result, geometry) {
+             jdboundary.on(SMap.MapEvent.click, function(result, geometry) {
+               console.log(result,geometry)
+            })
+            jdboundary.on(SMap.MapEvent.pointermove, function(result, geometry) {
               console.log(result,geometry)
             })
      
@@ -136,9 +141,12 @@
             }
             jwhboundary = new Plugins.Boundary(smap.view)
             jwhboundary.add(par)
-            jwhboundary.on('click', function(result, geometry) {
-             console.log(result,geometry)
-             })
+            jwhboundary.on(SMap.MapEvent.click, function(result, geometry) {
+              console.log(result,geometry)
+            })
+            jwhboundary.on(SMap.MapEvent.pointermove, function(result, geometry) {
+              console.log(result,geometry)
+            })
      
        })
         $("#btnhidejwhboundary").click(function () {
