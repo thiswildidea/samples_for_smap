@@ -98,14 +98,14 @@
                    'name': '点1',
                    'style': '1'
                    },
-                   position: [500, 500, 100]
+                   position: [500, 500, 0]
                })
               twomarker = new SMap.Marker({
                attributes: {
                    'name': '点2',
                    'style': '2'
                    },
-                    position: [550, 550, 200]
+                    position: [550, 550, 0]
                })
                const rederer = {
                     type: 'unique-value',
@@ -144,7 +144,7 @@
                                resource: {
                                  href: "http://127.0.0.1:5500/resources/images/green.gif"
                                },
-                             size: 20
+                             size: 40
                         }],
                        verticalOffset: {
                             screenLength: 40,
@@ -170,7 +170,7 @@
                               resource: {
                                href: "http://127.0.0.1:5500/resources/images/bluewhite.gif"
                             },
-                        size: 20
+                        size: 40
                     }],
                     verticalOffset: {
                          screenLength: 40,
@@ -197,7 +197,7 @@
                    verticalAlignment: 'top',
                    placement:'center-right',
                    minScale: 5000,
-                   maxScale: 1000,
+                   maxScale: 10,
                   //  labelingInfo: [
                   //         {
                   //           labelExpressionInfo: {
