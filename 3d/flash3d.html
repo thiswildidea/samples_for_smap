@@ -108,7 +108,7 @@
                {
                   x: 150,
                   y: 100,
-                  z: 1,
+                  z: 10,
                   attributes: {
                     name: '报警点3',
                     address: '人民广场附近2'
@@ -117,8 +117,9 @@
             ]
               const param = {
               color: [255, 0, 0, 1],
-              nring: 0.5,
-              spead: 1.5,
+              nring: 0.1,
+              spead: 10.5,
+              size: 5,
               view: smap.view,
               points: samples
               }
@@ -136,15 +137,15 @@
                 }
             })
             fashPoint3DLayer.on(SMap.MapEvent.pointermove, function(result, geometry) {
-                if (geometry) {
-                   smap.view.popup.defaultPopupTemplateEnabled = true
-                   smap.view.popup.autoOpenEnabled = false
-                   smap.view.popup.open({
-                        location: geometry,
-                        title: result.attributes.name,
-                        content: createContentpopup(result.attributes)
-                   })
-                }
+                // if (geometry) {
+                //    smap.view.popup.defaultPopupTemplateEnabled = true
+                //    smap.view.popup.autoOpenEnabled = false
+                //    smap.view.popup.open({
+                //         location: geometry,
+                //         title: result.attributes.name,
+                //         content: createContentpopup(result.attributes)
+                //    })
+                // }
             })
          })
          $("#btnremovefashPoint3DLayer").click(function () {
@@ -181,8 +182,9 @@
          ]
          const param = {
             color: [255, 255, 0, 1],
-            nring: 0.5,
-            spead: 1.5,
+            nring: 0.0,
+            spead: 0.5,
+            size: 5,
             view: smap.view,
             points: samples
          }

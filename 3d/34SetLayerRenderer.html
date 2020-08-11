@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>三维地图初始化</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+     <script src="../library/common/jquery-2.2.3.min.js"></script>
+     <script src="../library/smap/xuhui/SMap.min.js"></script>
+     <script>
+        const smap = new SMap.Map('mapcontainer', {
+        viewMode: '3D',
+        center: [0, 0],
+        zoom: 3,
+        zooms: [0, 11],
+        pitch: 60,
+        mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
+        showBuildingBlock: true
+        })
+         smap.on(SMap.MapEvent.maploaded, function(view) {
+           console.log(smap.maplayers)
+         })
+        $(function () {
+        $("#addlayercontrol").click(function () {
+           const layerListControl = new SMap.LayerListControl({
+           visible: true,
+           position: 'top-right',
+           collapse: true
+           })
+           smap.addControl(layerListControl)
+         }),
+         $("#btnaddFeatureLayer").click(function () {
+            const FeatureLayerparam = {
+              layerType: 'FeatureLayer',
+              layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/FeatureServer",
+              layerTitle: "XH_JD_V2",
+              layerId: "XH_JD_V2",
+              layerOpacity:1,
+              layerVisible:true,
+              layerMaxScale:10,
+              layerMinScale:10000000,
+              layerPopupEnabled:true,
+          
+              layerLabelsVisible:false
+             }
+             smap.addLayer(FeatureLayerparam)
+          })
+         $("#setLayerlayerRenderer").click(function () {
+            const Layerpasrams = {
+               layerId: "XH_JD_V2",
+               layerRenderer: {
+                 type: "unique-value",
+                 field: 'jd_code',
+                 defaultLabel: "",
+                 defaultSymbol: {
+                     type: "simple-fill",
+                     color: [255, 255, 255, 1],
+                     outline: {
+                     color: [255, 255, 0, 1],
+                     width: "5px"
+                     }
+                 },
+                 uniqueValueInfos: [
+                      {
+                           label: '天平街道',
+                           symbol: {
+                                 type: "simple-fill",
+                                 color: [255, 255, 0, 1],
+                                 outline: {
+                                 color: [255, 255, 255, 1],
+                                 width: "5px"
+                             }
+                           },
+                           value: '0403'
+                      },                      
+                      {
+                           label: '徐家汇街道',
+                           symbol: {
+                               type: "simple-fill",
+                               color: [255, 0, 0, 1],
+                               outline: {
+                               color: [0, 255, 255, 1],
+                               width: "5px"
+                              }
+                           },
+                           value: '0414'
+                      }, {
+                         label: '斜土街道',
+                         symbol: {
+                             type: "simple-fill",
+                             color: [255, 0, 0, 1],
+                             outline: {
+                                 color: [0, 255, 0, 1],
+                                 width: "5px"
+                             }
+                         },
+                         value: '0407'
+                     }, {
+                         label: '龙华街道',
+                         symbol: {
+                             type: "simple-fill",
+                             color: [255, 110, 0, 1],
+                             outline: {
+                                 color: [0, 255, 0, 1],
+                                 width: "5px"
+                             }
+                         },
+                         value: '0416'
+                     }, {
+                         label: '湖南街道',
+                         symbol: {
+                             type: "simple-fill",
+                             color: [255, 0, 100, 1],
+                             outline: {
+                                 color: [0, 255, 0, 1],
+                                 width: "5px"
+                             }
+                         },
+                         value: '0404'
+                     }, {
+                         label: '华泾镇',
+                         symbol: {
+                             type: "simple-fill",
+                             color: [255, 20, 10, 1],
+                             outline: {
+                                 color: [0, 255, 0, 1],
+                                 width: "5px"
+                             }
+                         },
+                         value: '0418'
+                     }, {
+                         label: '凌云街道',
+                         symbol: {
+                             type: "simple-fill",
+                             color: [255, 30, 50, 1],
+                             outline: {
+                                 color: [0, 255, 0, 1],
+                                 width: "5px"
+                             }
+                         },
+                         value: '0415'
+                     }, {
+                         label: '长桥街道',
+                         symbol: {
+                             type: "simple-fill",
+                             color: [255, 40, 110, 1],
+                             outline: {
+                                 color: [0, 255, 0, 1],
+                                 width: "5px"
+                             }
+                         },
+                         value: '0410'
+                     }, {
+                         label: '漕河泾街道',
+                         symbol: {
+                             type: "simple-fill",
+                             color: [255, 70, 80, 1],
+                             outline: {
+                                 color: [0, 255, 0, 1],
+                                 width: "5px"
+                             }
+                         },
+                         value: '0417'
+                     }, {
+                         label: '漕河泾街道',
+                         symbol: {
+                             type: "simple-fill",
+                             color: [255, 60, 100, 1],
+                             outline: {
+                                 color: [0, 255, 0, 1],
+                                 width: "5px"
+                             }
+                         },
+                         value: '0417'
+                     }, {
+                         label: '枫林街道',
+                         symbol: {
+                             type: "simple-fill",
+                             color: [255, 20, 100, 1],
+                             outline: {
+                                 color: [0, 255, 0, 1],
+                                 width: "5px"
+                             }
+                         },
+                         value: '0408'
+                     }, {
+                         label: '康健街道',
+                         symbol: {
+                             type: "simple-fill",
+                             color: [255, 50, 40, 1],
+                             outline: {
+                                 color: [0, 255, 0, 1],
+                                 width: "5px"
+                             }
+                         },
+                         value: '0413'
+                     }, {
+                         label: '虹梅街道',
+                         symbol: {
+                             type: "simple-fill",
+                             color: [255, 10, 160, 1],
+                             outline: {
+                                 color: [0, 255, 0, 1],
+                                 width: "5px"
+                             }
+                         },
+                         value: ' 0412'
+                     }, {
+                         label: '田林街道',
+                         symbol: {
+                             type: "simple-fill",
+                             color: [255, 60, 200, 1],
+                             outline: {
+                                 color: [0, 255, 0, 1],
+                                 width: "5px"
+                             }
+                         },
+                         value: ' 0411'
+                     }
+                 ]
+               }
+            }
+            smap.setLayerProperties(Layerpasrams)
+           })
+        })
+
+        
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+     <div class="mapbuttoncontainer">
+          <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+          <button class="mapbutton" id="btnaddFeatureLayer"> add FeatureLayer</button>
+          <button class="mapbutton" id="setLayerlayerRenderer"> 设置图层渲染</button>
+     </div>
+</body>
+
+</html>
