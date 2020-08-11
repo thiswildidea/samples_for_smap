@@ -123,16 +123,16 @@
                    'name': '点1',
                    'type': '点'
                    },
-                   symbol:{
-                     type: "simple-marker",
-                     style: "square",
-                     color: [255, 0, 0, 1],
-                     size: "18px",
-                     outline: {
-                         color: [255, 0, 0, 1],
-                         width: 1
-                     }
-                 },
+                //    symbol:{
+                //      type: "simple-marker",
+                //      style: "square",
+                //      color: [255, 0, 0, 1],
+                //      size: "18px",
+                //      outline: {
+                //          color: [255, 0, 0, 1],
+                //          width: 1
+                //      }
+                //  },
                    label: new SMap.Label({
                         text: '点1',
                         color: 'red',
@@ -153,22 +153,21 @@
                         rotated: true,
                         xoffset: 0,
                         yoffset: 0,
-                        zoffset: 1,
-                        labelingInfo: {
-                            type: "text", 
-                            color: "white",
-                            haloColor: "black",
-                            haloSize: "1px",
-                            text: "You are here",
-                            xoffset: 3,
-                            yoffset: 3,
-                            font: {
-                            size: 12,
-                            family: "Josefin Slab",
-                            weight: "bold"
-                          }
-                        }
-
+                        zoffset: 10,
+                        // labelingInfo: {
+                        //     type: "text", 
+                        //     color: "white",
+                        //     haloColor: "black",
+                        //     haloSize: "1px",
+                        //     text: "You are here",
+                        //     xoffset: 3,
+                        //     yoffset: 3,
+                        //     font: {
+                        //     size: 12,
+                        //     family: "Josefin Slab",
+                        //     weight: "bold"
+                        //   }
+                        // }
                    }),
                    position: [0, 0, 100]
           })

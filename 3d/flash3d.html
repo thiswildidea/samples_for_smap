@@ -87,6 +87,20 @@
     let fashPoint3DLayer1=null
       $(function () {
          $("#btnaddfashPoint3DLayer").click(function () {
+             const falsh3ddatas = [];
+            for (let i = 0; i <= 3000; i++) {
+                  const x = Math.ceil(Math.random() * 120000)
+                  const y = Math.ceil(Math.random() * 120000)
+                 falsh3ddatas.push({
+                     x: x,
+                     y: y,
+                     z: 1,
+                     attributes: {
+                        name: '点'+ i,
+                        address: '位置'+ i
+                     }
+                 })
+             };     
           const samples = [{
                x: 0,
                y: 0,
@@ -117,11 +131,11 @@
             ]
               const param = {
               color: [255, 0, 0, 1],
-              nring: 0.1,
-              spead: 10.5,
-              size: 5,
+              nring: 3,
+              spead: 1.0,
+              size: 30,
               view: smap.view,
-              points: samples
+              points: falsh3ddatas
               }
                fashPoint3DLayer = new Plugins.FlashPoint3DLayer(smap.view)
                fashPoint3DLayer.add(param)
