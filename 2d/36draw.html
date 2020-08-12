@@ -47,6 +47,15 @@
         let draw 
         smap.on(SMap.MapEvent.maploaded, function(view) {
              draw = new Plugins.Draw(smap.view)
+             draw.polygonsymbol = {
+                type: "simple-fill",
+                color: [255, 255, 255, 1],
+                style: "solid",
+                outline: {
+                    color: [255, 0, 0, 0.8],
+                    width: 20
+                }
+            }
              draw.on('drawcomplete', function (graphic,drawtype) {
                 console.log(graphic)
                 console.log(drawtype)
