@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>三维地图初始化</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+         .esri-popup__content .tdlabel {
+           width: 200px;
+         }
+
+         .esri-popup__content .tdvalue {
+           width: 200px;
+         }
+    </style>
+     <script src="../library/common/jquery-2.2.3.min.js"></script>
+     <script src="../library/smap/xuhui/SMap.min.js"></script>
+     <script src="../library/smap/xuhui/GeoTask.min.js"></script>
+     <script src="../library/smap/xuhui/Plugins.min.js"></script>
+     <script>
+        const smap = new SMap.Map('mapcontainer', {
+        viewMode: '2D',
+        center: [0, 0],
+        zoom: 3,
+        zooms: [0, 11],
+        mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
+        })
+        function createContentpopup(data) {
+        let htmlstring = '';
+        htmlstring += "<table>"
+            for (let key in data) {
+            htmlstring += "<tr>";
+                htmlstring += '<td class="tdlabel">';
+                    htmlstring += "<span>";
+                        htmlstring += key;
+                        htmlstring += " :";
+                        htmlstring += "</span>";
+                    htmlstring += "</td>";
+                htmlstring += '<td class="tdvalue">';
+                    htmlstring += "<span>";
+                        htmlstring += data[key] != null ? data[key] : "";
+                        htmlstring += "</span>";
+                    htmlstring += "</td>";
+                htmlstring += "</tr>";
+            }
+            htmlstring += "</table>"
+        return htmlstring;
+        }
+        let draw 
+        let flqueryTask=null
+        smap.on(SMap.MapEvent.maploaded, function(view) {
+             draw = new Plugins.Draw(smap.view)
+             flqueryTask = new GeoTask.Query(smap.view)
+             draw.on('drawcomplete', function (graphic,drawtype) {
+             flqueryTask.remove()
+             const param = {
+                  layerUniqueId: 'wb_sh_sx',
+                  geometry:graphic.geometry,
+                  url:'http://31.8.11.69:6080/arcgis/rest/services/wb_sh_sx/MapServer',
+                  layerId:0,
+                  displayed: true,
+                  outFields: ['*'],
+                  type: 'polygon',
+                  symbol: {
+                      type: 'simple-fill',
+                      color: [255, 255, 255, 1],
+                      outline: {
+                      color: [255, 255, 0, 1],
+                      width: '5px'
+                     }
+                   }
+                }
+              flqueryTask.mapImageLayer(param).then((result) => {
+                  console.log(result)
+               })
+            })
+
+           flqueryTask.on(SMap.MapEvent.click, function(result, geometry) {
+             if (geometry) {
+                   smap.view.popup.defaultPopupTemplateEnabled = true
+                   smap.view.popup.autoOpenEnabled = false
+                   smap.view.popup.open({
+                        location: geometry,
+                        title: result.attributes.name,
+                        content: createContentpopup(result.attributes),
+                   })
+                }
+           })
+         })
+        $(function () {
+        $("#addlayercontrol").click(function () {
+           const layerListControl = new SMap.LayerListControl({
+           visible: true,
+           position: 'top-right',
+           collapse: true
+           })
+           smap.addControl(layerListControl)
+         }),
+         $("#btndrawcircle").click(function () {
+             draw.clean()
+              flqueryTask.remove()
+             draw.drawcircle()
+          })
+
+          $("#btndrawRectangle").click(function () {
+            draw.clean()
+            flqueryTask.remove()
+              draw.drawrectangle()
+          })
+          $("#btnclean").click(function () {
+              draw.clean()
+              flqueryTask.remove()
+          })
+        })
+
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+     <div class="mapbuttoncontainer">
+          <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+          <button class="mapbutton" id="btndrawcircle"> draw circle</button>
+          <button class="mapbutton" id="btndrawRectangle"> draw Rectangle</button>
+          <button class="mapbutton" id="btnclean"> clean </button>
+     </div>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>三维地图初始化</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+     <script src="../library/common/jquery-2.2.3.min.js"></script>
+     <script src="../library/smap/xuhui/SMap.min.js"></script>
+      <script src="../library/smap/xuhui/Plugins.min.js"></script>
+     <script>
+        const smap = new SMap.Map('mapcontainer', {
+        viewMode: '2D',
+        center: [0, 0],
+        zoom: 3,
+        zooms: [0, 11],
+        mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
+        })
+        let draw 
+        smap.on(SMap.MapEvent.maploaded, function(view) {
+             draw = new Plugins.Draw(smap.view)
+             draw.on('drawcomplete', function (graphic,drawtype) {
+                console.log(graphic)
+                console.log(drawtype)
+            })
+         })
+        $(function () {
+        $("#addlayercontrol").click(function () {
+           const layerListControl = new SMap.LayerListControl({
+           visible: true,
+           position: 'top-right',
+           collapse: true
+           })
+           smap.addControl(layerListControl)
+         }),
+         $("#btndrawcircle").click(function () {
+             draw.drawcircle()
+          })
+
+          $("#btndrawRectangle").click(function () {
+              draw.drawrectangle()
+          })
+          $("#btnclean").click(function () {
+              draw.clean()
+          })
+        })
+
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+     <div class="mapbuttoncontainer">
+          <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+          <button class="mapbutton" id="btndrawcircle"> draw circle</button>
+          <button class="mapbutton" id="btndrawRectangle"> draw Rectangle</button>
+          <button class="mapbutton" id="btnclean"> clean </button>
+     </div>
+</body>
+
+</html>
