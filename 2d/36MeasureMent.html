@@ -99,28 +99,35 @@
            smap.addControl(layerListControl)
          }),
          $("#btndrawcircle").click(function () {
-             measurement.circle()
+            measurement.reset()
+            measurement.circle()
           })
 
          $("#btndrawRectangle").click(function () {
+             measurement.reset()
              measurement.rectangle()
          })
          $("#btndrawPoint").click(function () {
+             measurement.reset()
             measurement.Point()
          })
           $("#btndrawmultipoint").click(function () {
+              measurement.reset()
             measurement.Multipoint()
           })
            $("#btndrawpolyiine").click(function () {
+               measurement.reset()
              measurement.drawPolyline()
            })
 
            $("#btndrawpolygon").click(function () {
+               measurement.reset()
               measurement.drawPolygon()
            })
 
              
           $("#btnclean").click(function () {
+              measurement.reset()
               measurement.clean()
           })
         })

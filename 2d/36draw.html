@@ -85,24 +85,30 @@
            smap.addControl(layerListControl)
          }),
          $("#btndrawcircle").click(function () {
+             draw.reset()
              draw.drawcircle()
           })
 
           $("#btndrawRectangle").click(function () {
+              draw.reset()
               draw.drawrectangle()
           })
            $("#btndrawPoint").click(function () {
+               draw.reset()
               draw.drawPoint()
            })
             $("#btndrawmultipoint").click(function () {
+              draw.reset()
               draw.drawMultipoint()
             })
              $("#btndrawpolyiine").click(function () {
+               draw.reset()
                draw.drawPolyline()
              })
 
              $("#btndrawpolygon").click(function () {
-             draw.drawPolygon()
+                  draw.reset()
+                  draw.drawPolygon()
              })
 
              
