@@ -44,36 +44,50 @@
             zooms: [0, 11],
             mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
         })
-        let draw 
+        let measurement
         smap.on(SMap.MapEvent.maploaded, function(view) {
-             draw = new Plugins.Draw(smap.view)
-            //  draw.polygonsymbol = {
-            //     type: "simple-fill",
-            //     color: [255, 255, 255, 1],
-            //     style: "vertical",
-            //     outline: {
-            //         type: "simple-line",
-            //         width: "2px",
-            //         style: "dash-dot",
-            //         color: [255, 0, 0, 0.8],
-            //         width: 2
-            //     }
-            // }
+             measurement = new Plugins.Measurement(smap.view)
+        //      measurement.polygonsymbol = {
+        //         type: "simple-fill",
+        //         color: [255, 255, 255, 1],
+        //         style: "vertical",
+        //         outline: {
+        //             type: "simple-line",
+        //             width: "2px",
+        //             style: "dash-dot",
+        //             color: [255, 0, 0, 0.8],
+        //             width: 2
+        //         }
+        //     }
 
-            //  draw.polylinesymbol = {
-            //         type: "simple-line",
-            //         width: "2px",
-            //         style: "dash",
-            //         color: [255, 0, 0, 0.8],
-            //         width: 2
-            // }
-             draw.on('drawcomplete', function (graphic,drawtype) {
-                console.log(graphic)
-                console.log(drawtype)
+        //      measurement.polylinesymbol = {
+        //             type: "simple-line",
+        //             width: "2px",
+        //             style: "dash",
+        //             color: [255, 0, 0, 0.8],
+        //             width: 2
+        //     }
+        //    measurement.textsymbol = {
+        //        type: "text",
+        //        color: "white",
+        //        angle: 0,
+        //        text: "",
+        //        xoffset: 60,
+        //        yoffset: 10,
+        //        horizontalAlignment: 'right',
+        //        verticalAlignment: 'bottom',
+        //        font: {
+        //            size: 12,
+        //            family: "Josefin Slab",
+        //            weight: "bold"
+        //        }
+        //    }
+             measurement.on('measurementcomplete', function (graphic,result,measurementtype) {
+                 console.log(measurementtype)
+                 console.log(graphic)
+                  console.log(result)
             })
-            draw.on('drawbegin', function (drawtype) {
-                console.log(drawtype)
-            })
+
          })
         $(function () {
         $("#addlayercontrol").click(function () {
@@ -85,35 +99,36 @@
            smap.addControl(layerListControl)
          }),
          $("#btndrawcircle").click(function () {
-             draw.reset()
-             draw.drawcircle()
+            measurement.reset()
+            measurement.circle()
           })
 
-          $("#btndrawRectangle").click(function () {
-              draw.reset()
-              draw.drawrectangle()
+         $("#btndrawRectangle").click(function () {
+             measurement.reset()
+             measurement.rectangle()
+         })
+         $("#btndrawPoint").click(function () {
+             measurement.reset()
+            measurement.Point()
+         })
+          $("#btndrawmultipoint").click(function () {
+              measurement.reset()
+            measurement.Multipoint()
           })
-           $("#btndrawPoint").click(function () {
-               draw.reset()
-              draw.drawPoint()
+           $("#btndrawpolyiine").click(function () {
+               measurement.reset()
+             measurement.drawPolyline()
            })
-            $("#btndrawmultipoint").click(function () {
-              draw.reset()
-              draw.drawMultipoint()
-            })
-             $("#btndrawpolyiine").click(function () {
-               draw.reset()
-               draw.drawPolyline()
-             })
 
-             $("#btndrawpolygon").click(function () {
-                  draw.reset()
-                  draw.drawPolygon()
-             })
+           $("#btndrawpolygon").click(function () {
+               measurement.reset()
+              measurement.drawPolygon()
+           })
 
              
           $("#btnclean").click(function () {
-              draw.clean()
+              measurement.reset()
+              measurement.clean()
           })
         })
 

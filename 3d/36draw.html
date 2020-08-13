@@ -50,59 +50,59 @@
         let draw 
         smap.on(SMap.MapEvent.maploaded, function(view) {
              draw = new Plugins.Draw(smap.view)
-             draw.marksymbol = {
-                 type: "point-3d",
-                    symbolLayers: [{
-                         type: "icon",
-                         resource: {
-                         href: "http://127.0.0.1:5500/resources/images/green.gif"
-                    },
-                       size: 20
-                    }],
-                     verticalOffset: {
-                     screenLength: 400,
-                     maxWorldLength: 1000,
-                     minWorldLength: 20
-                 },
-                 callout: {
-                     type: "line",
-                     size: 1.5,
-                     color: "white",
-                     border: {
-                     color: "black"
-                    } 
-                 }
-             }
-             draw.polygonsymbol = {
-                type: "polygon-3d", 
-                symbolLayers: [{
-                    type: "extrude", 
-                    castShadows: false, 
-                    size: 100,  
-                    material: { color: "red" },
-                    edges: {
-                        type: "solid", 
-                        color: [50, 50, 50, 0.5]
-                    }
-                }]
-            }
-            draw.polylinesymbol = {
-                type: "line-3d", 
-                symbolLayers: [{
-                type: "path",
-                anchor:"center", 
-                Values:"center",
-                profile: "quad", 
-                width: 200, 
-                height: 500, 
-                material: { color: "#ff7380" },
-                cap: "square", 
-                join: "miter" ,
-                castShadows: false, 
-                profile:"circle",
-                profileRotation: "heading",
-                }]
-            }
+            //  draw.marksymbol = {
+            //      type: "point-3d",
+            //         symbolLayers: [{
+            //              type: "icon",
+            //              resource: {
+            //              href: "http://127.0.0.1:5500/resources/images/green.gif"
+            //         },
+            //            size: 20
+            //         }],
+            //          verticalOffset: {
+            //          screenLength: 400,
+            //          maxWorldLength: 1000,
+            //          minWorldLength: 20
+            //      },
+            //      callout: {
+            //          type: "line",
+            //          size: 1.5,
+            //          color: "white",
+            //          border: {
+            //          color: "black"
+            //         } 
+            //      }
+            //  }
+            //  draw.polygonsymbol = {
+            //     type: "polygon-3d", 
+            //     symbolLayers: [{
+            //         type: "extrude", 
+            //         castShadows: false, 
+            //         size: 100,  
+            //         material: { color: "red" },
+            //         edges: {
+            //             type: "solid", 
+            //             color: [50, 50, 50, 0.5]
+            //         }
+            //     }]
+            // }
+            // draw.polylinesymbol = {
+            //     type: "line-3d", 
+            //     symbolLayers: [{
+            //     type: "path",
+            //     anchor:"center", 
+            //     Values:"center",
+            //     profile: "quad", 
+            //     width: 200, 
+            //     height: 500, 
+            //     material: { color: "#ff7380" },
+            //     cap: "square", 
+            //     join: "miter" ,
+            //     castShadows: false, 
+            //     profile:"circle",
+            //     profileRotation: "heading",
+            //     }]
+            // }
              draw.on('drawcomplete', function (graphic,drawtype) {
                 console.log(graphic)
                 console.log(drawtype)
@@ -118,28 +118,35 @@
            smap.addControl(layerListControl)
          }),
          $("#btndrawcircle").click(function () {
+             draw.reset()
              draw.drawcircle()
           })
 
           $("#btndrawRectangle").click(function () {
+               draw.reset()
               draw.drawrectangle()
           })
            $("#btndrawPoint").click(function () {
+                draw.reset()
               draw.drawPoint()
            })
             $("#btndrawmultipoint").click(function () {
+                 draw.reset()
               draw.drawMultipoint()
             })
              $("#btndrawpolyiine").click(function () {
+                  draw.reset()
                draw.drawPolyline()
              })
 
              $("#btndrawpolygon").click(function () {
+                  draw.reset()
              draw.drawPolygon()
              })
 
              
           $("#btnclean").click(function () {
+               draw.reset()
               draw.clean()
           })
         })
