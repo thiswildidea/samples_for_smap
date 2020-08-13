@@ -34,23 +34,46 @@
         }
     </style>
      <script src="../library/common/jquery-2.2.3.min.js"></script>
-     <script src="../library/smap/jingshan/SMap.min.js"></script>
+     <script src="../library/smap/jignshan/SMap.min.js"></script>
       <script src="../library/smap/jingshan/Plugins.min.js"></script>
      <script>
         const smap = new SMap.Map('mapcontainer', {
-            viewMode: '3D',
-            center: [-20135, -48456],
+            viewMode: '2D',
+            center: [0, 0],
             zoom: 3,
             zooms: [0, 11],
-            pitch: 60,
-            mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
-            showBuildingBlock: true
+             pitch: 60,
+             mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
+             showBuildingBlock: true
         })
         let draw 
         smap.on(SMap.MapEvent.maploaded, function(view) {
              draw = new Plugins.Draw(smap.view)
+             draw.polygonsymbol = {
+                type: "simple-fill",
+                color: [255, 255, 255, 1],
+                style: "vertical",
+                outline: {
+                    type: "simple-line",
+                    width: "2px",
+                    style: "dash-dot",
+                    color: [255, 0, 0, 0.8],
+                    width: 2
+                }
+            }
+
+             draw.polylinesymbol = {
+                    type: "simple-line",
+                    width: "2px",
+                    style: "dash",
+                    color: [255, 0, 0, 0.8],
+                    width: 2
+            }
              draw.on('drawcomplete', function (graphic,drawtype) {
                 console.log(graphic)
+                console.log(drawtype)
+            })
+            draw.on('drawbegin', function (drawtype) {
                 console.log(drawtype)
             })
          })
@@ -70,6 +93,21 @@
           $("#btndrawRectangle").click(function () {
               draw.drawrectangle()
           })
+           $("#btndrawPoint").click(function () {
+              draw.drawPoint()
+           })
+            $("#btndrawmultipoint").click(function () {
+              draw.drawMultipoint()
+            })
+             $("#btndrawpolyiine").click(function () {
+               draw.drawPolyline()
+             })
+
+             $("#btndrawpolygon").click(function () {
+             draw.drawPolygon()
+             })
+
+             
           $("#btnclean").click(function () {
               draw.clean()
           })
@@ -84,6 +122,10 @@
           <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
           <button class="mapbutton" id="btndrawcircle"> draw circle</button>
           <button class="mapbutton" id="btndrawRectangle"> draw Rectangle</button>
+          <button class="mapbutton" id="btndrawPoint"> draw Point</button>
+          <button class="mapbutton" id="btndrawmultipoint"> draw multipoint</button>
+          <button class="mapbutton" id="btndrawpolyiine"> draw polyiine</button>
+         <button class="mapbutton" id="btndrawpolygon"> draw polygon</button>
           <button class="mapbutton" id="btnclean"> clean </button>
      </div>
 </body>
