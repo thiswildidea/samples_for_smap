@@ -190,7 +190,7 @@
             OverlaysFeaure = new Plugins.FeaureOverlays(smap.view)
             OverlaysFeaure.createFeatureGroup(OverlayGroup)
 
-            OverlaysFeaure.on(SMap.MapEvent.click, function(result, geometry) {
+            OverlaysFeaure.on(SMap.MapEvent.click, function(result, event, geometry) {
              if (geometry) {
                   smap.view.popup.defaultPopupTemplateEnabled = true
                   smap.view.popup.autoOpenEnabled = false
@@ -201,17 +201,20 @@
                })
              }
             })
-            OverlaysFeaure.on(SMap.MapEvent.pointermove, function(result, geometry) {
-            //  if (geometry) {
-            //       smap.view.popup.defaultPopupTemplateEnabled = true
-            //       smap.view.popup.autoOpenEnabled = false
-            //       smap.view.popup.open({
-            //       location: geometry,
-            //       title: result[0].attributes.name,
-            //       content: createContentpopup(result[0].attributes),
-            //    })
-            //  }
+            OverlaysFeaure.on(SMap.MapEvent.pointermove, function(result,event, geometry) {
+             if (geometry) {
+                  smap.view.popup.defaultPopupTemplateEnabled = true
+                  smap.view.popup.autoOpenEnabled = false
+                  smap.view.popup.open({
+                  location: geometry,
+                  title: result[0].attributes.name,
+                  content: createContentpopup(result[0].attributes),
+               })
+             }
           })
+            OverlaysFeaure.on(SMap.MapEvent.pointerleave, function(result,event, geometry) {
+
+            })
             
            })
            $("#btnupdatemarkgroup").click(function () {
