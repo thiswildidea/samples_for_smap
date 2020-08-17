@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>三维地图初始化</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+     <script src="../library/common/jquery-2.2.3.min.js"></script>
+     <script src="../library/smap/xuhui/SMap.min.js"></script>
+      <script src="../library/smap/xuhui/Plugins.min.js"></script>
+     <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
+            showBuildingBlock: true
+        })
+        let measurement
+        smap.on(SMap.MapEvent.maploaded, function(view) {
+             measurement = new Plugins.Measurement(smap.view)
+             measurement.polygonsymbol = {
+                type: "polygon-3d", 
+                symbolLayers: [{
+                    type: "extrude", 
+                    castShadows: false, 
+                    size: 100,  
+                    material: { color: "red" },
+                    edges: {
+                        type: "solid", 
+                        color: [50, 50, 50, 0.5]
+                    }
+                }]
+            }
+            measurement.marksymbol = {
+                 type: "point-3d",
+                    symbolLayers: [{
+                         type: "icon",
+                         resource: {
+                         href: "http://127.0.0.1:5500/resources/images/green.gif"
+                    },
+                       size: 20
+                    }],
+                     verticalOffset: {
+                     screenLength: 400,
+                     maxWorldLength: 1000,
+                     minWorldLength: 20
+                 },
+                 callout: {
+                     type: "line",
+                     size: 1.5,
+                     color: "white",
+                     border: {
+                     color: "black"
+                    } 
+                 }
+             }
+
+             measurement.polylinesymbol = {
+                  type: "line-3d",
+                 symbolLayers: [{
+                    type: "path",
+                    anchor:"center",
+                    Values:"center",
+                    profile: "quad",
+                    width: 20,
+                    height: 500,
+                    material: { color: "#ff7380" },
+                    cap: "square",
+                    join: "miter" ,
+                    castShadows: false,
+                    profile:"circle",
+                    profileRotation: "heading",
+                }]
+             }
+           measurement.textsymbol = {
+               type: "text",
+               color: "white",
+               angle: 0,
+               text: "",
+               xoffset: 60,
+               yoffset: 10,
+               horizontalAlignment: 'right',
+               verticalAlignment: 'bottom',
+               font: {
+                   size: 12,
+                   family: "Josefin Slab",
+                   weight: "bold"
+               }
+           }
+             measurement.on('measurementcomplete', function (graphic,result,measurementtype) {
+                 console.log(measurementtype)
+                 console.log(graphic)
+                  console.log(result)
+            })
+
+         })
+        $(function () {
+        $("#addUndergroundSwitch").click(function () {
+             const undergroundSwitch = new SMap.UndergroundSwitch({
+             visible: true,
+             position: 'top-right'
+         })
+         smap.addControl(undergroundSwitch)
+         })
+        $("#addlayercontrol").click(function () {
+           const layerListControl = new SMap.LayerListControl({
+           visible: true,
+           position: 'top-right',
+           collapse: true
+           })
+           smap.addControl(layerListControl)
+         }),
+         $("#btndrawcircle").click(function () {
+            measurement.reset()
+            measurement.circle()
+          })
+
+         $("#btndrawRectangle").click(function () {
+             measurement.reset()
+             measurement.rectangle()
+         })
+         $("#btndrawPoint").click(function () {
+             measurement.reset()
+            measurement.Point()
+         })
+          $("#btndrawmultipoint").click(function () {
+              measurement.reset()
+            measurement.Multipoint()
+          })
+           $("#btndrawpolyiine").click(function () {
+               measurement.reset()
+             measurement.drawPolyline()
+           })
+
+           $("#btndrawpolygon").click(function () {
+               measurement.reset()
+              measurement.drawPolygon()
+           })
+
+             
+          $("#btnclean").click(function () {
+              measurement.reset()
+              measurement.clean()
+          })
+        })
+
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+     <div class="mapbuttoncontainer">
+          <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+           <button class="mapbutton" id="addUndergroundSwitch"> 添加地上地下切换控件</button>
+          <button class="mapbutton" id="btndrawcircle"> draw circle</button>
+          <button class="mapbutton" id="btndrawRectangle"> draw Rectangle</button>
+          <button class="mapbutton" id="btndrawPoint"> draw Point</button>
+          <button class="mapbutton" id="btndrawmultipoint"> draw multipoint</button>
+          <button class="mapbutton" id="btndrawpolyiine"> draw polyiine</button>
+         <button class="mapbutton" id="btndrawpolygon"> draw polygon</button>
+          <button class="mapbutton" id="btnclean"> clean </button>
+     </div>
+</body>
+
+</html>
