@@ -110,6 +110,8 @@
                text: "",
                xoffset: 60,
                yoffset: 10,
+               lineHeight:1.0,
+               lineWidth:40,
                horizontalAlignment: 'right',
                verticalAlignment: 'bottom',
                font: {
@@ -142,34 +144,41 @@
            smap.addControl(layerListControl)
          }),
          $("#btndrawcircle").click(function () {
+            measurement.clean()
             measurement.reset()
             measurement.circle()
           })
 
          $("#btndrawRectangle").click(function () {
+              measurement.clean()
              measurement.reset()
              measurement.rectangle()
          })
          $("#btndrawPoint").click(function () {
+              measurement.clean()
              measurement.reset()
             measurement.Point()
          })
           $("#btndrawmultipoint").click(function () {
+               measurement.clean()
               measurement.reset()
             measurement.Multipoint()
           })
            $("#btndrawpolyiine").click(function () {
+                measurement.clean()
                measurement.reset()
              measurement.drawPolyline()
            })
 
            $("#btndrawpolygon").click(function () {
+                measurement.clean()
                measurement.reset()
               measurement.drawPolygon()
            })
 
              
           $("#btnclean").click(function () {
+               measurement.clean()
               measurement.reset()
               measurement.clean()
           })
