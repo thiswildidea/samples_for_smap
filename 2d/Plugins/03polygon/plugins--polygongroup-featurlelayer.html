@@ -102,7 +102,7 @@
                         new SMap.LngLat(-5400, -3000),
                         new SMap.LngLat(-3400, -3000),
                         new SMap.LngLat(-3400, 1560),
-                        new SMap.LngLat(-5400,1560),
+                        new SMap.LngLat(-5400, 1560),
                         new SMap.LngLat(-5400, -3000)
                     ]
                 })
@@ -128,7 +128,7 @@
                     horizontalAlignment: 'left',
                     verticalAlignment: 'top',
                     placement: 'center-right',
-                    minScale: 5000,
+                    minScale: 50000,
                     maxScale: 500,
 
                 })
@@ -141,8 +141,8 @@
                     style: '1',
                     symbol: {
                         type: "simple-fill",
-                        color: [255, 255, 255, 1],
-                        style: "solid",
+                        color: [255, 0, 255, 1],
+                        style: "diagonal-cross",
                         outline: {
                             type: "simple-line",
                             width: "1px",
@@ -155,7 +155,7 @@
                     symbol: {
                         type: "simple-fill",
                         color: [255, 0, 0, 1],
-                        style: "vertical",
+                        style: "diagonal-cross",
                         outline: {
                             type: "simple-line",
                             width: "1px",
@@ -171,10 +171,10 @@
                         width: "24px",
                         height: "24px",
                         outline: {
-                             type: "simple-line",
-                             width: "2px",
-                             style: "solid",
-                             color: [255, 0, 0, 0.8],
+                            type: "simple-line",
+                            width: "2px",
+                            style: "solid",
+                            color: [255, 0, 0, 0.8],
                         },
                     }
                 }, {
@@ -296,7 +296,7 @@
                         'name': 'polygon5',
                         'style': '5'
                     },
-                     paths: [
+                    paths: [
                         new SMap.LngLat(1600, 1600),
                         new SMap.LngLat(4700, 1600),
                         new SMap.LngLat(4700, 4800),

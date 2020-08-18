@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>地图覆盖物-面类型</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 20%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            /* float: left; */
+        }
+
+        .esri-popup__content .tdlabel {
+            width: 200px;
+        }
+
+        .esri-popup__content .tdvalue {
+            width: 200px;
+        }
+    </style>
+    <script src="../../../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../../../library/smap/xuhui/SMap.min.js"></script>
+    <script src="../../../library/smap/xuhui/Plugins.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+        let onepolygon = null
+        let sencondpolygon = null
+        let threepolygon = null
+        let fourpolygon = null
+        let fivepolygon = null
+        let sixpolygon = null
+        let OverlayGroup = null
+        let GraphicOverlays = null;
+
+        function createContentpopup(data) {
+            let htmlstring = '';
+            htmlstring += "<table>"
+            for (let key in data) {
+                htmlstring += "<tr>";
+                htmlstring += '<td class="tdlabel">';
+                htmlstring += "<span>";
+                htmlstring += key;
+                htmlstring += " :";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += '<td class="tdvalue">';
+                htmlstring += "<span>";
+                htmlstring += data[key] != null ? data[key] : "";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += "</tr>";
+            }
+            htmlstring += "</table>"
+            return htmlstring;
+        }
+        $(function () {
+            $("#btnaddpolygon").click(function () {
+                GraphicOverlays = new Plugins.GraphicOverlays(smap.view)
+                GraphicOverlays.on(SMap.MapEvent.click, function (result, geometry) {
+                    if (geometry) {
+                        smap.view.popup.defaultPopupTemplateEnabled = true
+                        smap.view.popup.autoOpenEnabled = false
+                        smap.view.popup.open({
+                            location: geometry,
+                            title: result.results[0].graphic.attributes.name,
+                            content: createContentpopup(result.results[0].graphic
+                                .attributes),
+                        })
+                    }
+                })
+                GraphicOverlays.on(SMap.MapEvent.pointermove, function (result, geometry) {
+                    //  if (geometry) {
+                    //       smap.view.popup.defaultPopupTemplateEnabled = true
+                    //       smap.view.popup.autoOpenEnabled = false
+                    //       smap.view.popup.open({
+                    //       location: geometry,
+                    // title: results[0].graphic.attributes.name,
+                    //       content: createContentpopup(result[0].attributes),
+                    //    })
+                    //  }
+                })
+                onepolygon = new SMap.Polygon({
+                    attributes: {
+                        'name': 'polygon1',
+                        'style': '1'
+                    },
+                    paths: [
+                        new SMap.LngLat(-5400, -3000,10),
+                        new SMap.LngLat(-3400, -3000,10),
+                        new SMap.LngLat(-3400, 1560,10),
+                        new SMap.LngLat(-5400, 1560,10),
+                        new SMap.LngLat(-5400, -3000,10)
+                    ],
+                    symbol: {
+                        type: "simple-fill",
+                        color: [255, 255, 255, 1],
+                        style: "solid",
+                        outline: {
+                            type: "simple-line",
+                            width: "1px",
+                            style: "solid",
+                            color: [255, 0, 0, 0.8],
+                        }
+                    },
+                    label: new SMap.Label({
+                        text: '面一',
+                        color: 'red',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'red',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                GraphicOverlays.add(onepolygon)
+
+                sencondpolygon = new SMap.Polygon({
+                    attributes: {
+                        'name': 'polygon2',
+                        'style': '2'
+                    },
+                    paths: [
+                        new SMap.LngLat(-6500, -5500,10),
+                        new SMap.LngLat(-4000, -5500,10),
+                        new SMap.LngLat(-4000, 550,10),
+                        new SMap.LngLat(-6500, 550,10),
+                        new SMap.LngLat(-6500, -6500,10)
+                    ],
+
+                    symbol: {
+                        type: "simple-fill",
+                        color: [255, 0, 0, 1],
+                        style: "vertical",
+                        outline: {
+                            type: "simple-line",
+                            width: "1px",
+                            style: "solid",
+                            color: [255, 0, 0, 0.8],
+                        }
+                    },
+                    label: new SMap.Label({
+                        text: '面二',
+                        color: 'red',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                GraphicOverlays.add(sencondpolygon)
+            })
+            $("#btnupdatepolygon").click(function () {
+                onepolygon.label.text = '面一更新'
+                GraphicOverlays.update(onepolygon)
+            })
+
+            $("#btndeletepolygon").click(function () {
+                GraphicOverlays.remove(onepolygon)
+            })
+
+            $("#btnaddmanypolygon").click(function () {
+                threepolygon = new SMap.Polygon({
+                    attributes: {
+                        'name': 'polygon3',
+                        'style': '3'
+                    },
+                    paths: [
+                        new SMap.LngLat(-2600, -2600,10,10),
+                        new SMap.LngLat(-100, -2600,10,10),
+                        new SMap.LngLat(-100, 2800,10,10),
+                        new SMap.LngLat(-2600, 2800,10,10),
+                        new SMap.LngLat(-2600, -2600,10)
+                    ],
+                    symbol: {
+                        type: "polygon-3d",
+                        symbolLayers: [{
+                            type: "extrude",
+                            size: 1000,
+                            material: {
+                                color: "red"
+                            }
+                        }]
+                    },
+                    label: new SMap.Label({
+                        text: '面三',
+                        color: 'red',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                fourpolygon = new SMap.Polygon({
+                    attributes: {
+                        'name': 'polygon4',
+                        'style': '4'
+                    },
+                    paths: [
+                        new SMap.LngLat(4700, 4700,10,10),
+                        new SMap.LngLat(9700, 4700,10,10),
+                        new SMap.LngLat(9700, 9700,10,10),
+                        new SMap.LngLat(4700, 9700,10,10),
+                        new SMap.LngLat(4700, 4700,10)
+                    ],
+                    symbol: {
+                        type: "simple-fill",
+                        color: [255, 0, 255, 1],
+                        style: "diagonal-cross",
+                        outline: {
+                            type: "simple-line",
+                            width: "1px",
+                            style: "solid",
+                            color: [255, 0, 0, 0.8],
+                        }
+                    },
+                    label: new SMap.Label({
+                        text: '面四',
+                        color: 'white',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                GraphicOverlays.add([threepolygon, fourpolygon])
+            })
+
+            $("#btnupdatemanypolygon").click(function () {
+                threepolygon.label.text = '面三更新'
+                fourpolygon.label.text = '面四更新'
+                GraphicOverlays.update([threepolygon, fourpolygon])
+            })
+
+            $("#btndeletemanypolygon").click(function () {
+                GraphicOverlays.remove([threepolygon, fourpolygon])
+            })
+
+            $("#btnaddpolygongroup").click(function () {
+                fivepolygon = new SMap.Polygon({
+                    attributes: {
+                        'name': 'polygon4',
+                        'style': '5'
+                    },
+                    paths: [
+                        new SMap.LngLat(1600, 1600,10,10),
+                        new SMap.LngLat(4700, 1600,10,10),
+                        new SMap.LngLat(4700, 4800,10,10),
+                        new SMap.LngLat(1600, 4800,10,10),
+                        new SMap.LngLat(1600, 1600,10)
+                    ],
+                    symbol: {
+                        type: "simple-fill",
+                        color: [255, 255, 0, 1],
+                        style: "forward-diagonal",
+                        outline: {
+                            type: "simple-line",
+                            width: "1px",
+                            style: "solid",
+                            color: [255, 0, 0, 0.8],
+                        }
+                    },
+                    label: new SMap.Label({
+                        text: '面五',
+                        color: 'blue',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                sixpolygon = new SMap.Polygon({
+                    attributes: {
+                        'name': 'polygon4',
+                        'style': '6'
+                    },
+                    paths: [
+                        new SMap.LngLat(9600, 9600,10,10),
+                        new SMap.LngLat(10700, 9600,10,10),
+                        new SMap.LngLat(10700, 10800,10,10),
+                        new SMap.LngLat(9600, 10800,10,10),
+                        new SMap.LngLat(9600, 9600,10)
+                    ],
+                    symbol: {
+                        type: "polygon-3d",
+                        symbolLayers: [{
+                            type: "extrude",
+                            size: 1000,
+                            material: {
+                                color: "red"
+                            }
+                        }]
+                    },
+                    label: new SMap.Label({
+                        text: '面6',
+                        color: 'white',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                OverlayGroup = new SMap.OverlayGroup([fivepolygon, sixpolygon], {
+                    overlaytype: 'polygon'
+                })
+                GraphicOverlays.add(OverlayGroup)
+            })
+
+            $("#btnupdatepolygongroup").click(function () {
+                fivepolygon.label.text = '面5更新'
+                sixpolygon.label.text = '面6更新'
+                GraphicOverlays.update(OverlayGroup)
+            })
+
+            $("#btndeltepolygongroup").click(function () {
+                smap.remove(OverlayGroup)
+            })
+            $("#btncleanall").click(function () {
+                GraphicOverlays.removeAll()
+            })
+            $("#btndeletelayer").click(function () {
+                GraphicOverlays.delete()
+            })
+
+            $("#addlayercontrol").click(function () {
+                const layerListControl = new SMap.LayerListControl({
+                    visible: true,
+                    position: 'top-right',
+                    collapse: true
+                })
+                smap.addControl(layerListControl)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddpolygon"> add one polygon </button>
+            <button class="mapbutton" id="btnupdatepolygon"> update one polygon</button>
+            <button class="mapbutton" id="btndeletepolygon"> delete one polygon</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddmanypolygon"> add many polygons </button>
+            <button class="mapbutton" id="btnupdatemanypolygon"> update many polygons</button>
+            <button class="mapbutton" id="btndeletemanypolygon"> delete many polygons</button>
+        </div>
+
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddpolygongroup"> add polygon group</button>
+            <button class="mapbutton" id="btnupdatepolygongroup"> update polygon group</button>
+            <button class="mapbutton" id="btndeltepolygongroup"> delete polygon group</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btncleanall">clear all GraphicOverlays</button>
+            <button class="mapbutton" id="btndeletelayer">delete GraphicOverlays</button>
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

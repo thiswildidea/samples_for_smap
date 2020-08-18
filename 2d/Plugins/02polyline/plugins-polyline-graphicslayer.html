@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>地图覆盖物-线类型</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 20%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            /* float: left; */
+        }
+
+        .esri-popup__content .tdlabel {
+            width: 200px;
+        }
+
+        .esri-popup__content .tdvalue {
+            width: 200px;
+        }
+    </style>
+    <script src="../../../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../../../library/smap/xuhui/SMap.min.js"></script>
+    <script src="../../../library/smap/xuhui/Plugins.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '2D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            mapStyle: 'smap://styles/dark'
+        })
+        let onepolyline = null
+        let sencondpolyline = null
+        let threepolyline = null
+        let fourpolyline = null
+        let fivepolyline = null
+        let sixpolyline = null
+        let OverlayGroup = null
+        let GraphicOverlays = null;
+
+        function createContentpopup(data) {
+            let htmlstring = '';
+            htmlstring += "<table>"
+            for (let key in data) {
+                htmlstring += "<tr>";
+                htmlstring += '<td class="tdlabel">';
+                htmlstring += "<span>";
+                htmlstring += key;
+                htmlstring += " :";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += '<td class="tdvalue">';
+                htmlstring += "<span>";
+                htmlstring += data[key] != null ? data[key] : "";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += "</tr>";
+            }
+            htmlstring += "</table>"
+            return htmlstring;
+        }
+        $(function () {
+            $("#btnaddpolyline").click(function () {
+                GraphicOverlays = new Plugins.GraphicOverlays(smap.view)
+                GraphicOverlays.on(SMap.MapEvent.click, function (result, geometry) {
+                    if (geometry) {
+                        smap.view.popup.defaultPopupTemplateEnabled = true
+                        smap.view.popup.autoOpenEnabled = false
+                        smap.view.popup.open({
+                            location: geometry,
+                            title: result.results[0].graphic.attributes.name,
+                            content: createContentpopup(result.results[0].graphic
+                                .attributes),
+                        })
+                    }
+                })
+                GraphicOverlays.on(SMap.MapEvent.pointermove, function (result, geometry) {
+                    //  if (geometry) {
+                    //       smap.view.popup.defaultPopupTemplateEnabled = true
+                    //       smap.view.popup.autoOpenEnabled = false
+                    //       smap.view.popup.open({
+                    //       location: geometry,
+                    // title: results[0].graphic.attributes.name,
+                    //       content: createContentpopup(result[0].attributes),
+                    //    })
+                    //  }
+                })
+                onepolyline = new SMap.Polyline({
+                    attributes: {
+                        'name': 'polyline1',
+                        'style': '1'
+                    },
+                    path: [
+                        new SMap.LngLat(400, 400),
+                        new SMap.LngLat(1420, 1420),
+                        new SMap.LngLat(1450, 1450)
+                    ],
+                    cap: 'square',
+                    strokeColor: 'red',
+                    style: 'solid',
+                    lineJoin: 'round',
+                    label: new SMap.Label({
+                        text: '线一',
+                        color: 'red',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'red',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                GraphicOverlays.add(onepolyline)
+
+                sencondpolyline = new SMap.Polyline({
+                    attributes: {
+                        'name': 'polyline2',
+                        'style': '2'
+                    },
+                    path: [
+                        new SMap.LngLat(1900, 1900),
+                        new SMap.LngLat(2420, 2420),
+                        new SMap.LngLat(2450, 2450)
+                    ],
+                    cap: 'square',
+                    strokeColor: 'red',
+                    style: 'solid',
+                    lineJoin: 'round',
+                    label: new SMap.Label({
+                        text: '线二',
+                        color: 'red',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                GraphicOverlays.add(sencondpolyline)
+            })
+            $("#btnupdatepolyline").click(function () {
+                onepolyline.label.text = '线一更新'
+                GraphicOverlays.update(onepolyline)
+            })
+
+            $("#btndeletepolyline").click(function () {
+                GraphicOverlays.remove(onepolyline)
+            })
+
+            $("#btnaddmanypolyline").click(function () {
+                threepolyline = new SMap.Polyline({
+                    attributes: {
+                        'name': 'polyline3',
+                        'style': '3'
+                    },
+                    path: [
+                        new SMap.LngLat(3900, 3900),
+                        new SMap.LngLat(4420, 4420),
+                        new SMap.LngLat(5450, 5450)
+                    ],
+                    cap: 'square',
+                    strokeColor: 'red',
+                    style: 'solid',
+                    lineJoin: 'round',
+                    label: new SMap.Label({
+                        text: '线三',
+                        color: 'red',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                fourpolyline = new SMap.Polyline({
+                    attributes: {
+                        'name': 'polyline4',
+                        'style': '4'
+                    },
+                    path: [
+                        new SMap.LngLat(6900, 6900),
+                        new SMap.LngLat(7420, 7420),
+                        new SMap.LngLat(8450, 8450)
+                    ],
+                    cap: 'square',
+                    strokeColor: 'red',
+                    style: 'solid',
+                    lineJoin: 'round',
+                    label: new SMap.Label({
+                        text: '线四',
+                        color: 'blue',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                GraphicOverlays.add([threepolyline, fourpolyline])
+            })
+
+            $("#btnupdatemanypolyline").click(function () {
+                threepolyline.label.text = '线三更新'
+                fourpolyline.label.text = '线四更新'
+                GraphicOverlays.update([threepolyline, fourpolyline])
+            })
+
+            $("#btndeletemanypolyline").click(function () {
+                GraphicOverlays.remove([threepolyline, fourpolyline])
+            })
+
+            $("#btnaddpolylinegroup").click(function () {
+                fivepolyline = new SMap.Polyline({
+                    attributes: {
+                        'name': 'polyline4',
+                        'style': '5'
+                    },
+                    path: [
+                        new SMap.LngLat(8900, 8900),
+                        new SMap.LngLat(9420, 9420),
+                        new SMap.LngLat(10450, 10450)
+                    ],
+                    cap: 'square',
+                    strokeColor: 'red',
+                    style: 'solid',
+                    lineJoin: 'round',
+                    label: new SMap.Label({
+                        text: '线五',
+                        color: 'blue',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                sixpolyline = new SMap.Polyline({
+                    attributes: {
+                        'name': 'polyline4',
+                        'style': '6'
+                    },
+                    path: [
+                        new SMap.LngLat(18900, 18900),
+                        new SMap.LngLat(19420, 19420),
+                        new SMap.LngLat(20450, 20450)
+                    ],
+                    cap: 'square',
+                    strokeColor: 'red',
+                    style: 'solid',
+                    lineJoin: 'round',
+                    label: new SMap.Label({
+                        text: '线6',
+                        color: 'white',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                OverlayGroup = new SMap.OverlayGroup([fivepolyline, sixpolyline], {
+                    overlaytype: 'polyline'
+                })
+                GraphicOverlays.add(OverlayGroup)
+            })
+
+            $("#btnupdatepolylinegroup").click(function () {
+                fivepolyline.label.text = '线5更新'
+                sixpolyline.label.text = '线6更新'
+                GraphicOverlays.update(OverlayGroup)
+            })
+
+            $("#btndeltepolylinegroup").click(function () {
+                smap.remove(OverlayGroup)
+            })
+            $("#btncleanall").click(function () {
+                GraphicOverlays.removeAll()
+            })
+            $("#btndeletelayer").click(function () {
+                GraphicOverlays.delete()
+            })
+
+            $("#addlayercontrol").click(function () {
+                const layerListControl = new SMap.LayerListControl({
+                    visible: true,
+                    position: 'top-right',
+                    collapse: true
+                })
+                smap.addControl(layerListControl)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddpolyline"> add one polyline </button>
+            <button class="mapbutton" id="btnupdatepolyline"> update one polyline</button>
+            <button class="mapbutton" id="btndeletepolyline"> delete one polyline</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddmanypolyline"> add many polylines </button>
+            <button class="mapbutton" id="btnupdatemanypolyline"> update many polylines</button>
+            <button class="mapbutton" id="btndeletemanypolyline"> delete many polylines</button>
+        </div>
+
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddpolylinegroup"> add polyline group</button>
+            <button class="mapbutton" id="btnupdatepolylinegroup"> update polyline group</button>
+            <button class="mapbutton" id="btndeltepolylinegroup"> delete polyline group</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btncleanall">clear all GraphicOverlays</button>
+            <button class="mapbutton" id="btndeletelayer">delete GraphicOverlays</button>
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
