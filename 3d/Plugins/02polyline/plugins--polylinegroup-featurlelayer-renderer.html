@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>地图覆盖物-polyline类型</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 20%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            /* float: left; */
+        }
+
+        .esri-popup__content .tdlabel {
+            width: 200px;
+        }
+
+        .esri-popup__content .tdvalue {
+            width: 200px;
+        }
+    </style>
+    <script src="../../../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../../../library/smap/xuhui/SMap.min.js"></script>
+    <script src="../../../library/smap/xuhui/Plugins.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+        let onepolyline = null
+        let twopolyline = null
+        let threepolyline = null
+        let fourpolyline = null
+        let fivepolyline = null
+        let polylinesgroup = null
+        smap.on(SMap.MapEvent.click, function (view, eventParamter) {
+
+        })
+
+        function createContentpopup(data) {
+            let htmlstring = '';
+            htmlstring += "<table>"
+            for (let key in data) {
+                htmlstring += "<tr>";
+                htmlstring += '<td class="tdlabel">';
+                htmlstring += "<span>";
+                htmlstring += key;
+                htmlstring += " :";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += '<td class="tdvalue">';
+                htmlstring += "<span>";
+                htmlstring += data[key] != null ? data[key] : "";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += "</tr>";
+            }
+            htmlstring += "</table>"
+            return htmlstring;
+        }
+        let OverlaysFeaure;
+        $(function () {
+            $("#btnaddpolylinegroup").click(function () {
+                onepolyline = new SMap.Polyline({
+                    attributes: {
+                        'name': 'polyline1',
+                        'style': '1'
+                    },
+                    path: [
+                        new SMap.LngLat(400, 400),
+                        new SMap.LngLat(1420, 1420),
+                        new SMap.LngLat(1450, 1450)
+                    ]
+                })
+                twopolyline = new SMap.Polyline({
+                    attributes: {
+                        'name': 'polyline2',
+                        'style': '2'
+                    },
+                    path: [
+                        new SMap.LngLat(0, 20),
+                        new SMap.LngLat(40, 40),
+                        new SMap.LngLat(50, 50)
+                    ]
+                })
+                const rederer = {
+                    type: 'unique-value',
+                    field: 'style', //图层字段
+                    defaultLabel: '',
+                    defaultSymbol: {
+                        type: "line-3d",
+                        symbolLayers: [{
+                            type: "path",
+                            anchor: "center",
+                            Values: "center",
+                            profile: "quad",
+                            width: 20,
+                            height: 30,
+                            material: {
+                                color: [255, 255, 255, 0.4]
+                            },
+                            cap: "square",
+                            join: "miter",
+                            castShadows: false,
+                            profileRotation: "heading"
+                        }]
+                    },
+                    uniqueValueInfos: [{
+                        label: '样式1',
+                        value: '1',
+                        symbol: {
+                            type: "line-3d",
+                            symbolLayers: [{
+                                type: "path",
+                                anchor: "center",
+                                Values: "center",
+                                profile: "quad",
+                                width: 20,
+                                height: 100,
+                                material: {
+                                    color: [255, 255, 255, 0.4]
+                                },
+                                cap: "square",
+                                join: "miter",
+                                castShadows: false,
+                                profileRotation: "heading"
+                            }]
+                        }
+                    }, {
+                        label: '样式2',
+                        value: '2',
+                        symbol: {
+                            type: "line-3d",
+                            symbolLayers: [{
+                                type: "path",
+                                profile: "quad",
+                                width: 20,
+                                height: 50,
+                                material: {
+                                    color: "#ff7380"
+                                },
+                                cap: "square",
+                                profileRotation: "heading"
+                            }]
+                        }
+                    }, {
+                        label: '样式3',
+                        value: '3',
+                        symbol: {
+                            type: "line-3d",
+                            symbolLayers: [{
+                                type: "path",
+                                profile: "circle",
+                                width: 20,
+                                height: 40,
+                                material: {
+                                    color: [0, 255, 0, 1]
+                                },
+                                cap: "round"
+                            }]
+                        }
+                    }, {
+                        label: '样式4',
+                        value: '4',
+                        symbol: {
+                            type: "line-3d",
+                            symbolLayers: [{
+                                type: "path",
+                                profile: "circle",
+                                width: 40,
+                                height: 40,
+                                material: {
+                                    color: [255, 255, 220, 1]
+                                },
+                                cap: "round"
+                            }]
+                        }
+                    }, {
+                        label: '样式5',
+                        value: '5',
+                        symbol: {
+                            type: "line-3d",
+                            symbolLayers: [{
+                                type: "path",
+                                profile: "circle",
+                                width: 40,
+                                height: 40,
+                                material: {
+                                    color: [255, 255, 0, 1]
+                                },
+                                cap: "round"
+                            }]
+                        }
+                    }]
+                }
+
+                const label = new SMap.Label({
+                    visible: true,
+                    labelingInfo: [{
+                        labelExpressionInfo: {
+                            value: '{name}'
+                        },
+                        symbol: {
+                            type: 'label-3d',
+                            symbolLayers: [{
+                                type: 'text',
+                                material: {
+                                    color: 'white'
+                                },
+                                halo: {
+                                    size: 1,
+                                    color: [50, 50, 50]
+                                },
+                                size: 18
+                            }],
+                            verticalOffset: {
+                                screenLength: 150,
+                                maxWorldLength: 200,
+                                minWorldLength: 20
+                            },
+                            callout: {
+                                type: 'line',
+                                color: [50, 50, 50],
+                                size: 2,
+                                border: {
+                                    color: [50, 50, 50]
+                                }
+                            }
+                        },
+                        labelPlacement: 'above-center',
+                        maxScale: 500,
+                        minScale: 500000
+                    }]
+                })
+                const datafiled = [{
+                    name: 'name',
+                    alias: 'name',
+                    type: 'string'
+                }]
+
+                polylinesgroup = new SMap.OverlayGroup([onepolyline, twopolyline], {
+                    overlaytype: 'polyline',
+                    datafiled: datafiled,
+                    renderer: rederer,
+                    label: label
+                })
+
+                OverlaysFeaure = new Plugins.FeaureOverlays(smap.view)
+                OverlaysFeaure.createFeatureGroup(polylinesgroup)
+
+                OverlaysFeaure.on(SMap.MapEvent.click, function (result, event, geometry) {
+                    if (geometry) {
+                        smap.view.popup.defaultPopupTemplateEnabled = true
+                        smap.view.popup.autoOpenEnabled = false
+                        smap.view.popup.open({
+                            location: geometry,
+                            title: result[0].attributes.name,
+                            content: createContentpopup(result[0].attributes),
+                        })
+                    }
+                })
+                OverlaysFeaure.on(SMap.MapEvent.pointermove, function (result, event, geometry) {
+                    if (geometry) {
+                        smap.view.popup.defaultPopupTemplateEnabled = true
+                        smap.view.popup.autoOpenEnabled = false
+                        smap.view.popup.open({
+                            location: geometry,
+                            title: result[0].attributes.name,
+                            content: createContentpopup(result[0].attributes),
+                        })
+                    }
+                })
+                OverlaysFeaure.on(SMap.MapEvent.pointerleave, function (result, event, geometry) {
+                    console.log(result)
+                })
+
+            })
+            $("#btnupdatepolylinegroup").click(function () {
+                onepolyline.attributes['name'] = 'polyline1更新'
+                OverlaysFeaure.updatefeature(polylinesgroup)
+            })
+            $("#btndeltepolylinegroup").click(function () {
+                OverlaysFeaure.removefeature(polylinesgroup)
+            })
+
+            $("#btnaddpolyline").click(function () {
+                threepolyline = new SMap.Polyline({
+                    attributes: {
+                        'name': 'polyline3',
+                        'style': '3'
+                    },
+                    path: [
+                        new SMap.LngLat(2600, 2600),
+                        new SMap.LngLat(2620, 2620),
+                        new SMap.LngLat(3650, 3650)
+                    ]
+                })
+                OverlaysFeaure.addfeature(threepolyline)
+            })
+
+            $("#btnupdatepolyline").click(function () {
+                threepolyline.attributes['name'] = 'polyline三更新'
+                OverlaysFeaure.updatefeature(threepolyline)
+            })
+
+            $("#btndeletepolyline").click(function () {
+                OverlaysFeaure.removefeature(threepolyline)
+            })
+
+            $("#btnaddpolylines").click(function () {
+                fourpolyline = new SMap.Polyline({
+                    attributes: {
+                        'name': 'polyline4',
+                        'style': '4'
+                    },
+                    path: [
+                        new SMap.LngLat(7400, 7600),
+                        new SMap.LngLat(8600, 8600),
+                        new SMap.LngLat(9650, 9650)
+                    ]
+                })
+
+                fivepolyline = new SMap.Polyline({
+                    attributes: {
+                        'name': 'polyline5',
+                        'style': '5'
+                    },
+                    path: [
+                        new SMap.LngLat(4600, 4600),
+                        new SMap.LngLat(4620, 4620),
+                        new SMap.LngLat(5650, 5650)
+                    ]
+                })
+                OverlaysFeaure.addfeature([fourpolyline, fivepolyline])
+            })
+            $("#btnupdatepolylines").click(function () {
+                fourpolyline.attributes['name'] = 'polyline4更新'
+                fivepolyline.attributes['name'] = 'polyline5更新'
+                OverlaysFeaure.updatefeature([fourpolyline, fivepolyline])
+            })
+
+            $("#btndeletepolylines").click(function () {
+                OverlaysFeaure.removefeature([fourpolyline, fivepolyline])
+            })
+
+            $("#btndRemoveallFeature").click(function () {
+                OverlaysFeaure.removeAll()
+            })
+            $("#btndeletelayer").click(function () {
+                OverlaysFeaure.delete()
+            })
+
+            $("#addlayercontrol").click(function () {
+                const layerListControl = new SMap.LayerListControl({
+                    visible: true,
+                    position: 'top-right',
+                    collapse: true
+                })
+                smap.addControl(layerListControl)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainergroup">
+
+
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddpolylinegroup"> add polyline group</button>
+            <button class="mapbutton" id="btnupdatepolylinegroup"> update polyline group</button>
+            <button class="mapbutton" id="btndeltepolylinegroup"> delete polyline group</button>
+        </div>
+
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddpolyline"> add one polyline </button>
+            <button class="mapbutton" id="btnupdatepolyline"> update polyline </button>
+            <button class="mapbutton" id="btndeletepolyline"> delete polyline</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddpolylines"> add polylines</button>
+            <button class="mapbutton" id="btnupdatepolylines"> update polylines </button>
+            <button class="mapbutton" id="btndeletepolylines"> delete polylines </button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btndRemoveallFeature"> remove all feature</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btndeletelayer"> delete layer</button>
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

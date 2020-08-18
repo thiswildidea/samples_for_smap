@@ -47,9 +47,9 @@
             width: 200px;
         }
     </style>
-     <script src="../../library/common/jquery-2.2.3.min.js"></script>
-     <script src="../../library/smap/xuhui/SMap.min.js"></script>
-     <script src="../../library/smap/xuhui/Plugins.min.js"></script>
+     <script src="../../../library/common/jquery-2.2.3.min.js"></script>
+     <script src="../../../library/smap/xuhui/SMap.min.js"></script>
+     <script src="../../../library/smap/xuhui/Plugins.min.js"></script>
      <script>
        const smap = new SMap.Map('mapcontainer', {
             viewMode: '2D',
@@ -141,7 +141,6 @@
                OverlayGroup = new SMap.OverlayGroup([onemarker, twomarker], {
                    overlaytype: 'marker',
                    datafiled: datafiled,
-                  //  elevationInfo:'relative-to-scene',
                    style: style,
                    label: label,
                    frreduction: featureReduction
@@ -178,7 +177,7 @@
             
            })
            $("#btnupdatemarkgroup").click(function () {
-              onemarker.attributes['name'] = '点1更新'
+               onemarker.attributes['name'] = '点1更新'
                OverlaysFeaure.updatefeature(OverlayGroup)
            })
            $("#btndeltemarkgroup").click(function () {

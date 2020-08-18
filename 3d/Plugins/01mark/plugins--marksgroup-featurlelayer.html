@@ -47,9 +47,9 @@
             width: 200px;
         }
     </style>
-     <script src="../../library/common/jquery-2.2.3.min.js"></script>
-     <script src="../../library/smap/xuhui/SMap.min.js"></script>
-     <script src="../../library/smap/xuhui/Plugins.min.js"></script>
+     <script src="../../../library/common/jquery-2.2.3.min.js"></script>
+     <script src="../../../library/smap/xuhui/SMap.min.js"></script>
+     <script src="../../../library/smap/xuhui/Plugins.min.js"></script>
      <script>
        const smap = new SMap.Map('mapcontainer', {
             viewMode: '3D',
@@ -107,87 +107,6 @@
                    },
                     position: [550, 550, 0]
                })
-               const rederer = {
-                    type: 'unique-value',
-                    field: 'style',   //图层字段
-                    defaultLabel: '',
-                    defaultSymbol: {
-                         type: "point-3d", 
-                         symbolLayers: [{
-                         type: "icon",
-                         resource: {
-                         href: "http://127.0.0.1:5500/resources/images/bluewhite.gif"
-                         },
-                        size: 20
-                    }],
-                    verticalOffset: {
-                         screenLength: 40,
-                         maxWorldLength: 100,
-                         minWorldLength: 20
-                    },
-                    callout: {
-                           type: "line", // autocasts as new LineCallout3D()
-                           size: 1.5,
-                           color: "white",
-                           border: {
-                           color: "black"
-                          }
-                       }
-                    },
-                    uniqueValueInfos: [{
-                        label: '样式1', 
-                        value: '1', 
-                        symbol: {
-                            type: "point-3d", 
-                            symbolLayers: [{
-                               type: "icon",
-                               resource: {
-                                 href: "http://127.0.0.1:5500/resources/images/green.gif"
-                               },
-                             size: 40
-                        }],
-                       verticalOffset: {
-                            screenLength: 40,
-                            maxWorldLength: 100,
-                            minWorldLength: 20
-                       },
-                       callout: {
-                                 type: "line", // autocasts as new LineCallout3D()
-                                 size: 1.5,
-                                 color: "white",
-                                 border: {
-                                 color: "black"
-                             }
-                          }
-                        }
-                  },{
-                        label: '样式2', 
-                        value: '2', 
-                        symbol: {
-                           type: "point-3d", 
-                           symbolLayers: [{
-                              type: "icon",
-                              resource: {
-                               href: "http://127.0.0.1:5500/resources/images/bluewhite.gif"
-                            },
-                        size: 40
-                    }],
-                    verticalOffset: {
-                         screenLength: 40,
-                         maxWorldLength: 100,
-                         minWorldLength: 20
-                    },
-                    callout: {
-                              type: "line", // autocasts as new LineCallout3D()
-                              size: 1.5,
-                              color: "white",
-                              border: {
-                              color: "black"
-                          }
-                       }
-                     }
-                  }]
-               }
                const label = new SMap.Label({
                    size: 28,
                    color: 'red',
@@ -197,46 +116,7 @@
                    verticalAlignment: 'top',
                    placement:'center-right',
                    minScale: 5000,
-                   maxScale: 10,
-                  //  labelingInfo: [
-                  //         {
-                  //           labelExpressionInfo: {
-                  //             value: '{name}'
-                  //           },
-                  //           symbol: {
-                  //             type: 'label-3d',
-                  //             symbolLayers: [
-                  //               {
-                  //                 type: 'text',
-                  //                 material: {
-                  //                   color: 'white'
-                  //                 },
-                  //                 halo: {
-                  //                   size: 1,
-                  //                   color: [50, 50, 50]
-                  //                 },
-                  //                 size: 18
-                  //               }
-                  //             ],
-                  //             verticalOffset: {
-                  //               screenLength: 150,
-                  //               maxWorldLength: 200,
-                  //               minWorldLength: 20
-                  //             },
-                  //             callout: {
-                  //               type: 'line',
-                  //               color: [50, 50, 50],
-                  //               size: 2,
-                  //               border: {
-                  //                 color: [50, 50, 50]
-                  //               }
-                  //             }
-                  //           },
-                  //           labelPlacement: 'above-center',
-                  //           maxScale: 0,
-                  //           minScale: 850000
-                  //         }
-                  //      ]
+                   maxScale: 10
                })
                const datafiled = [{
                    name: 'name',
@@ -262,8 +142,7 @@
                    overlaytype: 'marker',
                    datafiled: datafiled,
                   //  elevationInfo:'relative-to-scene',
-                   renderer:rederer,
-                  //  style: style,
+                   style: style,
                    label: label,
                    frreduction: featureReduction
                })
