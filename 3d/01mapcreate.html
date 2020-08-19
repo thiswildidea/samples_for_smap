@@ -33,21 +33,41 @@
             float: left;
         }
     </style>
-     <script src="../library/common/jquery-2.2.3.min.js"></script>
-     <script src="../library/smap/xuhui/SMap.min.js"></script>
-     <script>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/smap/xuhui/SMap.min.js"></script>
+    <script>
         const smap = new SMap.Map('mapcontainer', {
-        viewMode: '3D',
-        center: [0, 0],
-        zoom: 3,
-        zooms: [0, 11],
-        pitch: 60,
-        mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
-        showBuildingBlock: true
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
+            showBuildingBlock: true
         })
-         smap.on(SMap.MapEvent.maploaded, function(view) {
-           console.log(smap.maplayers)
-         })
+        smap.on(SMap.MapEvent.maploaded, function (view) {
+            smap.view.goTo({
+                fov: 55,
+                heading: 3.4914615640786066,
+                position: {
+                    x: -25210.552126,
+                    y: -96241.06967,
+                    z: 31796.88072,
+                    spatialReference: {
+                        wkid: 102100
+                    }
+                },
+                tilt: 59.816555
+            }, {
+                speedFactor: 2,
+                duration: 1000,
+                maxDuration: 1000,
+                easing: 'in-expo'
+            })
+        })
+        smap.on(SMap.MapEvent.extentchanged, function (view) {
+            console.log(smap.view.camera)
+        })
     </script>
 </head>
 
