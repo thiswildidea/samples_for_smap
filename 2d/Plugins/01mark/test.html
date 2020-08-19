@@ -51,6 +51,7 @@
     <script src="../../../library/common/jquery-2.2.3.min.js"></script>
     <script src="../../../library/smap/xuhui/SMap.min.js"></script>
     <script src="../../../library/smap/xuhui/Plugins.min.js"></script>
+    <script src="../../../library/smap/xuhui/GeoTask.min.js"></script>
     <script>
         const smap = new SMap.Map('mapcontainer', {
             viewMode: '2D',
@@ -65,20 +66,45 @@
         let fourmarker = null
         let fivemarker = null
         let massmarksgroup = null
+        let OverlaysFeaure;
         let draw
+        let flqueryTask = null
         smap.on(SMap.MapEvent.click, function (view, eventParamter) {
 
         })
         smap.on(SMap.MapEvent.maploaded, function (view) {
             draw = new Plugins.Draw(smap.view)
+            flqueryTask = new GeoTask.Query(smap.view)
 
             draw.on('drawcomplete', function (graphic, drawtype) {
-                console.log(graphic)
-                console.log(drawtype)
+                // console.log(graphic)
+                // console.log(drawtype)
+                const param = {
+                    layerUniqueId: OverlaysFeaure.displayedLayerid,
+                    geometry: graphic.geometry,
+                    displayed: true,
+                    outFields: ['*'],
+                    type: 'point',
+                    symbol: {
+                        type: "simple-marker",
+                        style: "square",
+                        color: [255, 0, 0, 0],
+                        size: "18px",
+                        outline: {
+                            color: [255, 0, 0, 0],
+                            width: 1
+                        }
+                    }
+                }
+                flqueryTask.featureLayer(param).then((result) => {
+                    console.log(result)
+                })
             })
+
             draw.on('drawbegin', function (drawtype) {
-                console.log(drawtype)
+                // console.log(drawtype)
             })
+
         })
 
         function createContentpopup(data) {
@@ -106,7 +132,7 @@
         function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        let OverlaysFeaure;
+
         $(function () {
             $("#btnaddmarkgroup").click(function () {
                 onemarker = new SMap.Marker({
@@ -143,7 +169,7 @@
                             value: '{name}'
                         },
                         maxScale: 500,
-                        minScale: 5000,
+                        minScale: 50000,
                     }]
 
                 })
@@ -245,15 +271,15 @@
                     }
                 })
                 OverlaysFeaure.on(SMap.MapEvent.pointermove, function (result, event, geometry) {
-                    if (geometry) {
-                        smap.view.popup.defaultPopupTemplateEnabled = true
-                        smap.view.popup.autoOpenEnabled = false
-                        smap.view.popup.open({
-                            location: geometry,
-                            title: result[0].attributes.name,
-                            content: createContentpopup(result[0].attributes),
-                        })
-                    }
+                    // if (geometry) {
+                    //     smap.view.popup.defaultPopupTemplateEnabled = true
+                    //     smap.view.popup.autoOpenEnabled = false
+                    //     smap.view.popup.open({
+                    //         location: geometry,
+                    //         title: result[0].attributes.name,
+                    //         content: createContentpopup(result[0].attributes),
+                    //     })
+                    // }
                 })
                 OverlaysFeaure.on(SMap.MapEvent.pointerleave, function (result, event, geometry) {
                     console.log(result)
@@ -339,7 +365,7 @@
             })
             $("#btnaddbigmarks").click(function () {
                 const marks = []
-                for (let i = 0; i <= 3000; i++) {
+                for (let i = 0; i <= 20000; i++) {
                     const x = Math.ceil(Math.random() * 120000)
                     const y = Math.ceil(Math.random() * 120000)
                     const marker = new SMap.Marker({
@@ -359,8 +385,26 @@
                     type: "cluster",
                     clusterRadius: "100px",
                     popupTemplate: {
-                        content: "This cluster represents {cluster_count} marks."
-                    }
+                        content: "This cluster represents {cluster_count} earthquakes."
+                    },
+                    clusterMinSize: "40px",
+                    clusterMaxSize: "80px",
+                    labelingInfo: [{
+                        deconflictionStrategy: "none",
+                        labelExpressionInfo: {
+                            expression: "Text($feature.cluster_count, '#,###')"
+                        },
+                        symbol: {
+                            type: "text",
+                            color: "white",
+                            font: {
+                                weight: "bold",
+                                family: "Noto Sans",
+                                size: "12px"
+                            }
+                        },
+                        labelPlacement: "center-center",
+                    }]
                 }
                 OverlaysFeaure.addcluster(clusterConfig)
             })
@@ -369,41 +413,41 @@
             })
 
             $("#btndrawcircle").click(function () {
-                 draw.clean()
+                draw.clean()
                 draw.reset()
                 draw.drawcircle()
             })
 
             $("#btndrawRectangle").click(function () {
-                 draw.clean()
+                draw.clean()
                 draw.reset()
                 draw.drawrectangle()
             })
             $("#btndrawPoint").click(function () {
-                 draw.clean()
+                draw.clean()
                 draw.reset()
                 draw.drawPoint()
             })
             $("#btndrawmultipoint").click(function () {
-                 draw.clean()
+                draw.clean()
                 draw.reset()
                 draw.drawMultipoint()
             })
             $("#btndrawpolyiine").click(function () {
-                 draw.clean()
+                draw.clean()
                 draw.reset()
                 draw.drawPolyline()
             })
 
             $("#btndrawpolygon").click(function () {
-                 draw.clean()
+                draw.clean()
                 draw.reset()
                 draw.drawPolygon()
             })
 
 
             $("#btnclean").click(function () {
-                 draw.clean()
+                draw.clean()
                 draw.clean()
             })
         })
