@@ -207,8 +207,31 @@
                     }]
                 }
                 const featureReduction = new SMap.FeatureReduction({
-                    type: 'cluster',
-                    clusterRadius: 100
+                    clusterConfig: {
+                        type: "cluster",
+                        clusterRadius: "100px",
+                        popupTemplate: {
+                            content: "This cluster represents {cluster_count} markers."
+                        },
+                        clusterMinSize: "40px",
+                        clusterMaxSize: "80px",
+                        labelingInfo: [{
+                            deconflictionStrategy: "none",
+                            labelExpressionInfo: {
+                                expression: "Text($feature.cluster_count, '#,###')"
+                            },
+                            symbol: {
+                                type: "text",
+                                color: "white",
+                                font: {
+                                    weight: "bold",
+                                    family: "Noto Sans",
+                                    size: "12px"
+                                }
+                            },
+                            labelPlacement: "center-center",
+                        }]
+                    }
                 })
                 OverlayGroup = new SMap.OverlayGroup([onemarker, twomarker], {
                     overlaytype: 'marker',
