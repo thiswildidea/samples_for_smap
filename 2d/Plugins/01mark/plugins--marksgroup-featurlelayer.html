@@ -311,13 +311,31 @@
           type: "cluster",
           clusterRadius: "100px",
           popupTemplate: {
-              content: "This cluster represents {cluster_count} marks."
-          }
+            content: "This cluster represents {cluster_count} makers."
+          },
+          clusterMinSize: "40px",
+          clusterMaxSize: "80px",
+          labelingInfo: [{
+            deconflictionStrategy: "none",
+            labelExpressionInfo: {
+              expression: "Text($feature.cluster_count, '#,###')"
+            },
+            symbol: {
+              type: "text",
+              color: "white",
+              font: {
+                weight: "bold",
+                family: "Noto Sans",
+                size: "12px"
+              }
+            },
+            labelPlacement: "center-center",
+          }]
         }
         OverlaysFeaure.addcluster(clusterConfig)
       })
       $("#btndeletecluseter").click(function () {
-         OverlaysFeaure.deletecluster()
+        OverlaysFeaure.deletecluster()
       })
     })
   </script>
