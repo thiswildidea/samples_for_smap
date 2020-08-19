@@ -47,18 +47,16 @@
             width: 200px;
         }
     </style>
-     <script src="../../library/common/jquery-2.2.3.min.js"></script>
-     <script src="../../library/smap/jingshan/SMap.min.js"></script>
-     <script src="../../library/smap/jingshan/Plugins.min.js"></script>
+     <script src="../../../library/common/jquery-2.2.3.min.js"></script>
+     <script src="../../../library/smap/jingshan/SMap.min.js"></script>
+     <script src="../../../library/smap/jingshan/Plugins.min.js"></script>
      <script>
        const smap = new SMap.Map('mapcontainer', {
-            viewMode: '3D',
+            viewMode: '2D',
             center: [-20135, -48456],
              zoom: 3,
              zooms: [0, 11],
-             pitch: 60,
-             mapStyle: 'smap://styles/dark',
-             showBuildingBlock: true
+             mapStyle: 'smap://styles/dark'
         })
         let onemarker = null
         let twomarker = null
@@ -109,71 +107,103 @@
                })
                
                const label = new SMap.Label({
-                   size: 28,
-                   color: 'red',
-                   xoffset: 0.1,
-                   yoffset: 0.1,
-                   horizontalAlignment: 'left',
-                   verticalAlignment: 'top',
-                   placement:'center-right',
-                   minScale: 5000,
-                   maxScale: 1000,
-                   labelingInfo: [
-                          {
-                            labelExpressionInfo: {
-                              value: '{name}'
-                            },
-                            symbol: {
-                              type: 'label-3d',
-                              symbolLayers: [
-                                {
-                                  type: 'text',
-                                  material: {
-                                    color: 'white'
-                                  },
-                                  halo: {
-                                    size: 1,
-                                    color: [50, 50, 50]
-                                  },
-                                  size: 18
-                                }
-                              ],
-                              verticalOffset: {
-                                screenLength: 150,
-                                maxWorldLength: 200,
-                                minWorldLength: 20
-                              },
-                              callout: {
-                                type: 'line',
-                                color: [50, 50, 50],
-                                size: 2,
-                                border: {
-                                  color: [50, 50, 50]
-                                }
-                              }
-                            },
-                            labelPlacement: 'above-center',
-                            maxScale: 0,
-                            minScale: 850000
-                          }
-                       ]
+                    visible: true,
+                    labelingInfo: [{
+                        symbol: {
+                            type: "text",
+                            color: "white",
+                            haloColor: "blue",
+                            haloSize: 1,
+                            font: {
+                                family: "Ubuntu Mono",
+                                size: 14,
+                                weight: "bold"
+                            }
+                        },
+                        labelPlacement: "center-right", //above-center, above-left, above-right, below-center, below-left, below-right, center-center, center-left, center-right
+                        labelExpressionInfo: {
+                             value: '{name}'
+                        },
+                        maxScale: 500,
+                        minScale: 5000,
+                    }]
+                   
                })
                const datafiled = [{
                    name: 'name',
                    alias: 'name',
                    type: 'string'
                }]
-               const style = [
-               {
-                  style: '1',
-                  size: new SMap.Size(20, 20),
-                  url: 'http://127.0.0.1:5500/resources/images/green.gif'
-               }, {
-                  style: '2',
-                  size: new SMap.Size(40, 40),
-                  url: 'http://127.0.0.1:5500/resources/images/bluewhite.gif'
+               const rederer = {
+                    type: 'unique-value',
+                    field: 'style',      //图层字段
+                    defaultLabel: '',
+                    defaultSymbol: {
+                         type: "picture-marker",
+                         url: "http://127.0.0.1:5500/resources/images/green.gif",
+                         width: "64px",
+                         height: "64px"
+                    },
+                    uniqueValueInfos: [{
+                        label: '样式1', 
+                        value: '1', 
+                        symbol: {
+                             type: "picture-marker",
+                             url: "http://127.0.0.1:5500/resources/images/bluewhite.gif",
+                             width: "64px",
+                             height: "64px"
+                        }
+                        
+                  },{
+                        label: '样式2', 
+                        value: '2', 
+                        symbol: {
+                           type: "picture-marker",
+                           url: "http://127.0.0.1:5500/resources/images/bluewhite.gif",
+                           width: "64px",
+                           height: "64px"
+                     }
+                  },{
+                        label: '样式3', 
+                        value: '3', 
+                        symbol: {
+                            type: "simple-marker",
+                            style: "square", // "circle"|"square"|"cross"|"x"|"diamond"|"triangle"|"path"
+                            color: "blue",
+                            size: "18px", 
+                            outline: {
+                            color: [ 255, 255, 0 ],
+                            width: 3
+                            }
+                     }
+                  },{
+                        label: '样式4', 
+                        value: '4', 
+                        symbol: {
+                            type: "simple-marker",
+                            style: "triangle", 
+                            color: "yellow",
+                            size: "18px", 
+                            outline: {
+                            color: [ 255, 255, 0 ],
+                            width: 3
+                            }
+                     }
+                  },{
+                        label: '样式5', 
+                        value: '5', 
+                        symbol: {
+                            type: "simple-marker",
+                            style: "x",
+                            color: "red",
+                            size: "18px", 
+                            outline: {
+                            color: [ 255, 255, 0 ],
+                            width: 3
+                            }
+                     }
+                  }]
                }
-               ]
                const featureReduction = new SMap.FeatureReduction({
                   type: 'cluster',
                   clusterRadius: 100
@@ -181,8 +211,7 @@
                OverlayGroup = new SMap.OverlayGroup([onemarker, twomarker], {
                    overlaytype: 'marker',
                    datafiled: datafiled,
-                  //  elevationInfo:'relative-to-scene',
-                   style: style,
+                   renderer: rederer,
                    label: label,
                    frreduction: featureReduction
                })
@@ -190,7 +219,7 @@
             OverlaysFeaure = new Plugins.FeaureOverlays(smap.view)
             OverlaysFeaure.createFeatureGroup(OverlayGroup)
 
-            OverlaysFeaure.on(SMap.MapEvent.click, function(result, event, geometry) {
+            OverlaysFeaure.on(SMap.MapEvent.click, function(result,event ,geometry) {
              if (geometry) {
                   smap.view.popup.defaultPopupTemplateEnabled = true
                   smap.view.popup.autoOpenEnabled = false
@@ -201,7 +230,7 @@
                })
              }
             })
-            OverlaysFeaure.on(SMap.MapEvent.pointermove, function(result,event, geometry) {
+            OverlaysFeaure.on(SMap.MapEvent.pointermove, function(result,event,geometry) {
              if (geometry) {
                   smap.view.popup.defaultPopupTemplateEnabled = true
                   smap.view.popup.autoOpenEnabled = false
@@ -212,13 +241,13 @@
                })
              }
           })
-            OverlaysFeaure.on(SMap.MapEvent.pointerleave, function(result,event, geometry) {
-
-            })
+          OverlaysFeaure.on(SMap.MapEvent.pointerleave, function(result,event, geometry) {
+             console.log(result)
+          })
             
            })
            $("#btnupdatemarkgroup").click(function () {
-              onemarker.attributes['name'] = '点1更新'
+               onemarker.attributes['name'] = '点1更新'
                OverlaysFeaure.updatefeature(OverlayGroup)
            })
            $("#btndeltemarkgroup").click(function () {
@@ -230,7 +259,7 @@
                   attributes: {
                      'name': '点3',
                      'type': '点',
-                     'style': '1'
+                     'style': '3'
                   },
                   position: [0, 0, 100]
            })
@@ -252,7 +281,7 @@
                   attributes: {
                      'name': '点4',
                      'type': '点',
-                     'style': '1'
+                     'style': '4'
                   },
                   position: [100, 0, 100]
            })
@@ -261,7 +290,7 @@
                   attributes: {
                      'name': '点5',
                      'type': '点',
-                     'style': '1'
+                     'style': '5'
                   },
                   position: [100, 100, 100]
            })
@@ -269,9 +298,9 @@
           })
            $("#btnupdataemarks").click(function () {
              fourmarker.attributes['name'] ='点4更新'
-             fourmarker.position =[100,0,400]
+             fourmarker.position =[100,10,400]
              fivemarker.attributes['name'] ='点5更新'
-              fourmarker.position =[100,100,300]
+              fourmarker.position =[100,200,300]
               OverlaysFeaure.updatefeature([fourmarker,fivemarker])
            })
 

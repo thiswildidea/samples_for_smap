@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>地图覆盖物-circle类型</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 20%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            /* float: left; */
+        }
+
+        .esri-popup__content .tdlabel {
+            width: 200px;
+        }
+
+        .esri-popup__content .tdvalue {
+            width: 200px;
+        }
+    </style>
+    <script src="../../../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../../../library/smap/jingshan/SMap.min.js"></script>
+    <script src="../../../library/smap/jingshan/Plugins.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [-20135, -48456],
+            zoom: 3,
+            zooms: [0, 11],
+            mapStyle: 'smap://styles/dark',
+            pitch: 60,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+        let onecircle = null
+        let sencondcircle = null
+        let threecircle = null
+        let fourcircle = null
+        let fivecircle = null
+        let sixcircle = null
+        let OverlayGroup = null
+        let GraphicOverlays = null;
+
+        function createContentpopup(data) {
+            let htmlstring = '';
+            htmlstring += "<table>"
+            for (let key in data) {
+                htmlstring += "<tr>";
+                htmlstring += '<td class="tdlabel">';
+                htmlstring += "<span>";
+                htmlstring += key;
+                htmlstring += " :";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += '<td class="tdvalue">';
+                htmlstring += "<span>";
+                htmlstring += data[key] != null ? data[key] : "";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += "</tr>";
+            }
+            htmlstring += "</table>"
+            return htmlstring;
+        }
+        $(function () {
+            $("#btnaddcircle").click(function () {
+                GraphicOverlays = new Plugins.GraphicOverlays(smap.view)
+                GraphicOverlays.on(SMap.MapEvent.click, function (result, geometry) {
+                    if (geometry) {
+                        smap.view.popup.defaultPopupTemplateEnabled = true
+                        smap.view.popup.autoOpenEnabled = false
+                        smap.view.popup.open({
+                            location: geometry,
+                            title: result.results[0].graphic.attributes.name,
+                            content: createContentpopup(result.results[0].graphic
+                                .attributes),
+                        })
+                    }
+                })
+                GraphicOverlays.on(SMap.MapEvent.pointermove, function (result, geometry) {
+                    //  if (geometry) {
+                    //       smap.view.popup.defaultPopupTemplateEnabled = true
+                    //       smap.view.popup.autoOpenEnabled = false
+                    //       smap.view.popup.open({
+                    //       location: geometry,
+                    // title: results[0].graphic.attributes.name,
+                    //       content: createContentpopup(result[0].attributes),
+                    //    })
+                    //  }
+                })
+                onecircle = new SMap.Circle({
+                    attributes: {
+                        'name': 'circle1',
+                        'style': '1'
+                    },
+                    center: new SMap.LngLat(0, 0),
+                    radius: 100,
+                    symbol: {
+                        type: "simple-fill",
+                        color: [255, 255, 255, 1],
+                        style: "solid",
+                        outline: {
+                            type: "simple-line",
+                            width: "1px",
+                            style: "solid",
+                            color: [255, 0, 0, 0.8],
+                        }
+                    },
+                    label: new SMap.Label({
+                        text: 'circle一',
+                        color: 'red',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'red',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                GraphicOverlays.add(onecircle)
+
+                sencondcircle = new SMap.Circle({
+                    attributes: {
+                        'name': 'circle2',
+                        'style': '2'
+                    },
+                    center: new SMap.LngLat(1000, 1000),
+                    radius: 100,
+
+                    symbol: {
+                        type: "simple-fill",
+                        color: [255, 0, 0, 1],
+                        style: "vertical",
+                        outline: {
+                            type: "simple-line",
+                            width: "1px",
+                            style: "solid",
+                            color: [255, 0, 0, 0.8],
+                        }
+                    },
+                    label: new SMap.Label({
+                        text: 'circle二',
+                        color: 'red',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                GraphicOverlays.add(sencondcircle)
+            })
+            $("#btnupdatecircle").click(function () {
+                onecircle.label.text = 'circle一更新'
+                GraphicOverlays.update(onecircle)
+            })
+
+            $("#btndeletecircle").click(function () {
+                GraphicOverlays.remove(onecircle)
+            })
+
+            $("#btnaddmanycircle").click(function () {
+                threecircle = new SMap.Circle({
+                    attributes: {
+                        'name': 'circle3',
+                        'style': '3'
+                    },
+                    center: new SMap.LngLat(1500, 1500),
+                    radius: 100,
+                    symbol: {
+                        type: "simple-fill",
+                        color: [0, 255, 255, 1],
+                        style: "diagonal-cross",
+                        outline: {
+                            type: "simple-line",
+                            width: "1px",
+                            style: "solid",
+                            color: [255, 0, 0, 0.8],
+                        }
+                    },
+                    label: new SMap.Label({
+                        text: 'circle三',
+                        color: 'red',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                fourcircle = new SMap.Circle({
+                    attributes: {
+                        'name': 'circle4',
+                        'style': '4'
+                    },
+                    center: new SMap.LngLat(2000, 2000),
+                    radius: 100,
+                    symbol: {
+                        type: "simple-fill",
+                        color: [255, 0, 255, 1],
+                        style: "diagonal-cross",
+                        outline: {
+                            type: "simple-line",
+                            width: "1px",
+                            style: "solid",
+                            color: [255, 0, 0, 0.8],
+                        }
+                    },
+                    label: new SMap.Label({
+                        text: 'circle四',
+                        color: 'white',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                GraphicOverlays.add([threecircle, fourcircle])
+            })
+
+            $("#btnupdatemanycircle").click(function () {
+                threecircle.label.text = 'circle三更新'
+                fourcircle.label.text = 'circle四更新'
+                GraphicOverlays.update([threecircle, fourcircle])
+            })
+
+            $("#btndeletemanycircle").click(function () {
+                GraphicOverlays.remove([threecircle, fourcircle])
+            })
+
+            $("#btnaddcirclegroup").click(function () {
+                fivecircle = new SMap.Circle({
+                    attributes: {
+                        'name': 'circle4',
+                        'style': '5'
+                    },
+                    center: new SMap.LngLat(2500, 2500),
+                    radius: 200,
+                    symbol: {
+                        type: "simple-fill",
+                        color: [255, 255, 0, 1],
+                        style: "forward-diagonal",
+                        outline: {
+                            type: "simple-line",
+                            width: "1px",
+                            style: "solid",
+                            color: [255, 0, 0, 0.8],
+                        }
+                    },
+                    label: new SMap.Label({
+                        text: 'circle五',
+                        color: 'blue',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                sixcircle = new SMap.Circle({
+                    attributes: {
+                        'name': 'circle4',
+                        'style': '6'
+                    },
+                    center: new SMap.LngLat(3500, 3500),
+                    radius: 200,
+                    symbol: {
+                        type: "polygon-3d",
+                        symbolLayers: [{
+                            type: "extrude",
+                            size: 1000,
+                            material: {
+                                color: "red"
+                            }
+                        }]
+                    },
+                    label: new SMap.Label({
+                        text: 'circle6',
+                        color: 'white',
+                        visible: true,
+                        size: 22,
+                        weight: 'normal',
+                        angle: 0,
+                        backgroundColor: 'blue',
+                        borderLineColor: 'blue',
+                        borderLineSize: 10,
+                        haloColor: '[51, 204, 51, 0.2]',
+                        haloSize: 0,
+                        horizontalAlignment: 'left',
+                        verticalAlignment: 'top',
+                        kerning: true,
+                        lineHeight: 25,
+                        lineWidth: 200,
+                        rotated: false,
+                        xoffset: 10,
+                        yoffset: 10
+                    })
+                })
+                OverlayGroup = new SMap.OverlayGroup([fivecircle, sixcircle], {
+                    overlaytype: 'circle'
+                })
+                GraphicOverlays.add(OverlayGroup)
+            })
+
+            $("#btnupdatecirclegroup").click(function () {
+                fivecircle.label.text = 'circle5更新'
+                sixcircle.label.text = 'circle6更新'
+                GraphicOverlays.update(OverlayGroup)
+            })
+
+            $("#btndeltecirclegroup").click(function () {
+                smap.remove(OverlayGroup)
+            })
+            $("#btncleanall").click(function () {
+                GraphicOverlays.removeAll()
+            })
+            $("#btndeletelayer").click(function () {
+                GraphicOverlays.delete()
+            })
+
+            $("#addlayercontrol").click(function () {
+                const layerListControl = new SMap.LayerListControl({
+                    visible: true,
+                    position: 'top-right',
+                    collapse: true
+                })
+                smap.addControl(layerListControl)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddcircle"> add one circle </button>
+            <button class="mapbutton" id="btnupdatecircle"> update one circle</button>
+            <button class="mapbutton" id="btndeletecircle"> delete one circle</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddmanycircle"> add many circles </button>
+            <button class="mapbutton" id="btnupdatemanycircle"> update many circles</button>
+            <button class="mapbutton" id="btndeletemanycircle"> delete many circles</button>
+        </div>
+
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddcirclegroup"> add circle group</button>
+            <button class="mapbutton" id="btnupdatecirclegroup"> update circle group</button>
+            <button class="mapbutton" id="btndeltecirclegroup"> delete circle group</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btncleanall">clear all GraphicOverlays</button>
+            <button class="mapbutton" id="btndeletelayer">delete GraphicOverlays</button>
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

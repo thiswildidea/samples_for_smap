@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>地图覆盖物-circle类型</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 20%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            /* float: left; */
+        }
+
+        .esri-popup__content .tdlabel {
+            width: 200px;
+        }
+
+        .esri-popup__content .tdvalue {
+            width: 200px;
+        }
+    </style>
+    <script src="../../../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../../../library/smap/jingshan/SMap.min.js"></script>
+    <script src="../../../library/smap/jingshan/Plugins.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '2D',
+            center: [-20135, -48456],
+            zoom: 3,
+            zooms: [0, 11],
+            mapStyle: 'smap://styles/dark'
+        })
+        let onecircle = null
+        let twocircle = null
+        let threecircle = null
+        let fourcircle = null
+        let fivecircle = null
+        let circlesgroup = null
+        smap.on(SMap.MapEvent.click, function (view, eventParamter) {
+
+        })
+
+        function createContentpopup(data) {
+            let htmlstring = '';
+            htmlstring += "<table>"
+            for (let key in data) {
+                htmlstring += "<tr>";
+                htmlstring += '<td class="tdlabel">';
+                htmlstring += "<span>";
+                htmlstring += key;
+                htmlstring += " :";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += '<td class="tdvalue">';
+                htmlstring += "<span>";
+                htmlstring += data[key] != null ? data[key] : "";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += "</tr>";
+            }
+            htmlstring += "</table>"
+            return htmlstring;
+        }
+        let OverlaysFeaure;
+        $(function () {
+            $("#btnaddcirclegroup").click(function () {
+                onecircle = new SMap.Circle({
+                    attributes: {
+                        'name': 'Circle1',
+                        'style': '1'
+                    },
+                    center: new SMap.LngLat(0, 0),
+                    radius: 100
+                })
+                twocircle = new SMap.Circle({
+                    attributes: {
+                        'name': 'Circle2',
+                        'style': '2'
+                    },
+                    center: new SMap.LngLat(1000, 1000),
+                    radius: 100
+                })
+                const datafiled = [{
+                    name: 'name',
+                    alias: 'name',
+                    type: 'string'
+                }]
+                const label = new SMap.Label({
+                    visible: true,
+                    labelingInfo: [{
+                        symbol: {
+                            type: "text",
+                            color: "white",
+                            haloColor: "blue",
+                            haloSize: 1,
+                            font: {
+                                family: "Ubuntu Mono",
+                                size: 14,
+                                weight: "bold"
+                            }
+                        },
+                        labelPlacement: "always-horizontal",
+                        labelExpressionInfo: {
+                             value: '{name}'
+                        },
+                        maxScale: 500,
+                        minScale: 5000,
+                    }]
+                })
+
+                const rederer = {
+                    type: 'unique-value',
+                    field: 'style', //图层字段
+                    defaultLabel: '',
+                    defaultSymbol: {
+                        type: "simple-fill",
+                        color: [255, 255, 255, 1],
+                        style: "solid",
+                        outline: {
+                            type: "simple-line",
+                            width: "1px",
+                            style: "solid",
+                            color: [255, 0, 0, 0.8],
+                        }
+                    },
+                    uniqueValueInfos: [{
+                        label: '样式1',
+                        value: '1',
+                        symbol: {
+                            type: "simple-fill",
+                            color: [255, 0, 0, 1],
+                            style: "vertical",
+                            outline: {
+                                type: "simple-line",
+                                width: "1px",
+                                style: "solid",
+                                color: [255, 0, 0, 0.8],
+                            }
+                        }
+                    }, {
+                        label: '样式1',
+                        value: '2',
+                        symbol: {
+                            type: "simple-fill",
+                            color: [255, 255, 0, 1],
+                            style: "vertical",
+                            outline: {
+                                type: "simple-line",
+                                width: "1px",
+                                style: "solid",
+                                color: [255, 0, 0, 0.8],
+                            }
+                        }
+                    }, {
+                        label: '样式3',
+                        value: '3',
+                        symbol: {
+                            type: "picture-fill",
+                            url: "http://127.0.0.1:5500/resources/images/grass.png",
+                            width: "24px",
+                            height: "24px",
+                            outline: {
+                                style: "solid"
+                            }
+                        }
+                    }, {
+                        label: '样式4',
+                        value: '4',
+                        symbol: {
+                            type: "simple-fill",
+                            color: [255, 0, 255, 1],
+                            style: "diagonal-cross",
+                            outline: {
+                                type: "simple-line",
+                                width: "1px",
+                                style: "solid",
+                                color: [255, 0, 0, 0.8],
+                            }
+                        }
+                    }, {
+                        label: '样式5',
+                        value: '5',
+                        symbol: {
+                            type: "simple-fill",
+                            color: [255, 255, 0, 1],
+                            style: "forward-diagonal",
+                            outline: {
+                                type: "simple-line",
+                                width: "1px",
+                                style: "solid",
+                                color: [255, 0, 0, 0.8],
+                            }
+                        }
+                    }]
+                }
+                circlesgroup = new SMap.OverlayGroup([onecircle, twocircle], {
+                    overlaytype: 'circle',
+                    datafiled: datafiled,
+                    renderer: rederer,
+                    label: label
+                })
+
+                OverlaysFeaure = new Plugins.FeaureOverlays(smap.view)
+                OverlaysFeaure.createFeatureGroup(circlesgroup)
+
+                OverlaysFeaure.on(SMap.MapEvent.click, function (result, event, geometry) {
+                    if (geometry) {
+                        smap.view.popup.defaultPopupTemplateEnabled = true
+                        smap.view.popup.autoOpenEnabled = false
+                        smap.view.popup.open({
+                            location: geometry,
+                            title: result[0].attributes.name,
+                            content: createContentpopup(result[0].attributes),
+                        })
+                    }
+                })
+                OverlaysFeaure.on(SMap.MapEvent.pointermove, function (result, event, geometry) {
+                    if (geometry) {
+                        smap.view.popup.defaultPopupTemplateEnabled = true
+                        smap.view.popup.autoOpenEnabled = false
+                        smap.view.popup.open({
+                            location: geometry,
+                            title: result[0].attributes.name,
+                            content: createContentpopup(result[0].attributes),
+                        })
+                    }
+                })
+                OverlaysFeaure.on(SMap.MapEvent.pointerleave, function (result, event, geometry) {
+                    console.log(result)
+                })
+
+            })
+            $("#btnupdatecirclegroup").click(function () {
+                onecircle.attributes['name'] = 'circle1更新'
+                OverlaysFeaure.updatefeature(circlesgroup)
+            })
+            $("#btndeltecirclegroup").click(function () {
+                OverlaysFeaure.removefeature(circlesgroup)
+            })
+
+            $("#btnaddcircle").click(function () {
+                threecircle = new SMap.Circle({
+                    attributes: {
+                        'name': 'circle3',
+                        'style': '3'
+                    },
+                    center: new SMap.LngLat(1500, 1500),
+                    radius: 100
+                })
+                OverlaysFeaure.addfeature(threecircle)
+            })
+
+            $("#btnupdatecircle").click(function () {
+                threecircle.attributes['name'] = 'circle三更新'
+                threecircle.position = [1600, 1600]
+                OverlaysFeaure.updatefeature(threecircle)
+            })
+
+            $("#btndeletecircle").click(function () {
+                OverlaysFeaure.removefeature(threecircle)
+            })
+
+            $("#btnaddcircles").click(function () {
+                fourcircle = new SMap.Circle({
+                    attributes: {
+                        'name': 'Circle4',
+                        'style': '4'
+                    },
+                    center: new SMap.LngLat(2000, 2000),
+                    radius: 100
+                })
+
+                fivecircle = new SMap.Circle({
+                    attributes: {
+                        'name': 'Circle5',
+                        'style': '5'
+                    },
+                    center: new SMap.LngLat(2500, 2500),
+                    radius: 200
+                })
+                OverlaysFeaure.addfeature([fourcircle, fivecircle])
+            })
+            $("#btnupdatecircles").click(function () {
+                fourcircle.attributes['name'] = 'Circle4更新'
+                fourcircle.center = new SMap.LngLat(2050, 2050)
+                fivecircle.attributes['name'] = 'Circle5更新'
+                fivecircle.center = new SMap.LngLat(2550, 2550)
+                OverlaysFeaure.updatefeature([fourcircle, fivecircle])
+            })
+
+            $("#btndeletecircles").click(function () {
+                OverlaysFeaure.removefeature([fourcircle, fivecircle])
+            })
+
+            $("#btndRemoveallFeature").click(function () {
+                OverlaysFeaure.removeAll()
+            })
+            $("#btndeletelayer").click(function () {
+                OverlaysFeaure.delete()
+            })
+
+            $("#addlayercontrol").click(function () {
+                const layerListControl = new SMap.LayerListControl({
+                    visible: true,
+                    position: 'top-right',
+                    collapse: true
+                })
+                smap.addControl(layerListControl)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainergroup">
+
+
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddcirclegroup"> add circle group</button>
+            <button class="mapbutton" id="btnupdatecirclegroup"> update circle group</button>
+            <button class="mapbutton" id="btndeltecirclegroup"> delete circle group</button>
+        </div>
+
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddcircle"> add one circle </button>
+            <button class="mapbutton" id="btnupdatecircle"> update circle </button>
+            <button class="mapbutton" id="btndeletecircle"> delete circle</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddcircles"> add circles</button>
+            <button class="mapbutton" id="btnupdatecircles"> update circles </button>
+            <button class="mapbutton" id="btndeletecircles"> delete circles </button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btndRemoveallFeature"> remove all feature</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btndeletelayer"> delete layer</button>
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
