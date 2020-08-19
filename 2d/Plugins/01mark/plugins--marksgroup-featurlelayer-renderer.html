@@ -39,7 +39,8 @@
             margin-bottom: 15px;
             /* float: left; */
         }
-      .esri-popup__content .tdlabel {
+
+        .esri-popup__content .tdlabel {
             width: 200px;
         }
 
@@ -47,66 +48,71 @@
             width: 200px;
         }
     </style>
-     <script src="../../../library/common/jquery-2.2.3.min.js"></script>
-     <script src="../../../library/smap/xuhui/SMap.min.js"></script>
-     <script src="../../../library/smap/xuhui/Plugins.min.js"></script>
-     <script>
-       const smap = new SMap.Map('mapcontainer', {
+    <script src="../../../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../../../library/smap/xuhui/SMap.min.js"></script>
+    <script src="../../../library/smap/xuhui/Plugins.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
             viewMode: '2D',
             center: [0, 0],
-             zoom: 3,
-             zooms: [0, 11],
-             mapStyle: 'smap://styles/dark'
+            zoom: 3,
+            zooms: [0, 11],
+            mapStyle: 'smap://styles/dark'
         })
         let onemarker = null
         let twomarker = null
         let threemarker = null
         let fourmarker = null
         let fivemarker = null
-        let massmarksgroup =null
-      smap.on(SMap.MapEvent.click, function(view, eventParamter) {
+        let massmarksgroup = null
+        smap.on(SMap.MapEvent.click, function (view, eventParamter) {
 
-      })
-      function createContentpopup(data) {
-         let htmlstring = '';
-         htmlstring += "<table>"
-             for (let key in data) {
-             htmlstring += "<tr>";
-                 htmlstring += '<td class="tdlabel">';
-                     htmlstring += "<span>";
-                         htmlstring += key;
-                         htmlstring += " :";
-                         htmlstring += "</span>";
-                     htmlstring += "</td>";
-                 htmlstring += '<td class="tdvalue">';
-                     htmlstring += "<span>";
-                         htmlstring += data[key] != null ? data[key] : "";
-                         htmlstring += "</span>";
-                     htmlstring += "</td>";
-                 htmlstring += "</tr>";
-             }
-             htmlstring += "</table>"
-         return htmlstring;
-         }
-       let OverlaysFeaure;
-      $(function () {
-           $("#btnaddmarkgroup").click(function () {
-               onemarker = new SMap.Marker({
-                   attributes: {
-                   'name': '点1',
-                   'style': '1'
-                   },
-                   position: [500, 500, 100]
-               })
-              twomarker = new SMap.Marker({
-               attributes: {
-                   'name': '点2',
-                   'style': '2'
-                   },
+        })
+
+        function createContentpopup(data) {
+            let htmlstring = '';
+            htmlstring += "<table>"
+            for (let key in data) {
+                htmlstring += "<tr>";
+                htmlstring += '<td class="tdlabel">';
+                htmlstring += "<span>";
+                htmlstring += key;
+                htmlstring += " :";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += '<td class="tdvalue">';
+                htmlstring += "<span>";
+                htmlstring += data[key] != null ? data[key] : "";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += "</tr>";
+            }
+            htmlstring += "</table>"
+            return htmlstring;
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        let OverlaysFeaure;
+        $(function () {
+            $("#btnaddmarkgroup").click(function () {
+                onemarker = new SMap.Marker({
+                    attributes: {
+                        'name': '点1',
+                        'style': '1'
+                    },
+                    position: [500, 500, 100]
+                })
+                twomarker = new SMap.Marker({
+                    attributes: {
+                        'name': '点2',
+                        'style': '2'
+                    },
                     position: [550, 550, 200]
-               })
-               
-               const label = new SMap.Label({
+                })
+
+                const label = new SMap.Label({
                     visible: true,
                     labelingInfo: [{
                         symbol: {
@@ -122,215 +128,241 @@
                         },
                         labelPlacement: "center-right", //above-center, above-left, above-right, below-center, below-left, below-right, center-center, center-left, center-right
                         labelExpressionInfo: {
-                             value: '{name}'
+                            value: '{name}'
                         },
                         maxScale: 500,
                         minScale: 5000,
                     }]
-                   
-               })
-               const datafiled = [{
-                   name: 'name',
-                   alias: 'name',
-                   type: 'string'
-               }]
-               const rederer = {
+
+                })
+                const datafiled = [{
+                    name: 'name',
+                    alias: 'name',
+                    type: 'string'
+                }]
+                const rederer = {
                     type: 'unique-value',
-                    field: 'style',      //图层字段
+                    field: 'style', //图层字段
                     defaultLabel: '',
                     defaultSymbol: {
-                         type: "picture-marker",
-                         url: "http://127.0.0.1:5500/resources/images/green.gif",
-                         width: "64px",
-                         height: "64px"
+                        type: "picture-marker",
+                        url: "http://127.0.0.1:5500/resources/images/marker1.png",
+                        width: "32px",
+                        height: "32px"
                     },
                     uniqueValueInfos: [{
-                        label: '样式1', 
-                        value: '1', 
+                        label: '样式1',
+                        value: '1',
                         symbol: {
-                             type: "picture-marker",
-                             url: "http://127.0.0.1:5500/resources/images/bluewhite.gif",
-                             width: "64px",
-                             height: "64px"
+                            type: "picture-marker",
+                            url: "http://127.0.0.1:5500/resources/images/marker1.png",
+                            width: "32px",
+                            height: "32px"
                         }
-                        
-                  },{
-                        label: '样式2', 
-                        value: '2', 
+
+                    }, {
+                        label: '样式2',
+                        value: '2',
                         symbol: {
-                           type: "picture-marker",
-                           url: "http://127.0.0.1:5500/resources/images/bluewhite.gif",
-                           width: "64px",
-                           height: "64px"
-                     }
-                  },{
-                        label: '样式3', 
-                        value: '3', 
+                            type: "picture-marker",
+                            url: "http://127.0.0.1:5500/resources/images/marker2.png",
+                            width: "32px",
+                            height: "32px"
+                        }
+                    }, {
+                        label: '样式3',
+                        value: '3',
                         symbol: {
                             type: "simple-marker",
                             style: "square", // "circle"|"square"|"cross"|"x"|"diamond"|"triangle"|"path"
                             color: "blue",
-                            size: "18px", 
+                            size: "18px",
                             outline: {
-                            color: [ 255, 255, 0 ],
-                            width: 3
+                                color: [255, 255, 0],
+                                width: 3
                             }
-                     }
-                  },{
-                        label: '样式4', 
-                        value: '4', 
+                        }
+                    }, {
+                        label: '样式4',
+                        value: '4',
                         symbol: {
                             type: "simple-marker",
-                            style: "triangle", 
+                            style: "triangle",
                             color: "yellow",
-                            size: "18px", 
+                            size: "18px",
                             outline: {
-                            color: [ 255, 255, 0 ],
-                            width: 3
+                                color: [255, 255, 0],
+                                width: 3
                             }
-                     }
-                  },{
-                        label: '样式5', 
-                        value: '5', 
+                        }
+                    }, {
+                        label: '样式5',
+                        value: '5',
                         symbol: {
-                            type: "simple-marker",
-                            style: "x",
-                            color: "red",
-                            size: "18px", 
-                            outline: {
-                            color: [ 255, 255, 0 ],
-                            width: 3
-                            }
-                     }
-                  }]
-               }
-               const featureReduction = new SMap.FeatureReduction({
-                  type: 'cluster',
-                  clusterRadius: 100
-               })
-               OverlayGroup = new SMap.OverlayGroup([onemarker, twomarker], {
-                   overlaytype: 'marker',
-                   datafiled: datafiled,
-                   renderer: rederer,
-                   label: label,
-                   frreduction: featureReduction
-               })
+                            type: "picture-marker",
+                            url: "http://127.0.0.1:5500/resources/images/marker3.png",
+                            width: "32px",
+                            height: "32px"
+                        }
+                    }]
+                }
+                const featureReduction = new SMap.FeatureReduction({
+                    type: 'cluster',
+                    clusterRadius: 100
+                })
+                OverlayGroup = new SMap.OverlayGroup([onemarker, twomarker], {
+                    overlaytype: 'marker',
+                    datafiled: datafiled,
+                    renderer: rederer,
+                    label: label,
+                    frreduction: featureReduction
+                })
 
-            OverlaysFeaure = new Plugins.FeaureOverlays(smap.view)
-            OverlaysFeaure.createFeatureGroup(OverlayGroup)
+                OverlaysFeaure = new Plugins.FeaureOverlays(smap.view)
+                OverlaysFeaure.createFeatureGroup(OverlayGroup)
 
-            OverlaysFeaure.on(SMap.MapEvent.click, function(result,event ,geometry) {
-             if (geometry) {
-                  smap.view.popup.defaultPopupTemplateEnabled = true
-                  smap.view.popup.autoOpenEnabled = false
-                  smap.view.popup.open({
-                  location: geometry,
-                  title: result[0].attributes.name,
-                  content: createContentpopup(result[0].attributes),
-               })
-             }
+                OverlaysFeaure.on(SMap.MapEvent.click, function (result, event, geometry) {
+                    if (geometry) {
+                        smap.view.popup.defaultPopupTemplateEnabled = true
+                        smap.view.popup.autoOpenEnabled = false
+                        smap.view.popup.open({
+                            location: geometry,
+                            title: result[0].attributes.name,
+                            content: createContentpopup(result[0].attributes),
+                        })
+                    }
+                })
+                OverlaysFeaure.on(SMap.MapEvent.pointermove, function (result, event, geometry) {
+                    if (geometry) {
+                        smap.view.popup.defaultPopupTemplateEnabled = true
+                        smap.view.popup.autoOpenEnabled = false
+                        smap.view.popup.open({
+                            location: geometry,
+                            title: result[0].attributes.name,
+                            content: createContentpopup(result[0].attributes),
+                        })
+                    }
+                })
+                OverlaysFeaure.on(SMap.MapEvent.pointerleave, function (result, event, geometry) {
+                    console.log(result)
+                })
+
             })
-            OverlaysFeaure.on(SMap.MapEvent.pointermove, function(result,event,geometry) {
-             if (geometry) {
-                  smap.view.popup.defaultPopupTemplateEnabled = true
-                  smap.view.popup.autoOpenEnabled = false
-                  smap.view.popup.open({
-                  location: geometry,
-                  title: result[0].attributes.name,
-                  content: createContentpopup(result[0].attributes),
-               })
-             }
-          })
-          OverlaysFeaure.on(SMap.MapEvent.pointerleave, function(result,event, geometry) {
-             console.log(result)
-          })
-            
-           })
-           $("#btnupdatemarkgroup").click(function () {
-               onemarker.attributes['name'] = '点1更新'
-               OverlaysFeaure.updatefeature(OverlayGroup)
-           })
-           $("#btndeltemarkgroup").click(function () {
-             OverlaysFeaure.removefeature(OverlayGroup)
-           })
+            $("#btnupdatemarkgroup").click(function () {
+                onemarker.attributes['name'] = '点1更新'
+                OverlaysFeaure.updatefeature(OverlayGroup)
+            })
+            $("#btndeltemarkgroup").click(function () {
+                OverlaysFeaure.removefeature(OverlayGroup)
+            })
 
-          $("#btnaddmark").click(function () {
-             threemarker = new SMap.Marker({
-                  attributes: {
-                     'name': '点3',
-                     'type': '点',
-                     'style': '3'
-                  },
-                  position: [0, 0, 100]
-           })
-            OverlaysFeaure.addfeature(threemarker)
-          })
+            $("#btnaddmark").click(function () {
+                threemarker = new SMap.Marker({
+                    attributes: {
+                        'name': '点3',
+                        'type': '点',
+                        'style': '3'
+                    },
+                    position: [0, 0, 100]
+                })
+                OverlaysFeaure.addfeature(threemarker)
+            })
 
-          $("#btnupdataemark").click(function () {
-            threemarker.attributes['name'] ='点三更新'
-            threemarker.position =[0,0,200]
-             OverlaysFeaure.updatefeature(threemarker)
-          })
+            $("#btnupdataemark").click(function () {
+                threemarker.attributes['name'] = '点三更新'
+                threemarker.position = [0, 0, 200]
+                OverlaysFeaure.updatefeature(threemarker)
+            })
 
-           $("#btndeletemark").click(function () {
-              OverlaysFeaure.removefeature(threemarker)
-           })
+            $("#btndeletemark").click(function () {
+                OverlaysFeaure.removefeature(threemarker)
+            })
 
-          $("#btnaddmarks").click(function () {
-             fourmarker = new SMap.Marker({
-                  attributes: {
-                     'name': '点4',
-                     'type': '点',
-                     'style': '4'
-                  },
-                  position: [100, 0, 100]
-           })
+            $("#btnaddmarks").click(function () {
+                fourmarker = new SMap.Marker({
+                    attributes: {
+                        'name': '点4',
+                        'type': '点',
+                        'style': '4'
+                    },
+                    position: [100, 0, 100]
+                })
 
-           fivemarker = new SMap.Marker({
-                  attributes: {
-                     'name': '点5',
-                     'type': '点',
-                     'style': '5'
-                  },
-                  position: [100, 100, 100]
-           })
-            OverlaysFeaure.addfeature([fourmarker,fivemarker])
-          })
-           $("#btnupdataemarks").click(function () {
-             fourmarker.attributes['name'] ='点4更新'
-             fourmarker.position =[100,10,400]
-             fivemarker.attributes['name'] ='点5更新'
-              fourmarker.position =[100,200,300]
-              OverlaysFeaure.updatefeature([fourmarker,fivemarker])
-           })
+                fivemarker = new SMap.Marker({
+                    attributes: {
+                        'name': '点5',
+                        'type': '点',
+                        'style': '5'
+                    },
+                    position: [100, 100, 100]
+                })
+                OverlaysFeaure.addfeature([fourmarker, fivemarker])
+            })
+            $("#btnupdataemarks").click(function () {
+                fourmarker.attributes['name'] = '点4更新'
+                fourmarker.position = [100, 10, 400]
+                fivemarker.attributes['name'] = '点5更新'
+                fourmarker.position = [100, 200, 300]
+                OverlaysFeaure.updatefeature([fourmarker, fivemarker])
+            })
 
             $("#btndeletemarks").click(function () {
-                 OverlaysFeaure.removefeature([fourmarker,fivemarker])
+                OverlaysFeaure.removefeature([fourmarker, fivemarker])
             })
 
-             $("#btndRemoveallFeature").click(function () {
-               OverlaysFeaure.removeAll()
-             })
-           $("#btndeletelayer").click(function () {
-             OverlaysFeaure.delete()
-           })
+            $("#btndRemoveallFeature").click(function () {
+                OverlaysFeaure.removeAll()
+            })
+            $("#btndeletelayer").click(function () {
+                OverlaysFeaure.delete()
+            })
 
-           $("#addlayercontrol").click(function () {
-               const layerListControl = new SMap.LayerListControl({
-               visible: true,
-               position: 'top-right',
-               collapse: true
-               })
-               smap.addControl(layerListControl)
-         })
-      })
+            $("#addlayercontrol").click(function () {
+                const layerListControl = new SMap.LayerListControl({
+                    visible: true,
+                    position: 'top-right',
+                    collapse: true
+                })
+                smap.addControl(layerListControl)
+            })
+            $("#btnaddbigmarks").click(function () {
+                const marks = []
+                for (let i = 0; i <= 3000; i++) {
+                    const x = Math.ceil(Math.random() * 120000)
+                    const y = Math.ceil(Math.random() * 120000)
+                    const marker = new SMap.Marker({
+                        attributes: {
+                            'name': '点' + i,
+                            'type': '点',
+                            'style': getRandomInt(1, 5).toString()
+                        },
+                        position: [x, y, 100]
+                    })
+                    marks.push(marker)
+                }
+                OverlaysFeaure.addfeature(marks)
+            })
+            $("#btnaddcluseter").click(function () {
+                const clusterConfig = {
+                    type: "cluster",
+                    clusterRadius: "100px",
+                    popupTemplate: {
+                        content: "This cluster represents {cluster_count} marks."
+                    }
+                }
+                OverlaysFeaure.addcluster(clusterConfig)
+            })
+            $("#btndeletecluseter").click(function () {
+                OverlaysFeaure.deletecluster()
+            })
+        })
     </script>
 </head>
 
 <body>
     <div id="mapcontainer"></div>
     <div class="mapbuttoncontainergroup">
-       
+
 
         <div class="mapbuttoncontainer">
             <button class="mapbutton" id="btnaddmarkgroup"> add mark group</button>
@@ -339,21 +371,26 @@
         </div>
 
         <div class="mapbuttoncontainer">
-          <button class="mapbutton" id="btnaddmark"> add one mark </button>
-          <button class="mapbutton" id="btnupdataemark"> update mark </button>
-          <button class="mapbutton" id="btndeletemark"> delete mark</button>
+            <button class="mapbutton" id="btnaddmark"> add one mark </button>
+            <button class="mapbutton" id="btnupdataemark"> update mark </button>
+            <button class="mapbutton" id="btndeletemark"> delete mark</button>
         </div>
         <div class="mapbuttoncontainer">
-          <button class="mapbutton" id="btnaddmarks"> add marks</button>
-          <button class="mapbutton" id="btnupdataemarks"> update marks </button>
-           <button class="mapbutton" id="btndeletemarks"> delete marks </button>
+            <button class="mapbutton" id="btnaddmarks"> add marks</button>
+            <button class="mapbutton" id="btnupdataemarks"> update marks </button>
+            <button class="mapbutton" id="btndeletemarks"> delete marks </button>
         </div>
-         <div class="mapbuttoncontainer">
-           <button class="mapbutton" id="btndRemoveallFeature"> remove all feature</button>
-         </div>
         <div class="mapbuttoncontainer">
-          <button class="mapbutton" id="btndeletelayer"> delete layer</button>
+            <button class="mapbutton" id="btndRemoveallFeature"> remove all feature</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddbigmarks"> add big mount marks</button>
+            <button class="mapbutton" id="btnaddcluseter"> add cluster</button>
+            <button class="mapbutton" id="btndeletecluseter"> delete cluster</button>
+        </div>
+        <div class="mapbuttoncontainer">
             <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+            <button class="mapbutton" id="btndeletelayer"> delete layer</button>
         </div>
     </div>
 
