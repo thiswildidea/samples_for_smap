@@ -171,8 +171,7 @@
           }
         }]
         const featureReduction = new SMap.FeatureReduction({
-          type: 'cluster',
-          clusterRadius: 100
+          type: 'selection'
         })
         OverlayGroup = new SMap.OverlayGroup([onemarker, twomarker], {
           overlaytype: 'marker',
