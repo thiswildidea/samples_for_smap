@@ -2,355 +2,353 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
-    <title>地图覆盖物-点类型</title>
-    <style>
-        html,
-        body,
-        #mapcontainer {
-            padding: 0;
-            margin: 0;
-            width: 100%;
-            height: 100%;
-        }
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+  <title>地图覆盖物-点类型</title>
+  <style>
+    html,
+    body,
+    #mapcontainer {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
 
-        .mapbuttoncontainergroup {
-            width: 20%;
-            height: 50%;
-            position: absolute;
-            display: flex;
-            flex-flow: column;
-        }
+    .mapbuttoncontainergroup {
+      width: 20%;
+      height: 50%;
+      position: absolute;
+      display: flex;
+      flex-flow: column;
+    }
 
-        .mapbuttoncontainer {
-            width: 100%;
-            display: flex;
-            flex-flow: row;
-            top: 5px;
-            left: 10px;
-            display: block;
-        }
+    .mapbuttoncontainer {
+      width: 100%;
+      display: flex;
+      flex-flow: row;
+      top: 5px;
+      left: 10px;
+      display: block;
+    }
 
-        .mapbuttoncontainer .mapbutton {
-            width: 100px;
-            height: 40px;
-            margin-right: 15px;
-            margin-bottom: 15px;
-            /* float: left; */
-        }
-    </style>
-     <script src="../library/common/jquery-2.2.3.min.js"></script>
-     <script src="../library/smap/xuhui/SMap.min.js"></script>
-     <script>
-       const smap = new SMap.Map('mapcontainer', {
-            viewMode: '3D',
-            center: [0, 0],
-             zoom: 3,
-             zooms: [0, 11],
-             pitch: 60,
-             mapStyle: 'smap://styles/dark',
-             showBuildingBlock: true
-        })
-        let onemarker = null
-        let sencondmarker = null
-        let threemarker = null
-        let fourmarker = null
+    .mapbuttoncontainer .mapbutton {
+      width: 100px;
+      height: 40px;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      /* float: left; */
+    }
+  </style>
+  <script src="../library/common/jquery-2.2.3.min.js"></script>
+  <script src="../library/smap/xuhui/SMap.min.js"></script>
+  <script>
+    const smap = new SMap.Map('mapcontainer', {
+      viewMode: '3D',
+      center: [0, 0],
+      zoom: 3,
+      zooms: [0, 11],
+      pitch: 60,
+      mapStyle: 'smap://styles/dark',
+      showBuildingBlock: true
+    })
+    let onemarker = null
+    let sencondmarker = null
+    let threemarker = null
+    let fourmarker = null
 
-        let marker5 = null
-        let marker6 = null
-        let OverlayGroup =null
-        let massmarksgroup =null
-      smap.on(SMap.MapEvent.click, function(view, eventParamter) {
-        view.hitTest(eventParamter).then(async function(response) {
-          if (response.results.length) {
-            if (response.results.length > 0) {
-                 const layerid = response.results[0].graphic.layer.id;
-                  if (layerid == massmarksgroup.uuid){
-                        objectid = response.results[0].graphic.attributes.objectId;
-                        const query = response.results[0].graphic.layer.createQuery();
-                         query.where = "objectid =" + objectid;
-                       response.results[0].graphic.layer.queryFeatures(query).then(function (response) {
-                       if (response.features.length > 0) {
-                          console.log(response.features)
-                         }
-                       });
-                  }
+    let marker5 = null
+    let marker6 = null
+    let OverlayGroup = null
+    let massmarksgroup = null
+
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    smap.on(SMap.MapEvent.click, function (view, eventParamter) {
+      view.hitTest(eventParamter).then(async function (response) {
+        if (response.results.length) {
+          if (response.results.length > 0) {
+            const layerid = response.results[0].graphic.layer.id;
+            if (layerid == massmarksgroup.uuid) {
+              objectid = response.results[0].graphic.attributes.objectId;
+              const query = response.results[0].graphic.layer.createQuery();
+              query.where = "objectid =" + objectid;
+              response.results[0].graphic.layer.queryFeatures(query).then(function (response) {
+                if (response.features.length > 0) {
+                  console.log(response.features)
+                }
+              });
             }
           }
+        }
+      })
+    })
+    $(function () {
+      $("#btnaddmark").click(function () {
+        onemarker = new SMap.Marker({
+          icon: new SMap.Icon({
+            size: new SMap.Size(40, 40),
+            image: 'http://127.0.0.1:5500/resources/images/marker1.png'
+          }),
+          attributes: {
+            'name': '点1',
+            'type': '点'
+          },
+          label: new SMap.Label({
+            color: 'red',
+            visible: true,
+            size: 22,
+            weight: 'normal',
+            angle: 0,
+            backgroundColor: 'red',
+            borderLineColor: 'blue',
+            borderLineSize: 1,
+            haloColor: '[51, 204, 51, 0.2]',
+            haloSize: 0,
+            horizontalAlignment: 'left',
+            verticalAlignment: 'top',
+            kerning: true,
+            lineHeight: 0,
+            lineWidth: 0,
+            rotated: true,
+            xoffset: 0,
+            yoffset: 0,
+            zoffset: 1
+          }),
+          position: [0, 0, 100]
         })
+        smap.addfeature(onemarker)
+
+        sencondmarker = new SMap.Marker({
+          icon: new SMap.Icon({
+            size: new SMap.Size(40, 40),
+            image: 'http://127.0.0.1:5500/resources/images/marker2.png'
+          }),
+          attributes: {
+            'name': '点2',
+            'type': '点'
+          },
+          label: new SMap.Label({
+            size: 12,
+            color: 'blue',
+            xoffset: 0,
+            yoffset: 0,
+            horizontalAlignment: 'left',
+            verticalAlignment: 'top',
+            placement: 'center-right'
+          }),
+          position: [100, 100, 1000]
+        })
+        smap.addfeature(sencondmarker)
       })
-      $(function () {
-         $("#btnaddmark").click(function () {
-         onemarker = new SMap.Marker({
-                      icon: new SMap.Icon({
-                      size: new SMap.Size(40, 40),
-                      image: 'http://127.0.0.1:5500/resources/images/green.gif'
-                  }),
-                  attributes: {
-                     'name': '点1',
-                     'type': '点'
-                  },
-                  label: new SMap.Label({
-                        color: 'red',
-                        visible: true,
-                        size: 22,
-                        weight: 'normal',
-                        angle: 0,
-                        backgroundColor: 'red',
-                        borderLineColor: 'blue',
-                        borderLineSize: 1,
-                        haloColor: '[51, 204, 51, 0.2]',
-                        haloSize: 0,
-                        horizontalAlignment: 'left',
-                        verticalAlignment: 'top',
-                        kerning: true,
-                        lineHeight: 0,
-                        lineWidth: 0,
-                        rotated: true,
-                        xoffset: 0,
-                        yoffset: 0,
-                        zoffset: 1
-                  }),
-                  position: [0, 0, 100]
-         })
-           smap.addfeature(onemarker)
+      $("#btnupdatemark").click(function () {
+        onemarker.attributes['name'] = '点一更新'
+        onemarker.icon.image = 'http://127.0.0.1:5500/resources/images/marker2.png'
+        smap.updatefeature(onemarker)
+      })
 
-           sencondmarker = new SMap.Marker({
-                icon: new SMap.Icon({
-                size: new SMap.Size(40, 40),
-                image: 'http://127.0.0.1:5500/resources/images/bluewhite.gif'
-           }),
-           attributes: {
-              'name': '点2',
-              'type': '点'
-           },
-           label: new SMap.Label({
-                 size: 12,
-                 color: 'blue',
-                 xoffset: 0,
-                 yoffset: 0,
-                 horizontalAlignment: 'left',
-                 verticalAlignment: 'top',
-                 placement: 'center-right'
-           }),
-              position: [100, 100, 1000]
-           })
-           smap.addfeature(sencondmarker)
-         })
-         $("#btnupdatemark").click(function () {
-           onemarker.attributes['name'] = '点一更新'
-           onemarker.icon.image = 'http://127.0.0.1:5500/resources/images/green.gif'
-           smap.updatefeature(onemarker)
-         })
+      $("#btndeletemark").click(function () {
+        smap.removefeature(onemarker)
+      })
 
-         $("#btndeletemark").click(function () {
-           smap.removefeature(onemarker)
-         })
+      $("#btnaddmanymark").click(function () {
+        threemarker = new SMap.Marker({
+          icon: new SMap.Icon({
+            size: new SMap.Size(40, 40),
+            image: 'http://127.0.0.1:5500/resources/images/marker3.png'
+          }),
+          attributes: {
+            'name': '点3',
+            'type': '点'
+          },
+          label: new SMap.Label({
+            text: '点3',
+            size: 22,
+            xoffset: 0,
+            yoffset: 0,
+            horizontalAlignment: 'left',
+            verticalAlignment: 'top'
+          }),
+          position: [1000, 1000, 10]
+        })
+        fourmarker = new SMap.Marker({
+          icon: new SMap.Icon({
+            size: new SMap.Size(40, 40),
+            image: 'http://127.0.0.1:5500/resources/images/marker4.gif'
+          }),
+          attributes: {
+            'name': '点4',
+            'type': '点'
+          },
+          label: new SMap.Label({
+            text: '点4',
+            size: 22,
+            xoffset: 0,
+            yoffset: 0,
+            horizontalAlignment: 'left',
+            verticalAlignment: 'top'
+          }),
+          position: [1100, 1100, 20]
+        })
+        smap.addfeature([threemarker, fourmarker])
+      })
 
-         $("#btnaddmanymark").click(function () {
-             threemarker = new SMap.Marker({
-                   icon: new SMap.Icon({
-                   size: new SMap.Size(40, 40),
-                   image: 'http://127.0.0.1:5500/resources/images/green.gif'
-             }),
-             attributes: {
-                   'name': '点3',
-                   'type': '点'
-             },
-             label: new SMap.Label({
-                   text: '点3',
-                   size: 22,
-                   xoffset: 0,
-                   yoffset: 0,
-                   horizontalAlignment: 'left',
-                   verticalAlignment: 'top'
-             }),
-             position: [1000, 1000, 10]
-             })
-             fourmarker = new SMap.Marker({
-                   icon: new SMap.Icon({
-                   size: new SMap.Size(40, 40),
-                   image: 'http://127.0.0.1:5500/resources/images/bluewhite.gif'
-             }),
-             attributes: {
-                  'name': '点4',
-                  'type': '点'
-             },
-             label: new SMap.Label({
-                 text: '点4',
-                 size: 22,
-                 xoffset: 0,
-                 yoffset: 0,
-                 horizontalAlignment: 'left',
-                 verticalAlignment: 'top'
-             }),
-                 position: [1100, 1100, 20]
-             })
-             smap.addfeature([threemarker, fourmarker])
-         })
+      $("#btnupdatemanymark").click(function () {
+        threemarker.icon.image = 'http://127.0.0.1:5500/resources/images/marker4.gif'
+        threemarker.attributes['name'] = '点三更新'
 
-          $("#btnupdatemanymark").click(function () {
-            threemarker.icon.image = 'http://127.0.0.1:5500/resources/images/bluewhite.gif'
-            threemarker.attributes['name'] = '点三更新'
+        fourmarker.icon.image = 'http://127.0.0.1:5500/resources/images/marker3.png'
+        fourmarker.attributes['name'] = '点四更新'
+        smap.updatefeature([threemarker, fourmarker])
+      })
 
-            fourmarker.icon.image = 'http://127.0.0.1:5500/resources/images/green.gif'
-            fourmarker.attributes['name'] = '点四更新'
-            smap.updatefeature([threemarker,fourmarker])
+      $("#btndeletemanymark").click(function () {
+        smap.removefeature([threemarker, fourmarker])
+      })
+
+      $("#btnaddmarkgroup").click(function () {
+        marker5 = new SMap.Marker({
+          attributes: {
+            'name': '点5',
+            'style': '1'
+          },
+          position: [500, 500, 100]
+        })
+        marker6 = new SMap.Marker({
+          attributes: {
+            'name': '点6',
+            'style': '2'
+          },
+          position: [550, 550, 200]
+        })
+        const label = new SMap.Label({
+          size: 28,
+          color: 'red',
+          xoffset: 0.1,
+          yoffset: 0.1,
+          horizontalAlignment: 'left',
+          verticalAlignment: 'top',
+          placement: 'center-right',
+          minScale: 5000,
+          maxScale: 1000
+        })
+        const datafiled = [{
+          name: 'name',
+          alias: 'name',
+          type: 'string'
+        }]
+        const style = [{
+          style: '1',
+          size: new SMap.Size(20, 20),
+          url: 'http://127.0.0.1:5500/resources/images/marker5.gif'
+        }, {
+          style: '2',
+          size: new SMap.Size(40, 40),
+          url: 'http://127.0.0.1:5500/resources/images/marker6.png'
+        }]
+        const featureReduction = new SMap.FeatureReduction({
+          type: 'selection'
+        })
+        OverlayGroup = new SMap.OverlayGroup([marker5, marker6], {
+          overlaytype: 'marker',
+          datafiled: datafiled,
+          style: style,
+          label: label,
+          frreduction: featureReduction
+        })
+        smap.addfeature(OverlayGroup)
+      })
+
+      $("#btnupdatemarkgroup").click(function () {
+        marker5.attributes['name'] = '点5更新'
+        OverlayGroup.overlayers[0].attributes['style'] = '2'
+        OverlayGroup.overlayers[1].attributes['style'] = '1'
+        smap.updatefeature(OverlayGroup)
+      })
+
+      $("#btndeltemarkgroup").click(function () {
+        smap.removefeature(OverlayGroup)
+      })
+      $("#btnaddbigmarks").click(function () {
+        const marks = []
+        for (let i = 0; i <= 10000; i++) {
+          const x = -2863.616790 + Math.ceil(Math.random() * 1200)
+          const y = -7984.038031 + Math.ceil(Math.random() * 1200)
+          const onemarker = new SMap.Marker({
+            attributes: {
+              'name': '点' + i,
+              'style': getRandomInt(0, 1).toString()
+            },
+            position: [x, y, 100]
           })
-
-            $("#btndeletemanymark").click(function () {
-             smap.removefeature([threemarker, fourmarker])
-            })
-
-           $("#btnaddmarkgroup").click(function () {
-               marker5 = new SMap.Marker({
-                   attributes: {
-                   'name': '点5',
-                   'style': '1'
-                   },
-                   position: [500, 500, 100]
-               })
-               marker6 = new SMap.Marker({
-               attributes: {
-                   'name': '点6',
-                   'style': '2'
-                   },
-                    position: [550, 550, 200]
-               })
-               const label = new SMap.Label({
-                   size: 28,
-                   color: 'red',
-                   xoffset: 0.1,
-                   yoffset: 0.1,
-                   horizontalAlignment: 'left',
-                   verticalAlignment: 'top',
-                   placement:'center-right',
-                   minScale: 5000,
-                   maxScale: 1000
-               })
-               const datafiled = [{
-                   name: 'name',
-                   alias: 'name',
-                   type: 'string'
-               }]
-               const style = [
-               {
-                  style: '1',
-                  size: new SMap.Size(20, 20),
-                  url: 'http://127.0.0.1:5500/resources/images/green.gif'
-               }, {
-                  style: '2',
-                  size: new SMap.Size(40, 40),
-                  url: 'http://127.0.0.1:5500/resources/images/bluewhite.gif'
-               }
-               ]
-               const featureReduction = new SMap.FeatureReduction({
-                  type: 'cluster',
-                  clusterRadius: 100
-               })
-               OverlayGroup = new SMap.OverlayGroup([marker5, marker6], {
-                   overlaytype: 'marker',
-                   datafiled: datafiled,
-                   style: style,
-                   label: label,
-                   frreduction: featureReduction
-               })
-               smap.addfeature(OverlayGroup)
-           })
-
-           $("#btnupdatemarkgroup").click(function () {
-               marker5.attributes['name'] = '点5更新'
-               OverlayGroup.overlayers[0].attributes['style'] = '2'
-               OverlayGroup.overlayers[1].attributes['style'] = '1'
-               smap.updatefeature(OverlayGroup)
-           })
-
-           $("#btndeltemarkgroup").click(function () {
-             smap.removefeature(OverlayGroup)
-           })
-           $("#btnaddbigmarks").click(function () {
-                const marks = []
-                for (let i = 0; i <= 10000; i++) {
-                  const x = -2863.616790 + Math.ceil(Math.random() * 1200)
-                  const y = -7984.038031 + Math.ceil(Math.random() * 1200)
-                  const onemarker = new SMap.Marker({
-                    attributes: {
-                      'name': '点' + i,
-                      'style': Math.ceil(Math.random()).toString()
-                    },
-                    position: [x, y, 100]
-                  })
-                  marks.push(onemarker)
-                }
-                const label = new SMap.Label({
-                  size: 22,
-                  color: 'black',
-                  xoffset: 0.1,
-                  yoffset: 0.1,
-                  horizontalAlignment: 'left',
-                  verticalAlignment: 'top'
-                })
-                const datafiled = [{
-                  name: 'name',
-                  alias: 'name',
-                  type: 'string'
-                }]
-                const style = [
-                  {
-                    style: '0',
-                    size: new SMap.Size(40, 40),
-                    url: 'http://127.0.0.1:5500/resources/images/green.gif'
-                  }, {
-                    style: '1',
-                    size: new SMap.Size(40, 40),
-                    url: 'http://127.0.0.1:5500/resources/images/bluewhite.gif'
-                  }
-                ]
-                const featureReduction = new SMap.FeatureReduction({
-                  type: 'cluster',
-                  clusterRadius: 100
-                })
-                 massmarksgroup = new SMap.OverlayGroup(marks, {
-                  overlaytype: 'marker',
-                  datafiled: datafiled,
-                  style: style,
-                  label: label,
-                  frreduction: featureReduction
-                })
-                 smap.addfeature(massmarksgroup)
-           })
-            $("#btncleanbigmarks").click(function () {
-                smap.removefeature(massmarksgroup)
-            })
+          marks.push(onemarker)
+        }
+        const label = new SMap.Label({
+          size: 22,
+          color: 'black',
+          xoffset: 0.1,
+          yoffset: 0.1,
+          horizontalAlignment: 'left',
+          verticalAlignment: 'top'
+        })
+        const datafiled = [{
+          name: 'name',
+          alias: 'name',
+          type: 'string'
+        }]
+        const style = [{
+          style: '0',
+          size: new SMap.Size(40, 40),
+          url: 'http://127.0.0.1:5500/resources/images/marker5.gif'
+        }, {
+          style: '1',
+          size: new SMap.Size(40, 40),
+          url: 'http://127.0.0.1:5500/resources/images/marker6.png'
+        }]
+        const featureReduction = new SMap.FeatureReduction({
+          type: 'selection'
+        })
+        massmarksgroup = new SMap.OverlayGroup(marks, {
+          overlaytype: 'marker',
+          datafiled: datafiled,
+          style: style,
+          label: label,
+          frreduction: featureReduction
+        })
+        smap.addfeature(massmarksgroup)
       })
-    </script>
+      $("#btncleanbigmarks").click(function () {
+        smap.removefeature(massmarksgroup)
+      })
+    })
+  </script>
 </head>
 
 <body>
-    <div id="mapcontainer"></div>
-    <div class="mapbuttoncontainergroup">
-        <div class="mapbuttoncontainer">
-            <button class="mapbutton" id="btnaddmark"> add one mark </button>
-            <button class="mapbutton" id="btnupdatemark"> update one mark</button>
-            <button class="mapbutton" id="btndeletemark"> delete one mark</button>
-        </div>
-        <div class="mapbuttoncontainer">
-            <button class="mapbutton" id="btnaddmanymark"> add many marks </button>
-            <button class="mapbutton" id="btnupdatemanymark"> update many marks</button>
-            <button class="mapbutton" id="btndeletemanymark"> delete many marks</button>
-        </div>
-
-        <div class="mapbuttoncontainer">
-            <button class="mapbutton" id="btnaddmarkgroup"> add mark group</button>
-            <button class="mapbutton" id="btnupdatemarkgroup"> update mark group</button>
-            <button class="mapbutton" id="btndeltemarkgroup"> delete mark group</button>
-        </div>
-        <div class="mapbuttoncontainer">
-            <button class="mapbutton" id="btnaddbigmarks"> add big mount marks</button>
-             <button class="mapbutton" id="btncleanbigmarks">clear big mount marks</button>
-        </div>
+  <div id="mapcontainer"></div>
+  <div class="mapbuttoncontainergroup">
+    <div class="mapbuttoncontainer">
+      <button class="mapbutton" id="btnaddmark"> add one mark </button>
+      <button class="mapbutton" id="btnupdatemark"> update one mark</button>
+      <button class="mapbutton" id="btndeletemark"> delete one mark</button>
     </div>
+    <div class="mapbuttoncontainer">
+      <button class="mapbutton" id="btnaddmanymark"> add many marks </button>
+      <button class="mapbutton" id="btnupdatemanymark"> update many marks</button>
+      <button class="mapbutton" id="btndeletemanymark"> delete many marks</button>
+    </div>
+
+    <div class="mapbuttoncontainer">
+      <button class="mapbutton" id="btnaddmarkgroup"> add mark group</button>
+      <button class="mapbutton" id="btnupdatemarkgroup"> update mark group</button>
+      <button class="mapbutton" id="btndeltemarkgroup"> delete mark group</button>
+    </div>
+    <div class="mapbuttoncontainer">
+      <button class="mapbutton" id="btnaddbigmarks"> add big mount marks</button>
+      <button class="mapbutton" id="btncleanbigmarks">clear big mount marks</button>
+    </div>
+  </div>
 
 </body>
 
