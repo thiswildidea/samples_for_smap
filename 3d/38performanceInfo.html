@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>三维地图初始化</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainer {
+            width: 20%;
+            display: flex;
+            flex-flow: row;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+
+        .esri-performanceInfo {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 1em;
+            width: 400px;
+            height: 400px;
+            overflow-y: auto;
+        }
+
+        table {
+            margin: 1em 0;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/smap/xuhui/SMap.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
+            showBuildingBlock: true
+        })
+        smap.on(SMap.MapEvent.maploaded, function (view) {
+            // smap.view.goTo({
+            //     fov: 55,
+            //     heading: 3.4914615640786066,
+            //     position: {
+            //         x: -25210.552126,
+            //         y: -96241.06967,
+            //         z: 31796.88072,
+            //         spatialReference: {
+            //             wkid: 102100
+            //         }
+            //     },
+            //     tilt: 59.816555
+            // }, {
+            //     speedFactor: 2,
+            //     duration: 1000,
+            //     maxDuration: 1000,
+            //     easing: 'in-expo'
+            // })
+        })
+        smap.on(SMap.MapEvent.extentchanged, function (view) {
+            console.log(smap.view.camera)
+        })
+        $(function () {
+            $("#addlayercontrol").click(function () {
+                    const layerListControl = new SMap.LayerListControl({
+                        visible: true,
+                        position: 'top-right',
+                        collapse: true
+                    })
+                    smap.addControl(layerListControl)
+                }),
+                $("#addperformanceInfo").click(function () {
+                    const performanceInfoControl = new SMap.PerformanceInfoControl({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(performanceInfoControl)
+                })
+
+            $("#setmemeorylimit").click(function () {
+                smap.setmemoryLimit(4098)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainer">
+        <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+        <button class="mapbutton" id="addperformanceInfo"> performanceInfo</button>
+        <button class="mapbutton" id="setmemeorylimit"> set 内存</button>
+    </div>
+</body>
+
+</html>
