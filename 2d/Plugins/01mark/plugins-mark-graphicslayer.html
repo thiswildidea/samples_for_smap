@@ -320,7 +320,7 @@
             })
 
             $("#btndeltemarkgroup").click(function () {
-                smap.remove(OverlayGroup)
+                GraphicOverlays.remove(OverlayGroup)
             })
             $("#btnaddbigmarks").click(function () {
                 const marks = []
@@ -361,7 +361,7 @@
                     })
                     marks.push(onemarker)
                 }
-                smap.add(marks)
+                GraphicOverlays.add(marks)
             })
             $("#btncleanall").click(function () {
                 GraphicOverlays.removeAll()
