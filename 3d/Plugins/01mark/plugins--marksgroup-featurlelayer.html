@@ -292,8 +292,8 @@
       $("#btnaddbigmarks").click(function () {
         const marks = []
         for (let i = 0; i <= 3000; i++) {
-          const x = Math.ceil(Math.random() * 120000)
-           const y = Math.ceil(Math.random() *120000) 
+          const x =-20135 + Math.ceil(Math.random() * 12000)
+          const y = -48456 + Math.ceil(Math.random() * 12000)
             const marker = new SMap.Marker({
             attributes: {
               'name': '点' + i,
