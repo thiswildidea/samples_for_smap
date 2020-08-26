@@ -14,6 +14,7 @@
             width: 100%;
             height: 100%;
         }
+
         .mapbuttoncontainer {
             width: 100%;
             display: flex;
@@ -31,13 +32,14 @@
             margin-bottom: 15px;
             float: left;
         }
-          .esri-popup__content .tdlabel {
-          width: 200px;
-          }
 
-          .esri-popup__content .tdvalue {
-          width: 200px;
-          }
+        .esri-popup__content .tdlabel {
+            width: 200px;
+        }
+
+        .esri-popup__content .tdvalue {
+            width: 200px;
+        }
     </style>
     <script src="../library/common/jquery-2.2.3.min.js"></script>
     <script src="../library/smap/xuhui/GeoTask.min.js"></script>
@@ -46,98 +48,107 @@
         const smap = new SMap.Map('mapcontainer', {
             viewMode: '3D',
             center: [0, 0],
-             zoom: 3,
-             zooms: [0, 11],
-             pitch: 60,
-             mapStyle: 'smap://styles/dark',
-             showBuildingBlock: true
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
         })
 
-      function createContentpopup(data) {
-          let htmlstring = '';
-          htmlstring += "<table>"
-              for (let key in data) {
-              htmlstring += "<tr>";
-                  htmlstring += '<td class="tdlabel">';
-                      htmlstring += "<span>";
-                          htmlstring += key;
-                          htmlstring += " :";
-                          htmlstring += "</span>";
-                      htmlstring += "</td>";
-                  htmlstring += '<td class="tdvalue">';
-                      htmlstring += "<span>";
-                          htmlstring += data[key] != null ? data[key] : "";
-                          htmlstring += "</span>";
-                      htmlstring += "</td>";
-                  htmlstring += "</tr>";
-              }
-              htmlstring += "</table>"
-          return htmlstring;
-      }
-     let identifytask=null
-      smap.on(SMap.MapEvent.maploaded, function(view, eventParamter) {
-          identifytask = new GeoTask.Identify(smap.view)
-          identifytask.on(SMap.MapEvent.pointermove, function(result, geometry) {
-             if (geometry) {
-                  smap.view.popup.defaultPopupTemplateEnabled = true
-                  smap.view.popup.autoOpenEnabled = false
-                  smap.view.popup.open({
-                  location: geometry,
-                  title: result.attributes.name,
-                  content: createContentpopup(result.attributes),
-               })
-             }
-          })
-    })
-      smap.on(SMap.MapEvent.click, function(view, eventParamter) {
-          const param = {
-              layerUniqueId:'XH_JD_V2',
-              url:"http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
-              displayed: true, //查询接口是否在地图上显示
-              layerIds:[0],
-              tolerance:1,
-              geometry:eventParamter.mapPoint
-          }
-          identifytask.MapService(param).then((result) => {
-            console.log(result)
-          })
-      })
-      
-      $(function () {
-          $("#btnaddlayer").click(function () {
-            const param = {
-              layerType: 'MapImageLayer',
-              layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
-              layerTitle: "XH_JD_V2",
-              LayerId: "XH_JD_V2",
-              layerOpacity:1,
-              layerVisible:true,
-              layerMaxScale:1000,
-              layerMinScale:10000000
+        function createContentpopup(data) {
+            let htmlstring = '';
+            htmlstring += "<table>"
+            for (let key in data) {
+                htmlstring += "<tr>";
+                htmlstring += '<td class="tdlabel">';
+                htmlstring += "<span>";
+                htmlstring += key;
+                htmlstring += " :";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += '<td class="tdvalue">';
+                htmlstring += "<span>";
+                htmlstring += data[key] != null ? data[key] : "";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += "</tr>";
+            }
+            htmlstring += "</table>"
+            return htmlstring;
         }
-        smap.addLayer(param)
-          })
-         $("#btnhide").click(function () {
-            identifytask.hide()
-         })
-         $("#btnshow").click(function () {
-            identifytask.show()
-         })
-         $("#btnclearn").click(function () {
-           identifytask.remove()
-         })
-      })
+        let identifytask = null
+        smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {
+            identifytask = new GeoTask.Identify(smap.view)
+            identifytask.on(SMap.MapEvent.pointermove, function (result, geometry) {
+                if (geometry) {
+                    smap.view.popup.defaultPopupTemplateEnabled = true
+                    smap.view.popup.autoOpenEnabled = false
+                    smap.view.popup.open({
+                        location: geometry,
+                        title: result.attributes.name,
+                        content: createContentpopup(result.attributes),
+                    })
+                }
+            })
+        })
+        smap.on(SMap.MapEvent.click, function (view, eventParamter) {
+            const param = {
+                layerUniqueId: 'XH_JD_V2',
+                url: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
+                displayed: true, //查询接口是否在地图上显示
+                layerIds: [0],
+                tolerance: 1,
+                geometry: eventParamter.mapPoint
+            }
+            identifytask.MapService(param).then((result) => {
+                console.log(result)
+            })
+        })
+
+        $(function () {
+            $("#addlayercontrol").click(function () {
+                    const layerListControl = new SMap.LayerListControl({
+                        visible: true,
+                        position: 'top-right',
+                        collapse: true
+                    })
+                    smap.addControl(layerListControl)
+                }),
+                $("#btnaddlayer").click(function () {
+                    const param = {
+                        layerType: 'MapImageLayer',
+                        layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
+                        layerTitle: "XH_JD_V2",
+                        LayerId: "XH_JD_V2",
+                        layerOpacity: 1,
+                        layerVisible: true,
+                        layerMaxScale: 1000,
+                        layerMinScale: 10000000
+                    }
+                    smap.addLayer(param)
+                })
+            $("#btnhide").click(function () {
+                identifytask.hide()
+            })
+            $("#btnshow").click(function () {
+                identifytask.show()
+            })
+            $("#btnclearn").click(function () {
+                identifytask.remove()
+            })
+        })
     </script>
 </head>
 
 <body>
     <div id="mapcontainer"></div>
-        <div class="mapbuttoncontainer">
-            <button class="mapbutton" id="btnaddlayer"> btnaddlayer</button>
-            <button class="mapbutton" id="btnhide"> hide Identify result</button>
-            <button class="mapbutton" id="btnshow"> show Identify result</button>
-            <button class="mapbutton" id="btnclearn"> clean Identify result</button>
-        </div>
+    <div class="mapbuttoncontainer">
+        <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+        <button class="mapbutton" id="btnaddlayer"> btnaddlayer</button>
+        <button class="mapbutton" id="btnhide"> hide Identify result</button>
+        <button class="mapbutton" id="btnshow"> show Identify result</button>
+        <button class="mapbutton" id="btnclearn"> clean Identify result</button>
+    </div>
 </body>
 
 </html>

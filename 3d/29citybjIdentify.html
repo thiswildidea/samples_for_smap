@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+  <title>Identify</title>
+  <style>
+    html,
+    body,
+    #mapcontainer {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .mapbuttoncontainer {
+      width: 100%;
+      display: flex;
+      flex-flow: row;
+      position: relative;
+      top: 5px;
+      left: 10px;
+      display: block;
+    }
+
+    .mapbuttoncontainer .mapbutton {
+      width: 100px;
+      height: 40px;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      float: left;
+    }
+  </style>
+  <script src="../library/common/jquery-2.2.3.min.js"></script>
+  <script src="../library/smap/xuhui/GeoTask.min.js"></script>
+  <script src="../library/smap/xuhui/SMap.min.js"></script>
+  <script>
+    const smap = new SMap.Map('mapcontainer', {
+      viewMode: '3D',
+      center: [-1520, -9132, 0],
+      zoom: 5,
+      zooms: [4, 11],
+      pitch: 60,
+      mapStyle: 'smap://styles/dark',
+      showBuildingBlock: true
+    })
+
+    smap.on(SMap.MapEvent.extentchanged, function (extent) {
+      //   console.log(smap.view.camera)
+      //   console.log(smap.view.center)
+      //   console.log(smap.view.zoom)
+    })
+    let identifytask = null
+    smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {
+      smap.setRotation(303)
+      //   smap.view.goTo({
+      //        fov: 55,
+      //        heading: 303,
+      //         position: {
+      //               x: 16908.553204123655,
+      //               y: -19483.163579664666,
+      //               z: 12029.675031845449,
+      //               spatialReference: 102100
+      //          },
+      //         tilt: 61.4946725090369
+      //   })
+
+      identifytask = new GeoTask.Identify(smap.view)
+      identifytask.on('click', function (result, geometry) {
+        console.log(result, geometry)
+      })
+    })
+    smap.on(SMap.MapEvent.click, function (view, eventParamter) {
+      const param = {
+        url: "http://10.81.71.181/arcgis/rest/services/xh/XH_04_DT/MapServer",
+        displayed: true, //查询接口是否在地图上显示
+        layerIds: [30,31,32,111,112,113],
+        tolerance: 2,
+        geometry: eventParamter.mapPoint
+      }
+      identifytask.MapService(param).then((result) => {
+        console.log(result)
+      })
+    })
+
+    $(function () {
+      $("#addlayercontrol").click(function () {
+          const layerListControl = new SMap.LayerListControl({
+            visible: true,
+            position: 'top-right',
+            collapse: true
+          })
+          smap.addControl(layerListControl)
+        }),
+        $("#btnaddlayer").click(function () {
+          const param = {
+            layerType: 'SHCDMapImageLayer',
+            layerUrl: "http://10.81.71.181/arcgis/rest/services/xh/XH_04_DT/MapServer",
+            layerTitle: "城市部件",
+            layerId: "XH_04_DT",
+            layerSublayers: [{
+                id: 30,
+                title: '燃气站点',
+                sublayers: [{
+                    id: 31,
+                    title: '燃气站点',
+                  },
+                  {
+                    id: 32,
+                    title: '燃气站点1',
+                  },
+                ],
+              },
+              {
+                id: 111,
+                title: '物业小区点 ',
+                sublayers: [{
+                    id: 112,
+                    title: '物业小区点0',
+                  },
+                  {
+                    id: 113,
+                    title: '物业小区点1',
+                  },
+                ],
+              },
+            ]
+          }
+          smap.addLayer(param)
+        })
+      $("#btnhide").click(function () {
+        identifytask.hide()
+      })
+      $("#btnshow").click(function () {
+        identifytask.show()
+      })
+      $("#btnclearn").click(function () {
+        identifytask.remove()
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <div id="mapcontainer"></div>
+  <div class="mapbuttoncontainer">
+    <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+    <button class="mapbutton" id="btnaddlayer"> btnaddlayer</button>
+    <button class="mapbutton" id="btnhide"> hide Identify result</button>
+    <button class="mapbutton" id="btnshow"> show Identify result</button>
+    <button class="mapbutton" id="btnclearn"> clean Identify result</button>
+  </div>
+</body>
+
+</html>
