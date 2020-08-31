@@ -162,7 +162,9 @@
                         yoffset: 10
                     })
                 })
-                GraphicOverlays.add(onepolygon)
+                GraphicOverlays.add(onepolygon).then((result) => {
+                    console.log(result)
+                })
 
                 sencondpolygon = new SMap.Polygon({
                     attributes: {
@@ -210,11 +212,15 @@
                         yoffset: 10
                     })
                 })
-                GraphicOverlays.add(sencondpolygon)
+                GraphicOverlays.add(sencondpolygon).then((result) => {
+                    console.log(result)
+                })
             })
             $("#btnupdatepolygon").click(function () {
                 onepolygon.label.text = '面一更新'
-                GraphicOverlays.update(onepolygon)
+                GraphicOverlays.update(onepolygon).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btndeletepolygon").click(function () {
@@ -311,13 +317,17 @@
                         yoffset: 10
                     })
                 })
-                GraphicOverlays.add([threepolygon, fourpolygon])
+                GraphicOverlays.add([threepolygon, fourpolygon]).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btnupdatemanypolygon").click(function () {
                 threepolygon.label.text = '面三更新'
                 fourpolygon.label.text = '面四更新'
-                GraphicOverlays.update([threepolygon, fourpolygon])
+                GraphicOverlays.update([threepolygon, fourpolygon]).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btndeletemanypolygon").click(function () {
@@ -417,13 +427,17 @@
                 OverlayGroup = new SMap.OverlayGroup([fivepolygon, sixpolygon], {
                     overlaytype: 'polygon'
                 })
-                GraphicOverlays.add(OverlayGroup)
+                GraphicOverlays.add(OverlayGroup).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btnupdatepolygongroup").click(function () {
                 fivepolygon.label.text = '面5更新'
                 sixpolygon.label.text = '面6更新'
-                GraphicOverlays.update(OverlayGroup)
+                GraphicOverlays.update(OverlayGroup).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btndeltepolygongroup").click(function () {

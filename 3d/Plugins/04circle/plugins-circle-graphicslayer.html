@@ -158,7 +158,9 @@
                         yoffset: 10
                     })
                 })
-                GraphicOverlays.add(onecircle)
+                GraphicOverlays.add(onecircle).then((result) => {
+                    console.log(result)
+                })
 
                 sencondcircle = new SMap.Circle({
                     attributes: {
@@ -201,11 +203,15 @@
                         yoffset: 10
                     })
                 })
-                GraphicOverlays.add(sencondcircle)
+                GraphicOverlays.add(sencondcircle).then((result) => {
+                    console.log(result)
+                })
             })
             $("#btnupdatecircle").click(function () {
                 onecircle.label.text = 'circle一更新'
-                GraphicOverlays.update(onecircle)
+                GraphicOverlays.update(onecircle).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btndeletecircle").click(function () {
@@ -293,13 +299,17 @@
                         yoffset: 10
                     })
                 })
-                GraphicOverlays.add([threecircle, fourcircle])
+                GraphicOverlays.add([threecircle, fourcircle]).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btnupdatemanycircle").click(function () {
                 threecircle.label.text = 'circle三更新'
                 fourcircle.label.text = 'circle四更新'
-                GraphicOverlays.update([threecircle, fourcircle])
+                GraphicOverlays.update([threecircle, fourcircle]).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btndeletemanycircle").click(function () {
@@ -389,13 +399,17 @@
                 OverlayGroup = new SMap.OverlayGroup([fivecircle, sixcircle], {
                     overlaytype: 'circle'
                 })
-                GraphicOverlays.add(OverlayGroup)
+                GraphicOverlays.add(OverlayGroup).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btnupdatecirclegroup").click(function () {
                 fivecircle.label.text = 'circle5更新'
                 sixcircle.label.text = 'circle6更新'
-                GraphicOverlays.update(OverlayGroup)
+                GraphicOverlays.update(OverlayGroup).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btndeltecirclegroup").click(function () {

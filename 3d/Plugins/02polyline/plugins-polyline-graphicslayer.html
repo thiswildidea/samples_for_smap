@@ -167,7 +167,9 @@
                         yoffset: 10
                     })
                 })
-                GraphicOverlays.add(onepolyline)
+                GraphicOverlays.add(onepolyline).then((result) => {
+                   console.log(result)
+                })
 
                 sencondpolyline = new SMap.Polyline({
                     attributes: {
@@ -219,11 +221,15 @@
                         yoffset: 10
                     })
                 })
-                GraphicOverlays.add(sencondpolyline)
+                GraphicOverlays.add(sencondpolyline).then((result) => {
+                    console.log(result)
+                })
             })
             $("#btnupdatepolyline").click(function () {
                 onepolyline.label.text = '点一更新'
-                GraphicOverlays.update(onepolyline)
+                GraphicOverlays.update(onepolyline).then((result) => {
+                     console.log(result)
+                })
             })
 
             $("#btndeletepolyline").click(function () {
@@ -331,13 +337,17 @@
                         yoffset: 10
                     })
                 })
-                GraphicOverlays.add([threepolyline, fourpolyline])
+                GraphicOverlays.add([threepolyline, fourpolyline]).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btnupdatemanypolyline").click(function () {
                 threepolyline.label.text = '线三更新'
                 fourpolyline.label.text = '线四更新'
-                GraphicOverlays.update([threepolyline, fourpolyline])
+                GraphicOverlays.update([threepolyline, fourpolyline]).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btndeletemanypolyline").click(function () {
@@ -448,13 +458,17 @@
                 OverlayGroup = new SMap.OverlayGroup([fivepolyline, sixpolyline], {
                     overlaytype: 'polyline'
                 })
-                GraphicOverlays.add(OverlayGroup)
+                GraphicOverlays.add(OverlayGroup).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btnupdatepolylinegroup").click(function () {
                 fivepolyline.label.text = '线5更新'
                 sixpolyline.label.text = '线6更新'
-                GraphicOverlays.update(OverlayGroup)
+                GraphicOverlays.update(OverlayGroup).then((result) => {
+                    console.log(result)
+                })
             })
 
             $("#btndeltepolylinegroup").click(function () {
