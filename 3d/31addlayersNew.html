@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>Identify</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/smap/xuhui/SMap.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+
+        $(function () {
+            $("#addlayercontrol").click(function () {
+                const layerListControl = new SMap.LayerListControl({
+                        visible: true,
+                        position: 'top-right',
+                        collapse: true
+                    })
+                    smap.addControl(layerListControl)
+                }),
+
+                $("#addUndergroundSwitch").click(function () {
+                    const undergroundSwitch = new SMap.UndergroundSwitch({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(undergroundSwitch)
+                }),
+                $("#btnaddLayer").click(function () {
+                    const layeroption = {
+                        layerType: 'FeatureLayer',
+                        layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_PIPELINE/FeatureServer/1",
+                        layerTitle: "雨水管点",
+                        layerId: "XH_PIPELINE_YSGD",
+                        layerOpacity: 1,
+                        layerVisible: true,
+                        layerMaxScale: 10,
+                        layerMinScale: 10000000,
+                        layerPopupEnabled: true,
+                        layerPopupTemplate: {
+                            title: '{exp_no}',
+                            content: [{
+                                type: 'fields',
+                                fieldInfos: [{
+                                        fieldName: 'exp_no',
+                                        label: '物探点号'
+                                    },
+                                    {
+                                        fieldName: 'feature',
+                                        label: '特征'
+                                    },
+                                    {
+                                        fieldName: 'subsid',
+                                        label: '附属物'
+                                    },
+                                    {
+                                        fieldName: 'dlmc',
+                                        label: '道路名称'
+                                    },
+                                    {
+                                        fieldName: 'jjcc',
+                                        label: '窨井尺寸'
+                                    }
+                                ]
+                            }]
+                        },
+                        layerLabelsVisible: false
+                    }
+                    const layer = new SMap.Layer(layeroption)
+                    smap.addLayers(layer)
+                }),
+                $("#btremoveLayerr").click(function () {
+                    smap.removeLayer('XH_PIPELINE_YSGD')
+                })
+            $("#btnaddLayers").click(function () {
+
+                const layeroption = {
+                    layerType: 'FeatureLayer',
+                    layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_PIPELINE/FeatureServer/1",
+                    layerTitle: "雨水管点",
+                    layerId: "XH_PIPELINE_YSGD",
+                    layerOpacity: 1,
+                    layerVisible: true,
+                    layerMaxScale: 10,
+                    layerMinScale: 10000000,
+                    layerPopupEnabled: true,
+                    layerPopupTemplate: {
+                        title: '{exp_no}',
+                        content: [{
+                            type: 'fields',
+                            fieldInfos: [{
+                                    fieldName: 'exp_no',
+                                    label: '物探点号'
+                                },
+                                {
+                                    fieldName: 'feature',
+                                    label: '特征'
+                                },
+                                {
+                                    fieldName: 'subsid',
+                                    label: '附属物'
+                                },
+                                {
+                                    fieldName: 'dlmc',
+                                    label: '道路名称'
+                                },
+                                {
+                                    fieldName: 'jjcc',
+                                    label: '窨井尺寸'
+                                }
+                            ]
+                        }]
+                    },
+                    layerLabelsVisible: false
+                }
+
+                const layeroption2 = {
+                    layerType: 'SceneLayer',
+                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/LBJZ_ORIGIN/SceneServer",
+                    layerTitle: "历保建筑原貌",
+                    layerId: "LBJZ_ORIGIN",
+                    layerOpacity: 1,
+                    layerVisible: true,
+                    layerMaxScale: 1000,
+                    layerMinScale: 10000000,
+                    layerPopupEnabled: true,
+                    layerelevationInfo: {
+                        mode: 'absolute-height',
+                        offset: -2.5
+                    }
+                }
+                const XH_PIPELINE_YSGDlayer = new SMap.Layer(layeroption)
+                const LBJZ_ORIGINlayer = new SMap.Layer(layeroption2)
+                smap.addLayers([XH_PIPELINE_YSGDlayer, LBJZ_ORIGINlayer])
+            })
+            $("#btremoveLayers").click(function () {
+                smap.removeLayer('XH_PIPELINE_YSGD')
+                smap.removeLayer('LBJZ_ORIGIN')
+            })
+
+            $("#btnaddgrouplayer").click(function () {
+                const LG = {
+                    layerGroups: [{
+                        layerId: "buildings_3d_belove_layers",
+                        layerTitle: "地下",
+                        layerVisible: true,
+                        listMode: 'show',
+                        layerGroups: [{
+                            layerId: "RQFJ_XH",
+                            layerTitle: "三维燃气管线",
+                            layerVisible: false,
+                            listMode: 'show',
+                            layers: [{
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/RQFJ/SceneServer",
+                                    layerId: "RQFJ",
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "燃气管线FJ",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                }, {
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/RQGX/SceneServer",
+                                    layerId: "RQGX",
+                                    istoken: false,
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "燃气管线GX",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                },
+                                {
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/RQJS/SceneServer",
+                                    layerId: "RQJS",
+                                    istoken: false,
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "燃气管线JS",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                }, {
+                                    layerUrl: 'http://10.201.37.220/server/rest/services/Hosted/RQTZ/SceneServer',
+                                    layerId: 'RQTZ',
+                                    istoken: false,
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: 'SceneLayer',
+                                    layerPopupEnabled: true,
+                                    layerTitle: '燃气管线TZ',
+                                    layerelevationInfo: {
+                                        mode: 'absolute-height',
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                }
+                            ]
+                        }, {
+                            layerId: "DLGX_XH",
+                            layerTitle: "三维电力管线",
+                            tag: "DLGX_XH",
+                            layerVisible: false,
+                            listMode: 'show',
+                            layers: [{
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/DLGX/SceneServer",
+                                    layerId: "DLGX",
+                                    istoken: false,
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "电力管线GX",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                },
+                                {
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/DLFJ/SceneServer",
+                                    layerId: "DLFJ",
+                                    istoken: false,
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "电力管线FJ",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                }, {
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/DLJS/SceneServer",
+                                    layerId: "DLJS",
+                                    istoken: false,
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "电力管线JS",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                }
+                            ]
+                        }, {
+                            layerId: "DXGX_XH",
+                            layerTitle: "三维电信管线",
+                            tag: "DXGX_XH",
+                            layerVisible: false,
+                            listMode: 'show',
+                            layers: [{
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/DXGX/SceneServer",
+                                    layerId: "DXGX",
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "电信管线GX",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -10
+                                    },
+                                    listMode: 'show'
+                                },
+                                {
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/DXFJ/SceneServer",
+                                    layerId: "DXFJ",
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    tag: "DXFJ",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "电信管线FJ",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -10
+                                    },
+                                    type: "image",
+                                    listMode: 'show'
+                                }, {
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/DXJS/SceneServer",
+                                    layerId: "DXJS",
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "电信管线JS",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -10
+                                    },
+                                    listMode: 'show'
+                                }
+                            ]
+                        }, {
+                            layerId: "PSGX_XH",
+                            layerTitle: "三维排水管线",
+                            tag: "PSGX_XH",
+                            layerVisible: false,
+                            listMode: 'show',
+                            layers: [{
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/PSGX/SceneServer",
+                                    layerId: "PSGX",
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "排水管线GX",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                },
+                                {
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/PSFJ/SceneServer",
+                                    layerId: "PSFJ",
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "排水管线FJ",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                }, {
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/PSTZ/SceneServer",
+                                    layerId: "PSTZ",
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "排水管线TZ",
+                                    listMode: 'show'
+                                }
+                            ]
+                        }, {
+                            layerId: "JSGX_XH",
+                            layerTitle: "三维给水管线",
+                            tag: "JSGX_XH",
+                            layerVisible: false,
+                            listMode: 'show',
+                            layers: [{
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/JSGX/SceneServer",
+                                    layerId: "JSGX",
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "给水管线GX",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                },
+                                {
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/JSJS/SceneServer",
+                                    layerId: "JSJS",
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "给水管线JS",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                }, {
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/JSTZ/SceneServer",
+                                    layerId: "JSTZ",
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "给水管线TZ",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                }
+                            ]
+                        }, {
+                            layerId: "QTGX_XH",
+                            layerTitle: "三维其他管线",
+                            tag: "QTGX_XH",
+                            layerVisible: false,
+                            listMode: 'show',
+                            layers: [{
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/QTGX/SceneServer",
+                                    layerId: "QTGX",
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "其他管线GX",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                },
+                                {
+                                    layerUrl: "http://10.201.37.220/server/rest/services/Hosted/QTJS/SceneServer",
+                                    layerId: "QTJS",
+                                    layerVisible: true,
+                                    layerOpacity: 1.0,
+                                    layerType: "SceneLayer",
+                                    layerPopupEnabled: true,
+                                    layerTitle: "其他管线JS",
+                                    layerelevationInfo: {
+                                        mode: "absolute-height",
+                                        offset: -4.5
+                                    },
+                                    listMode: 'show'
+                                }
+                            ]
+                        }],
+                        layers: []
+                    }]
+                }
+                const lgroup = new SMap.LayerGroup(LG)
+                smap.addLayers(lgroup)
+            })
+            $("#btremovegrouplayer").click(function () {
+                smap.removeLayer('buildings_3d_belove_layers')
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+            <button class="mapbutton" id="addUndergroundSwitch"> 添加地上地下切换控件</button>
+            <button class="mapbutton" id="btnaddLayer"> add layer</button>
+            <button class="mapbutton" id="btremoveLayerr"> remove Layer</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddLayers"> add layers</button>
+            <button class="mapbutton" id="btremoveLayers"> remove layers</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddgrouplayer"> add grouplayer</button>
+            <button class="mapbutton" id="btremovegrouplayer"> remove grouplayer</button>
+        </div>
+    </div>
+</body>
+
+</html>
