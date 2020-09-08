@@ -1,0 +1,6351 @@
+{
+    "version": 8,
+    "sprite": "http://10.108.3.57/server/rest/services/Hosted/vBasemap2/VectorTileServer/resources/styles/../sprites/sprite",
+    "glyphs": "http://10.108.3.57/server/rest/services/Hosted/vBasemap2/VectorTileServer/resources/styles/fonts/{fontstack}/{range}.pbf",
+    "sources": {
+        "esri": {
+            "type": "vector",
+            "url": "http://10.108.3.57/server/rest/services/Hosted/vBasemap2/VectorTileServer"
+        }
+    },
+    "layers": [{
+        "id": "CONTINENTS",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "CONTINENTS",
+        "layout": {},
+        "paint": {
+            "fill-color": "#002F47"
+        }
+    }, {
+        "id": "行政区划面",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "行政区划面",
+        "layout": {},
+        "paint": {
+            "fill-color": "#DC143C"
+        }
+    }, {
+        "id": "海部",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "海部",
+        "layout": {},
+        "paint": {
+            "fill-color": "#002F47"
+        }
+    }, {
+        "id": "岛",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "岛",
+        "layout": {},
+        "paint": {
+            "fill-color": "#000000"
+        }
+    }, {
+        "id": "区县_合并面1",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "区县_合并面1",
+        "layout": {},
+        "paint": {
+            "fill-color": "#001F3B"
+        }
+    }, {
+        "id": "rivercsj",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "rivercsj",
+        "layout": {},
+        "paint": {
+            "fill-color": "#002F47"
+        }
+    }, {
+        "id": "River",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "River",
+        "minzoom": 5.68,
+        "layout": {},
+        "paint": {
+            "fill-color": "#002F47"
+        }
+    }, {
+        "id": "公园绿地高尔夫面",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "公园绿地高尔夫面",
+        "minzoom": 4.36,
+        "layout": {},
+        "paint": {
+            "fill-color": "#002B33",
+            "fill-opacity": 0.6
+        }
+    }, {
+        "id": "building/房屋/Building_8:2",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Building_8:2",
+        "minzoom": 7,
+        "layout": {},
+        "paint": {
+            "fill-color": "#3B5E5E",
+            "fill-opacity": 0.3
+        }
+    }, {
+        "id": "building/房屋/Building_27",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Building_27",
+        "minzoom": 7,
+        "layout": {},
+        "paint": {
+            "fill-color": "#45454D",
+            "fill-opacity": 0.3
+        }
+    }, {
+        "id": "building/房屋/Building_8:1",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Building_8:1",
+        "minzoom": 6,
+        "maxzoom": 6,
+        "layout": {},
+        "paint": {
+            "fill-color": "#3B5E5E",
+            "fill-opacity": 0.3
+        }
+    }, {
+        "id": "building/device_land/Device_Land_LINE2POLYGON",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Device_Land_LINE2POLYGON",
+        "minzoom": 7,
+        "layout": {},
+        "paint": {
+            "fill-color": "#404040",
+            "fill-opacity": 0.25,
+            "fill-outline-color": "#BDBDBD"
+        }
+    }, {
+        "id": "building/device_land/device_land边线",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "device_land边线",
+        "minzoom": 7,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#1A1A1A",
+            "line-width": 0.533333,
+            "line-opacity": 0.25
+        }
+    }, {
+        "id": "building/device_land/Device_Land_Sel_DIS",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Device_Land_Sel_DIS",
+        "minzoom": 7,
+        "layout": {},
+        "paint": {
+            "fill-color": "#404040",
+            "fill-opacity": 0.25,
+            "fill-outline-color": "#686868"
+        }
+    }, {
+        "id": "河流面",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "河流面",
+        "layout": {},
+        "paint": {
+            "fill-color": "#002F47"
+        }
+    }, {
+        "id": "湖泊面",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "湖泊面",
+        "layout": {},
+        "paint": {
+            "fill-color": "#002F47"
+        }
+    }, {
+        "id": "堤",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "堤",
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#00142E",
+            "line-width": 1.33333
+        }
+    }, {
+        "id": "500/单线河流三级:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "单线河流三级:4",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#002F47",
+            "line-width": 2.66667
+        }
+    }, {
+        "id": "500/单线河流二级:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "单线河流二级:3",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#002F47",
+            "line-width": 2.66667
+        }
+    }, {
+        "id": "500/道路面/Road_Polygon:4",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Road_Polygon:4",
+        "minzoom": 10.74,
+        "layout": {},
+        "paint": {
+            "fill-color": "#292E33"
+        }
+    }, {
+        "id": "500/道路/dm/五级街道:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "五级街道:4",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/五级公路:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "五级公路:3",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/四级街道:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "四级街道:1",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/三级街道:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "三级街道:2",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/二级街道:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级街道:1",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 5.33333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/一级街道:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级街道:2",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 6.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/四级公路:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "四级公路:2",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/三级公路:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "三级公路:3",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/二级公路:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级公路:6",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 5.33333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/一级公路:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级公路:1",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 6.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/国道:7",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "国道:7",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 6.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/桥梁:7",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "桥梁:7",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-width": 1.6,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/隧道:4/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "隧道:4",
+        "minzoom": 10.74,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-dasharray": [5, 7.5],
+            "line-width": 0.533333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/dm/隧道:4/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "隧道:4",
+        "minzoom": 10.74,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-dasharray": [5, 7.5],
+            "line-width": 0.533333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "500/道路/道路框架/公开版高速公路:9",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版高速公路:9",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 13.3333,
+            "line-opacity": 0.28
+        }
+    }, {
+        "id": "500/道路/道路框架/公开版城市快速路:8",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:8",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 13.3333,
+            "line-opacity": 0.28
+        }
+    }, {
+        "id": "500/道路/道路框架/匝道:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "匝道:2",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 5.33333,
+            "line-opacity": 0.28
+        }
+    }, {
+        "id": "500/铁路:4/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:4",
+        "minzoom": 10.74,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#4E4E4E",
+            "line-width": 2.66683,
+            "line-opacity": 0.6
+        }
+    }, {
+        "id": "500/铁路:4/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:4",
+        "minzoom": 10.74,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#9C9C9C",
+            "line-dasharray": [3.26949, 3.26949],
+            "line-width": 2.03905,
+            "line-opacity": 0.6
+        }
+    }, {
+        "id": "500/轨道交通/轨交站轮廓:3",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "轨交站轮廓:3",
+        "minzoom": 10.74,
+        "layout": {},
+        "paint": {
+            "fill-color": "#C9F2D0",
+            "fill-opacity": 0.11,
+            "fill-outline-color": "#6E6E6E"
+        }
+    }, {
+        "id": "500/轨道交通/轨道交通:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "轨道交通:2",
+        "minzoom": 10.74,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#828282",
+            "line-width": 9.33333,
+            "line-opacity": 0.44
+        }
+    }, {
+        "id": "500/轨道交通/轨交站通道:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "轨交站通道:1",
+        "minzoom": 10.74,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#00734C",
+            "line-width": 4,
+            "line-opacity": 0.385
+        }
+    }, {
+        "id": "500/dsnp500/Disney_Bathroom:1",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Bathroom:1",
+        "minzoom": 10.74,
+        "layout": {
+            "icon-image": "500/dsnp500/Disney_Bathroom:1",
+            "icon-allow-overlap": true
+        },
+        "paint": {
+            "icon-color": "#0084A8"
+        }
+    }, {
+        "id": "1000/单线河流三级:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "单线河流三级:3",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#002F47",
+            "line-width": 2.66667
+        }
+    }, {
+        "id": "1000/单线河流二级:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "单线河流二级:2",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#002F47",
+            "line-width": 2.66667
+        }
+    }, {
+        "id": "1000/道路面/Road_Polygon:1",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Road_Polygon:1",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {},
+        "paint": {
+            "fill-color": "#292E33"
+        }
+    }, {
+        "id": "1000/道路/dm/五级街道:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "五级街道:1",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/五级公路:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "五级公路:4",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/四级街道:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "四级街道:4",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/三级街道:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "三级街道:1",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/二级街道:7",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级街道:7",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 5.33333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/一级街道:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级街道:1",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 6.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/四级公路:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "四级公路:1",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/三级公路:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "三级公路:1",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/二级公路:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级公路:1",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 5.33333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/一级公路:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级公路:3",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 6.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/国道:10",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "国道:10",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 6.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/桥梁:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "桥梁:3",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-width": 1.6,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/隧道:6/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "隧道:6",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-dasharray": [5, 7.5],
+            "line-width": 0.533333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/dm/隧道:6/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "隧道:6",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-dasharray": [5, 7.5],
+            "line-width": 0.533333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "1000/道路/道路框架/公开版高速公路:10",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版高速公路:10",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 13.3333,
+            "line-opacity": 0.28
+        }
+    }, {
+        "id": "1000/道路/道路框架/公开版城市快速路:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:6",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 13.3333,
+            "line-opacity": 0.28
+        }
+    }, {
+        "id": "1000/道路/道路框架/匝道:10",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "匝道:10",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 5.33333,
+            "line-opacity": 0.28
+        }
+    }, {
+        "id": "1000/铁路:6/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:6",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#4E4E4E",
+            "line-width": 2.66683,
+            "line-opacity": 0.6
+        }
+    }, {
+        "id": "1000/铁路:6/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:6",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#9C9C9C",
+            "line-dasharray": [3.26949, 3.26949],
+            "line-width": 2.03905,
+            "line-opacity": 0.6
+        }
+    }, {
+        "id": "1000/轨道交通/轨交站轮廓:2",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "轨交站轮廓:2",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {},
+        "paint": {
+            "fill-color": "#C9F2D0",
+            "fill-opacity": 0.11,
+            "fill-outline-color": "#6E6E6E"
+        }
+    }, {
+        "id": "1000/轨道交通/轨道交通:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "轨道交通:3",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#828282",
+            "line-width": 6.66667,
+            "line-opacity": 0.44
+        }
+    }, {
+        "id": "1000/轨道交通/轨交站通道:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "轨交站通道:2",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#00734C",
+            "line-width": 2.66667,
+            "line-opacity": 0.385
+        }
+    }, {
+        "id": "1000/dsnpoint1k/Disney_Bathroom:2",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Bathroom:2",
+        "minzoom": 10,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "1000/dsnpoint1k/Disney_Bathroom:2",
+            "icon-allow-overlap": true
+        },
+        "paint": {
+            "icon-color": "#0084A8"
+        }
+    }, {
+        "id": "2000/单线河流三级:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "单线河流三级:1",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#002F47",
+            "line-width": 2.66667
+        }
+    }, {
+        "id": "2000/单线河流二级:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "单线河流二级:4",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#002F47",
+            "line-width": 2.66667
+        }
+    }, {
+        "id": "2000/道路面/Road_Polygon:3",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Road_Polygon:3",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {},
+        "paint": {
+            "fill-color": "#292E33"
+        }
+    }, {
+        "id": "2000/道路/dm/五级街道:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "五级街道:3",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/五级公路:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "五级公路:2",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/四级街道:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "四级街道:3",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/三级街道:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "三级街道:4",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/二级街道:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级街道:6",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 5.33333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/一级街道:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级街道:3",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 6.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/四级公路:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "四级公路:3",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/三级公路:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "三级公路:4",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/二级公路:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级公路:3",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 5.33333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/一级公路:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级公路:5",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 6.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/国道:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "国道:6",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 6.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/桥梁:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "桥梁:2",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-width": 1.6,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/隧道:1/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "隧道:1",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-dasharray": [5, 7.5],
+            "line-width": 0.533333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/dm/隧道:1/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "隧道:1",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-dasharray": [5, 7.5],
+            "line-width": 0.533333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "2000/道路/道路框架/公开版高速公路:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版高速公路:1",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 13.3333,
+            "line-opacity": 0.28
+        }
+    }, {
+        "id": "2000/道路/道路框架/公开版城市快速路:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:5",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 13.3333,
+            "line-opacity": 0.28
+        }
+    }, {
+        "id": "2000/道路/道路框架/匝道:7",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "匝道:7",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 5.33333,
+            "line-opacity": 0.28
+        }
+    }, {
+        "id": "2000/轨道交通/铁路:8/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:8",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#4E4E4E",
+            "line-width": 2.66683,
+            "line-opacity": 0.33
+        }
+    }, {
+        "id": "2000/轨道交通/铁路:8/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:8",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#9C9C9C",
+            "line-dasharray": [3.26949, 3.26949],
+            "line-width": 2.03905,
+            "line-opacity": 0.33
+        }
+    }, {
+        "id": "2000/轨道交通/轨交站轮廓:4",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "轨交站轮廓:4",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {},
+        "paint": {
+            "fill-color": "#C9F2D0",
+            "fill-opacity": 0.11,
+            "fill-outline-color": "#6E6E6E"
+        }
+    }, {
+        "id": "2000/轨道交通/轨道交通:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "轨道交通:4",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#828282",
+            "line-width": 2.66667,
+            "line-opacity": 0.44
+        }
+    }, {
+        "id": "2000/轨道交通/轨交站通道:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "轨交站通道:3",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#00734C",
+            "line-width": 1.33333,
+            "line-opacity": 0.385
+        }
+    }, {
+        "id": "2000/dsnpoint2k/Disney_Bathroom:3",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Bathroom:3",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "2000/dsnpoint2k/Disney_Bathroom:3",
+            "icon-allow-overlap": true
+        },
+        "paint": {
+            "icon-color": "#0084A8"
+        }
+    }, {
+        "id": "4000/单线河流三级:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "单线河流三级:6",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#002F47",
+            "line-width": 2.66667
+        }
+    }, {
+        "id": "4000/单线河流二级:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "单线河流二级:1",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#002F47",
+            "line-width": 2.66667
+        }
+    }, {
+        "id": "4000/道路面/Road_Polygon:2",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Road_Polygon:2",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {},
+        "paint": {
+            "fill-color": "#282E33"
+        }
+    }, {
+        "id": "4000/Disney_Block:2/ ",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:2",
+        "filter": ["==", "_symbol", 0],
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.1
+        }
+    }, {
+        "id": "4000/Disney_Block:2/AI探险岛",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:2",
+        "filter": ["==", "_symbol", 1],
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.1
+        }
+    }, {
+        "id": "4000/Disney_Block:2/FL梦幻世界",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:2",
+        "filter": ["==", "_symbol", 2],
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.1
+        }
+    }, {
+        "id": "4000/Disney_Block:2/ME主入口和花园",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:2",
+        "filter": ["==", "_symbol", 3],
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.1
+        }
+    }, {
+        "id": "4000/Disney_Block:2/TC宝藏湾",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:2",
+        "filter": ["==", "_symbol", 4],
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.1
+        }
+    }, {
+        "id": "4000/Disney_Block:2/TL明日世界",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:2",
+        "filter": ["==", "_symbol", 5],
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.1
+        }
+    }, {
+        "id": "4000/Disney_Block:2/迪士尼小镇",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:2",
+        "filter": ["==", "_symbol", 6],
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.1
+        }
+    }, {
+        "id": "4000/Disney_Block:2/<all other values>",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:2",
+        "filter": ["==", "_symbol", 7],
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {},
+        "paint": {
+            "fill-color": "#F3F5C6",
+            "fill-opacity": 0.1,
+            "fill-outline-color": "#6E6E6E"
+        }
+    }, {
+        "id": "4000/道路/dm/五级街道:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "五级街道:2",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/五级公路:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "五级公路:1",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/四级街道:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "四级街道:2",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/三级街道:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "三级街道:5",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/二级街道:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级街道:5",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 5.33333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/一级街道:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级街道:4",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 6.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/四级公路:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "四级公路:5",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/三级公路:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "三级公路:2",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 4,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/二级公路:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级公路:2",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 5.33333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/一级公路:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级公路:6",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA599",
+            "line-width": 6.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/国道:8",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "国道:8",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 6.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/桥梁:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "桥梁:6",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-width": 1.6,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/隧道:3/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "隧道:3",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-dasharray": [5, 7.5],
+            "line-width": 0.533333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/dm/隧道:3/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "隧道:3",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-dasharray": [5, 7.5],
+            "line-width": 0.533333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "4000/道路/道路框架/公开版高速公路:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版高速公路:3",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 13.3333,
+            "line-opacity": 0.28
+        }
+    }, {
+        "id": "4000/道路/道路框架/公开版城市快速路:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:4",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 13.3333,
+            "line-opacity": 0.28
+        }
+    }, {
+        "id": "4000/道路/道路框架/匝道:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "匝道:6",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 5.33333,
+            "line-opacity": 0.28
+        }
+    }, {
+        "id": "4000/铁路:2/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:2",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#4E4E4E",
+            "line-width": 2.66683,
+            "line-opacity": 0.6
+        }
+    }, {
+        "id": "4000/铁路:2/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:2",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#9C9C9C",
+            "line-dasharray": [3.26949, 3.26949],
+            "line-width": 2.03905,
+            "line-opacity": 0.6
+        }
+    }, {
+        "id": "4000/轨道交通/轨交站轮廓:1",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "轨交站轮廓:1",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {},
+        "paint": {
+            "fill-color": "#C9F2D0",
+            "fill-opacity": 0.11,
+            "fill-outline-color": "#6E6E6E"
+        }
+    }, {
+        "id": "4000/轨道交通/轨道交通:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "轨道交通:5",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#828282",
+            "line-width": 2.66667,
+            "line-opacity": 0.44
+        }
+    }, {
+        "id": "4000/轨道交通/轨交站通道:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "轨交站通道:4",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#00734C",
+            "line-width": 1.33333,
+            "line-opacity": 0.385
+        }
+    }, {
+        "id": "Disney_BlockText/<all other values>",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_BlockText",
+        "filter": ["==", "_symbol", 0],
+        "minzoom": 6.68,
+        "maxzoom": 7.68,
+        "layout": {},
+        "paint": {
+            "fill-color": "#828282",
+            "fill-outline-color": "#6E6E6E"
+        }
+    }, {
+        "id": "8000/单线河流三级:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "单线河流三级:5",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#002F47",
+            "line-width": 2.66667
+        }
+    }, {
+        "id": "8000/单线河流二级:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "单线河流二级:5",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#002F47",
+            "line-width": 2.66667
+        }
+    }, {
+        "id": "8000/道路/dm/三级街道:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "三级街道:3",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 1.6,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "8000/道路/dm/二级街道:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级街道:4",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 2.66667,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "8000/道路/dm/一级街道:7",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级街道:7",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 5.33333,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "8000/道路/dm/四级公路:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "四级公路:4",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-width": 1.6,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "8000/道路/dm/三级公路:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "三级公路:6",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-width": 2.66667,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "8000/道路/dm/二级公路:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级公路:4",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-width": 4,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "8000/道路/dm/一级公路:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级公路:2",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 5.33333,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "8000/道路/dm/国道:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "国道:1",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 2.66667,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "8000/道路/dm/隧道:5/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "隧道:5",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-dasharray": [5, 7.5],
+            "line-width": 0.533333,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "8000/道路/dm/隧道:5/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "隧道:5",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-dasharray": [5, 7.5],
+            "line-width": 0.533333,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "8000/道路/dm/桥梁:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "桥梁:4",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-width": 1.6,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "8000/道路/道路框架/公开版高速公路:7",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版高速公路:7",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 6.66667,
+            "line-opacity": 0.315
+        }
+    }, {
+        "id": "8000/道路/道路框架/公开版城市快速路:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:3",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 6.66667,
+            "line-opacity": 0.315
+        }
+    }, {
+        "id": "8000/道路/道路框架/匝道:8",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "匝道:8",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 1.73333,
+            "line-opacity": 0.315
+        }
+    }, {
+        "id": "8000/铁路:1/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:1",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#4E4E4E",
+            "line-width": 2.66683,
+            "line-opacity": 0.6
+        }
+    }, {
+        "id": "8000/铁路:1/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:1",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#9C9C9C",
+            "line-dasharray": [3.26949, 3.26949],
+            "line-width": 2.03905,
+            "line-opacity": 0.6
+        }
+    }, {
+        "id": "8000/轨道交通/轨道交通:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "轨道交通:6",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#828282",
+            "line-width": 2.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "8000/轨道交通/轨道交通站:5",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨道交通站:5",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "icon-image": "8000/轨道交通/轨道交通站:5",
+            "icon-allow-overlap": true
+        },
+        "paint": {
+            "icon-color": "#FFFFFF",
+            "icon-opacity": 0.3
+        }
+    }, {
+        "id": "8000/Disney_Block:1/ ",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:1",
+        "filter": ["==", "_symbol", 0],
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.2
+        }
+    }, {
+        "id": "8000/Disney_Block:1/AI探险岛",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:1",
+        "filter": ["==", "_symbol", 1],
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.2
+        }
+    }, {
+        "id": "8000/Disney_Block:1/FL梦幻世界",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:1",
+        "filter": ["==", "_symbol", 2],
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.2
+        }
+    }, {
+        "id": "8000/Disney_Block:1/ME主入口和花园",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:1",
+        "filter": ["==", "_symbol", 3],
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.2
+        }
+    }, {
+        "id": "8000/Disney_Block:1/TC宝藏湾",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:1",
+        "filter": ["==", "_symbol", 4],
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.2
+        }
+    }, {
+        "id": "8000/Disney_Block:1/TL明日世界",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:1",
+        "filter": ["==", "_symbol", 5],
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.2
+        }
+    }, {
+        "id": "8000/Disney_Block:1/迪士尼小镇",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:1",
+        "filter": ["==", "_symbol", 6],
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {},
+        "paint": {
+            "fill-opacity": 0.2
+        }
+    }, {
+        "id": "8000/Disney_Block:1/<all other values>",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "Disney_Block:1",
+        "filter": ["==", "_symbol", 7],
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {},
+        "paint": {
+            "fill-color": "#F3F5C6",
+            "fill-opacity": 0.2,
+            "fill-outline-color": "#6E6E6E"
+        }
+    }, {
+        "id": "16000/单线河流三级:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "单线河流三级:2",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#002F47",
+            "line-width": 1.6
+        }
+    }, {
+        "id": "16000/单线河流二级:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "单线河流二级:6",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#002F47",
+            "line-width": 1.6
+        }
+    }, {
+        "id": "16000/道路/dm/二级街道:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级街道:3",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 2.66667,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "16000/道路/dm/一级街道:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级街道:6",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 2.66667,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "16000/道路/dm/三级公路:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "三级公路:5",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 2.66667,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "16000/道路/dm/二级公路:7",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级公路:7",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 2.66667,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "16000/道路/dm/一级公路:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级公路:4",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 2.66667,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "16000/道路/dm/桥梁:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "桥梁:1",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-width": 1.6,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "16000/道路/dm/国道:9",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "国道:9",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 2.66667,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "16000/道路/dm/隧道:2/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "隧道:2",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-dasharray": [5, 7.5],
+            "line-width": 0.533333,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "16000/道路/dm/隧道:2/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "隧道:2",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-dasharray": [5, 7.5],
+            "line-width": 0.533333,
+            "line-opacity": 0.27
+        }
+    }, {
+        "id": "16000/道路/道路框架/公开版高速公路:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版高速公路:5",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 4,
+            "line-opacity": 0.36
+        }
+    }, {
+        "id": "16000/道路/道路框架/公开版城市快速路:9",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:9",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 4,
+            "line-opacity": 0.36
+        }
+    }, {
+        "id": "16000/道路/道路框架/匝道:11",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "匝道:11",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 1.73333,
+            "line-opacity": 0.36
+        }
+    }, {
+        "id": "16000/铁路:3/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:3",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#4E4E4E",
+            "line-width": 2.66683,
+            "line-opacity": 0.6
+        }
+    }, {
+        "id": "16000/铁路:3/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:3",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#9C9C9C",
+            "line-dasharray": [3.26949, 3.26949],
+            "line-width": 2.03905,
+            "line-opacity": 0.6
+        }
+    }, {
+        "id": "16000/轨道交通/轨道交通:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "轨道交通:1",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#828282",
+            "line-width": 2.66667,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "16000/轨道交通/轨道交通站:1",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨道交通站:1",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "icon-image": "16000/轨道交通/轨道交通站:1",
+            "icon-allow-overlap": true
+        },
+        "paint": {
+            "icon-color": "#FFFFFF",
+            "icon-opacity": 0.3
+        }
+    }, {
+        "id": "32000/铁路:5/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:5",
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#4E4E4E",
+            "line-width": 2.66683,
+            "line-opacity": 0.5
+        }
+    }, {
+        "id": "32000/铁路:5/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:5",
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#9C9C9C",
+            "line-dasharray": [3.26949, 3.26949],
+            "line-width": 2.03905,
+            "line-opacity": 0.5
+        }
+    }, {
+        "id": "32000/道路/dm/二级街道:2/<all other values>",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级街道:2",
+        "filter": ["==", "_symbol", 0],
+        "minzoom": 4.68,
+        "maxzoom": 5.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#828282",
+            "line-width": 1.33333,
+            "line-opacity": 0.18
+        }
+    }, {
+        "id": "32000/道路/dm/一级街道:8/<all other values>",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级街道:8",
+        "filter": ["==", "_symbol", 0],
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#828282",
+            "line-width": 1.33333,
+            "line-opacity": 0.18
+        }
+    }, {
+        "id": "32000/道路/dm/二级公路:5/<all other values>",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "二级公路:5",
+        "filter": ["==", "_symbol", 0],
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#828282",
+            "line-width": 1.33333,
+            "line-opacity": 0.18
+        }
+    }, {
+        "id": "32000/道路/dm/一级公路:8/<all other values>",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级公路:8",
+        "filter": ["==", "_symbol", 0],
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#828282",
+            "line-width": 1.33333,
+            "line-opacity": 0.18
+        }
+    }, {
+        "id": "32000/道路/dm/国道:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "国道:5",
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 2.66667,
+            "line-opacity": 0.18
+        }
+    }, {
+        "id": "32000/道路/dm/桥梁:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "桥梁:5",
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5BF",
+            "line-width": 1.6,
+            "line-opacity": 0.18
+        }
+    }, {
+        "id": "32000/道路/道路框架/公开版高速公路:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版高速公路:2",
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 5.33333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "32000/道路/道路框架/公开版城市快速路:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:2",
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 5.33333,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "32000/道路/道路框架/匝道:9",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "匝道:9",
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 2,
+            "line-opacity": 0.24
+        }
+    }, {
+        "id": "64000/公园绿地高尔夫面(>450000):1",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "公园绿地高尔夫面(>450000):1",
+        "minzoom": 3.68,
+        "maxzoom": 4.09,
+        "layout": {},
+        "paint": {
+            "fill-color": "#002B33",
+            "fill-opacity": 0.55
+        }
+    }, {
+        "id": "64000/铁路:7/1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:7",
+        "minzoom": 3.68,
+        "maxzoom": 4.09,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#4E4E4E",
+            "line-width": 2.66683,
+            "line-opacity": 0.4
+        }
+    }, {
+        "id": "64000/铁路:7/0",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "铁路:7",
+        "minzoom": 3.68,
+        "maxzoom": 4.09,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#9C9C9C",
+            "line-dasharray": [3.26949, 3.26949],
+            "line-width": 2.03905,
+            "line-opacity": 0.4
+        }
+    }, {
+        "id": "64000/道路/dm/一级街道:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级街道:5",
+        "minzoom": 3.68,
+        "maxzoom": 4.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 2.66667,
+            "line-opacity": 0.1
+        }
+    }, {
+        "id": "64000/道路/dm/一级公路:7",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "一级公路:7",
+        "minzoom": 3.68,
+        "maxzoom": 4.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 2.66667,
+            "line-opacity": 0.1
+        }
+    }, {
+        "id": "64000/道路/dm/国道:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "国道:4",
+        "minzoom": 3.68,
+        "maxzoom": 4.09,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 2.66667,
+            "line-opacity": 0.1
+        }
+    }, {
+        "id": "64000/道路/道路框架/公开版高速公路:8",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版高速公路:8",
+        "minzoom": 3.68,
+        "maxzoom": 4.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#448970",
+            "line-width": 4,
+            "line-opacity": 0.2
+        }
+    }, {
+        "id": "64000/道路/道路框架/公开版城市快速路:7",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:7",
+        "minzoom": 3.68,
+        "maxzoom": 4.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#448970",
+            "line-width": 4,
+            "line-opacity": 0.2
+        }
+    }, {
+        "id": "64000/道路/道路框架/匝道:5",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "匝道:5",
+        "minzoom": 3.68,
+        "maxzoom": 4.09,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#66CDAB",
+            "line-width": 1.73333,
+            "line-opacity": 0.2
+        }
+    }, {
+        "id": "128000/公园绿地高尔夫面(>450000):2",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "公园绿地高尔夫面(>450000):2",
+        "minzoom": 2.68,
+        "maxzoom": 3.36,
+        "layout": {},
+        "paint": {
+            "fill-color": "#002B33",
+            "fill-opacity": 0.55
+        }
+    }, {
+        "id": "128000/道路/国道:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "国道:3",
+        "minzoom": 2.68,
+        "maxzoom": 3.36,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 1.6,
+            "line-opacity": 0.4
+        }
+    }, {
+        "id": "128000/道路/道路框架/csj高速公路:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "csj高速公路:2",
+        "minzoom": 2.68,
+        "maxzoom": 3.36,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 1.73333,
+            "line-opacity": 0.2
+        }
+    }, {
+        "id": "128000/道路/道路框架/公开版高速公路:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版高速公路:4",
+        "minzoom": 2.68,
+        "maxzoom": 3.36,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 2.66667,
+            "line-opacity": 0.2
+        }
+    }, {
+        "id": "128000/道路/道路框架/公开版城市快速路:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:1",
+        "minzoom": 2.68,
+        "maxzoom": 3.36,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 2.66667,
+            "line-opacity": 0.2
+        }
+    }, {
+        "id": "128000/道路/道路框架/匝道:4",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "匝道:4",
+        "minzoom": 2.68,
+        "maxzoom": 3.36,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 1.73333,
+            "line-opacity": 0.2
+        }
+    }, {
+        "id": "128000/市区政府:1",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "市区政府:1",
+        "minzoom": 2.68,
+        "maxzoom": 3.36,
+        "layout": {
+            "icon-image": "128000/市区政府:1",
+            "icon-allow-overlap": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)"
+        }
+    }, {
+        "id": "256000/道路/国道:2",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "国道:2",
+        "minzoom": 1.03,
+        "maxzoom": 2.68,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 1.6,
+            "line-opacity": 0.15
+        }
+    }, {
+        "id": "256000/道路/道路框架/csj国道",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "csj国道",
+        "minzoom": 1.03,
+        "maxzoom": 2.68,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#5FA5A6",
+            "line-width": 1.6,
+            "line-opacity": 0.15
+        }
+    }, {
+        "id": "256000/道路/道路框架/csj高速公路:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "csj高速公路:1",
+        "minzoom": 1.03,
+        "maxzoom": 2.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 1.73333,
+            "line-opacity": 0.15
+        }
+    }, {
+        "id": "256000/道路/道路框架/公开版高速公路:6",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版高速公路:6",
+        "minzoom": 1.03,
+        "maxzoom": 2.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 2.66667,
+            "line-opacity": 0.15
+        }
+    }, {
+        "id": "256000/道路/道路框架/公开版城市快速路:11",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:11",
+        "minzoom": 1.03,
+        "maxzoom": 2.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 2.66667,
+            "line-opacity": 0.15
+        }
+    }, {
+        "id": "256000/道路/道路框架/匝道:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "匝道:3",
+        "minzoom": 1.03,
+        "maxzoom": 2.68,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#329696",
+            "line-width": 1.73333,
+            "line-opacity": 0.15
+        }
+    }, {
+        "id": "256000/市区政府:2",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "市区政府:2",
+        "minzoom": 1.03,
+        "maxzoom": 2.36,
+        "layout": {
+            "icon-image": "256000/市区政府:2",
+            "icon-allow-overlap": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)"
+        }
+    }, {
+        "id": "512000/道路/道路框架/公开版高速公路:11",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版高速公路:11",
+        "minzoom": 0.77,
+        "maxzoom": 1.03,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#3E454D",
+            "line-width": 2.66667,
+            "line-opacity": 0.45
+        }
+    }, {
+        "id": "512000/道路/道路框架/公开版城市快速路:10",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:10",
+        "minzoom": 0.77,
+        "maxzoom": 1.03,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#3C444D",
+            "line-width": 2.66667,
+            "line-opacity": 0.45
+        }
+    }, {
+        "id": "512000/道路/道路框架/匝道:1",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "匝道:1",
+        "minzoom": 0.77,
+        "maxzoom": 1.03,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#3C444D",
+            "line-width": 1.73333,
+            "line-opacity": 0.45
+        }
+    }, {
+        "id": "512000/道路/道路框架/csj高速公路:3",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "csj高速公路:3",
+        "minzoom": 0.77,
+        "maxzoom": 1.03,
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#3C444D",
+            "line-width": 1.73333,
+            "line-opacity": 0.45
+        }
+    }, {
+        "id": "512000/市区政府:3",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "市区政府:3",
+        "minzoom": 0.77,
+        "maxzoom": 1.03,
+        "layout": {
+            "icon-image": "512000/市区政府:3",
+            "icon-allow-overlap": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)"
+        }
+    }, {
+        "id": "区县界线",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "区县界线",
+        "minzoom": 4.36,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#2B7057",
+            "line-dasharray": [20, 2.5],
+            "line-width": 0.533333
+        }
+    }, {
+        "id": "省市界线",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "省市界线",
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#00A884",
+            "line-dasharray": [4.61538, 0.769231],
+            "line-width": 1.73333,
+            "line-opacity": 0.5
+        }
+    }, {
+        "id": "New Group Layer/行政区划LINE",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "行政区划LINE",
+        "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#00A884",
+            "line-width": 1.73333,
+            "line-opacity": 0.5
+        }
+    }, {
+        "id": "区县面",
+        "type": "line",
+        "source": "esri",
+        "source-layer": "区县面",
+        "maxzoom": 4,
+        "layout": {
+            "line-join": "round"
+        },
+        "paint": {
+            "line-color": "#448970",
+            "line-width": 1.06667,
+            "line-opacity": 0.4
+        }
+    }, {
+        "id": "sh面/<all other values>",
+        "type": "fill",
+        "source": "esri",
+        "source-layer": "sh面",
+        "filter": ["==", "_symbol", 0],
+        "minzoom": 1.03,
+        "maxzoom": 1.03,
+        "layout": {},
+        "paint": {
+            "fill-color": "#828282",
+            "fill-opacity": 0.4,
+            "fill-outline-color": "#6E6E6E"
+        }
+    }, {
+        "id": "ANNOOTHER",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "ANNOOTHER",
+        "layout": {
+            "icon-image": "ANNOOTHER",
+            "icon-allow-overlap": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)"
+        }
+    }, {
+        "id": "市区政府7w",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "市区政府7w",
+        "minzoom": 3.36,
+        "layout": {
+            "icon-image": "市区政府7w",
+            "icon-allow-overlap": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)",
+            "icon-opacity": 0.4
+        }
+    }, {
+        "id": "机场",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "机场",
+        "minzoom": 3.36,
+        "layout": {
+            "icon-image": "机场",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Bold"],
+            "text-size": 16,
+            "text-anchor": "bottom-left",
+            "text-offset": [1.37176, -0.257623],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "火车站",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "火车站",
+        "minzoom": 4.36,
+        "layout": {
+            "icon-image": "火车站",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 17.3333,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.485402, -0.348912],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#448970",
+            "text-color": "#66CDAB"
+        }
+    }, {
+        "id": "8000/铁路:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "铁路:1/label",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 17.3333,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.223077],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "16000/铁路:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "铁路:3/label",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 14.6667,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.209091],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "2000/轨道交通/铁路:8/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "铁路:8/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.2375],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "4000/铁路:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "铁路:2/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 18.6667,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.228571],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/铁路:6/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "铁路:6/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.2375],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "500/铁路:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "铁路:4/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 24,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.244444],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "大型居住区线/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "大型居住区线/label",
+        "filter": ["==", "$type", "Point"],
+        "minzoom": 7,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-letter-spacing": 0.56,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#528A75"
+        }
+    }, {
+        "id": "4000/轨道交通/轨道交通:5/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨道交通:5/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 24,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.244444],
+            "text-letter-spacing": 0.5,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "2000/轨道交通/轨道交通:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨道交通:4/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 24,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.244444],
+            "text-letter-spacing": 0.5,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/轨道交通/轨道交通:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨道交通:3/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.2375],
+            "text-letter-spacing": 0.5,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "500/轨道交通/轨道交通:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨道交通:2/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 24,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.244444],
+            "text-letter-spacing": 0.5,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "市人大市政府:2",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "市人大市政府:2",
+        "minzoom": 0.03,
+        "maxzoom": 0.9,
+        "layout": {
+            "icon-image": "市人大市政府:2",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 18.6667,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.326177, -0.0180076],
+            "text-field": "{_name}",
+            "text-allow-overlap": true,
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#00A884",
+            "icon-opacity": 0.7,
+            "text-color": "#00A884"
+        }
+    }, {
+        "id": "市人大市政府:1/<all other values>",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "市人大市政府:1",
+        "filter": ["==", "_symbol", 0],
+        "minzoom": 0.9,
+        "layout": {
+            "icon-image": "市人大市政府:1/<all other values>",
+            "icon-allow-overlap": true,
+            "text-font": ["SimHei Regular"],
+            "text-size": 30.6667,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.248135, 0.0605606],
+            "text-field": "{_name}",
+            "text-allow-overlap": true,
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#38A800",
+            "text-color": "#895A44",
+            "text-halo-color": "#895A44",
+            "text-halo-width": 0.266667
+        }
+    }, {
+        "id": "1000/道路/dm/二级公路:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "二级公路:1/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 21.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "500/道路/dm/二级公路:6/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "二级公路:6/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "4000/道路/dm/二级公路:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "二级公路:2/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "2000/道路/dm/二级公路:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "二级公路:3/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "8000/道路/dm/二级公路:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "二级公路:4/label",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 29.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#B2B2B2"
+        }
+    }, {
+        "id": "16000/道路/dm/二级公路:7/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "二级公路:7/label",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "32000/道路/dm/一级公路:8/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级公路:8/label",
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#B2B2B2"
+        }
+    }, {
+        "id": "16000/道路/dm/一级公路:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级公路:4/label",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/道路/dm/一级公路:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级公路:3/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 21.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "500/道路/dm/一级公路:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级公路:1/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "2000/道路/dm/一级公路:5/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级公路:5/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "4000/道路/dm/一级公路:6/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级公路:6/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "16000/道路/dm/国道:9/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "国道:9/label",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 20,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "500/道路/dm/国道:7/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "国道:7/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "2000/道路/dm/国道:6/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "国道:6/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "4000/道路/dm/国道:8/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "国道:8/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/道路/dm/国道:10/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "国道:10/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 21.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "8000/道路/dm/国道:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "国道:1/label",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "8000/道路/dm/一级公路:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级公路:2/label",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 28,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#B2B2B2"
+        }
+    }, {
+        "id": "32000/道路/dm/国道:5/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "国道:5/label",
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 21.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "ANNOOTHER/label/sheng",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "ANNOOTHER",
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 16,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.0589256, 0.241074],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#828282"
+        }
+    }, {
+        "id": "16000/道路/道路框架/公开版高速公路编号:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路编号:3/label",
+        "filter": ["==", "$type", "Point"],
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 14.6667,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "icon-image": "16000/道路/道路框架/公开版高速公路编号:3/Default/{_len}",
+            "icon-rotation-alignment": "viewport",
+            "text-rotation-alignment": "viewport"
+        },
+        "paint": {
+            "text-color": "#343434"
+        }
+    }, {
+        "id": "8000/道路/道路框架/公开版高速公路编号:6/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路编号:6/label",
+        "filter": ["==", "$type", "Point"],
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 16,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "icon-image": "8000/道路/道路框架/公开版高速公路编号:6/Default/{_len}",
+            "icon-rotation-alignment": "viewport",
+            "text-rotation-alignment": "viewport"
+        },
+        "paint": {
+            "text-color": "#343434"
+        }
+    }, {
+        "id": "500/道路/道路框架/公开版高速公路编号:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路编号:2/label",
+        "filter": ["==", "$type", "Point"],
+        "minzoom": 10.74,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "icon-image": "500/道路/道路框架/公开版高速公路编号:2/Default/{_len}",
+            "icon-rotation-alignment": "viewport",
+            "text-rotation-alignment": "viewport"
+        },
+        "paint": {
+            "text-color": "#343434"
+        }
+    }, {
+        "id": "2000/道路/道路框架/公开版高速公路编号:7/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路编号:7/label",
+        "filter": ["==", "$type", "Point"],
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 18.6667,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "icon-image": "2000/道路/道路框架/公开版高速公路编号:7/Default/{_len}",
+            "icon-rotation-alignment": "viewport",
+            "text-rotation-alignment": "viewport"
+        },
+        "paint": {
+            "text-color": "#343434"
+        }
+    }, {
+        "id": "4000/道路/道路框架/公开版高速公路编号:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路编号:4/label",
+        "filter": ["==", "$type", "Point"],
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 16,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "icon-image": "4000/道路/道路框架/公开版高速公路编号:4/Default/{_len}",
+            "icon-rotation-alignment": "viewport",
+            "text-rotation-alignment": "viewport"
+        },
+        "paint": {
+            "text-color": "#343434"
+        }
+    }, {
+        "id": "1000/道路/道路框架/公开版高速公路编号:5/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路编号:5/label",
+        "filter": ["==", "$type", "Point"],
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 18.6667,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "icon-image": "1000/道路/道路框架/公开版高速公路编号:5/Default/{_len}",
+            "icon-rotation-alignment": "viewport",
+            "text-rotation-alignment": "viewport"
+        },
+        "paint": {
+            "text-color": "#343434"
+        }
+    }, {
+        "id": "32000/道路/道路框架/公开版高速公路编号:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路编号:1/label",
+        "filter": ["==", "$type", "Point"],
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 14.6667,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "icon-image": "32000/道路/道路框架/公开版高速公路编号:1/Default/{_len}",
+            "icon-rotation-alignment": "viewport",
+            "text-rotation-alignment": "viewport"
+        },
+        "paint": {
+            "text-color": "#343434"
+        }
+    }, {
+        "id": "8000/道路/道路框架/公开版高速公路:7/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路:7/label",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 28,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#33A57B"
+        }
+    }, {
+        "id": "128000/道路/道路框架/公开版高速公路:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路:4/label",
+        "minzoom": 2.68,
+        "maxzoom": 3.36,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#33A57B"
+        }
+    }, {
+        "id": "32000/道路/道路框架/公开版高速公路:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路:2/label",
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#33A57B"
+        }
+    }, {
+        "id": "64000/道路/道路框架/公开版高速公路:8/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路:8/label",
+        "minzoom": 3.68,
+        "maxzoom": 4.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#33A57B"
+        }
+    }, {
+        "id": "16000/道路/道路框架/公开版高速公路:5/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路:5/label",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#33A57B"
+        }
+    }, {
+        "id": "1000/道路/道路框架/公开版高速公路:10/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路:10/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#678A7D",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "4000/道路/道路框架/公开版高速公路:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路:3/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#678A7D"
+        }
+    }, {
+        "id": "500/道路/道路框架/公开版高速公路:9/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路:9/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#678A7D",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "2000/道路/道路框架/公开版高速公路:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版高速公路:1/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#678A7D"
+        }
+    }, {
+        "id": "32000/道路/dm/一级街道:8/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级街道:8/label",
+        "minzoom": 5.09,
+        "maxzoom": 4.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#D7D79E"
+        }
+    }, {
+        "id": "16000/道路/dm/一级街道:6/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级街道:6/label",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#D7D79E"
+        }
+    }, {
+        "id": "8000/道路/dm/一级街道:7/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级街道:7/label",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 29.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#D7D79E"
+        }
+    }, {
+        "id": "500/道路/dm/一级街道:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级街道:2/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "2000/道路/dm/一级街道:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级街道:3/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "4000/道路/dm/一级街道:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级街道:4/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/道路/dm/一级街道:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一级街道:1/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 21.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "500/道路/dm/五级公路:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "五级公路:3/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "1000/道路/dm/五级公路:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "五级公路:4/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 21.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "2000/道路/dm/五级公路:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "五级公路:2/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "500/道路/dm/四级公路:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "四级公路:2/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "4000/道路/dm/四级公路:5/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "四级公路:5/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "2000/道路/dm/四级公路:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "四级公路:3/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/道路/dm/四级公路:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "四级公路:1/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 21.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "4000/道路/dm/三级公路:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "三级公路:2/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "2000/道路/dm/三级公路:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "三级公路:4/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/道路/dm/三级公路:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "三级公路:1/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 21.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "500/道路/dm/三级公路:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "三级公路:3/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "8000/道路/dm/三级公路:6/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "三级公路:6/label",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 29.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#B2B2B2"
+        }
+    }, {
+        "id": "1000/道路/dm/五级街道:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "五级街道:1/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 21.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "500/道路/dm/五级街道:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "五级街道:4/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "2000/道路/dm/五级街道:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "五级街道:3/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "POI5b/长途汽车站",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "长途汽车站",
+        "minzoom": 7,
+        "layout": {
+            "icon-image": "POI5b/长途汽车站",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 16,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.609186, -0.309186],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#66CDAB",
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "500/道路/dm/四级街道:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "四级街道:1/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "2000/道路/dm/四级街道:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "四级街道:3/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "4000/道路/dm/四级街道:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "四级街道:2/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/道路/dm/四级街道:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "四级街道:4/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 21.3333,
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "2000/道路/dm/三级街道:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "三级街道:4/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "500/道路/dm/三级街道:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "三级街道:2/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "4000/道路/dm/三级街道:5/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "三级街道:5/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/道路/dm/三级街道:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "三级街道:1/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 21.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "8000/道路/dm/二级街道:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "二级街道:4/label",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 29.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#D7D79E"
+        }
+    }, {
+        "id": "2000/道路/dm/二级街道:6/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "二级街道:6/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/道路/dm/二级街道:7/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "二级街道:7/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 21.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "500/道路/dm/二级街道:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "二级街道:1/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "4000/道路/dm/二级街道:5/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "二级街道:5/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "16000/道路/dm/二级街道:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "二级街道:3/label",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#D7D79E"
+        }
+    }, {
+        "id": "4000/单线河流二级:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "单线河流二级:1/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimSun Regular"],
+            "text-size": 17.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "500/单线河流二级:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "单线河流二级:3/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimSun Regular"],
+            "text-size": 18.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "2000/单线河流二级:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "单线河流二级:4/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimSun Regular"],
+            "text-size": 18.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/单线河流二级:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "单线河流二级:2/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimSun Regular"],
+            "text-size": 20,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "8000/单线河流二级:5/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "单线河流二级:5/label",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimSun Regular"],
+            "text-size": 17.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#00734C"
+        }
+    }, {
+        "id": "8000/单线河流三级:5/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "单线河流三级:5/label",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimSun Regular"],
+            "text-size": 17.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#00734C"
+        }
+    }, {
+        "id": "4000/单线河流三级:6/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "单线河流三级:6/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimSun Regular"],
+            "text-size": 17.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "500/单线河流三级:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "单线河流三级:4/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimSun Regular"],
+            "text-size": 18.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/单线河流三级:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "单线河流三级:3/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimSun Regular"],
+            "text-size": 20,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "2000/单线河流三级:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "单线河流三级:1/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimSun Regular"],
+            "text-size": 18.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "Disney_BlockText/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_BlockText/label",
+        "minzoom": 6.68,
+        "maxzoom": 7.68,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 14.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#66CDAB",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "Disney_BlockText5K/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_BlockText5K/label",
+        "minzoom": 7.68,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#66CDAB"
+        }
+    }, {
+        "id": "一般集镇/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "一般集镇",
+        "minzoom": 4.36,
+        "layout": {
+            "text-font": ["Microsoft YaHei Bold"],
+            "text-size": 24,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-allow-overlap": true,
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#5C8944"
+        }
+    }, {
+        "id": "主要集镇/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "主要集镇",
+        "minzoom": 4.36,
+        "layout": {
+            "text-font": ["Microsoft YaHei Bold"],
+            "text-size": 24,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-allow-overlap": true,
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#5C8944"
+        }
+    }, {
+        "id": "小型居住区/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "小型居住区",
+        "minzoom": 8,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 18.6667,
+            "text-anchor": "left",
+            "text-offset": [0.0714286, 0],
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#528A75"
+        }
+    }, {
+        "id": "2000/轨道交通/轨道交通站:4",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨道交通站:4",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "2000/轨道交通/轨道交通站:4",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 25.3333,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#FFFFFF",
+            "icon-opacity": 0.55,
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "4000/轨道交通/轨道交通站:6",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨道交通站:6",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "icon-image": "4000/轨道交通/轨道交通站:6",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 26.6667,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#FFFFFF",
+            "icon-opacity": 0.55,
+            "text-color": "#728944",
+            "text-halo-color": "#343434",
+            "text-halo-width": 0.4
+        }
+    }, {
+        "id": "500/轨道交通/轨道交通站:3",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨道交通站:3",
+        "minzoom": 10.74,
+        "layout": {
+            "icon-image": "500/轨道交通/轨道交通站:3",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 26.6667,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#FFFFFF",
+            "icon-opacity": 0.55,
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "1000/轨道交通/轨道交通站:2",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨道交通站:2",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "1000/轨道交通/轨道交通站:2",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 18.6667,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#FFFFFF",
+            "icon-opacity": 0.55,
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "1000/dsnpoint1k/Disney_Infirmary:3",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Infirmary:3",
+        "minzoom": 10,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "1000/dsnpoint1k/Disney_Infirmary:3",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 18.6667,
+            "text-anchor": "left",
+            "text-offset": [0.517857, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#E60000",
+            "text-color": "#FF7F7F"
+        }
+    }, {
+        "id": "2000/dsnpoint2k/Disney_Infirmary:1",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Infirmary:1",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "2000/dsnpoint2k/Disney_Infirmary:1",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 16,
+            "text-anchor": "left",
+            "text-offset": [0.545312, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#FF0000",
+            "text-color": "#FF7F7F"
+        }
+    }, {
+        "id": "500/dsnp500/Disney_Infirmary:2",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Infirmary:2",
+        "minzoom": 10.74,
+        "layout": {
+            "icon-image": "500/dsnp500/Disney_Infirmary:2",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "left",
+            "text-offset": [0.497266, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#E60000",
+            "text-color": "#FF7F7F"
+        }
+    }, {
+        "id": "500/道路/dm/隧道:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "隧道:4/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 24,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.244444],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "4000/道路/dm/隧道:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "隧道:3/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 25.3333,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.247368],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "1000/道路/dm/隧道:6/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "隧道:6/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.2375],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "2000/道路/dm/隧道:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "隧道:1/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 24,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.244444],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "8000/道路/dm/隧道:5/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "隧道:5/label",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "bottom",
+            "text-offset": [0, 0.2375],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "街道办事处",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "街道办事处",
+        "minzoom": 5.68,
+        "layout": {
+            "icon-image": "街道办事处",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 17.3333,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)",
+            "text-color": "#828282"
+        }
+    }, {
+        "id": "1000/dsnpoint1k/Disney_Tourist:2",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Tourist:2",
+        "minzoom": 10,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "1000/dsnpoint1k/Disney_Tourist:2",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 18.6667,
+            "text-anchor": "left",
+            "text-offset": [0.583482, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#0070FF",
+            "text-color": "#FFD37F"
+        }
+    }, {
+        "id": "镇政府",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "镇政府",
+        "minzoom": 4.36,
+        "layout": {
+            "icon-image": "镇政府",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 17.3333,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)",
+            "text-color": "#004C5C",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "500/dsnp500/Disney_Tourist:1",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Tourist:1",
+        "minzoom": 10.74,
+        "layout": {
+            "icon-image": "500/dsnp500/Disney_Tourist:1",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "left",
+            "text-offset": [0.553711, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#0070FF",
+            "text-color": "#FFD37F"
+        }
+    }, {
+        "id": "2000/dsnpoint2k/Disney_Tourist:3",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Tourist:3",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "2000/dsnpoint2k/Disney_Tourist:3",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 16,
+            "text-anchor": "left",
+            "text-offset": [0.624479, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#FFFF00",
+            "text-color": "#FFFF00"
+        }
+    }, {
+        "id": "1000/dsnpoint1k/Disney_Diner:2",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Diner:2",
+        "minzoom": 10,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "1000/dsnpoint1k/Disney_Diner:2",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 18.6667,
+            "text-anchor": "left",
+            "text-offset": [0.54308, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#E6E600",
+            "text-color": "#E6E600"
+        }
+    }, {
+        "id": "500/dsnp500/Disney_Diner:1",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Diner:1",
+        "minzoom": 10.74,
+        "layout": {
+            "icon-image": "500/dsnp500/Disney_Diner:1",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "left",
+            "text-offset": [0.518359, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#E6E600",
+            "text-color": "#E6E600"
+        }
+    }, {
+        "id": "1000/道路/道路框架/公开版城市快速路:6/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:6/label",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 24,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#678A7D",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "2000/道路/道路框架/公开版城市快速路:5/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:5/label",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#678A7D"
+        }
+    }, {
+        "id": "500/道路/道路框架/公开版城市快速路:8/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:8/label",
+        "minzoom": 10.74,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#678A7D",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1.33333
+        }
+    }, {
+        "id": "4000/道路/道路框架/公开版城市快速路:4/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:4/label",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#678A7D"
+        }
+    }, {
+        "id": "16000/道路/道路框架/公开版城市快速路:9/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:9/label",
+        "minzoom": 5.09,
+        "maxzoom": 6.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#33A57B"
+        }
+    }, {
+        "id": "64000/道路/道路框架/公开版城市快速路:7/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:7/label",
+        "minzoom": 3.68,
+        "maxzoom": 4.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#33A57B"
+        }
+    }, {
+        "id": "32000/道路/道路框架/公开版城市快速路:2/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:2/label",
+        "minzoom": 4.09,
+        "maxzoom": 5.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 26.6667,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#33A57B"
+        }
+    }, {
+        "id": "128000/道路/道路框架/公开版城市快速路:1/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:1/label",
+        "minzoom": 2.68,
+        "maxzoom": 3.36,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 25.3333,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#33A57B"
+        }
+    }, {
+        "id": "500/dsnp500/Disney_Diningcar",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Diningcar",
+        "minzoom": 10.74,
+        "layout": {
+            "icon-image": "500/dsnp500/Disney_Diningcar",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "left",
+            "text-offset": [0.5625, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#FFFFFF",
+            "text-color": "#FFAA00"
+        }
+    }, {
+        "id": "8000/道路/道路框架/公开版城市快速路:3/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "公开版城市快速路:3/label",
+        "minzoom": 6.09,
+        "maxzoom": 7.68,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimHei Regular"],
+            "text-size": 28,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#33A57B"
+        }
+    }, {
+        "id": "1000/dsnpoint1k/Disney_Play:2",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Play:2",
+        "minzoom": 10,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "1000/dsnpoint1k/Disney_Play:2",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 18.6667,
+            "text-anchor": "left",
+            "text-offset": [0.533607, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#FFAA00",
+            "text-color": "#FFAA00"
+        }
+    }, {
+        "id": "500/dsnp500/Disney_Play:3",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Play:3",
+        "minzoom": 10.74,
+        "layout": {
+            "icon-image": "500/dsnp500/Disney_Play:3",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "left",
+            "text-offset": [0.51575, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#FFAA00",
+            "text-color": "#FFAA00"
+        }
+    }, {
+        "id": "2000/dsnpoint2k/Disney_Play:1",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Play:1",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "2000/dsnpoint2k/Disney_Play:1",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 16,
+            "text-anchor": "left",
+            "text-offset": [0.557417, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#FFAA00",
+            "text-color": "#FFAA00"
+        }
+    }, {
+        "id": "1000/BuildingText_point_xm:1",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "BuildingText_point_xm:1",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "1000/BuildingText_point_xm:1",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 16,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.0589256, 0.241074],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)",
+            "text-color": "#686868"
+        }
+    }, {
+        "id": "500/BuildingText_point_xm:3",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "BuildingText_point_xm:3",
+        "minzoom": 10.74,
+        "layout": {
+            "icon-image": "500/BuildingText_point_xm:3",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 14.6667,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.0642824, 0.235718],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)",
+            "text-color": "#686868"
+        }
+    }, {
+        "id": "2000/BuildingText_point_xm:2",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "BuildingText_point_xm:2",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "2000/BuildingText_point_xm:2",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.0441942, 0.255806],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)",
+            "text-color": "#686868"
+        }
+    }, {
+        "id": "1000/dsnpoint1k/Disney_Store:1",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Store:1",
+        "minzoom": 10,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "1000/dsnpoint1k/Disney_Store:1",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 18.6667,
+            "text-anchor": "left",
+            "text-offset": [0.54308, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#A87000",
+            "text-color": "#A87000"
+        }
+    }, {
+        "id": "500/dsnp500/Disney_Store:2",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "Disney_Store:2",
+        "minzoom": 10.74,
+        "layout": {
+            "icon-image": "500/dsnp500/Disney_Store:2",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "left",
+            "text-offset": [0.518359, 0],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#A87000",
+            "text-color": "#A87000"
+        }
+    }, {
+        "id": "ver50W20W",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "ver50W20W",
+        "minzoom": 0,
+        "layout": {
+            "icon-image": "ver50W20W",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 10.6667,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.424326, -0.12667],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "rgba(212,208,200,0)",
+            "icon-opacity": 0.2,
+            "text-color": "#00A884"
+        }
+    }, {
+        "id": "256000/市区政府:2/label/qx",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "市区政府:2",
+        "minzoom": 1.03,
+        "maxzoom": 2.36,
+        "layout": {
+            "text-font": ["Microsoft YaHei Bold"],
+            "text-size": 26.6667,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.152855, 0.146707],
+            "text-field": "{_name}",
+            "text-allow-overlap": true,
+            "icon-image": "256000/市区政府:2/qx/{_len}",
+            "icon-rotation-alignment": "viewport",
+            "text-rotation-alignment": "viewport"
+        },
+        "paint": {
+            "text-color": "#73FFDF"
+        }
+    }, {
+        "id": "市区政府7w/label/qx",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "市区政府7w",
+        "minzoom": 3.36,
+        "layout": {
+            "text-font": ["Microsoft YaHei Bold"],
+            "text-size": 24,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.169839, 0.129675],
+            "text-field": "{_name}",
+            "text-allow-overlap": true,
+            "icon-image": "市区政府7w/qx/{_len}",
+            "icon-rotation-alignment": "viewport",
+            "text-rotation-alignment": "viewport"
+        },
+        "paint": {
+            "text-color": "#9ED7C2"
+        }
+    }, {
+        "id": "河流结构线/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "河流结构线/label",
+        "minzoom": 3.03,
+        "maxzoom": 3.09,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 20,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#73DFFF"
+        }
+    }, {
+        "id": "中型居住区",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "中型居住区",
+        "minzoom": 8,
+        "layout": {
+            "icon-image": "中型居住区",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Bold"],
+            "text-size": 20,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.203807, 0.0956095],
+            "text-letter-spacing": 0.1,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)",
+            "icon-opacity": 0.5,
+            "text-color": "#528A75"
+        }
+    }, {
+        "id": "512000/河流结构线注记/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "河流结构线注记/label",
+        "minzoom": 0.77,
+        "maxzoom": 1.03,
+        "layout": {
+            "symbol-placement": "line",
+            "symbol-spacing": 1000,
+            "text-font": ["SimSun Regular"],
+            "text-size": 14.6667,
+            "text-letter-spacing": 0.5,
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "ver",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "ver",
+        "minzoom": 8.42,
+        "layout": {
+            "icon-image": "ver",
+            "icon-allow-overlap": true,
+            "text-font": ["SimSun Regular"],
+            "text-size": 13.3333,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.238211, 0.0613518],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)",
+            "text-color": "#9C9C9C"
+        }
+    }, {
+        "id": "county",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "county",
+        "minzoom": 1.77,
+        "layout": {
+            "icon-image": "county",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 13.3333,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.450086, -0.150086],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#686868",
+            "text-color": "#686868"
+        }
+    }, {
+        "id": "csjcity",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "csjcity",
+        "layout": {
+            "icon-image": "csjcity",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 14.6667,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.441271, -0.141271],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "rgba(240,240,240,0)",
+            "text-color": "#686868"
+        }
+    }, {
+        "id": "csjcity1",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "csjcity1",
+        "layout": {
+            "icon-image": "csjcity1",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 16,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.404759, -0.0938839],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#4E4E4E",
+            "text-color": "#686868"
+        }
+    }, {
+        "id": "2000/轨道交通/轨交出入口:2",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨交出入口:2",
+        "minzoom": 9,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "2000/轨道交通/轨交出入口:2",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 24,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-allow-overlap": true,
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#00734C",
+            "icon-opacity": 0.55,
+            "text-color": "#000000"
+        }
+    }, {
+        "id": "500/轨道交通/轨交出入口:3",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨交出入口:3",
+        "minzoom": 10.74,
+        "layout": {
+            "icon-image": "500/轨道交通/轨交出入口:3",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 24,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-allow-overlap": true,
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#00734C",
+            "icon-opacity": 0.55,
+            "text-color": "#000000"
+        }
+    }, {
+        "id": "1000/轨道交通/轨交出入口:4",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨交出入口:4",
+        "minzoom": 9.42,
+        "maxzoom": 10,
+        "layout": {
+            "icon-image": "1000/轨道交通/轨交出入口:4",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 21.3333,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-allow-overlap": true,
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#00734C",
+            "icon-opacity": 0.55,
+            "text-color": "#000000"
+        }
+    }, {
+        "id": "4000/轨道交通/轨交出入口:1",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "轨交出入口:1",
+        "minzoom": 7.68,
+        "maxzoom": 9,
+        "layout": {
+            "icon-image": "4000/轨道交通/轨交出入口:1",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 24,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-allow-overlap": true,
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "#00734C",
+            "icon-opacity": 0.55,
+            "text-color": "#000000"
+        }
+    }, {
+        "id": "POI5b/宾馆/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "宾馆",
+        "minzoom": 9,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 16,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.0589256, 0.241074],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "POI5b/医院/label/Default",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "医院",
+        "minzoom": 9,
+        "layout": {
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 16,
+            "text-anchor": "bottom-left",
+            "text-offset": [0.0589256, 0.241074],
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "text-color": "#448970"
+        }
+    }, {
+        "id": "POI5b/文体教",
+        "type": "symbol",
+        "source": "esri",
+        "source-layer": "文体教",
+        "minzoom": 7,
+        "layout": {
+            "icon-image": "POI5b/文体教",
+            "icon-allow-overlap": true,
+            "text-font": ["Microsoft YaHei Regular"],
+            "text-size": 16,
+            "text-anchor": "center",
+            "text-field": "{_name}",
+            "text-optional": true
+        },
+        "paint": {
+            "icon-color": "rgba(212,208,200,0)",
+            "text-color": "#448970"
+        }
+    }]
+}

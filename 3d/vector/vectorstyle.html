@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
-    <title>地图控件</title>
+    <title>Identify</title>
     <style>
         html,
         body,
@@ -14,16 +14,23 @@
             width: 100%;
             height: 100%;
         }
+        .mapbuttoncontainergroup {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
 
         .mapbuttoncontainer {
-            width: 20%;
+            width: 100%;
             display: flex;
             flex-flow: row;
-            position: absolute;
             top: 5px;
             left: 10px;
             display: block;
         }
+
 
         .mapbuttoncontainer .mapbutton {
             width: 100px;
@@ -34,47 +41,46 @@
         }
     </style>
     <script src="../../library/common/jquery-2.2.3.min.js"></script>
-    <script src="../../library/smap/xuhui/SMap.js"></script>
-     <script src="./style.js"></script>
+    <script src="../../library/smap/xuhui/SMap.min.js"></script>
     <script>
         const smap = new SMap.Map('mapcontainer', {
             viewMode: '3D',
             center: [0, 0],
-            zoom: 3,
-            zooms: [0, 11],
-            pitch: 60,
-            mapStyle: 'smap://styles/dark', // 'smap://styles/dark' 'smap://styles/image'
-            showBuildingBlock: true
+             zoom: 3,
+             zooms: [0, 11],
+             pitch: 60,
+             mapStyle: 'smap://styles/dark',
+             showBuildingBlock: true
         })
 
-        $(function () {
-            $("#addlayercontrol").click(function () {
-                const layerListControl = new SMap.LayerListControl({
-                    visible: true,
-                    position: 'top-right',
-                    collapse: true
-                })
-                smap.addControl(layerListControl)
-            })
-            $("#setvectorstyle").click(function () {
-                const vectorlayer =smap.getLayer('basemap_as')
-                // vectorlayer.loadStyle(vstyle)
-                 const paintProperties = vectorlayer.getPaintProperties("面/区县面");
-                 paintProperties["fill-color"] =
-                 paintProperties["fill-color"] == "#FF44AA" ? "#FF44AA" : "#FF44AA";
-                 vectorlayer.setPaintProperties("面/区县面", paintProperties);
-            })
+        smap.on(SMap.MapEvent.maploaded, function (view) {
+         smap.set3dlabel()
         })
+      
+      $(function () {
+           $("#addlayercontrol").click(function () {
+              const layerListControl = new SMap.LayerListControl({
+                 visible: true,
+                 position: 'top-right',
+                 collapse: true
+              })
+              smap.addControl(layerListControl)
+           }),
+            $("#btnsetlayer").click(function () {
+             const layer = smap.getLayer("basemap_as")
+             layer.loadStyle('http://127.0.0.1:5500/3d/vector/root.json')
+          })
+      })
     </script>
 </head>
 
 <body>
     <div id="mapcontainer"></div>
-    <div class="mapbuttoncontainer">
-        <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
-        <button class="mapbutton" id="setvectorstyle"> 修改样式</button>
-        
-
+      <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+             <button class="mapbutton" id="btnsetlayer"> 设置矢量切片</button>
+        </div>
     </div>
 </body>
 

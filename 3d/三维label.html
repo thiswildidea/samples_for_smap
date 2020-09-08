@@ -47,6 +47,9 @@
            showBuildingBlock: true
         })
         
+         smap.on(SMap.MapEvent.maploaded, function(view) {
+            smap.set3dlabel()
+         })
       $(function () {
          $("#addlayercontrol").click(function () {
            const layerListControl = new SMap.LayerListControl({

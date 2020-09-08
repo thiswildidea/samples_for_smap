@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>Identify</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../library/smap/xuhui/SMap.min.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+
+        $(function () {
+            $("#addlayercontrol").click(function () {
+                    const layerListControl = new SMap.LayerListControl({
+                        visible: true,
+                        position: 'top-right',
+                        collapse: true
+                    })
+                    smap.addControl(layerListControl)
+                }),
+
+                $("#addUndergroundSwitch").click(function () {
+                    const undergroundSwitch = new SMap.UndergroundSwitch({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(undergroundSwitch)
+                }),
+                $("#btnaddLayer").click(function () {
+                    const layeroption = {
+                        layerType: 'FeatureLayer',
+                        layerUrl: "http://10.201.37.222/arcgis/rest/services/Hosted/lake/FeatureServer/0",
+                        layerTitle: "徐汇河流",
+                        layerId: "xh_lake",
+                        layerOpacity: 1,
+                        layerVisible: true,
+                        layerMaxScale: 500,
+                        layerMinScale: 1280000,
+                        layerRenderer: {
+                            type: "simple",
+                            symbol: {
+                                type: "polygon-3d",
+                                symbolLayers: [{
+                                    type: "water",
+                                    waveDirection: 180,
+                                    color:[52, 193, 229],
+                                    waveStrength: "moderate",
+                                    waterbodySize: "large"
+                                }]
+                            }
+                        },
+                        layerPopupEnabled: true
+                    }
+                    const layer = new SMap.Layer(layeroption)
+                    smap.addLayers(layer)
+                }),
+                $("#btremoveLayerr").click(function () {
+                    smap.removeLayer('xh_lake')
+                })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+            <button class="mapbutton" id="addUndergroundSwitch"> 添加地上地下切换控件</button>
+            <button class="mapbutton" id="btnaddLayer"> add layer</button>
+            <button class="mapbutton" id="btremoveLayerr"> remove Layer</button>
+        </div>
+    </div>
+</body>
+
+</html>
