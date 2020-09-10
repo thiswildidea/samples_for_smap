@@ -14,6 +14,7 @@
             width: 100%;
             height: 100%;
         }
+
         .mapbuttoncontainergroup {
             width: 40%;
             height: 50%;
@@ -46,174 +47,195 @@
         const smap = new SMap.Map('mapcontainer', {
             viewMode: '3D',
             center: [0, 0],
-             zoom: 3,
-             zooms: [0, 11],
-             pitch: 60,
-             mapStyle: 'smap://styles/dark',
-             showBuildingBlock: true
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
         })
 
         smap.on(SMap.MapEvent.maploaded, function (view) {
-         smap.set3dlabel()
+            smap.set3dlabel()
         })
-      
-      $(function () {
-           $("#addlayercontrol").click(function () {
-              const layerListControl = new SMap.LayerListControl({
-                 visible: true,
-                 position: 'top-right',
-                 collapse: true
-              })
-              smap.addControl(layerListControl)
-           }),
-          $("#btnaddMapImageLayer").click(function () {
-            const MapImageLayerparam = {
-              layerType: 'MapImageLayer',
-              layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/MapServer",
-              layerTitle: "徐汇区街道V2",
-              layerId: "XH_JD_V2",
-              layerOpacity:1,
-              layerVisible:true,
-              layerMaxScale:10,
-              layerMinScale:10000000
-             }
-             smap.addLayer(MapImageLayerparam)
-        })
-          $("#btremoveMapImageLayer").click(function () {
-              smap.removeLayer('XH_JD_V2')
-           }),
 
-         $("#btnaddFeatureLayer").click(function () {
-            const FeatureLayerparam = {
-              layerType: 'FeatureLayer',
-              layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_PIPELINE/FeatureServer/1",
-              layerTitle: "雨水管点",
-              layerId: "XH_PIPELINE_YSGD",
-              layerOpacity:1,
-              layerVisible:true,
-              layerMaxScale:10,
-              layerMinScale:10000000,
-              layerPopupEnabled:true,
-              layerPopupTemplate: {
-                  title: '{exp_no}',
-                  content: [{
-                      type: 'fields',
-                      fieldInfos: [{
-                              fieldName: 'exp_no',
-                              label: '物探点号'
-                          },
-                          {
-                              fieldName: 'feature',
-                              label: '特征'
-                          },
-                          {
-                              fieldName: 'subsid',
-                              label: '附属物'
-                          },
-                          {
-                              fieldName: 'dlmc',
-                              label: '道路名称'
-                          },
-                          {
-                              fieldName: 'jjcc',
-                              label: '窨井尺寸'
-                          }
-                      ]
-                  }]
-              },
-              layerLabelsVisible:false
-             }
-             smap.addLayer(FeatureLayerparam)
-         })
-           $("#btremoveFeatureLayer").click(function () {
-              smap.removeLayer('XH_PIPELINE_YSGD')
-           }),
-        $("#btnaddSceneLayer").click(function () {
-            const SceneLayerparam = {
-                layerType: 'SceneLayer',
-                 layerUrl: "http://10.201.37.220/server/rest/services/Hosted/LBJZ_ORIGIN/SceneServer",
-                 layerTitle: "历保建筑原貌",
-                 layerId: "LBJZ_ORIGIN",
-                 layerOpacity:1,
-                 layerVisible:true,
-                 layerMaxScale:1000,
-                 layerMinScale:10000000,
-                 layerPopupEnabled:true,
-                 layerelevationInfo: {
-                 mode: 'absolute-height',
-                 offset: -2.5
+        $(function () {
+            $("#addlayercontrol").click(function () {
+                    const layerListControl = new SMap.LayerListControl({
+                        visible: true,
+                        position: 'top-right',
+                        collapse: true
+                    })
+                    smap.addControl(layerListControl)
+                }),
+                $("#btnaddMapImageLayer").click(function () {
+                    const MapImageLayerparam = {
+                        layerType: 'FeatureLayer',
+                        layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_JD_V2/FeatureServer",
+                        layerTitle: "徐汇区街道V2",
+                        layerId: "XH_JD_V2",
+                        layerOpacity: 1,
+                        layerVisible: true,
+                        layerMaxScale: 10,
+                        layerMinScale: 10000000,
+                        layerLabelsVisible: true,
+                        layerLabelingInfo: [{
+                            symbol: {
+                                type: 'label-3d',
+                                symbolLayers: [{
+                                    type: 'text',
+                                    material: {
+                                        color: [255, 0, 102, 255]
+                                    },
+                                    halo: {
+                                        color: [255, 0, 0, 0.7],
+                                        size: 3
+                                    },
+                                    size: 45
+                                }]
+                            },
+                            labelPlacement: 'above-center',
+                            labelExpressionInfo: {
+                                expression: '$feature.jd_name'
+                            }
+                        }]
+                    }
+                    smap.addLayer(MapImageLayerparam)
+                })
+            $("#btremoveMapImageLayer").click(function () {
+                    smap.removeLayer('XH_JD_V2')
+                }),
+
+                $("#btnaddFeatureLayer").click(function () {
+                    const FeatureLayerparam = {
+                        layerType: 'FeatureLayer',
+                        layerUrl: "http://10.201.37.222/arcgis/rest/services/XH_PIPELINE/FeatureServer/1",
+                        layerTitle: "雨水管点",
+                        layerId: "XH_PIPELINE_YSGD",
+                        layerOpacity: 1,
+                        layerVisible: true,
+                        layerMaxScale: 10,
+                        layerMinScale: 10000000,
+                        layerPopupEnabled: true,
+                        layerPopupTemplate: {
+                            title: '{exp_no}',
+                            content: [{
+                                type: 'fields',
+                                fieldInfos: [{
+                                        fieldName: 'exp_no',
+                                        label: '物探点号'
+                                    },
+                                    {
+                                        fieldName: 'feature',
+                                        label: '特征'
+                                    },
+                                    {
+                                        fieldName: 'subsid',
+                                        label: '附属物'
+                                    },
+                                    {
+                                        fieldName: 'dlmc',
+                                        label: '道路名称'
+                                    },
+                                    {
+                                        fieldName: 'jjcc',
+                                        label: '窨井尺寸'
+                                    }
+                                ]
+                            }]
+                        },
+                        layerLabelsVisible: false
+                    }
+                    smap.addLayer(FeatureLayerparam)
+                })
+            $("#btremoveFeatureLayer").click(function () {
+                    smap.removeLayer('XH_PIPELINE_YSGD')
+                }),
+                $("#btnaddSceneLayer").click(function () {
+                    const SceneLayerparam = {
+                        layerType: 'SceneLayer',
+                        layerUrl: "http://10.201.37.220/server/rest/services/Hosted/LBJZ_ORIGIN/SceneServer",
+                        layerTitle: "历保建筑原貌",
+                        layerId: "LBJZ_ORIGIN",
+                        layerOpacity: 1,
+                        layerVisible: true,
+                        layerMaxScale: 1000,
+                        layerMinScale: 10000000,
+                        layerPopupEnabled: true,
+                        layerelevationInfo: {
+                            mode: 'absolute-height',
+                            offset: -2.5
+                        }
+                    }
+                    smap.addLayer(SceneLayerparam)
+                })
+            $("#btremoveSceneLayer").click(function () {
+                smap.removeLayer('LBJZ_ORIGIN')
+            })
+
+            $("#btnaddSHCTiledMapServiceLayer").click(function () {
+                const SHCTiledMapServiceLayerparam = {
+                    layerType: 'SHCTiledMapServiceLayer',
+                    layerUrl: "http://10.201.37.222/arcgis/rest/services/Air1948/MapServer",
+                    layerTitle: "Air1948",
+                    layerId: "Air1948",
+                    layerOpacity: 1,
+                    layerVisible: true
                 }
-             }
-             smap.addLayer(SceneLayerparam)
-         })
-           $("#btremoveSceneLayer").click(function () {
-             smap.removeLayer('LBJZ_ORIGIN')
-           })
+                smap.addLayer(SHCTiledMapServiceLayerparam)
+            })
+            $("#btremoveSHCTiledMapServiceLayer").click(function () {
+                smap.removeLayer('LBJZ_ORIGIN')
+            })
 
-           $("#btnaddSHCTiledMapServiceLayer").click(function () {
-                 const SHCTiledMapServiceLayerparam = {
-                     layerType: 'SHCTiledMapServiceLayer',
-                     layerUrl: "http://10.201.37.222/arcgis/rest/services/Air1948/MapServer",
-                     layerTitle: "Air1948",
-                     layerId: "Air1948",
-                     layerOpacity:1,
-                     layerVisible:true
-                 }
-                 smap.addLayer(SHCTiledMapServiceLayerparam)
-           })
-           $("#btremoveSHCTiledMapServiceLayer").click(function () {
-              smap.removeLayer('LBJZ_ORIGIN')
-           })
-
-             $("#btnaddTilelayer").click(function () {
-                 const SHCTiledMapServiceLayerparam = {
-                     layerType: 'TileLayer',
-                     layerUrl: "http://10.201.37.222/arcgis/rest/services/maskboundary/xh_maskboundary/MapServer",
-                     layerTitle: "XHGQ",
-                     layerId: "XHGQ",
-                     layerOpacity:1,
-                     layerVisible:true
-                 }
-                 smap.addLayer(SHCTiledMapServiceLayerparam)
-           })
-           $("#btremoveTilelayerr").click(function () {
-              smap.removeLayer('LBJZ_ORIGIN')
-           })
+            $("#btnaddTilelayer").click(function () {
+                const SHCTiledMapServiceLayerparam = {
+                    layerType: 'TileLayer',
+                    layerUrl: "http://10.201.37.222/arcgis/rest/services/maskboundary/xh_maskboundary/MapServer",
+                    layerTitle: "XHGQ",
+                    layerId: "XHGQ",
+                    layerOpacity: 1,
+                    layerVisible: true
+                }
+                smap.addLayer(SHCTiledMapServiceLayerparam)
+            })
+            $("#btremoveTilelayerr").click(function () {
+                smap.removeLayer('LBJZ_ORIGIN')
+            })
             $("#btnsetlayer").click(function () {
-             const layer = smap.getLayer("basemap_as")
-             layer.loadStyle('http://127.0.0.1:5500/root.json')
-          })
-      })
+                const layer = smap.getLayer("basemap_as")
+                layer.loadStyle('http://127.0.0.1:5500/root.json')
+            })
+        })
     </script>
 </head>
 
 <body>
     <div id="mapcontainer"></div>
-      <div class="mapbuttoncontainergroup">
+    <div class="mapbuttoncontainergroup">
         <div class="mapbuttoncontainer">
             <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
             <button class="mapbutton" id="btnaddMapImageLayer"> add MapImageLayer</button>
-             <button class="mapbutton" id="btremoveMapImageLayer"> remove MapImageLayer</button>
+            <button class="mapbutton" id="btremoveMapImageLayer"> remove MapImageLayer</button>
         </div>
-         <div class="mapbuttoncontainer">
-             <button class="mapbutton" id="btnaddFeatureLayer"> add FeatureLayer</button>
-             <button class="mapbutton" id="btremoveFeatureLayer"> remove FeatureLayer</button>
-         </div>
-          <div class="mapbuttoncontainer">
-              <button class="mapbutton" id="btnaddSceneLayer"> add SceneLayer</button>
-              <button class="mapbutton" id="btremoveSceneLayer"> remove SceneLayer</button>
-          </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddFeatureLayer"> add FeatureLayer</button>
+            <button class="mapbutton" id="btremoveFeatureLayer"> remove FeatureLayer</button>
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddSceneLayer"> add SceneLayer</button>
+            <button class="mapbutton" id="btremoveSceneLayer"> remove SceneLayer</button>
+        </div>
 
-           <div class="mapbuttoncontainer">
-               <button class="mapbutton" id="btnaddSHCTiledMapServiceLayer"> add SHCTiledMapServiceLayer</button>
-               <button class="mapbutton" id="btremoveSHCTiledMapServiceLayer"> remove SHCTiledMapServiceLayer</button>
-           </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddSHCTiledMapServiceLayer"> add SHCTiledMapServiceLayer</button>
+            <button class="mapbutton" id="btremoveSHCTiledMapServiceLayer"> remove SHCTiledMapServiceLayer</button>
+        </div>
 
-            <div class="mapbuttoncontainer">
-                <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
-                <button class="mapbutton" id="btremoveTilelayerr"> remove Tilelayer</button>
-                <button class="mapbutton" id="btnsetlayer"> 设置矢量切片</button>
-            </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
+            <button class="mapbutton" id="btremoveTilelayerr"> remove Tilelayer</button>
+            <button class="mapbutton" id="btnsetlayer"> 设置矢量切片</button>
+        </div>
     </div>
 </body>
 
