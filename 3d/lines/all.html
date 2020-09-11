@@ -4525,6 +4525,268 @@
                     color: '#FFFF00'
                 }
                 meshLinerenderer.add(xhroadrenderer)
+
+                const skylinetrack = [
+                    [
+                        [
+                            20000,
+                            20000,
+                            20000
+                        ],
+                        [
+                            10000,
+                            10000,
+                            4000
+                        ],
+                        [
+                            5000,
+                            5000,
+                            2000
+                        ],
+                        [
+                            -3393.290,
+                            -5003.722,
+                            0
+                        ],
+                    ],
+                    [
+                        [
+                            -20000,
+                            -20000,
+                            20000
+                        ],
+                        [
+                            -10000,
+                            -10000,
+                            4000
+                        ],
+                        [
+                            -5000,
+                            -5000,
+                            2000
+                        ],
+                        [
+                            -6357.628,
+                            -7291.962,
+                            0
+                        ],
+                    ],
+                    [
+                        [
+                            -10000,
+                            -10000,
+                            20000
+                        ],
+                        [
+                            10000,
+                            10000,
+                            4000
+                        ],
+                        [
+                            -5000,
+                            -5000,
+                            2000
+                        ],
+                        [
+                            -3341.372,
+                            -10665.406,
+                            0
+                        ],
+                    ],
+                    [
+                        [
+                            8057,
+                            -13862,
+                            20000
+                        ],
+                        [
+                            4000,
+                            -8000,
+                            4000
+                        ],
+                        [
+                            2000,
+                            -5000,
+                            2000
+                        ],
+                        [
+                            -721.992,
+                            -7728.525,
+                            0
+                        ],
+                    ],
+                    [
+                        [
+                            -9281,
+                            -14382,
+                            30000
+                        ],
+                        [
+                            -5000,
+                            -7500,
+                            6000
+                        ],
+                        [
+                            -3000,
+                            -5000,
+                            2000
+                        ],
+                        [
+                            -3381.060,
+                            -7291.962,
+                            0
+                        ],
+                    ]
+
+                ]
+
+                const skylinetrackrenderer = {
+                    paths: skylinetrack,
+                    width: 10,
+                    rest: 70,
+                    color: '#00BFFF'
+                }
+                meshLinerenderer.add(skylinetrackrenderer)
+                const skylinetrackrenderer1 = {
+                    paths: skylinetrack,
+                    width: 10,
+                    rest: 80,
+                    color: '#00BFFF'
+                }
+                meshLinerenderer.add(skylinetrackrenderer1)
+                const skylinetrackrenderer2 = {
+                    paths: skylinetrack,
+                    width: 10,
+                    rest: 100,
+                    color: '#0000FF'
+                }
+                meshLinerenderer.add(skylinetrackrenderer2)
+
+                const skylinetrackrendere3 = {
+                    paths: skylinetrack,
+                    width: 10,
+                    rest: 100,
+                    color: '#FFFF00'
+                }
+                meshLinerenderer.add(skylinetrackrendere3)
+
+                const xhczup = [
+                    [
+                        [
+                            -5738.0634999983013,
+                            -10305.35399999842,
+                            0
+                        ],
+                        [
+                            -5738.0634999983013,
+                            -10305.35399999842,
+                            1000
+                        ]
+
+                    ],
+                    [
+                        [
+                            -1951.882,
+                            -7117.921,
+                            0
+                        ],
+                        [
+                            -1951.882,
+                            -7117.921,
+                            1000
+                        ]
+                    ],
+                    [
+                        [
+                            -2846.160,
+                            -8908.437,
+                            0
+                        ],
+                        [
+                            -2846.160,
+                            -8908.437,
+                            1000
+                        ]
+                    ],
+                    [
+                        [
+                            -1258.380,
+                            -12493.071,
+                            0
+                        ],
+                        [
+                            -1258.380,
+                            -12493.071,
+                            1000
+                        ]
+                    ],
+                    [
+                        [
+                            -2218.661,
+                            -2539.565,
+                            0
+                        ],
+                        [
+                            -2218.661,
+                            -2539.565,
+                            1000
+                        ]
+                    ],
+                    [
+                        [
+                            -2748.464,
+                            -8515.415,
+                            0
+                        ],
+                        [
+                            -2748.464,
+                            -8515.415,
+                            2000
+                        ]
+                    ],
+                    [
+                        [
+                            -3075.432,
+                            -7818.457,
+                            0
+                        ],
+                        [
+                            -3075.432,
+                            -7818.457,
+                            2000
+                        ]
+                    ]
+                ]
+                const xhczuprenderer = {
+                    paths: xhczup,
+                    width: 20,
+                    rest: 10,
+                    color: '#FFFF00'
+                }
+                meshLinerenderer.add(xhczuprenderer)
+
+                const xhczuprenderer1 = {
+                    paths: xhczup,
+                    width: 15,
+                    rest: 10,
+                    color: '#4B0082'
+                }
+                meshLinerenderer.add(xhczuprenderer1)
+                const xhczuprenderer2 = {
+                    paths: xhczup,
+                    width: 30,
+                    rest: 20,
+                    color: '#FF1493'
+                }
+                meshLinerenderer.add(xhczuprenderer2)
+
+                const xhczuprenderer3 = {
+                    paths: xhczup,
+                    width: 30,
+                    rest: 20,
+                    color: '#00FF00'
+                }
+                meshLinerenderer.add(xhczuprenderer3)
             })
             $("#btnremoveMeshLine").click(function () {
                 meshLinerenderer.remove()
