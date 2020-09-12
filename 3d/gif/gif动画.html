@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>gif动画</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../../library/smap/xuhui/SMap.min.js"></script>
+    <script src="../../library/smap/xuhui/Plugins.min.js"></script>
+    <script type="module">
+        import * as THREE from '../../library/common/three.module.r119.js';
+             window.THREERenderer =THREE;
+        import {
+            CSS2DRenderer,
+            CSS2DObject,
+        } from '../../library/common/CSS2DRenderer.js';
+
+        window.CSS2DRenderer =CSS2DRenderer;
+        window.CSS2DObject =CSS2DObject;
+     </script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+
+        function createContentpopup(data) {
+            let htmlstring = '';
+            htmlstring += "<table>"
+            for (let key in data) {
+                htmlstring += "<tr>";
+                htmlstring += '<td class="tdlabel">';
+                htmlstring += "<span>";
+                htmlstring += key;
+                htmlstring += " :";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += '<td class="tdvalue">';
+                htmlstring += "<span>";
+                htmlstring += data[key] != null ? data[key] : "";
+                htmlstring += "</span>";
+                htmlstring += "</td>";
+                htmlstring += "</tr>";
+            }
+            htmlstring += "</table>"
+            return htmlstring;
+        }
+        smap.on(SMap.MapEvent.click, function (view, eventParamter) {
+            console.log(eventParamter)
+        })
+        let flashGiffLayer = null
+        $(function () {
+            $("#addlayercontrol").click(function () {
+                    const layerListControl = new SMap.LayerListControl({
+                        visible: true,
+                        position: 'top-right',
+                        collapse: true
+                    })
+                    smap.addControl(layerListControl)
+                }),
+
+                $("#addbasemaptoggle").click(function () {
+                    const basemapToggle = new SMap.BasemapToggle({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(basemapToggle)
+                }),
+
+                $("#addUndergroundSwitch").click(function () {
+                    const undergroundSwitch = new SMap.UndergroundSwitch({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(undergroundSwitch)
+                })
+
+            $("#btnaddTilelayer").click(function () {
+                const SHCTiledMapServiceLayerparam = {
+                    layerType: 'TileLayer',
+                    layerUrl: "http://10.201.37.222/arcgis/rest/services/maskboundary/xh_maskboundary/MapServer",
+                    layerTitle: "XHGQ",
+                    layerId: "XHGQ",
+                    layerOpacity: 1,
+                    layerVisible: true
+                }
+                smap.addLayer(SHCTiledMapServiceLayerparam)
+            })
+            $("#btnaddgifmarker").click(function () {
+                const datas = [{
+                        x: -564.47,
+                        y: -5465.75,
+                        z: 1,
+                        url:'http://127.0.0.1:5500/resources/images/warning.gif',
+                        attributes: {
+                            name: '报警点4',
+                            address: '广场附近'
+                        }
+                    },
+                    {
+                        x: -712.44,
+                        y: -5647.55,
+                        z: 100,
+                        url:'http://127.0.0.1:5500/resources/images/marker4.gif',
+                        attributes: {
+                            name: '报警点5',
+                            address: '广场附近1'
+                        }
+                    },
+                    {
+                        x: -255.08,
+                        y: -5114.07,
+                        z: 1,
+                        url:'http://127.0.0.1:5500/resources/images/marker7.gif',
+                        attributes: {
+                            name: '报警点6',
+                            address: '广场附近2'
+                        }
+                    }
+                ]
+                const param = {
+                    points: datas
+                }
+                flashGiffLayer = new Plugins.FlashGifLayer(smap.view)
+                flashGiffLayer.add(param)
+                flashGiffLayer.on(SMap.MapEvent.click, function (result, geometry) {
+                    if (geometry) {
+                        smap.view.popup.defaultPopupTemplateEnabled = true
+                        smap.view.popup.autoOpenEnabled = false
+                        smap.view.popup.open({
+                            location: geometry,
+                            title: result.attributes.name,
+                            content: createContentpopup(result.attributes)
+                        })
+                    }
+                })
+            })
+            $("#btnremovegifmarker").click(function () {
+                flashGiffLayer.remove();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+            <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
+            <button class="mapbutton" id="addUndergroundSwitch"> 添加地上地下切换控件</button>
+            <button class="mapbutton" id="btnaddgifmarker"> add gifmarker</button>
+            <button class="mapbutton" id="btnremovegifmarker"> remove gifmarker</button>
+            <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
+        </div>
+    </div>
+</body>
+
+</html>

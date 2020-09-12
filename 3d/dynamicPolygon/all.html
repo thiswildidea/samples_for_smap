@@ -43,12 +43,19 @@
     </style>
     <script src="../../library/common/jquery-2.2.3.min.js"></script>
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
-    <script src="../../library/smap/xuhui/Plugins.js"></script>
+    <script src="../../library/smap/xuhui/Plugins.min.js"></script>
     <script src="../../library/common/meshLine/three.r79.js"></script>
     <script src="../../library/common/meshLine/THREE.MeshLine.js"></script>
     <script type="module">
         import * as THREE from '../../library/common/three.module.r119.js';
              window.THREERenderer =THREE;
+              import {
+              CSS2DRenderer,
+              CSS2DObject,
+              } from '../../library/common/CSS2DRenderer.js';
+
+              window.CSS2DRenderer =CSS2DRenderer;
+              window.CSS2DObject =CSS2DObject;
      </script>
     <script>
         const smap = new SMap.Map('mapcontainer', {
@@ -68,6 +75,7 @@
             smap.set3dlabel()
         })
         let dynamicPolygonrenderer = null
+        let flashGiffLayer = null
         $(function () {
             $("#addlayercontrol").click(function () {
                     const layerListControl = new SMap.LayerListControl({
@@ -105,7 +113,7 @@
                 }
                 smap.addLayer(SHCTiledMapServiceLayerparam)
             })
-            $("#btnaddMeshLine").click(function () {
+            $("#btnaddAnimation").click(function () {
                 dynamicPolygonrenderer = new Plugins.DynamicPolygon(smap.view)
                 //动态墙
                 const xhczuprenderer = {
@@ -5040,10 +5048,69 @@
                 }
                 meshLinerenderer.add(xhxyurenderer3)
 
+                const datas = [{
+                        x: -958.15,
+                        y: -4846,
+                        z: 1,
+                        url: 'http://127.0.0.1:5500/resources/images/warning.gif',
+                        attributes: {
+                            name: '报警点4',
+                            address: '广场附近'
+                        }
+                    },
+                    {
+                        x: -712.44,
+                        y: -5647.55,
+                        z: 100,
+                        url: 'http://127.0.0.1:5500/resources/images/marker4.gif',
+                        attributes: {
+                            name: '报警点5',
+                            address: '广场附近1'
+                        }
+                    },
+                    {
+                        x: -255.08,
+                        y: -5114.07,
+                        z: 1,
+                        url: 'http://127.0.0.1:5500/resources/images/marker7.gif',
+                        attributes: {
+                            name: '报警点6',
+                            address: '广场附近2'
+                        }
+                    },
+                    {
+                        x: 403,
+                        y: -8794.62,
+                        z: 1,
+                        url: 'http://127.0.0.1:5500/resources/images/徐汇.gif',
+                        attributes: {
+                            name: '报警点6',
+                            address: '广场附近2'
+                        }
+                    }
+                ]
+                const param = {
+                    points: datas
+                }
+                flashGiffLayer = new Plugins.FlashGifLayer(smap.view)
+                flashGiffLayer.add(param)
+                flashGiffLayer.on(SMap.MapEvent.click, function (result, geometry) {
+                    if (geometry) {
+                        smap.view.popup.defaultPopupTemplateEnabled = true
+                        smap.view.popup.autoOpenEnabled = false
+                        smap.view.popup.open({
+                            location: geometry,
+                            title: result.attributes.name,
+                            content: createContentpopup(result.attributes)
+                        })
+                    }
+                })
+
             })
-            $("#btnremoveMeshLine").click(function () {
+            $("#btnremoveAnimation").click(function () {
                 dynamicPolygonrenderer.remove()
                 meshLinerenderer.remove()
+                flashGiffLayer.remove()
             })
         })
     </script>
@@ -5056,8 +5123,8 @@
             <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
             <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
             <button class="mapbutton" id="addUndergroundSwitch"> 添加地上地下切换控件</button>
-            <button class="mapbutton" id="btnaddMeshLine"> add MeshLine</button>
-            <button class="mapbutton" id="btnremoveMeshLine"> remove MeshLine</button>
+            <button class="mapbutton" id="btnaddAnimation"> 添加动画</button>
+            <button class="mapbutton" id="btnremoveAnimation"> 删除动画</button>
             <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
         </div>
     </div>
