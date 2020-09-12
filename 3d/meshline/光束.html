@@ -44,7 +44,7 @@
     <script src="../../library/common/jquery-2.2.3.min.js"></script>
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
     <script src="../../library/smap/xuhui/Plugins.min.js"></script>
-    <script src="../../library/common/meshLine/three.js"></script>
+    <script src="../../library/common/meshLine/three.r79.js"></script>
     <script src="../../library/common/meshLine/THREE.MeshLine.js"></script>
     <script>
         const smap = new SMap.Map('mapcontainer', {
@@ -101,12 +101,12 @@
                         [
                             -5738.0634999983013,
                             -10305.35399999842,
-                            0
+                            10000
                         ],
                         [
                             -5738.0634999983013,
                             -10305.35399999842,
-                            1000
+                            0
                         ]
 
                     ],
@@ -114,72 +114,72 @@
                         [
                             -1951.882,
                             -7117.921,
-                            0
+                            10000
                         ],
                         [
                             -1951.882,
                             -7117.921,
-                            1000
+                            0
                         ]
                     ],
                     [
                         [
                             -2846.160,
                             -8908.437,
-                            0
+                            10000
                         ],
                         [
                             -2846.160,
                             -8908.437,
-                            1000
+                            0
                         ]
                     ],
                     [
                         [
                             -1258.380,
                             -12493.071,
-                            0
+                             10000
                         ],
                         [
                             -1258.380,
                             -12493.071,
-                            1000
+                            0
                         ]
                     ],
                     [
                         [
                             -2218.661,
                             -2539.565,
-                            0
+                             10000
                         ],
                         [
                             -2218.661,
                             -2539.565,
-                            1000
+                            0
                         ]
                     ],
                     [
                         [
                             -2748.464,
                             -8515.415,
-                            0
+                             10000
                         ],
                         [
                             -2748.464,
                             -8515.415,
-                            2000
+                            0
                         ]
                     ],
                     [
                         [
                             -3075.432,
                             -7818.457,
-                            0
+                            10000
                         ],
                         [
                             -3075.432,
                             -7818.457,
-                            2000
+                            0
                         ]
                     ]
                 ]
@@ -187,32 +187,40 @@
                     paths: xhczup,
                     width: 20,
                     rest: 10,
+                    linesegment:60,
+                    linesegmentfade:60,
                     color: '#FFFF00'
                 }
                 meshLinerenderer.add(xhczuprenderer)
 
-                const xhczuprenderer1 = {
-                    paths: xhczup,
-                    width: 15,
-                    rest: 10,
-                    color: '#4B0082'
-                }
-                meshLinerenderer.add(xhczuprenderer1)
-                const xhczuprenderer2 = {
-                    paths: xhczup,
-                    width: 30,
-                    rest: 20,
-                    color: '#FF1493'
-                }
-                meshLinerenderer.add(xhczuprenderer2)
+                // const xhczuprenderer1 = {
+                //     paths: xhczup,
+                //     width: 15,
+                //     rest: 10,
+                //     linesegment:60,
+                //     linesegmentfade:60,
+                //     color: '#00FFFF'
+                // }
+                // meshLinerenderer.add(xhczuprenderer1)
+                // const xhczuprenderer2 = {
+                //     paths: xhczup,
+                //     width: 30,
+                //     rest: 20,
+                //     linesegment:60,
+                //     linesegmentfade:60,
+                //     color: '#00FFFF'
+                // }
+                // meshLinerenderer.add(xhczuprenderer2)
 
-                  const xhczuprenderer3 = {
-                  paths: xhczup,
-                  width: 30,
-                  rest: 20,
-                  color: '#00FF00'
-                  }
-                  meshLinerenderer.add(xhczuprenderer3)
+                //   const xhczuprenderer3 = {
+                //   paths: xhczup,
+                //   width: 30,
+                //   rest: 20,
+                //   linesegment:60,
+                //     linesegmentfade:60,
+                //   color: '#00FFFF'
+                //   }
+                //   meshLinerenderer.add(xhczuprenderer3)
             })
             $("#btnremoveMeshLine").click(function () {
                 meshLinerenderer.remove()

@@ -44,7 +44,7 @@
     <script src="../../library/common/jquery-2.2.3.min.js"></script>
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
     <script src="../../library/smap/xuhui/Plugins.min.js"></script>
-    <script src="../../library/common/meshLine/three.js"></script>
+    <script src="../../library/common/meshLine/three.r79.js"></script>
     <script src="../../library/common/meshLine/THREE.MeshLine.js"></script>
     <script>
         const smap = new SMap.Map('mapcontainer', {
@@ -96,149 +96,123 @@
             })
             $("#btnaddMeshLine").click(function () {
                 meshLinerenderer = new Plugins.MeshLine(smap.view)
-                const skylinetrack = [
+                const xhczup = [
                     [
                         [
-                            20000,
-                            20000,
-                            20000
+                            -5738.0634999983013,
+                            -10305.35399999842,
+                            10000
                         ],
                         [
-                            10000,
-                            10000,
-                            4000
-                        ],
-                        [
-                            5000,
-                            5000,
-                            2000
-                        ],
-                        [
-                            -3393.290,
-                            -5003.722,
+                            -5738.0634999983013,
+                            -10305.35399999842,
                             0
-                        ],
+                        ]
+
                     ],
                     [
                         [
-                            -20000,
-                            -20000,
-                            20000
+                            -1951.882,
+                            -7117.921,
+                            10000
                         ],
                         [
-                            -10000,
-                            -10000,
-                            4000
-                        ],
-                        [
-                            -5000,
-                            -5000,
-                            2000
-                        ],
-                        [
-                            -6357.628,
-                            -7291.962,
+                            -1951.882,
+                            -7117.921,
                             0
-                        ],
+                        ]
                     ],
                     [
                         [
-                            -10000,
-                            -10000,
-                            20000
+                            -2846.160,
+                            -8908.437,
+                            10000
                         ],
                         [
-                            10000,
-                            10000,
-                            4000
-                        ],
-                        [
-                            -5000,
-                            -5000,
-                            2000
-                        ],
-                        [
-                            -3341.372,
-                            -10665.406,
+                            -2846.160,
+                            -8908.437,
                             0
-                        ],
+                        ]
                     ],
                     [
                         [
-                            8057,
-                            -13862,
-                            20000
+                            -1258.380,
+                            -12493.071,
+                             10000
                         ],
                         [
-                            4000,
-                            -8000,
-                            4000
-                        ],
-                        [
-                            2000,
-                            -5000,
-                            2000
-                        ],
-                        [
-                            -721.992,
-                            -7728.525,
+                            -1258.380,
+                            -12493.071,
                             0
-                        ],
+                        ]
                     ],
                     [
                         [
-                            -9281,
-                            -14382,
-                            30000
+                            -2218.661,
+                            -2539.565,
+                             10000
                         ],
                         [
-                            -5000,
-                            -7500,
-                            6000
-                        ],
-                        [
-                            -3000,
-                            -5000,
-                            2000
-                        ],
-                        [
-                            -3381.060,
-                            -7291.962,
+                            -2218.661,
+                            -2539.565,
                             0
+                        ]
+                    ],
+                    [
+                        [
+                            -2748.464,
+                            -8515.415,
+                             10000
                         ],
+                        [
+                            -2748.464,
+                            -8515.415,
+                            0
+                        ]
+                    ],
+                    [
+                        [
+                            -3075.432,
+                            -7818.457,
+                            10000
+                        ],
+                        [
+                            -3075.432,
+                            -7818.457,
+                            0
+                        ]
                     ]
-
                 ]
-
-                const xhroadrenderer2 = {
-                    paths: skylinetrack,
-                    width: 10,
-                    rest: 70,
-                    color: '#00BFFF'
-                }
-                meshLinerenderer.add(xhroadrenderer2)
-                const xhroadrenderer3 = {
-                    paths: skylinetrack,
-                    width: 10,
-                    rest: 80,
-                    color: '#00BFFF'
-                }
-                meshLinerenderer.add(xhroadrenderer3)
-                const xhroadrenderer4 = {
-                    paths: skylinetrack,
-                    width: 10,
-                    rest: 100,
-                    color: '#0000FF'
-                }
-                meshLinerenderer.add(xhroadrenderer4)
-
-                const xhroadrenderer5 = {
-                    paths: skylinetrack,
-                    width: 10,
-                    rest: 100,
+                const xhczuprenderer = {
+                    paths: xhczup,
+                    width: 20,
+                    rest: 10,
                     color: '#FFFF00'
                 }
-                meshLinerenderer.add(xhroadrenderer5)
+                meshLinerenderer.add(xhczuprenderer)
+
+                const xhczuprenderer1 = {
+                    paths: xhczup,
+                    width: 15,
+                    rest: 10,
+                    color: '#00FFFF'
+                }
+                meshLinerenderer.add(xhczuprenderer1)
+                const xhczuprenderer2 = {
+                    paths: xhczup,
+                    width: 30,
+                    rest: 20,
+                    color: '#00FFFF'
+                }
+                meshLinerenderer.add(xhczuprenderer2)
+
+                  const xhczuprenderer3 = {
+                  paths: xhczup,
+                  width: 30,
+                  rest: 20,
+                  color: '#00FFFF'
+                  }
+                  meshLinerenderer.add(xhczuprenderer3)
             })
             $("#btnremoveMeshLine").click(function () {
                 meshLinerenderer.remove()
