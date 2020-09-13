@@ -44,10 +44,8 @@
     <script src="../../library/common/jquery-2.2.3.min.js"></script>
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
     <script src="../../library/smap/xuhui/Plugins.min.js"></script>
-    <script type="module">
-        import * as THREE from '../../library/common/three.module.r119.js';
-             window.THREERenderer =THREE;
-     </script>
+    <script src="../../library/common/meshLine/three.r79.js"></script>
+    <script src="../../library/common/meshLine/THREE.MeshLine.js"></script>
     <script>
         const smap = new SMap.Map('mapcontainer', {
             viewMode: '3D',
@@ -58,11 +56,10 @@
             mapStyle: 'smap://styles/dark',
             showBuildingBlock: true
         })
-
+        let meshLinerenderer = null
         smap.on(SMap.MapEvent.click, function (view, eventParamter) {
             console.log(eventParamter)
         })
-        let dynamicPolygonrenderer = null
         $(function () {
             $("#addlayercontrol").click(function () {
                     const layerListControl = new SMap.LayerListControl({
@@ -101,34 +98,80 @@
                 smap.addLayer(SHCTiledMapServiceLayerparam)
             })
             $("#btnaddMeshLine").click(function () {
-                dynamicPolygonrenderer = new Plugins.DynamicPolygon(smap.view)
-                const xhczuprenderer = {
-                    points: [
-                        [-554.47, -5455.75], // 坐标1
-                        [-722.44, -5657.55], // 坐标2
-                    ],
-                    texturestart: 'http://127.0.0.1:5500/resources/images/texture_1.png',
-                    texturestarend: 'http://127.0.0.1:5500/resources/images/texture_6.jpg',
-                    height: 160,
-                    offset: 0,
-                }
-                dynamicPolygonrenderer.add(xhczuprenderer)
+                meshLinerenderer = new Plugins.MeshLine(smap.view)
 
-                const xhczuprenderer1 = {
-                    points: [
-                        [-265.08, -5124.07], // 坐标1
-                        [ -496.3, -5325.14334], // 坐标2
-                    ],
-                    texturestart: 'http://127.0.0.1:5500/resources/images/texture_1.png',
-                    texturestarend: 'http://127.0.0.1:5500/resources/images/texture_5.jpg',
-                    height: 160,
-                    offset: 10,
-                }
 
-                dynamicPolygonrenderer.add(xhczuprenderer1)
+                const buildingdatas = []
+                for (let i = 0; i <= 85; i++) {
+                    const building = [
+                        [
+                            -1296.45,
+                            -5472.113,
+                            i
+                        ],
+                        [
+                            -1337.1975,
+                            -5439.77291,
+                            i
+                        ],
+                        [
+                            -1354.552267674292,
+                            -5455.7810961871155,
+                            i
+                        ],
+                        [
+                            -1345.5509815511239,
+                            -5488.856011600856,
+                            i
+                        ],
+                        [
+                            -1331.84958852061,
+                            -5503.799245244818,
+                            i
+                        ],
+                        [
+                            -1303.82745129712,
+                            -5466.929750116041,
+                            i
+                        ],
+
+                    ]
+                    buildingdatas.push(building)
+                }
+                console.log(buildingdatas)
+
+                const xhbuildingrenderer = {
+                    paths: buildingdatas,
+                    width: 100,
+                    rest: 10,
+                    linesegment: 60,
+                    linesegmentfade: 60,
+                    color: '#FFFF00'
+                }
+                meshLinerenderer.add(xhbuildingrenderer)
+
+                const xhbuildingrenderer1 = {
+                    paths: buildingdatas,
+                    width: 100,
+                    rest: 100,
+                    linesegment: 60,
+                    linesegmentfade: 60,
+                    color: '#00CED1'
+                }
+                meshLinerenderer.add(xhbuildingrenderer1)
+
+                const xhbuildingrenderer2 = {
+                    paths: buildingdatas,
+                    width: 100,
+                    rest: 100,
+                    linesegment: 60,
+                    linesegmentfade: 60,
+                    color: '#DC143C'
+                }
+                meshLinerenderer.add(xhbuildingrenderer2)
             })
             $("#btnremoveMeshLine").click(function () {
-                dynamicPolygonrenderer.remove()
+                meshLinerenderer.remove()
             })
         })
     </script>

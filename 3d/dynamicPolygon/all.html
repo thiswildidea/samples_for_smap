@@ -5048,6 +5048,46 @@
                 }
                 meshLinerenderer.add(xhxyurenderer3)
 
+                const buildingdatas = []
+                for (let i = 0; i <= 81; i++) {
+                    const building = [
+                        [-1296.45, -5472.113, i],
+                        [-1337.1975, -5439.77291,i],
+                        [-1354.552267674292, -5455.7810961871155, i],
+                        [-1345.5509815511239, -5488.856011600856, i],
+                        [-1331.84958852061, -5503.799245244818, i],
+                        [-1303.82745129712, -5466.929750116041, i],
+                    ]
+                    buildingdatas.push(building)
+                }
+                const xhbuildingrenderer = {
+                    paths: buildingdatas,
+                    width: 100,
+                    rest: 10,
+                    linesegment: 60,
+                    linesegmentfade: 60,
+                    color: '#FFFF00'
+                }
+                meshLinerenderer.add(xhbuildingrenderer) 
+                const xhbuildingrenderer1 = {
+                    paths: buildingdatas,
+                    width: 100,
+                    rest: 100,
+                    linesegment: 60,
+                    linesegmentfade: 60,
+                    color: '#00CED1'
+                }
+                meshLinerenderer.add(xhbuildingrenderer1) 
+                const xhbuildingrenderer2 = {
+                    paths: buildingdatas,
+                    width: 100,
+                    rest: 100,
+                    linesegment: 60,
+                    linesegmentfade: 60,
+                    color: '#DC143C'
+                }
+                meshLinerenderer.add(xhbuildingrenderer2)
+
                 const datas = [{
                         x: -958.15,
                         y: -4846,
