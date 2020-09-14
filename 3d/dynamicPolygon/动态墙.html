@@ -64,6 +64,13 @@
         })
         let dynamicPolygonrenderer = null
         $(function () {
+              $("#addcompasscontrol").click(function () {
+              const compass = new SMap.Compass({
+              visible: true,
+              position: 'top-right'
+              })
+              smap.addControl(compass)
+              }),
             $("#addlayercontrol").click(function () {
                     const layerListControl = new SMap.LayerListControl({
                         visible: true,
@@ -138,6 +145,7 @@
     <div id="mapcontainer"></div>
     <div class="mapbuttoncontainergroup">
         <div class="mapbuttoncontainer">
+              <button class="mapbutton" id="addcompasscontrol"> 添加罗盘控件</button>
             <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
             <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
             <button class="mapbutton" id="addUndergroundSwitch"> 添加地上地下切换控件</button>
