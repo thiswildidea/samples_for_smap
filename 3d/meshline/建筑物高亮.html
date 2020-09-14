@@ -102,7 +102,7 @@
 
 
                 const buildingdatas = []
-                for (let i = 0; i <= 85; i++) {
+                for (let i = 0; i <= 85; i=i+5) {
                     const building = [
                         [
                             -1296.45,
@@ -138,11 +138,9 @@
                     ]
                     buildingdatas.push(building)
                 }
-                console.log(buildingdatas)
-
                 const xhbuildingrenderer = {
                     paths: buildingdatas,
-                    width: 100,
+                    width: 10,
                     rest: 10,
                     linesegment: 60,
                     linesegmentfade: 60,
@@ -152,7 +150,7 @@
 
                 const xhbuildingrenderer1 = {
                     paths: buildingdatas,
-                    width: 100,
+                    width: 10,
                     rest: 100,
                     linesegment: 60,
                     linesegmentfade: 60,
@@ -162,7 +160,7 @@
 
                 const xhbuildingrenderer2 = {
                     paths: buildingdatas,
-                    width: 100,
+                    width: 10,
                     rest: 100,
                     linesegment: 60,
                     linesegmentfade: 60,

@@ -100,7 +100,7 @@
                 }
                 smap.addLayer(SHCTiledMapServiceLayerparam)
             })
-            $("#btnaddMeshLine").click(function () {
+            $("#btnaddynamicPolygon").click(function () {
                 dynamicPolygonrenderer = new Plugins.DynamicPolygon(smap.view)
                 const xhczuprenderer = {
                     points: [
@@ -127,7 +127,7 @@
 
                 dynamicPolygonrenderer.add(xhczuprenderer1)
             })
-            $("#btnremoveMeshLine").click(function () {
+            $("#btnremovedynamicPolygon").click(function () {
                 dynamicPolygonrenderer.remove()
             })
         })
@@ -141,8 +141,8 @@
             <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
             <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
             <button class="mapbutton" id="addUndergroundSwitch"> 添加地上地下切换控件</button>
-            <button class="mapbutton" id="btnaddMeshLine"> add MeshLine</button>
-            <button class="mapbutton" id="btnremoveMeshLine"> remove MeshLine</button>
+            <button class="mapbutton" id="btnaddynamicPolygon"> 添加动态墙</button>
+            <button class="mapbutton" id="btnremovedynamicPolygon"> 删除动态墙e</button>
             <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
         </div>
     </div>
