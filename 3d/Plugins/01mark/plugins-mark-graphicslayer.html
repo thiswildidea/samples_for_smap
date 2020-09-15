@@ -120,7 +120,7 @@
                 onemarker = new SMap.Marker({
                     icon: new SMap.Icon({
                         size: new SMap.Size(40, 40),
-                        image: 'http://127.0.0.1:5500/resources/images//marker1.png'
+                        image: '../../resources/images//marker1.png'
                     }),
                     attributes: {
                         'name': '点1',
@@ -182,7 +182,7 @@
                 sencondmarker = new SMap.Marker({
                     icon: new SMap.Icon({
                         size: new SMap.Size(40, 40),
-                        image: 'http://127.0.0.1:5500/resources/images//marker2.png'
+                        image: '../../resources/images//marker2.png'
                     }),
                     attributes: {
                         'name': '点2',
@@ -219,7 +219,7 @@
                 threemarker = new SMap.Marker({
                     icon: new SMap.Icon({
                         size: new SMap.Size(40, 40),
-                        image: 'http://127.0.0.1:5500/resources/images//marker3.png'
+                        image: '../../resources/images//marker3.png'
                     }),
                     attributes: {
                         'name': '点3',
@@ -238,7 +238,7 @@
                 fourmarker = new SMap.Marker({
                     icon: new SMap.Icon({
                         size: new SMap.Size(40, 40),
-                        image: 'http://127.0.0.1:5500/resources/images/marker4.gif'
+                        image: '../../resources/images/marker4.gif'
                     }),
                     attributes: {
                         'name': '点4',
@@ -260,9 +260,9 @@
             })
 
             $("#btnupdatemanymark").click(function () {
-                threemarker.icon.image = 'http://127.0.0.1:5500/resources/images/marker4.gif'
+                threemarker.icon.image = '../../resources/images/marker4.gif'
                 threemarker.label.text = '点三更新'
-                fourmarker.icon.image = 'http://127.0.0.1:5500/resources/images/marker3.png'
+                fourmarker.icon.image = '../../resources/images/marker3.png'
                 fourmarker.label.text = '点四更新'
                 GraphicOverlays.update([threemarker, fourmarker]).then((result) => {
                     console.log(result)
@@ -277,7 +277,7 @@
                 fivemarker = new SMap.Marker({
                     icon: new SMap.Icon({
                         size: new SMap.Size(40, 40),
-                        image: 'http://127.0.0.1:5500/resources/images/marker5.gif'
+                        image: '../../resources/images/marker5.gif'
                     }),
                     attributes: {
                         'name': '点5',
@@ -298,7 +298,7 @@
                 sixmarker = new SMap.Marker({
                     icon: new SMap.Icon({
                         size: new SMap.Size(40, 40),
-                        image: 'http://127.0.0.1:5500/resources/images/marker6.png'
+                        image: '../../resources/images/marker6.png'
                     }),
                     attributes: {
                         'name': '点6',
@@ -325,10 +325,10 @@
             })
 
             $("#btnupdatemarkgroup").click(function () {
-                fivemarker.icon.image = 'http://127.0.0.1:5500/resources/images/marker6.png'
+                fivemarker.icon.image = '../../resources/images/marker6.png'
                 fivemarker.label.text = '点5更新'
 
-                sixmarker.icon.image = 'http://127.0.0.1:5500/resources/images/marker5.gif'
+                sixmarker.icon.image = '../../resources/images/marker5.gif'
                 sixmarker.label.text = '点6更新'
                 GraphicOverlays.update(OverlayGroup).then((result) => {
                     console.log(result)
@@ -346,7 +346,7 @@
                     const onemarker = new SMap.Marker({
                         icon: new SMap.Icon({
                             size: new SMap.Size(40, 40),
-                            image: 'http://127.0.0.1:5500/resources/images/marker3.png'
+                            image: '../../resources/images/marker3.png'
                         }),
                         attributes: {
                             'name': '点' + i,
