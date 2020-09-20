@@ -89,7 +89,7 @@
         onemarker = new SMap.Marker({
           icon: new SMap.Icon({
             size: new SMap.Size(40, 40),
-            image: '../../resources/images/marker1.png'
+            image: '../resources/images/marker1.png'
           }),
           attributes: {
             'name': '点1',
@@ -123,7 +123,7 @@
         sencondmarker = new SMap.Marker({
           icon: new SMap.Icon({
             size: new SMap.Size(40, 40),
-            image: '../../resources/images/marker2.png'
+            image: '../resources/images/marker2.png'
           }),
           attributes: {
             'name': '点2',
@@ -144,7 +144,7 @@
       })
       $("#btnupdatemark").click(function () {
         onemarker.attributes['name'] = '点一更新'
-        onemarker.icon.image = '../../resources/images/marker2.png'
+        onemarker.icon.image = '../resources/images/marker2.png'
         smap.updatefeature(onemarker)
       })
 
@@ -156,7 +156,7 @@
         threemarker = new SMap.Marker({
           icon: new SMap.Icon({
             size: new SMap.Size(40, 40),
-            image: '../../resources/images/marker3.png'
+            image: '../resources/images/marker3.png'
           }),
           attributes: {
             'name': '点3',
@@ -175,7 +175,7 @@
         fourmarker = new SMap.Marker({
           icon: new SMap.Icon({
             size: new SMap.Size(40, 40),
-            image: '../../resources/images/marker4.gif'
+            image: '../resources/images/marker4.gif'
           }),
           attributes: {
             'name': '点4',
@@ -195,10 +195,10 @@
       })
 
       $("#btnupdatemanymark").click(function () {
-        threemarker.icon.image = '../../resources/images/marker4.gif'
+        threemarker.icon.image = '../resources/images/marker4.gif'
         threemarker.attributes['name'] = '点三更新'
 
-        fourmarker.icon.image = '../../resources/images/marker3.png'
+        fourmarker.icon.image = '../resources/images/marker3.png'
         fourmarker.attributes['name'] = '点四更新'
         smap.updatefeature([threemarker, fourmarker])
       })
@@ -241,11 +241,11 @@
         const style = [{
           style: '1',
           size: new SMap.Size(20, 20),
-          url: '../../resources/images/marker5.gif'
+          url: '../resources/images/marker5.gif'
         }, {
           style: '2',
           size: new SMap.Size(40, 40),
-          url: '../../resources/images/marker6.png'
+          url: '../resources/images/marker6.png'
         }]
         const featureReduction = new SMap.FeatureReduction({
           type: 'selection'
@@ -255,6 +255,7 @@
           datafiled: datafiled,
           style: style,
           label: label,
+          elevationInfo: 'relative-to-scene',
           frreduction: featureReduction
         })
         smap.addfeature(OverlayGroup)
@@ -280,7 +281,7 @@
               'name': '点' + i,
               'style': getRandomInt(0, 1).toString()
             },
-            position: [x, y, 100]
+            position: [x, y, 0]
           })
           marks.push(onemarker)
         }
@@ -300,11 +301,11 @@
         const style = [{
           style: '0',
           size: new SMap.Size(40, 40),
-          url: '../../resources/images/marker5.gif'
+          url: '../resources/images/marker5.gif'
         }, {
           style: '1',
           size: new SMap.Size(40, 40),
-          url: '../../resources/images/marker6.png'
+          url: '../resources/images/marker6.png'
         }]
         const featureReduction = new SMap.FeatureReduction({
           type: 'selection'
@@ -314,6 +315,14 @@
           datafiled: datafiled,
           style: style,
           label: label,
+          elevationInfo: {
+            mode: "relative-to-scene",
+            offset: 10,
+            // featureExpressionInfo: {
+            //   expression: "Geometry($feature).z * 10"
+            // },
+            unit: "meters"
+          },
           frreduction: featureReduction
         })
         smap.addfeature(massmarksgroup)

@@ -45,7 +45,7 @@
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
     <script src="../../library/smap/xuhui/Plugins.min.js"></script>
        <script type="module">
-           import * as THREE from '../../library/common/three.module.r119.js';
+           import * as THREE from '../../library/common/three.module.js';
              window.THREERenderer =THREE;
      </script>
     <script>
@@ -109,7 +109,7 @@
                 }
                 smap.addLayer(SHCTiledMapServiceLayerparam)
             })
-            $("#btnaddMeshLine").click(function () {
+            $("#btnaddCylinderFence").click(function () {
                 meshLinerenderer = new Plugins.DynamicCylinderFence(smap.view)
                 const Aurorarenderer = {
                     center: [-3070, -7947],
@@ -134,7 +134,7 @@
                     tilt: 0
                 })
             })
-            $("#btnremoveMeshLine").click(function () {
+            $("#btnremoveCylinderFence").click(function () {
                 meshLinerenderer.remove()
             })
         })
@@ -149,8 +149,8 @@
             <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
             <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
             <button class="mapbutton" id="addUndergroundSwitch"> 添加地上地下切换控件</button>
-            <button class="mapbutton" id="btnaddMeshLine"> add MeshLine</button>
-            <button class="mapbutton" id="btnremoveMeshLine"> remove MeshLine</button>
+            <button class="mapbutton" id="btnaddCylinderFence"> add CylinderFence</button>
+            <button class="mapbutton" id="btnremoveCylinderFence"> remove CylinderFence</button>
             <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
         </div>
     </div>
