@@ -45,16 +45,12 @@
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
     <script src="../../library/smap/xuhui/Plugins.min.js"></script>
     <script type="module">
-        import * as THREE from '../../library/common/three.module.js';
-             window.THREERenderer =THREE;
-        import {
-            CSS2DRenderer,
-            CSS2DObject,
-        } from '../../library/common/CSS2DRenderer.js';
-
-        window.CSS2DRenderer =CSS2DRenderer;
-        window.CSS2DObject =CSS2DObject;
-     </script>
+        import * as THREE from '../../library/common/three.module.js'; 
+        import { CSS2DRenderer,CSS2DObject,} from '../../library/common/CSS2DRenderer.js';
+               window.THREERenderer =THREE;
+               window.CSS2DRenderer =CSS2DRenderer;
+               window.CSS2DObject =CSS2DObject;
+    </script>
     <script>
         const smap = new SMap.Map('mapcontainer', {
             viewMode: '3D',

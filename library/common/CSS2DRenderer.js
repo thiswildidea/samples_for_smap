@@ -3,7 +3,7 @@ import {
     Matrix4,
     Object3D,
     Vector3
-} from './three.module.r119.js';
+} from './three.module.js';
 var CSS2DObject = function (b) {
     Object3D.call(this);
     this.element = b || document.createElement('div');

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>heatmap3dlayer</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../../library/smap/xuhui/SMap.min.js"></script>
+    <script src="../../library/smap/xuhui/Plugins.min.js"></script>
+    <script src="../../library/common/d3.min.js"></script>
+    <script src="../../library/common/three109.min.js"></script>
+
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 20,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+        smap.on(SMap.MapEvent.click, function (view, eventParamter) {
+            console.log(eventParamter)
+        })
+        let heatmap3dlayer = null
+        $(function () {
+            $("#addlayercontrol").click(function () {
+                    const layerListControl = new SMap.LayerListControl({
+                        visible: true,
+                        position: 'top-right',
+                        collapse: true
+                    })
+                    smap.addControl(layerListControl)
+                }),
+
+                $("#addbasemaptoggle").click(function () {
+                    const basemapToggle = new SMap.BasemapToggle({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(basemapToggle)
+                }),
+
+                $("#addUndergroundSwitch").click(function () {
+                    const undergroundSwitch = new SMap.UndergroundSwitch({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(undergroundSwitch)
+                })
+
+            $("#btna3dheatmap").click(function () {
+
+                heatmap3dlayer = new Plugins.HeatMap3dLayer(smap.view)
+                const data = []
+                for (let i = 0; i <= 10000; i++) {
+                    data.push({
+                        coordinate: [Math.random() * 10000, Math.random() *
+                            10000
+                        ],
+                        value: Math.random() * 10000,
+                        count: 30000 * Math.random(),
+                    })
+                }
+                const paramter = {
+                    data: data,
+                    options: {
+                        gridScale: 2,
+                        size: 2,
+                        gradient: {
+                            0.25: 'rgb(0,0,200)',
+                            0.55: 'rgb(0,255,0)',
+                            0.85: 'yellow',
+                            1.0: 'rgb(255,0,0)'
+                        },
+                        altitude: 100,
+                        scaleZ: 1,
+                        opacity: 1,
+                        wireframe: false,
+                    }
+                }
+                heatmap3dlayer.add(paramter)
+            })
+            $("#btnsetMaterialColor").click(function () {
+                heatmap3dlayer.setMaterialColor('rgb(255,255,255)')
+            })
+            $("#btnsetwireframe").click(function () {
+                heatmap3dlayer.setwireframe()
+            })
+
+            $("#btnsetaltitude").click(function () {
+                heatmap3dlayer.setaltitude(100)
+            })
+
+            $("#btnsetscaleZ").click(function () {
+                heatmap3dlayer.setscaleZ(100)
+            })
+
+            $("#btnsetopacity").click(function () {
+                heatmap3dlayer.setopacity(0.5)
+            })
+
+
+            $("#btnremove3dheatmap").click(function () {
+                heatmap3dlayer.remove()
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+            <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
+            <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
+
+
+        </div>
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="btna3dheatmap"> add 3dheatmap</button>
+            <button class="mapbutton" id="btnsetMaterialColor"> add setMaterialColor</button>
+            <button class="mapbutton" id="btnsetwireframe"> add setwireframe</button>
+            <button class="mapbutton" id="btnsetaltitude"> add setaltitude</button>
+            <button class="mapbutton" id="btnsetscaleZ"> add setscaleZ</button>
+            <button class="mapbutton" id="btnsetopacity"> add setopacity</button>
+            <button class="mapbutton" id="btnremove3dheatmap"> remove 3dheatmap</button>
+        </div>
+    </div>
+</body>
+
+</html>
