@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>ripplewall</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../../library/smap/xuhui/SMap.min.js"></script>
+    <script src="../../library/smap/xuhui/Plugins.min.js"></script>
+    <script src="../../library/common/d3.min.js"></script>
+    <script src="../../library/common/three109.min.js"></script>
+
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 20,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+        let ElectricShieldrenderer = null
+        smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {
+
+        })
+
+        $(function () {
+            $("#addlayercontrol").click(function () {
+                    const layerListControl = new SMap.LayerListControl({
+                        visible: true,
+                        position: 'top-right',
+                        collapse: true
+                    })
+                    smap.addControl(layerListControl)
+                }),
+
+                $("#addbasemaptoggle").click(function () {
+                    const basemapToggle = new SMap.BasemapToggle({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(basemapToggle)
+                }),
+
+                $("#addUndergroundSwitch").click(function () {
+                    const undergroundSwitch = new SMap.UndergroundSwitch({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(undergroundSwitch)
+                })
+
+            $("#btnaddTilelayer").click(function () {
+                const SHCTiledMapServiceLayerparam = {
+                    layerType: 'TileLayer',
+                    layerUrl: "http://10.201.37.222/arcgis/rest/services/maskboundary/xh_maskboundary/MapServer",
+                    layerTitle: "XHGQ",
+                    layerId: "XHGQ",
+                    layerOpacity: 1,
+                    layerVisible: true
+                }
+                smap.addLayer(SHCTiledMapServiceLayerparam)
+            })
+
+            $("#btnaElectricShield").click(function () {
+                ElectricShieldrenderer = new Plugins.ElectricShieldRenderer(smap.view)
+                const param = {
+                    points: [{
+                        x: 0,
+                        y: 0,
+                        radius: 20000,
+                        altitude: 0,
+                    }, {
+                        x: 100,
+                        y: 100,
+                        radius: 20,
+                        altitude: 0,
+                    }],
+                    options: {
+                        color: '#DC143C',
+                        wireframe:false,
+                        speed: 1,
+                    }
+                }
+                ElectricShieldrenderer.add(param)
+            })
+
+            $("#btnremoveElectricShield").click(function () {
+                ElectricShieldrenderer.remove()
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div id="heatmapSettingcontainerid" class="heatmapSettingcontainer">
+        <div class='heatmapScalez'>
+            <h6>设置Scalez</h6>
+            <div id='heatmapScalezslider' class="hmscalez">
+
+            </div>
+        </div>
+        <div class='heatmapaltitude'>
+            <h6>设置altitude</h6>
+            <div id='heatmapaltitudeslider' class="hmaltitude">
+
+            </div>
+        </div>
+        <div class='heatmapopacity'>
+            <h6>设置透明度</h6>
+            <div id='heatmapopacityslider' class="hmopacity">
+
+            </div>
+        </div>
+        <div class='heatmapwireframe'>
+            <h6>wireframe</h6>
+            <input type="checkbox" id='hmwireframe' title="wireframe" />
+        </div>
+    </div>
+    <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+            <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
+            <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
+            <button class="mapbutton" id="btnaElectricShield"> add ElectricShield</button>
+            <button class="mapbutton" id="btnremoveElectricShield"> remove ElectricShield</button>
+
+        </div>
+    </div>
+</body>
+
+</html>

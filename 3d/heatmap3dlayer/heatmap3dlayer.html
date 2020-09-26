@@ -40,6 +40,85 @@
             margin-bottom: 15px;
             float: left;
         }
+
+        #heatmapSettingcontainerid {
+            position: absolute;
+            margin-right: 10px;
+            height: 300px;
+            width: 400px;
+            margin-top: 10px;
+            display: flex;
+            flex-flow: column;
+
+        }
+
+        .heatmapSettingcontainer h6 {
+            width: 80px;
+            text-align: center;
+        }
+
+        .heatmapScalez {
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+
+        .heatmapScalez .hmscalez {
+            width: 300px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .heatmapaltitude {
+            margin-top: 20px;
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .heatmapaltitude .hmaltitude {
+            width: 300px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .heatmapopacity {
+            margin-top: 20px;
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .heatmapopacity .hmopacity {
+            width: 300px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+
+        .heatmapwireframe {
+            margin-top: 20px;
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .heatmapwireframe input {
+            margin-top: 30px;
+        }
     </style>
     <script src="../../library/common/jquery-2.2.3.min.js"></script>
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
@@ -57,10 +136,67 @@
             mapStyle: 'smap://styles/dark',
             showBuildingBlock: true
         })
-        smap.on(SMap.MapEvent.click, function (view, eventParamter) {
-            console.log(eventParamter)
-        })
         let heatmap3dlayer = null
+        smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {
+            smap.view.ui.add('heatmapSettingcontainerid', "top-right");
+            SMap.load(['esri/widgets/Slider']).then(([Slider]) => {
+                const Scalezslider = new Slider({
+                    container: 'heatmapScalezslider',
+                    min: 1,
+                    max: 200,
+                    visibleElements: {
+                        labels: true
+                    },
+                    precision: 1,
+                    values: [1]
+                });
+
+                Scalezslider.on("thumb-drag", function (event) {
+                    const value = parseInt(event.value);
+                    if (!heatmap3dlayer) return;
+                    heatmap3dlayer.setscaleZ(value)
+                });
+
+                const slideraltitude = new Slider({
+                    container: 'heatmapaltitudeslider',
+                    min: 0,
+                    max: 1000,
+                    visibleElements: {
+                        labels: true
+                    },
+                    precision: 1,
+                    values: [1]
+                });
+
+                slideraltitude.on("thumb-drag", function (event) {
+                    const value = parseInt(event.value);
+                    if (!heatmap3dlayer) return;
+                    heatmap3dlayer.setaltitude(value)
+                });
+
+                const slideropacity = new Slider({
+                    container: 'heatmapopacityslider',
+                    min: 0,
+                    max: 1,
+                    visibleElements: {
+                        labels: true
+                    },
+                    precision: 10,
+                    values: [1]
+                });
+
+                slideropacity.on("thumb-drag", function (event) {
+                    const value = parseInt(event.value);
+                    if (!heatmap3dlayer) return;
+                    heatmap3dlayer.setopacity(value)
+                });
+
+                document.getElementById("hmwireframe").addEventListener("click", function () {
+                    heatmap3dlayer.setwireframe()
+                });
+            })
+        })
+
         $(function () {
             $("#addlayercontrol").click(function () {
                     const layerListControl = new SMap.LayerListControl({
@@ -87,37 +223,72 @@
                     smap.addControl(undergroundSwitch)
                 })
 
-            $("#btna3dheatmap").click(function () {
+            $("#btnaddTilelayer").click(function () {
+                const SHCTiledMapServiceLayerparam = {
+                    layerType: 'TileLayer',
+                    layerUrl: "http://10.201.37.222/arcgis/rest/services/maskboundary/xh_maskboundary/MapServer",
+                    layerTitle: "XHGQ",
+                    layerId: "XHGQ",
+                    layerOpacity: 1,
+                    layerVisible: true
+                }
+                smap.addLayer(SHCTiledMapServiceLayerparam)
+            })
 
-                heatmap3dlayer = new Plugins.HeatMap3dLayer(smap.view)
-                const data = []
-                for (let i = 0; i <= 10000; i++) {
-                    data.push({
-                        coordinate: [Math.random() * 10000, Math.random() *
-                            10000
-                        ],
-                        value: Math.random() * 10000,
-                        count: 30000 * Math.random(),
-                    })
-                }
-                const paramter = {
-                    data: data,
-                    options: {
-                        gridScale: 2,
-                        size: 2,
-                        gradient: {
-                            0.25: 'rgb(0,0,200)',
-                            0.55: 'rgb(0,255,0)',
-                            0.85: 'yellow',
-                            1.0: 'rgb(255,0,0)'
-                        },
-                        altitude: 100,
-                        scaleZ: 1,
-                        opacity: 1,
-                        wireframe: false,
-                    }
-                }
-                heatmap3dlayer.add(paramter)
+            $("#btna3dheatmap").click(function () {
+                d3.csv('http://10.201.37.225:8080/smiapi/arcgis/xudata1.txt',
+                    (error, response) => {
+                        // console.log(response);
+                        let data = response.map(d => {
+                            return {
+                                coordinate: [Number(d.x), Number(d.y)],
+                                value: Math.random() * 10,
+                                count: 30 * Math.random(),
+                            };
+                        });
+                        heatmap3dlayer = new Plugins.HeatMap3dLayer(smap.view)
+                        const paramter = {
+                            data: data,
+                            options: {
+                                gridScale: 2,
+                                size: 2,
+                                gradient: {
+                                    0.25: 'rgb(0,0,200)',
+                                    0.55: 'rgb(0,255,0)',
+                                    0.85: 'yellow',
+                                    1.0: 'rgb(255,0,0)'
+                                },
+                                altitude: 0,
+                                scaleZ: 100,
+                                opacity: 1,
+                                wireframe: false,
+                                color: 'rgb(255,255,255)'
+                            }
+                        }
+                        heatmap3dlayer.add(paramter)
+
+                    //     const heatmap3dlayer2 = new Plugins.HeatMap3dLayer(smap.view)
+                    //     const paramter2 = {
+                    //         data: data,
+                    //         options: {
+                    //             gridScale: 2,
+                    //             size: 2,
+                    //             gradient: {
+                    //                 0.25: 'rgb(0,0,200)',
+                    //                 0.55: 'rgb(0,255,0)',
+                    //                 0.85: 'yellow',
+                    //                 1.0: 'rgb(255,0,0)'
+                    //             },
+                    //             altitude: 200,
+                    //             scaleZ: 100,
+                    //             opacity: 1,
+                    //             wireframe: false,
+                    //             // color: 'rgb(255,255,255)'
+                    //         }
+                    //     }
+                    //     heatmap3dlayer2.add(paramter2)
+
+                });
             })
             $("#btnsetMaterialColor").click(function () {
                 heatmap3dlayer.setMaterialColor('rgb(255,255,255)')
@@ -148,6 +319,30 @@
 
 <body>
     <div id="mapcontainer"></div>
+    <div id="heatmapSettingcontainerid" class="heatmapSettingcontainer">
+        <div class='heatmapScalez'>
+            <h6>设置Scalez</h6>
+            <div id='heatmapScalezslider' class="hmscalez">
+
+            </div>
+        </div>
+        <div class='heatmapaltitude'>
+            <h6>设置altitude</h6>
+            <div id='heatmapaltitudeslider' class="hmaltitude">
+
+            </div>
+        </div>
+        <div class='heatmapopacity'>
+            <h6>设置透明度</h6>
+            <div id='heatmapopacityslider' class="hmopacity">
+
+            </div>
+        </div>
+        <div class='heatmapwireframe'>
+            <h6>wireframe</h6>
+            <input type="checkbox" id='hmwireframe' title="wireframe" />
+        </div>
+    </div>
     <div class="mapbuttoncontainergroup">
         <div class="mapbuttoncontainer">
             <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
@@ -158,11 +353,7 @@
         </div>
         <div class="mapbuttoncontainer">
             <button class="mapbutton" id="btna3dheatmap"> add 3dheatmap</button>
-            <button class="mapbutton" id="btnsetMaterialColor"> add setMaterialColor</button>
-            <button class="mapbutton" id="btnsetwireframe"> add setwireframe</button>
-            <button class="mapbutton" id="btnsetaltitude"> add setaltitude</button>
-            <button class="mapbutton" id="btnsetscaleZ"> add setscaleZ</button>
-            <button class="mapbutton" id="btnsetopacity"> add setopacity</button>
+            <button class="mapbutton" id="btnsetMaterialColor">setMaterialColor</button>
             <button class="mapbutton" id="btnremove3dheatmap"> remove 3dheatmap</button>
         </div>
     </div>
