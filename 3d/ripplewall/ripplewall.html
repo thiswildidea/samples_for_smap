@@ -40,6 +40,85 @@
             margin-bottom: 15px;
             float: left;
         }
+
+        #ripplewallSettingcontainerid {
+            position: absolute;
+            margin-right: 10px;
+            height: 300px;
+            width: 400px;
+            margin-top: 10px;
+            display: flex;
+            flex-flow: column;
+
+        }
+
+        .ripplewallSettingcontainer h6 {
+            width: 80px;
+            text-align: center;
+        }
+
+        .ripplewallScalez {
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+
+        .ripplewallScalez .rwscalez {
+            width: 300px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .ripplewallaltitude {
+            margin-top: 20px;
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .ripplewallaltitude .rwaltitude {
+            width: 300px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .ripplewallopacity {
+            margin-top: 20px;
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .ripplewallopacity .rwopacity {
+            width: 300px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+
+        .ripplewallwireframe {
+            margin-top: 20px;
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .ripplewallwireframe input {
+            margin-top: 30px;
+        }
     </style>
     <script src="../../library/common/jquery-2.2.3.min.js"></script>
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
@@ -60,6 +139,46 @@
         let ripplewallRenderer = null
         smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {
 
+            smap.view.ui.add('ripplewallSettingcontainerid', "top-right");
+            SMap.load(['esri/widgets/Slider']).then(([Slider]) => {
+                const Scalezslider = new Slider({
+                    container: 'ripplewallScalezslider',
+                    min: 1,
+                    max: 200,
+                    visibleElements: {
+                        labels: true
+                    },
+                    precision: 1,
+                    values: [1]
+                });
+
+                Scalezslider.on("thumb-drag", function (event) {
+                    const value = parseInt(event.value);
+                    if (!ripplewallRenderer) return;
+                    ripplewallRenderer.setscaleZ(value)
+                });
+
+                const slideraltitude = new Slider({
+                    container: 'ripplewallaltitudeslider',
+                    min: 0,
+                    max: 1000,
+                    visibleElements: {
+                        labels: true
+                    },
+                    precision: 1,
+                    values: [1]
+                });
+
+                slideraltitude.on("thumb-drag", function (event) {
+                    const value = parseInt(event.value);
+                    if (!ripplewallRenderer) return;
+                    ripplewallRenderer.setaltitude(value)
+                });
+
+                document.getElementById("rwwireframe").addEventListener("click", function () {
+                    ripplewallRenderer.setwireframe()
+                });
+            })
         })
 
         $(function () {
@@ -108,18 +227,17 @@
                         [1000, 0],
                         [1000, 1000],
                         [0, 1000],
-                         [0, 0]
+                        [0, 0]
                     ],
                     options: {
                         color: '#DC143C',
                         height: 800,
-                        altitude:0,
+                        altitude: 0,
                         speed: 1,
                     }
                 }
                 ripplewallRenderer.add(param)
             })
-
             $("#btnremoveripplewall").click(function () {
                 ripplewallRenderer.remove()
             })
@@ -129,28 +247,22 @@
 
 <body>
     <div id="mapcontainer"></div>
-    <div id="heatmapSettingcontainerid" class="heatmapSettingcontainer">
-        <div class='heatmapScalez'>
+    <div id="ripplewallSettingcontainerid" class="ripplewallSettingcontainer">
+        <div class='ripplewallScalez'>
             <h6>设置Scalez</h6>
-            <div id='heatmapScalezslider' class="hmscalez">
+            <div id='ripplewallScalezslider' class="rwscalez">
 
             </div>
         </div>
-        <div class='heatmapaltitude'>
+        <div class='ripplewallaltitude'>
             <h6>设置altitude</h6>
-            <div id='heatmapaltitudeslider' class="hmaltitude">
+            <div id='ripplewallaltitudeslider' class="rwaltitude">
 
             </div>
         </div>
-        <div class='heatmapopacity'>
-            <h6>设置透明度</h6>
-            <div id='heatmapopacityslider' class="hmopacity">
-
-            </div>
-        </div>
-        <div class='heatmapwireframe'>
+        <div class='ripplewallwireframe'>
             <h6>wireframe</h6>
-            <input type="checkbox" id='hmwireframe' title="wireframe" />
+            <input type="checkbox" id='rwwireframe' title="wireframe" />
         </div>
     </div>
     <div class="mapbuttoncontainergroup">
@@ -159,9 +271,7 @@
             <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
             <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
             <button class="mapbutton" id="btnaripplewall"> add ripplewall</button>
-            <button class="mapbutton" id="btnsetMaterialColor">setMaterialColor</button>
             <button class="mapbutton" id="btnremoveripplewall"> remove ripplewall</button>
-
         </div>
     </div>
 </body>

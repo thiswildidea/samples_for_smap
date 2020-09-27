@@ -40,6 +40,85 @@
             margin-bottom: 15px;
             float: left;
         }
+
+        #electricshieldSettingcontainerid {
+            position: absolute;
+            margin-right: 10px;
+            height: 300px;
+            width: 400px;
+            margin-top: 10px;
+            display: flex;
+            flex-flow: column;
+
+        }
+
+        .electricshieldSettingcontainer h6 {
+            width: 80px;
+            text-align: center;
+        }
+
+        .electricshieldScalez {
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+
+        .electricshieldScalez .esscalez {
+            width: 300px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .electricshieldaltitude {
+            margin-top: 20px;
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .electricshieldaltitude .esaltitude {
+            width: 300px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .electricshieldopacity {
+            margin-top: 20px;
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .electricshieldopacity .esopacity {
+            width: 300px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+
+        .electricshieldwireframe {
+            margin-top: 20px;
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .electricshieldwireframe input {
+            margin-top: 30px;
+        }
     </style>
     <script src="../../library/common/jquery-2.2.3.min.js"></script>
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
@@ -59,7 +138,45 @@
         })
         let ElectricShieldrenderer = null
         smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {
+            smap.view.ui.add('electricshieldSettingcontainerid', "top-right");
+            SMap.load(['esri/widgets/Slider']).then(([Slider]) => {
+                const Scalezslider = new Slider({
+                    container: 'electricshieldScalezslider',
+                    min: 1,
+                    max: 200,
+                    visibleElements: {
+                        labels: true
+                    },
+                    precision: 1,
+                    values: [1]
+                });
 
+                Scalezslider.on("thumb-drag", function (event) {
+                    const value = parseInt(event.value);
+                    if (!ElectricShieldrenderer) return;
+                    ElectricShieldrenderer.setscaleZ(value)
+                });
+
+                const slideraltitude = new Slider({
+                    container: 'electricshieldaltitudeslider',
+                    min: 0,
+                    max: 1000,
+                    visibleElements: {
+                        labels: true
+                    },
+                    precision: 1,
+                    values: [1]
+                });
+
+                slideraltitude.on("thumb-drag", function (event) {
+                    const value = parseInt(event.value);
+                    if (!ElectricShieldrenderer) return;
+                    ElectricShieldrenderer.setaltitude(value)
+                });
+                document.getElementById("eswireframe").addEventListener("click", function () {
+                    ElectricShieldrenderer.setwireframe()
+                });
+            })
         })
 
         $(function () {
@@ -106,17 +223,17 @@
                     points: [{
                         x: 0,
                         y: 0,
-                        radius: 20000,
+                        radius: 200000,
                         altitude: 0,
                     }, {
-                        x: 100,
-                        y: 100,
-                        radius: 20,
+                        x: -712.44,
+                        y: -5647.55,
+                        radius: 200,
                         altitude: 0,
                     }],
                     options: {
-                        color: '#DC143C',
-                        wireframe:false,
+                        color: '#FFFF00',
+                        wireframe: false,
                         speed: 1,
                     }
                 }
@@ -132,28 +249,22 @@
 
 <body>
     <div id="mapcontainer"></div>
-    <div id="heatmapSettingcontainerid" class="heatmapSettingcontainer">
-        <div class='heatmapScalez'>
+    <div id="electricshieldSettingcontainerid" class="electricshieldSettingcontainer">
+        <div class='electricshieldScalez'>
             <h6>设置Scalez</h6>
-            <div id='heatmapScalezslider' class="hmscalez">
+            <div id='electricshieldScalezslider' class="esscalez">
 
             </div>
         </div>
-        <div class='heatmapaltitude'>
+        <div class='electricshieldaltitude'>
             <h6>设置altitude</h6>
-            <div id='heatmapaltitudeslider' class="hmaltitude">
+            <div id='electricshieldaltitudeslider' class="esaltitude">
 
             </div>
         </div>
-        <div class='heatmapopacity'>
-            <h6>设置透明度</h6>
-            <div id='heatmapopacityslider' class="hmopacity">
-
-            </div>
-        </div>
-        <div class='heatmapwireframe'>
+        <div class='electricshieldwireframe'>
             <h6>wireframe</h6>
-            <input type="checkbox" id='hmwireframe' title="wireframe" />
+            <input type="checkbox" id='eswireframe' title="wireframe" />
         </div>
     </div>
     <div class="mapbuttoncontainergroup">
