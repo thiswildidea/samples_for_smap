@@ -1,4001 +1,4001 @@
 const shanghaipoints = [{
     x: -36490.77979,
     y: 59906.89215,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -11679.08267,
     y: 27369.89493,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -722.3733258,
     y: 13259.57354,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -1840.882801,
     y: -18236.94083,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 9131.430678,
     y: -20304.9086,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -14214.48859,
     y: -4635.200354,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 43906.24504,
     y: -71432.96149,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 40191.21655,
     y: 20506.85477,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 15474.52724,
     y: 69226.27875,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -46775.13344,
     y: -30069.40543,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -40820.15422,
     y: -37896.3671,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -14763.14238,
     y: -46278.62018,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -29605.34264,
     y: 68527.41504,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 38066.06637,
     y: -6874.213643,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 26394.72467,
     y: 54345.94953,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -35330.85144,
     y: -7621.251056,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -56928.72762,
     y: 872.6884923,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 19826.59973,
     y: -2007.423531,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -14878.80391,
     y: 43974.93695,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 12737.98162,
     y: -6669.043906,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 25380.60687,
     y: 49097.9719,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 58062.78634,
     y: 58068.67296,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 79391.30132,
     y: 59733.27089,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -36812.90614,
     y: 34090.9751,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 29046.32731,
     y: -55733.02296,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -22082.97094,
     y: -59839.45363,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -37280.26911,
     y: 43398.92752,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -33820.58517,
     y: 48014.32615,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -24579.9517,
     y: 60714.02791,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -20639.02169,
     y: -1583.550656,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 20696.26956,
     y: -1266.184963,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -55328.59117,
     y: 4705.526674,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 39733.65463,
     y: 73485.3384,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 60803.75095,
     y: 57651.66978,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 20908.24305,
     y: 48405.61382,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 31151.54949,
     y: -6932.588865,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 502.6151983,
     y: -19039.26647,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -14117.39788,
     y: -4057.757969,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 70059.6458,
     y: -33187.15689,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 12774.70137,
     y: -71179.16336,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 68160.51979,
     y: -5614.680782,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -16173.33373,
     y: -29764.83372,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -5974.696303,
     y: -50973.43621,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 12306.09141,
     y: 69878.2898,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 71697.43195,
     y: 33622.88106,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64624.07064,
     y: -15910.1686,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -19075.4944,
     y: -20311.39771,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 11822.60134,
     y: 36597.25786,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -51350.1186,
     y: 57359.13652,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 76535.68397,
     y: -28471.12232,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 48025.97183,
     y: 44709.00953,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 70487.28643,
     y: 30408.47762,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 41593.45587,
     y: 45563.29171,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 69001.98779,
     y: 67050.372,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 16599.05251,
     y: -64172.92061,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64082.65644,
     y: 55710.05263,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 75039.40075,
     y: 12784.55894,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64409.26091,
     y: 11376.561,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 27766.62647,
     y: 70735.65021,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 11289.02213,
     y: 13117.74891,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -34540.75822,
     y: 19319.92107,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -3922.292262,
     y: 24490.23815,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 50473.57416,
     y: -21636.48443,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 60873.09537,
     y: 16344.70559,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -35202.82698,
     y: 34460.21039,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -33009.62326,
     y: 65736.51782,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 52709.77759,
     y: -15106.90325,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -26002.74642,
     y: 39456.25027,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -47488.2361,
     y: -36793.67533,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 16229.28274,
     y: 19911.24876,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -5936.298922,
     y: 70803.04262,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 20571.61578,
     y: 45149.79216,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 64657.37618,
     y: 19863.91006,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 57434.8718,
     y: 61046.41876,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -45996.81178,
     y: -66941.68257,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 23125.7501,
     y: 59118.62042,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 14798.64071,
     y: -10103.32312,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -33638.7548,
     y: -38565.71533,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 67423.50304,
     y: -4312.314085,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 17923.1145,
     y: -21040.23268,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -13729.34454,
     y: -2981.64486,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 1765.120446,
     y: 44537.73428,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -28471.07477,
     y: -66604.92854,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -51011.48353,
     y: 43392.44677,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 17713.37251,
     y: 65234.45124,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 46805.50075,
     y: -33227.94236,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 53461.57455,
     y: -3927.479222,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -12989.65336,
     y: -6757.004698,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 2067.568779,
     y: 41034.30228,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 9762.41634,
     y: 3958.832389,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 14890.52795,
     y: -63451.29827,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 43944.09536,
     y: -23394.46046,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -49274.40109,
     y: 67058.27877,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -44718.33109,
     y: 64093.07764,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -6699.24767,
     y: 55356.98924,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -23897.93281,
     y: 73015.60846,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -24243.57061,
     y: 52191.5094,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 31052.07924,
     y: 33129.40988,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -36958.37645,
     y: -66791.29823,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 23690.49243,
     y: -54842.56718,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -4038.471778,
     y: -41313.02821,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 58862.01845,
     y: -52680.30424,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 32518.08301,
     y: 72964.23001,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 32437.7107,
     y: -36638.52833,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 59710.51418,
     y: 50766.9069,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 14349.01564,
     y: 22826.70746,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 30104.42659,
     y: -69369.56045,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 21496.57968,
     y: 53458.49909,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 12791.98143,
     y: 61892.54256,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 79045.62551,
     y: 43374.21529,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 57561.74905,
     y: -46082.51387,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -14328.77552,
     y: 17975.04918,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -44798.843,
     y: 18757.14175,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -2509.696469,
     y: -57152.94289,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 54893.24348,
     y: -19142.74057,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 36127.58227,
     y: -5097.276774,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 51447.91167,
     y: -14267.3611,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 76925.98852,
     y: 35270.47413,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 23897.83294,
     y: 40741.93708,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -51398.41602,
     y: -55263.35727,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -25228.59015,
     y: 69665.76276,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 58410.69557,
     y: 21044.32793,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -53499.78688,
     y: -49684.47939,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 16851.9189,
     y: 27522.10288,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 36425.66055,
     y: -12808.55362,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 35447.04684,
     y: -10752.84763,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -15197.55921,
     y: 8376.631384,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 72411.3257,
     y: 16288.90577,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -54423.27882,
     y: -11995.43104,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -29920.4903,
     y: 8037.369332,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -2392.905015,
     y: -65747.10147,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 53264.99953,
     y: -41312.11284,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -40634.76726,
     y: -22108.25437,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 65394.73631,
     y: 43336.23338,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 34023.29163,
     y: 5188.729506,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 64391.87938,
     y: -24190.13239,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 23519.90392,
     y: -49081.8949,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 66992.54327,
     y: 29949.1796,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64165.34198,
     y: 60186.9728,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -48152.22732,
     y: 60118.72002,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 1236.974907,
     y: 65551.95739,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 32034.92063,
     y: -13674.87241,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -38214.35845,
     y: -70770.69902,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -33118.07032,
     y: 64899.3295,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -19579.45152,
     y: 26978.5989,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -9341.297292,
     y: -5650.980228,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 38907.91678,
     y: 9307.794045,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 74115.96406,
     y: 6077.199198,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 56770.28631,
     y: -64519.92803,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 19639.39955,
     y: -17219.0996,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 49839.64455,
     y: -11011.11676,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -17381.97238,
     y: -21782.8063,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -49236.04383,
     y: -23519.48167,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 57351.80306,
     y: -32225.79018,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 58684.97451,
     y: -71937.63135,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -18347.2919,
     y: 27105.07448,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 59948.28101,
     y: -45607.21855,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 76527.74495,
     y: 72452.5795,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 49131.12985,
     y: -10433.79465,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -46417.27702,
     y: -69536.20996,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -39294.85942,
     y: 22984.91563,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -61030.50062,
     y: 73450.78009,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 61007.21703,
     y: -48108.95491,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 40625.54504,
     y: 49438.24348,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64215.38414,
     y: 26987.3232,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 61299.10341,
     y: 1192.334726,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 75225.09755,
     y: 51416.77787,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -50293.1299,
     y: 3778.800747,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -42696.80044,
     y: 15282.19367,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -60642.07659,
     y: 66353.85084,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 4940.86758,
     y: 48470.53689,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 8026.892554,
     y: 62754.1097,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -8012.744982,
     y: 66130.69947,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -3040.353346,
     y: 3967.309972,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 27759.05427,
     y: -66082.19847,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 26605.51246,
     y: 50983.03273,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 2405.570128,
     y: -18774.13769,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -6033.627726,
     y: -50029.09735,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -38889.76954,
     y: -71654.58731,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 20748.50301,
     y: -24918.84885,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 79887.04581,
     y: -67222.42316,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 22847.9161,
     y: 19697.54338,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -61430.75079,
     y: 3791.06518,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 29026.25454,
     y: 53168.12664,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -8469.544847,
     y: 46356.12126,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 59264.71026,
     y: -23333.92476,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -49383.98626,
     y: -68563.97812,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 4278.916815,
     y: -67566.16811,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 51499.10431,
     y: 65471.60572,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -4698.628591,
     y: -48536.37131,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -9005.423419,
     y: 52218.46742,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -22715.43291,
     y: -37259.0168,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 28125.77315,
     y: 3510.745697,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 13156.06669,
     y: -36278.59497,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 29481.89507,
     y: 58480.25264,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 977.0714338,
     y: -17734.13272,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 2744.691458,
     y: -481.6046306,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 48742.5159,
     y: 45657.7561,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -56594.12881,
     y: 64170.50262,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 31884.19858,
     y: 10352.26214,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 5088.924573,
     y: -48517.93017,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 18358.33891,
     y: -11616.30364,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 66274.43229,
     y: -62372.24352,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 5901.895196,
     y: 42672.50396,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 64250.56406,
     y: 61226.14582,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -47488.11875,
     y: 70212.01727,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 20517.28593,
     y: -46842.37769,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 53596.92258,
     y: -65021.06606,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 32739.98095,
     y: 58082.71898,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 3381.758586,
     y: 67036.41674,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 15295.12001,
     y: -18384.2827,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -52040.08578,
     y: -48347.5707,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -34809.09324,
     y: 36773.89949,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -9086.988785,
     y: 9658.816955,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 42811.74834,
     y: 25835.99637,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 58399.78254,
     y: -20784.80966,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 63046.03319,
     y: -4816.503413,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 20146.51782,
     y: -68527.68201,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -20728.66486,
     y: -32963.90627,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -7640.486129,
     y: 63876.77055,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 78129.28421,
     y: 31204.21066,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 70720.09327,
     y: -37835.98485,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 47382.76349,
     y: -19277.14433,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 8045.646481,
     y: 17587.8955,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -33382.96898,
     y: -53614.55907,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -26087.68887,
     y: -34219.73685,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 3384.439046,
     y: -30982.47715,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 24703.41289,
     y: 55167.38204,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 71684.91449,
     y: -56901.85477,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -38593.92672,
     y: 51909.39595,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -29298.6914,
     y: -17882.60983,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 57387.87781,
     y: -22636.58592,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 70390.17364,
     y: 63040.59189,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -8092.399452,
     y: -68062.99966,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 64911.63089,
     y: -32573.69013,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 43936.58229,
     y: 41952.25318,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 19192.7567,
     y: -13097.7276,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64857.49318,
     y: -49542.82581,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 7893.207809,
     y: -21148.34645,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 49968.68231,
     y: -46886.82573,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 17082.77983,
     y: 55244.53807,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 34863.57378,
     y: 27363.08037,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -14259.61321,
     y: 68620.03617,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 3271.107331,
     y: -15015.18777,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -48092.95479,
     y: -23153.32128,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 45736.92563,
     y: -11445.61777,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -43865.57025,
     y: -5555.262579,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -44197.18369,
     y: 14994.84771,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -39559.70119,
     y: 7351.731998,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -60299.82739,
     y: -48918.5339,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -57780.74681,
     y: 63157.69587,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 12111.62109,
     y: -9187.380608,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -38975.16112,
     y: 31861.41616,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -16676.46068,
     y: 22717.07643,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -21000.27487,
     y: -43840.69987,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 79549.91555,
     y: 19404.36077,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 52352.61787,
     y: 64752.75981,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -45446.07053,
     y: 14604.70663,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -36077.66202,
     y: 22814.50707,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -49653.34776,
     y: 69410.11294,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 66504.27631,
     y: -49483.92132,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 74888.46898,
     y: 36695.28161,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -50712.08768,
     y: 59827.24775,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 66219.74117,
     y: 20694.84084,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64150.39326,
     y: -33970.50272,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 29209.31055,
     y: 69316.12433,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -8477.479361,
     y: 46071.34057,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 24049.54157,
     y: 55301.40888,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -7586.474295,
     y: -35094.18853,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 56827.71144,
     y: -9094.198245,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 20148.00312,
     y: -29346.40025,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -38915.7761,
     y: -33094.46641,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 17240.06096,
     y: -62219.85283,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 28034.22309,
     y: 22438.02721,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 45670.36874,
     y: 21225.46231,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -10956.8316,
     y: 38357.27784,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -18369.24172,
     y: 67368.27247,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 79093.40098,
     y: 14050.59927,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 3217.305402,
     y: -30401.95742,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 5025.544174,
     y: 53840.48865,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -39710.64386,
     y: -9123.403294,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 32085.9168,
     y: -32373.61843,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 41486.24566,
     y: -66982.53487,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 12224.34144,
     y: 19607.72818,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 31158.20605,
     y: -40325.30251,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -45897.45186,
     y: -58136.4059,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 7847.218765,
     y: -62893.16468,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 7399.734129,
     y: -26287.91437,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -54076.57153,
     y: -61694.78783,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 31929.91883,
     y: 36398.4212,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -9767.407968,
     y: 58196.63173,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 52688.69178,
     y: -34849.30949,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 69353.03731,
     y: 40931.37758,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -10638.36972,
     y: -47187.14509,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 6920.91272,
     y: 72513.74353,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 24220.71147,
     y: 44521.84467,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 21443.05523,
     y: -65680.59166,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 34257.70651,
     y: 9097.818476,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -58563.00964,
     y: 4650.454035,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -15195.01084,
     y: 12132.0112,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 54537.03095,
     y: -32466.44162,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -50196.59812,
     y: -43448.77605,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 22025.57022,
     y: -35088.63247,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 31425.7419,
     y: 23004.86308,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 16900.48427,
     y: -36836.56553,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -32355.05688,
     y: 41714.45854,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 56222.52996,
     y: 66813.39102,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 13588.52155,
     y: 33121.13095,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -36155.40017,
     y: 31340.39629,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 31979.85677,
     y: -53218.06648,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 19772.78927,
     y: 23435.1492,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -17234.29439,
     y: -53911.14719,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 16192.75407,
     y: 46210.62427,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 54124.80888,
     y: 61809.8223,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -10855.40983,
     y: -15656.10478,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 37192.14941,
     y: 50994.4986,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -60670.19674,
     y: -56332.44057,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 57037.78906,
     y: 34892.39822,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -57995.54966,
     y: 45931.13925,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 47582.81392,
     y: 7204.02354,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -25995.71911,
     y: -42913.29972,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 14436.93504,
     y: -59803.36691,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -19.21230011,
     y: -62339.40113,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 19986.79739,
     y: 34914.2939,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -29833.86098,
     y: -66458.67398,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 4275.726483,
     y: 7316.795887,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 73277.29111,
     y: 22635.84155,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -8216.304115,
     y: 26356.35413,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -41174.2925,
     y: 24638.18503,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -2441.769524,
     y: -70355.17891,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 31292.92399,
     y: -23315.79003,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 74129.00629,
     y: -32278.99809,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 16575.76927,
     y: 18033.13607,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 79944.98179,
     y: 57961.59312,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 57932.11312,
     y: -9250.555408,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 63769.52614,
     y: 37798.74074,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 11433.59719,
     y: -71031.06908,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -24615.28552,
     y: 41707.72807,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -7408.796444,
     y: -11826.64525,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 79900.28673,
     y: 60227.48524,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -47434.62722,
     y: 70627.32404,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -16652.83112,
     y: -35983.49827,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 41475.04465,
     y: 4970.786728,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -58110.91301,
     y: -35216.23574,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 55423.03434,
     y: -29239.5311,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 12580.44214,
     y: 36748.34851,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 61490.46778,
     y: 21864.88307,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -49520.99872,
     y: 60314.70423,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 44525.00876,
     y: 4240.225856,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -41987.45838,
     y: -50456.35847,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 44710.89345,
     y: 40769.96983,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 21213.048,
     y: 21903.72562,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 25527.25116,
     y: -37453.12078,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 29202.13671,
     y: -28708.19305,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -61099.78718,
     y: -21260.07248,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 11643.32151,
     y: 52794.69421,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -53815.92993,
     y: 71893.41489,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -20892.0224,
     y: -63708.53109,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 74998.97735,
     y: 60620.00346,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 20270.91024,
     y: -14239.29625,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -25704.36939,
     y: -59060.08066,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -47142.27407,
     y: -36175.94228,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -20883.03028,
     y: -54392.60474,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -55206.96445,
     y: 58360.41432,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 57449.80509,
     y: -62108.01897,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 7481.124817,
     y: -9594.826437,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 78083.87413,
     y: -68647.57275,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 64586.84377,
     y: 41538.14066,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 36664.69715,
     y: -4218.757593,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -3582.230057,
     y: -53032.84584,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 50262.67788,
     y: 40531.884,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 65703.33783,
     y: -38490.80626,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 38560.4991,
     y: -47691.12835,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -1464.865946,
     y: 64441.0404,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 52259.25206,
     y: -19533.55063,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -40519.30628,
     y: -70051.48864,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 6544.619899,
     y: 9385.567325,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -30000.31458,
     y: -16212.27573,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 45733.8969,
     y: -71696.17685,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -25079.55589,
     y: -21983.89806,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -31686.6287,
     y: -55364.75669,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -9204.046775,
     y: 68234.76021,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -14859.47403,
     y: 28527.11048,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 29184.28058,
     y: 9561.209552,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -16934.13936,
     y: -32219.10378,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 53499.82218,
     y: 60309.34172,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -62225.76183,
     y: 7412.255051,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 30212.85667,
     y: -30287.41457,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -2018.09698,
     y: 6969.114924,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 53584.78226,
     y: -31757.94239,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 76991.94788,
     y: -67959.10908,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 38234.47137,
     y: -25739.40733,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 53906.73095,
     y: -13809.57477,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 46557.5146,
     y: -28453.18428,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 77195.90632,
     y: -48615.84004,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 43640.49942,
     y: 55443.40912,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 74396.20606,
     y: -25495.46724,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 39603.92789,
     y: -21854.04172,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -25559.22997,
     y: -64798.36042,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -57449.33053,
     y: 55198.71194,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 18224.60002,
     y: -12993.46309,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 15821.79581,
     y: 15906.23954,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -35634.00462,
     y: -52865.31305,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -50370.84306,
     y: -32790.76098,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 48829.38125,
     y: 66248.95718,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 47608.37169,
     y: -64818.0982,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 9208.810565,
     y: 38918.67105,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 74693.38272,
     y: -61769.7449,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 44262.23499,
     y: 40068.1137,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -31502.43554,
     y: 4474.771424,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 61809.30872,
     y: -64149.65582,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 33379.29664,
     y: -23194.23083,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 55458.14383,
     y: 60161.82322,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -40026.69816,
     y: -61302.86849,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 73968.51346,
     y: 31873.25568,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 23238.84223,
     y: -35309.40763,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 61209.29934,
     y: 51936.16919,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 72990.18592,
     y: -1636.678812,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 64903.78238,
     y: 51675.85883,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -38870.03926,
     y: -56237.06347,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 69182.1097,
     y: 579.0525521,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -50541.04499,
     y: 52171.54726,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -59255.83713,
     y: 32109.94364,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 11137.56947,
     y: -18466.06998,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 7178.670329,
     y: 46056.44601,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64665.10228,
     y: -31541.5408,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -14169.98922,
     y: 5038.956976,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -34297.8417,
     y: 16646.72393,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -44425.31516,
     y: -45037.07099,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 44134.87879,
     y: 9882.243935,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -50183.26315,
     y: -8548.744754,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -47375.51782,
     y: 36773.1462,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 74385.78003,
     y: 52246.70672,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 40986.69236,
     y: -63651.31232,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 47915.59181,
     y: -67971.95317,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -3189.242711,
     y: -33209.78009,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -31685.04442,
     y: 40272.51389,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -44231.761,
     y: 44676.56853,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -9862.778136,
     y: -19462.28475,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -60856.61961,
     y: 3534.60442,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -53290.48888,
     y: -34906.77566,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 33618.5553,
     y: 43928.22448,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 56136.09512,
     y: 56728.68937,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -27866.20787,
     y: -35968.33434,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -49266.08036,
     y: 64678.2503,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 49580.81613,
     y: 4667.391319,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -26674.61706,
     y: 70565.24879,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 58006.15535,
     y: 12388.65722,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -45381.66817,
     y: 17230.53047,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 27972.73794,
     y: 2092.847827,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -31998.64967,
     y: -71280.84159,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -27265.44804,
     y: 33307.36004,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -48257.84984,
     y: -23099.28945,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 58301.44541,
     y: -24697.81106,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -43299.9652,
     y: -45814.5009,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -33238.04737,
     y: -18107.0647,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -12556.70876,
     y: 43966.24609,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -16634.82879,
     y: 73514.50572,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 5985.303882,
     y: -486.2529389,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 12600.40669,
     y: -60283.82628,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 31231.47094,
     y: -58837.56531,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 59453.88203,
     y: 62194.97473,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -38143.45923,
     y: -5916.644259,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 29740.11501,
     y: -20769.57245,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 60940.2771,
     y: 56796.86349,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 31304.43032,
     y: 61944.94441,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -7159.846739,
     y: -52488.00212,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 74980.87189,
     y: -35544.8632,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -38220.08139,
     y: -37659.97984,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 55900.27707,
     y: 66578.21739,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 27796.04438,
     y: 66544.7332,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 47540.29247,
     y: 51241.2245,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -55148.07665,
     y: -45841.68247,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -7597.147848,
     y: 73700.58843,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -27467.33632,
     y: -54620.28598,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -8298.086629,
     y: -11335.80923,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 31461.85627,
     y: -12979.6659,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 55187.75165,
     y: -41386.30255,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 28028.23571,
     y: -44190.91218,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 49262.53311,
     y: 26922.57594,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 58935.4141,
     y: -13584.76311,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -11602.82499,
     y: -18110.43384,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -28446.48828,
     y: 51086.41424,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 25138.39864,
     y: 30037.9788,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 74521.39878,
     y: 18895.85267,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -54957.91663,
     y: -57370.94033,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 40857.72871,
     y: 51188.01932,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -63391.26471,
     y: 17941.55989,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -21031.25323,
     y: -33678.85199,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 7252.349179,
     y: -5344.030346,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 60580.34704,
     y: -5889.57861,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 44840.7957,
     y: -25135.21441,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 22126.57145,
     y: -46383.92781,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -55428.65659,
     y: 56098.8592,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -6050.123472,
     y: 68884.51363,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 35184.31634,
     y: -31319.60395,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -11958.518,
     y: 19212.91126,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -34596.88536,
     y: -39279.62331,
-    altitude: 1000
+    altitude: 0
 }, {
     x: 33107.77749,
     y: 51802.20054,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -55118.91519,
     y: 34844.48885,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64967.07639,
     y: 71909.35727,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65011.56387,
     y: 71874.11252,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65008.43598,
     y: 71815.4414,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65000.96045,
     y: 71932.54709,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65008.66555,
     y: 71827.51448,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65031.60909,
     y: 71862.25728,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65041.61908,
     y: 71876.0141,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64993.74669,
     y: 71869.58554,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64968.8006,
     y: 71843.4313,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65017.542,
     y: 71910.18924,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65009.294,
     y: 71885.25359,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65054.685,
     y: 71860.51981,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64994.56689,
     y: 71898.6992,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64956.39001,
     y: 71864.7845,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65024.28996,
     y: 71853.83719,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65036.03959,
     y: 71919.29136,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64989.58783,
     y: 71853.55185,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64997.1485,
     y: 71864.48779,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65018.01058,
     y: 71943.27064,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65025.29277,
     y: 71943.64911,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65042.34268,
     y: 71863.25732,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64995.14665,
     y: 71909.999,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65030.10986,
     y: 71843.51286,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65025.13008,
     y: 71864.94503,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64968.39233,
     y: 71873.9804,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65029.24469,
     y: 71862.11009,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65046.32808,
     y: 71907.32921,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65030.97513,
     y: 71885.89071,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64931.02095,
     y: 71881.21547,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64962.1396,
     y: 71914.79422,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64960.37832,
     y: 71905.45818,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64972.9924,
     y: 71866.02925,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65063.55034,
     y: 71902.59609,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64930.23088,
     y: 71874.51317,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65006.9471,
     y: 71866.09541,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65022.81557,
     y: 71900.11376,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65007.48112,
     y: 71892.67963,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64972.81266,
     y: 71905.76424,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65016.21804,
     y: 71920.35407,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64988.68399,
     y: 71895.70285,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65001.34051,
     y: 71900.5639,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65016.16121,
     y: 71944.08544,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64990.18584,
     y: 71932.05034,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65046.89562,
     y: 71899.82232,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65020.97186,
     y: 71946.98259,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65005.05202,
     y: 71955.22839,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64977.15583,
     y: 71859.43472,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65016.58173,
     y: 71947.39528,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65011.2056,
     y: 71918.34572,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65018.56802,
     y: 71911.96085,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65010.54018,
     y: 71877.01792,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65061.2083,
     y: 71890.42642,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64977.69366,
     y: 71844.90008,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64953.90195,
     y: 71916.68054,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64943.67978,
     y: 71888.14505,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65028.46034,
     y: 71859.38862,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65025.99761,
     y: 71863.49802,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65037.40785,
     y: 71864.74952,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64987.32412,
     y: 71901.85448,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64938.71677,
     y: 71870.2185,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65004.869,
     y: 71925.57105,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65065.29586,
     y: 71893.94149,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65008.08261,
     y: 71858.90561,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64966.84479,
     y: 71905.06254,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64952.53432,
     y: 71889.13039,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65070.29734,
     y: 71897.62196,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65024.26363,
     y: 71857.07616,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64975.05899,
     y: 71912.90734,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65007.07401,
     y: 71941.38331,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65047.46521,
     y: 71875.04478,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64963.9096,
     y: 71863.47001,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65040.06443,
     y: 71910.85304,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64939.34548,
     y: 71879.30089,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.4616,
     y: 71858.96468,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65011.66628,
     y: 71902.1671,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64947.19171,
     y: 71875.23644,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64972.14777,
     y: 71884.0766,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64992.87774,
     y: 71918.15321,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65052.04009,
     y: 71891.5413,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64992.19407,
     y: 71909.74325,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65015.38016,
     y: 71938.29914,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64967.82697,
     y: 71912.68103,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65028.8243,
     y: 71847.68906,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.11436,
     y: 71945.28807,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65025.09697,
     y: 71862.8716,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65057.98199,
     y: 71920.63205,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65004.42387,
     y: 71870.0388,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65053.59597,
     y: 71887.07259,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65030.9093,
     y: 71925.97085,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64932.56535,
     y: 71900.38773,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64985.05976,
     y: 71867.16047,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65018.17207,
     y: 71852.47208,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64999.83388,
     y: 71816.88551,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64963.76746,
     y: 71857.50545,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64979.70435,
     y: 71951.59896,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64925.5176,
     y: 71878.04958,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65009.63287,
     y: 71890.29523,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65018.19561,
     y: 71949.9782,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64966.18758,
     y: 71875.03618,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65064.06296,
     y: 71902.5404,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64998.15285,
     y: 71854.92142,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65000.37349,
     y: 71925.67166,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65023.15231,
     y: 71839.16371,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65017.13463,
     y: 71906.27239,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64971.70509,
     y: 71921.87212,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64961.57996,
     y: 71857.8357,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65039.28288,
     y: 71865.82878,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64943.79694,
     y: 71876.88713,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64995.28724,
     y: 71893.09819,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65014.24278,
     y: 71942.62854,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65045.37482,
     y: 71878.1019,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65010.78433,
     y: 71930.54235,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65047.22396,
     y: 71895.74051,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64986.61326,
     y: 71818.69301,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65017.31468,
     y: 71828.28997,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65050.31707,
     y: 71872.80778,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65003.56221,
     y: 71957.58442,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64942.8696,
     y: 71875.65483,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65032.42476,
     y: 71860.88183,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65033.90975,
     y: 71933.88231,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65031.92463,
     y: 71897.67029,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64939.15135,
     y: 71891.51975,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64980.54427,
     y: 71933.09165,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65024.10327,
     y: 71888.38222,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65006.08758,
     y: 71927.64526,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64941.93849,
     y: 71873.39593,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64996.08382,
     y: 71931.15237,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65008.65465,
     y: 71858.50263,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.09195,
     y: 71840.88738,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64986.24584,
     y: 71882.70299,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65047.62076,
     y: 71881.72743,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64963.54587,
     y: 71838.81053,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65020.30014,
     y: 71883.53048,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65060.0166,
     y: 71907.3891,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64958.92287,
     y: 71897.8683,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64962.28749,
     y: 71879.46413,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64973.8545,
     y: 71928.90754,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65051.03965,
     y: 71872.06963,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65020.96651,
     y: 71874.232,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65023.14632,
     y: 71870.86493,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64994.05049,
     y: 71805.39238,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.23169,
     y: 71937.64967,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64982.79491,
     y: 71926.09043,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65003.08186,
     y: 71836.01895,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64995.13547,
     y: 71915.59554,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64991.62231,
     y: 71895.74239,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.69072,
     y: 71948.51878,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64952.92002,
     y: 71896.16457,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65007.22835,
     y: 71959.60632,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65000.98442,
     y: 71842.52313,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64934.44239,
     y: 71861.4201,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64952.6853,
     y: 71903.80328,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65001.17428,
     y: 71953.57374,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65021.44653,
     y: 71943.15656,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64991.38541,
     y: 71955.46269,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64913.48609,
     y: 71880.91512,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64958.65208,
     y: 71856.14996,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65022.07563,
     y: 71922.82225,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64961.92567,
     y: 71924.26192,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65035.85039,
     y: 71872.6583,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64960.06069,
     y: 71860.21595,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65018.34072,
     y: 71947.76619,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65047.39799,
     y: 71853.82003,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65038.4215,
     y: 71848.78178,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64960.36261,
     y: 71839.49277,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65027.20171,
     y: 71922.37731,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64977.87404,
     y: 71892.14474,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64979.57387,
     y: 71819.03426,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.72761,
     y: 71861.66613,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64919.47849,
     y: 71882.3006,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65010.0174,
     y: 71925.08427,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65009.50974,
     y: 71813.04327,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64988.5895,
     y: 71924.99423,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65049.20543,
     y: 71897.44564,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65018.24657,
     y: 71836.44018,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64935.50963,
     y: 71874.94586,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64979.48875,
     y: 71827.37319,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64992.02772,
     y: 71936.20329,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65032.10653,
     y: 71902.67968,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65034.16542,
     y: 71907.09526,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64983.65935,
     y: 71880.33245,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65059.26024,
     y: 71883.86024,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64997.58318,
     y: 71911.51366,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65007.43278,
     y: 71923.33268,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64980.50704,
     y: 71951.62789,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64960.95157,
     y: 71873.44341,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64926.97626,
     y: 71882.53952,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65000.89368,
     y: 71887.68286,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65050.30727,
     y: 71900.71672,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64959.09176,
     y: 71919.52199,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65007.38661,
     y: 71930.2852,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65025.38697,
     y: 71858.98366,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65012.6493,
     y: 71904.55725,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64998.50061,
     y: 71930.29873,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64996.55049,
     y: 71922.35197,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65032.06762,
     y: 71932.91278,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64988.53542,
     y: 71813.14801,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64941.31272,
     y: 71878.12017,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64991.79142,
     y: 71830.53632,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65001.65283,
     y: 71950.05007,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65046.28657,
     y: 71868.67499,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65026.17673,
     y: 71932.93688,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64956.35652,
     y: 71849.64168,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65029.12644,
     y: 71891.61579,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64991.31537,
     y: 71853.17987,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65013.03386,
     y: 71880.8664,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64928.37616,
     y: 71884.75372,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65051.09284,
     y: 71885.19321,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65008.63138,
     y: 71852.75643,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64945.60368,
     y: 71893.95235,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65015.75538,
     y: 71834.45034,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64943.42565,
     y: 71868.39616,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65012.80276,
     y: 71946.07417,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64959.88275,
     y: 71846.55887,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65014.48843,
     y: 71826.19933,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64991.03139,
     y: 71935.64998,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65019.22038,
     y: 71837.31162,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64969.29976,
     y: 71859.22211,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65019.847,
     y: 71846.58181,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65044.6246,
     y: 71935.5573,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65037.3567,
     y: 71927.68227,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65065.8241,
     y: 71883.69287,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65034.27537,
     y: 71881.80078,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65005.35321,
     y: 71942.39775,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64975.91757,
     y: 71932.9224,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64994.04291,
     y: 71950.91006,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64992.49918,
     y: 71835.15402,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64964.18296,
     y: 71919.08083,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65018.48273,
     y: 71868.51431,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64935.39434,
     y: 71874.01944,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65029.79679,
     y: 71897.78533,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64976.8518,
     y: 71923.68753,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65015.80052,
     y: 71910.6999,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65073.11188,
     y: 71899.6949,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65012.65616,
     y: 71884.03069,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64988.48413,
     y: 71852.39678,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65050.25432,
     y: 71905.16265,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65055.56147,
     y: 71893.93044,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64932.19745,
     y: 71889.4548,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64968.65711,
     y: 71838.66914,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65031.71595,
     y: 71862.8824,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64977.36416,
     y: 71847.34691,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65038.57233,
     y: 71933.86516,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64953.89768,
     y: 71857.18416,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64976.95843,
     y: 71875.33273,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64973.38767,
     y: 71844.00728,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64941.45183,
     y: 71874.39858,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64981.69975,
     y: 71862.49891,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64958.71981,
     y: 71913.43409,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65037.41247,
     y: 71864.62196,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64982.68879,
     y: 71922.13877,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65046.57337,
     y: 71855.01649,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64996.3242,
     y: 71857.22625,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65022.32044,
     y: 71850.99567,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65014.91042,
     y: 71900.35462,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65022.8683,
     y: 71939.90579,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65014.03229,
     y: 71952.13319,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65077.31305,
     y: 71885.33571,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64960.27798,
     y: 71837.73379,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65025.40497,
     y: 71874.42133,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64982.17234,
     y: 71947.71812,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65019.51437,
     y: 71828.01291,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65048.47937,
     y: 71919.26916,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65043.10568,
     y: 71927.13439,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.80652,
     y: 71870.84276,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65061.24263,
     y: 71908.13107,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65037.99109,
     y: 71842.59844,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64996.764,
     y: 71873.81224,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64991.95566,
     y: 71863.70732,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65044.84057,
     y: 71877.60501,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65045.5089,
     y: 71854.83743,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64967.28214,
     y: 71833.48113,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65012.64829,
     y: 71943.31403,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.46998,
     y: 71839.24069,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64993.01274,
     y: 71878.93864,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65063.26852,
     y: 71916.05508,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64992.92915,
     y: 71950.07501,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65057.77667,
     y: 71865.35499,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64978.90209,
     y: 71891.95424,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65023.62906,
     y: 71836.65569,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65017.10725,
     y: 71867.64833,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65018.74186,
     y: 71868.89726,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65002.7046,
     y: 71807.40978,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64963.05329,
     y: 71846.84496,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64988.26405,
     y: 71903.21859,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65032.27699,
     y: 71896.88126,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64955.97117,
     y: 71907.41569,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64998.69374,
     y: 71870.54784,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65001.66094,
     y: 71865.64046,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65004.4945,
     y: 71946.31943,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64976.66445,
     y: 71863.55881,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65044.52972,
     y: 71865.75215,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65019.10252,
     y: 71891.37136,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64967.29921,
     y: 71865.14232,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65039.51421,
     y: 71853.92316,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65011.39564,
     y: 71932.13504,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64981.48545,
     y: 71835.94534,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65061.86882,
     y: 71912.57372,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65016.06519,
     y: 71866.79533,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65033.5224,
     y: 71920.03769,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65010.66326,
     y: 71947.32075,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65082.4458,
     y: 71898.84255,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65017.78781,
     y: 71941.07994,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64983.63157,
     y: 71883.49392,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65016.2236,
     y: 71954.7301,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64963.10621,
     y: 71846.0051,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65017.19686,
     y: 71871.09883,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64999.19886,
     y: 71807.61547,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65025.76198,
     y: 71918.8443,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65000.04282,
     y: 71831.60316,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65016.13371,
     y: 71918.52785,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64926.21515,
     y: 71894.32304,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65032.13114,
     y: 71837.05311,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64978.04001,
     y: 71872.52793,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65009.73781,
     y: 71906.33152,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65067.4036,
     y: 71894.81332,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64930.2167,
     y: 71869.55404,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65037.90461,
     y: 71907.21991,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65020.16756,
     y: 71938.06727,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65042.8726,
     y: 71890.81987,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64969.85322,
     y: 71857.67392,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64934.52394,
     y: 71892.70896,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65055.20724,
     y: 71891.72064,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64981.52039,
     y: 71853.26551,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64966.25854,
     y: 71847.34058,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64999.67178,
     y: 71956.32312,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65034.78825,
     y: 71839.30698,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64977.30953,
     y: 71876.59256,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65051.951,
     y: 71892.99332,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64969.55113,
     y: 71853.93955,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64999.24133,
     y: 71973.43169,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64931.82557,
     y: 71882.05205,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64981.87342,
     y: 71924.22243,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65038.65511,
     y: 71908.10065,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64939.77414,
     y: 71892.44962,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64942.24315,
     y: 71878.24306,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65011.50813,
     y: 71822.75575,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65066.75566,
     y: 71877.72633,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64999.66602,
     y: 71946.55991,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65059.18011,
     y: 71886.69191,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64978.24654,
     y: 71914.09362,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65024.00864,
     y: 71926.7517,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64986.32912,
     y: 71878.09009,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64994.84329,
     y: 71828.51451,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64962.49408,
     y: 71854.2346,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65008.63997,
     y: 71863.26589,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64946.78084,
     y: 71879.54858,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65028.60484,
     y: 71909.90601,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65056.16373,
     y: 71882.21542,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65046.5744,
     y: 71858.59605,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65034.02537,
     y: 71940.01673,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65017.75306,
     y: 71858.14867,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64990.71962,
     y: 71876.23555,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64977.759,
     y: 71881.84708,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65004.42304,
     y: 71925.7626,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65017.25176,
     y: 71935.95762,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64980.94387,
     y: 71817.43185,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64983.80954,
     y: 71838.13281,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65066.70945,
     y: 71889.19971,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65019.4213,
     y: 71931.87279,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64939.55811,
     y: 71876.89233,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65016.09217,
     y: 71839.29345,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65015.31708,
     y: 71934.17068,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65025.06882,
     y: 71881.08694,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65061.92143,
     y: 71891.65738,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65047.90049,
     y: 71901.62319,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65062.73535,
     y: 71917.53362,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64948.26466,
     y: 71893.15721,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65035.56068,
     y: 71865.23733,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64983.67377,
     y: 71936.27309,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65050.65261,
     y: 71863.70986,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65015.75666,
     y: 71860.91643,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64983.58562,
     y: 71885.00719,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64972.30434,
     y: 71879.19021,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65042.74578,
     y: 71924.77401,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64955.4481,
     y: 71864.04685,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64941.12319,
     y: 71908.5436,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65056.4006,
     y: 71908.8355,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64994.12611,
     y: 71881.7369,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65023.82152,
     y: 71859.26489,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64928.48302,
     y: 71883.71139,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65041.20683,
     y: 71900.89458,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64954.66238,
     y: 71889.30774,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64942.28225,
     y: 71871.33816,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65018.90497,
     y: 71933.83478,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65048.87709,
     y: 71899.32914,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65018.6344,
     y: 71954.65275,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65004.01309,
     y: 71829.80953,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64972.13764,
     y: 71868.83516,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65037.94237,
     y: 71888.05887,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65016.87935,
     y: 71931.80263,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64985.724,
     y: 71877.54624,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65059.99966,
     y: 71878.25027,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65042.93001,
     y: 71908.7706,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65021.16277,
     y: 71938.27644,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65007.86578,
     y: 71889.58094,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65045.98739,
     y: 71922.65695,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65036.80542,
     y: 71861.0498,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65047.7056,
     y: 71906.18409,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65024.00562,
     y: 71880.90096,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64996.91814,
     y: 71862.57121,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64980.1399,
     y: 71876.50404,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64987.13034,
     y: 71905.04028,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64987.4791,
     y: 71919.39511,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.17156,
     y: 71871.84979,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65053.68903,
     y: 71879.83426,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64977.37994,
     y: 71871.06518,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65014.4113,
     y: 71956.58611,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64975.18925,
     y: 71938.54709,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64979.42275,
     y: 71877.83293,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65063.92421,
     y: 71909.953,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64993.04462,
     y: 71954.60219,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65043.00295,
     y: 71889.10354,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65007.95285,
     y: 71938.73281,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64959.90534,
     y: 71886.75547,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65012.80962,
     y: 71945.0676,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65004.01074,
     y: 71850.45672,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64972.50674,
     y: 71863.63491,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64985.95637,
     y: 71949.64841,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65026.39918,
     y: 71874.88587,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65016.13889,
     y: 71882.44216,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65057.28414,
     y: 71882.84135,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65049.52674,
     y: 71884.465,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64953.52739,
     y: 71868.39461,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65037.9075,
     y: 71899.86977,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64993.889,
     y: 71825.98902,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64995.54542,
     y: 71957.87474,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65021.44643,
     y: 71891.18514,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65001.96604,
     y: 71886.70936,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65004.12404,
     y: 71860.35106,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65029.30716,
     y: 71928.77667,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64985.42767,
     y: 71889.66287,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64983.48403,
     y: 71835.99399,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65025.67714,
     y: 71931.37975,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64941.308,
     y: 71882.81985,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.68027,
     y: 71887.84026,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.00192,
     y: 71902.5597,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64999.12595,
     y: 71924.61887,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64995.08376,
     y: 71937.22136,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64948.08267,
     y: 71898.09623,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65026.68386,
     y: 71837.1161,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65020.00822,
     y: 71916.83975,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64967.53965,
     y: 71907.23721,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65036.39954,
     y: 71927.25121,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65047.18817,
     y: 71887.87625,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64995.67057,
     y: 71842.75944,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65027.04171,
     y: 71933.97109,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64968.60524,
     y: 71861.91319,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65054.57355,
     y: 71914.16478,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65030.69853,
     y: 71939.93644,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65000.99416,
     y: 71891.78339,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64998.17008,
     y: 71837.92072,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64965.77164,
     y: 71927.17678,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64991.94637,
     y: 71952.81562,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65015.86163,
     y: 71881.91311,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65021.48984,
     y: 71844.74713,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65037.45777,
     y: 71906.56127,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65061.73838,
     y: 71905.11156,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65023.10007,
     y: 71936.37575,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64993.73657,
     y: 71862.66946,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64951.2497,
     y: 71853.91896,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64969.89528,
     y: 71863.22685,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65039.86836,
     y: 71929.53719,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64989.18697,
     y: 71868.52502,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64968.68541,
     y: 71864.40781,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65059.05309,
     y: 71890.01192,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64993.6114,
     y: 71832.41586,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65041.31709,
     y: 71927.50915,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64947.28728,
     y: 71874.05647,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65011.40064,
     y: 71897.04445,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65076.3795,
     y: 71900.98447,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65032.38759,
     y: 71900.33055,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.80539,
     y: 71916.38399,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64973.30686,
     y: 71923.12284,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65052.06668,
     y: 71914.8623,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65058.82237,
     y: 71920.099,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64979.1522,
     y: 71830.34209,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64992.11527,
     y: 71891.84386,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64958.3748,
     y: 71909.84643,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64969.48926,
     y: 71929.70534,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64945.02955,
     y: 71851.80117,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65011.49314,
     y: 71946.66649,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64984.35731,
     y: 71912.01738,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64973.08642,
     y: 71880.36482,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64956.98071,
     y: 71864.78083,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65034.24623,
     y: 71842.44321,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65010.42585,
     y: 71843.74611,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65040.93976,
     y: 71875.46985,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64937.618,
     y: 71888.3474,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65031.25451,
     y: 71904.94568,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65050.75117,
     y: 71907.68235,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64939.93255,
     y: 71904.86947,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65001.73589,
     y: 71968.11284,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65007.63742,
     y: 71842.78138,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64986.95703,
     y: 71817.8359,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65020.09643,
     y: 71884.99145,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64978.32102,
     y: 71930.94617,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64995.42961,
     y: 71936.05974,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -65012.3197,
     y: 71818.46056,
-    altitude: 1000
+    altitude: 0
 }, {
     x: -64992.65166,
     y: 71908.13812,
-    altitude: 1000
+    altitude: 0
 }]

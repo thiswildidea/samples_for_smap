@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
-    <title>ripplewall</title>
+    <title>cloud</title>
     <style>
         html,
         body,
@@ -124,7 +124,8 @@
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
     <script src="../../library/smap/xuhui/Plugins.min.js"></script>
     <script src="../../library/common/d3.min.js"></script>
-    <script src="./data.js"></script>
+    <script src="./shanghairandomPoints.js"></script>
+     <script src="./xudata.js"></script>
     <script src="../../library/common/three109.min.js"></script>
 
     <script>
@@ -137,49 +138,11 @@
             mapStyle: 'smap://styles/dark',
             showBuildingBlock: true
         })
-        let ripplewallRenderer = null
+        let cloudRenderer = null
         smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {
 
-            smap.view.ui.add('ripplewallSettingcontainerid', "top-right");
-            SMap.load(['esri/widgets/Slider']).then(([Slider]) => {
-                const Scalezslider = new Slider({
-                    container: 'ripplewallScalezslider',
-                    min: 1,
-                    max: 200,
-                    visibleElements: {
-                        labels: true
-                    },
-                    precision: 1,
-                    values: [1]
-                });
-
-                Scalezslider.on("thumb-drag", function (event) {
-                    const value = parseInt(event.value);
-                    if (!ripplewallRenderer) return;
-                    ripplewallRenderer.setscaleZ(value)
-                });
-
-                const slideraltitude = new Slider({
-                    container: 'ripplewallaltitudeslider',
-                    min: 0,
-                    max: 1000,
-                    visibleElements: {
-                        labels: true
-                    },
-                    precision: 1,
-                    values: [1]
-                });
-
-                slideraltitude.on("thumb-drag", function (event) {
-                    const value = parseInt(event.value);
-                    if (!ripplewallRenderer) return;
-                    ripplewallRenderer.setaltitude(value)
-                });
-
-                document.getElementById("rwwireframe").addEventListener("click", function () {
-                    ripplewallRenderer.setwireframe()
-                });
-            })
+            
+           
         })
 
         $(function () {
@@ -220,29 +183,21 @@
                 smap.addLayer(SHCTiledMapServiceLayerparam)
             })
 
-            $("#btnaripplewall").click(function () {
-                ripplewallRenderer = new Plugins.RipplewallRenderer(smap.view)
+            $("#btnaddcloud").click(function () {
+                cloudRenderer = new Plugins.CloudRenderer(smap.view)
                 const param = {
-                    points: [
-                        [0, 0],
-                        [1000, 0],
-                        [1000, 1000],
-                        [0, 1000],
-                         [-1000, 1000],
-                        [0, 0]
-                    ],
-                    // points:datas,
+                    points:shanghaipoints,
                     options: {
-                        color: '#DC143C',
-                        height: 800,
-                        altitude: 0,
-                        speed: 1,
+                        cloudurl: '../../resources/images/sun.png',
+                        width: 600,
+                        height: 600,
+                        offset:5
                     }
                 }
-                ripplewallRenderer.add(param)
+                cloudRenderer.add(param)
             })
-            $("#btnremoveripplewall").click(function () {
-                ripplewallRenderer.remove()
+            $("#btnremovecloud").click(function () {
+                cloudRenderer.remove()
             })
         })
     </script>
@@ -250,31 +205,13 @@
 
 <body>
     <div id="mapcontainer"></div>
-    <div id="ripplewallSettingcontainerid" class="ripplewallSettingcontainer">
-        <div class='ripplewallScalez'>
-            <h6>设置Scalez</h6>
-            <div id='ripplewallScalezslider' class="rwscalez">
-
-            </div>
-        </div>
-        <div class='ripplewallaltitude'>
-            <h6>设置altitude</h6>
-            <div id='ripplewallaltitudeslider' class="rwaltitude">
-
-            </div>
-        </div>
-        <div class='ripplewallwireframe'>
-            <h6>wireframe</h6>
-            <input type="checkbox" id='rwwireframe' title="wireframe" />
-        </div>
-    </div>
     <div class="mapbuttoncontainergroup">
         <div class="mapbuttoncontainer">
             <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
             <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
             <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
-            <button class="mapbutton" id="btnaripplewall"> add ripplewall</button>
-            <button class="mapbutton" id="btnremoveripplewall"> remove ripplewall</button>
+            <button class="mapbutton" id="btnaddcloud"> add cloud</button>
+            <button class="mapbutton" id="btnremovecloud"> remove cloud</button>
         </div>
     </div>
 </body>

@@ -125,6 +125,7 @@
     <script src="../../library/smap/xuhui/Plugins.min.js"></script>
     <script src="../../library/common/d3.min.js"></script>
     <script src="./shanghairandomPoints.js"></script>
+     <script src="./xudata.js"></script>
     <script src="../../library/common/three109.min.js"></script>
 
     <script>
@@ -185,11 +186,12 @@
             $("#btnaddcloud").click(function () {
                 cloudRenderer = new Plugins.CloudRenderer(smap.view)
                 const param = {
-                    points:shanghaipoints,
+                    points:xupoints,
                     options: {
                         cloudurl: '../../resources/images/cloud.png',
-                        width: 3000,
-                        height: 3000,
+                        width: 600,
+                        height: 600,
+                        offset:5
                     }
                 }
                 cloudRenderer.add(param)
