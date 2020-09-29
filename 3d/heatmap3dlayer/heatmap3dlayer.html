@@ -236,14 +236,13 @@
             })
 
             $("#btna3dheatmap").click(function () {
-                d3.csv('http://10.201.37.225:8080/smiapi/arcgis/xudata1.txt',
+                d3.csv('./xuroaddata.txt',
                     (error, response) => {
-                        // console.log(response);
                         let data = response.map(d => {
                             return {
                                 coordinate: [Number(d.x), Number(d.y)],
                                 value: Math.random() * 10,
-                                count: 30 * Math.random(),
+                                count: 300 * Math.random(),
                             };
                         });
                         heatmap3dlayer = new Plugins.HeatMap3dLayer(smap.view)
@@ -267,28 +266,7 @@
                         }
                         heatmap3dlayer.add(paramter)
 
-                    //     const heatmap3dlayer2 = new Plugins.HeatMap3dLayer(smap.view)
-                    //     const paramter2 = {
-                    //         data: data,
-                    //         options: {
-                    //             gridScale: 2,
-                    //             size: 2,
-                    //             gradient: {
-                    //                 0.25: 'rgb(0,0,200)',
-                    //                 0.55: 'rgb(0,255,0)',
-                    //                 0.85: 'yellow',
-                    //                 1.0: 'rgb(255,0,0)'
-                    //             },
-                    //             altitude: 200,
-                    //             scaleZ: 100,
-                    //             opacity: 1,
-                    //             wireframe: false,
-                    //             // color: 'rgb(255,255,255)'
-                    //         }
-                    //     }
-                    //     heatmap3dlayer2.add(paramter2)
-
-                });
+                    });
             })
             $("#btnsetMaterialColor").click(function () {
                 heatmap3dlayer.setMaterialColor('rgb(255,255,255)')
