@@ -84,7 +84,6 @@ MeshLine.prototype.raycast = ( function () {
 
 		var precision = raycaster.linePrecision;
 		var precisionSq = precision * precision;
-		var interRay = new THREE.Vector3();
 
 		var geometry = this.geometry;
 
@@ -95,7 +94,7 @@ MeshLine.prototype.raycast = ( function () {
 		sphere.copy( geometry.boundingSphere );
 		sphere.applyMatrix4( this.matrixWorld );
 
-		if ( raycaster.ray.intersectSphere( sphere, interRay ) === false ) {
+		if ( raycaster.ray.intersectSphere( sphere ) === false ) {
 
 			return;
 
@@ -107,6 +106,7 @@ MeshLine.prototype.raycast = ( function () {
 		var vStart = new THREE.Vector3();
 		var vEnd = new THREE.Vector3();
 		var interSegment = new THREE.Vector3();
+		var interRay = new THREE.Vector3();
 		var step = this instanceof THREE.LineSegments ? 2 : 1;
 
 		if ( geometry instanceof THREE.BufferGeometry ) {
@@ -334,14 +334,6 @@ MeshLine.prototype.process = function() {
 		this.attributes.index.needsUpdate = true;
 	}
 
-	// this.geometry.setAttribute( 'position', this.attributes.position );
-	// this.geometry.setAttribute( 'previous', this.attributes.previous );
-	// this.geometry.setAttribute( 'next', this.attributes.next );
-	// this.geometry.setAttribute( 'side', this.attributes.side );
-	// this.geometry.setAttribute( 'width', this.attributes.width );
-	// this.geometry.setAttribute( 'uv', this.attributes.uv );
-	// this.geometry.setAttribute( 'counters', this.attributes.counters );
-
 	this.geometry.addAttribute( 'position', this.attributes.position );
 	this.geometry.addAttribute( 'previous', this.attributes.previous );
 	this.geometry.addAttribute( 'next', this.attributes.next );
@@ -433,7 +425,6 @@ THREE.ShaderChunk[ 'meshline_vert' ] = [
 	'uniform float near;',
 	'uniform float far;',
 	'uniform float sizeAttenuation;',
-	'uniform vec2 offset;',
 	'',
 	'varying vec2 vUV;',
 	'varying vec4 vColor;',
@@ -454,7 +445,7 @@ THREE.ShaderChunk[ 'meshline_vert' ] = [
 	'    float pixelWidthRatio = 1. / (resolution.x * projectionMatrix[0][0]);',
 	'',
 	'    vColor = vec4( color, opacity );',
-	'    vUV = uv + offset;',
+	'    vUV = uv;',
 	'',
 	'    mat4 m = projectionMatrix * modelViewMatrix;',
 	'    vec4 finalPosition = m * vec4( position, 1.0 );',
@@ -565,7 +556,6 @@ function MeshLineMaterial( parameters ) {
 				visibility: {value: 1 },
 				alphaTest: {value: 0 },
 				repeat: { value: new THREE.Vector2( 1, 1 ) },
-				offset: { value: new THREE.Vector2( 1, 1 ) },
 			}
 		),
 

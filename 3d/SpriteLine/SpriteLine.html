@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>SpriteLine</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../../library/smap/xuhui/SMap.min.js"></script>
+    <script src="../../library/smap/xuhui/Plugins.min.js"></script>
+    <script src="../../library/common/d3.min.js"></script>
+    <script src="./maptalks.min.js"></script>
+    <script src="../../library/common/three109.min.js"></script>
+    <script src="../../library/common/meshLine/THREE.MeshLine.js"></script>
+
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 20,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+        let SpriteLinerenderer = null
+        smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {})
+
+        $(function () {
+            $("#addlayercontrol").click(function () {
+                    const layerListControl = new SMap.LayerListControl({
+                        visible: true,
+                        position: 'top-right',
+                        collapse: true
+                    })
+                    smap.addControl(layerListControl)
+                }),
+
+                $("#addbasemaptoggle").click(function () {
+                    const basemapToggle = new SMap.BasemapToggle({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(basemapToggle)
+                }),
+
+                $("#addUndergroundSwitch").click(function () {
+                    const undergroundSwitch = new SMap.UndergroundSwitch({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(undergroundSwitch)
+                })
+
+            $("#btnaddTilelayer").click(function () {
+                const SHCTiledMapServiceLayerparam = {
+                    layerType: 'TileLayer',
+                    layerUrl: "http://10.201.37.222/arcgis/rest/services/maskboundary/xh_maskboundary/MapServer",
+                    layerTitle: "XHGQ",
+                    layerId: "XHGQ",
+                    layerOpacity: 1,
+                    layerVisible: true
+                }
+                smap.addLayer(SHCTiledMapServiceLayerparam)
+            })
+
+            $("#btnaSpriteLine").click(function () {
+                SpriteLinerenderer = new Plugins.SpriteLineRenderer(smap.view)
+                fetch('./road1.json').then(function (res) {
+                    return res.text();
+                }).then(function (text) {
+                    return JSON.parse(text);
+                }).then(function (geojson) {
+
+                    let multiLineStrings = maptalks.GeoJSON.toGeometry(geojson);
+                    const param = {
+                        multiLineStrings: multiLineStrings,
+                        options: {
+                            textureURL: './nanshan-road1.png',
+                            lineWidth: 23,
+                            speed:1
+                        }
+                    }
+                    SpriteLinerenderer.add(param)
+                });
+
+                fetch('./road2.json').then(function (res) {
+                    return res.text();
+                }).then(function (text) {
+                    return JSON.parse(text);
+                }).then(function (geojson) {
+
+                    let multiLineStrings = maptalks.GeoJSON.toGeometry(geojson);
+                    const param = {
+                        multiLineStrings: multiLineStrings,
+                        options: {
+                            textureURL: './nanshan-road2.png',
+                            lineWidth: 23,
+                            speed:1
+                        }
+                    }
+                    SpriteLinerenderer.add(param)
+                });
+
+                fetch('./road3.json').then(function (res) {
+                    return res.text();
+                }).then(function (text) {
+                    return JSON.parse(text);
+                }).then(function (geojson) {
+
+                    let multiLineStrings = maptalks.GeoJSON.toGeometry(geojson);
+                    const param = {
+                        multiLineStrings: multiLineStrings,
+                        options: {
+                            textureURL: './nanshan-road3.png',
+                            lineWidth: 23,
+                            speed:1
+                        }
+                    }
+                    SpriteLinerenderer.add(param)
+                });
+
+            })
+
+            $("#btnremoveSpriteLine").click(function () {
+                SpriteLinerenderer.remove()
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+            <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
+            <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
+            <button class="mapbutton" id="btnaSpriteLine"> add SpriteLine</button>
+            <button class="mapbutton" id="btnremoveSpriteLine"> remove SpriteLine</button>
+
+        </div>
+    </div>
+</body>
+
+</html>
