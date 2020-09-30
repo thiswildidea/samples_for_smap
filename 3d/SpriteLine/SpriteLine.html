@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
@@ -45,6 +46,7 @@
     <script src="../../library/smap/xuhui/Plugins.min.js"></script>
     <script src="../../library/common/d3.min.js"></script>
     <script src="./maptalks.min.js"></script>
+     <script src="./xudata.js"></script>
     <script src="../../library/common/three109.min.js"></script>
     <script src="../../library/common/meshLine/THREE.MeshLine.js"></script>
 
@@ -101,7 +103,7 @@
 
             $("#btnaSpriteLine").click(function () {
                 SpriteLinerenderer = new Plugins.SpriteLineRenderer(smap.view)
-                fetch('./road1.json').then(function (res) {
+                fetch('./shroad/cityroad.json').then(function (res) {
                     return res.text();
                 }).then(function (text) {
                     return JSON.parse(text);
@@ -111,15 +113,15 @@
                     const param = {
                         multiLineStrings: multiLineStrings,
                         options: {
-                            textureURL: './nanshan-road1.png',
-                            lineWidth: 23,
-                            speed:1
+                            textureURL: './road1.png',
+                            lineWidth: 10,
+                            speed: 1
                         }
                     }
                     SpriteLinerenderer.add(param)
                 });
 
-                fetch('./road2.json').then(function (res) {
+                fetch('./shroad/el_road.json').then(function (res) {
                     return res.text();
                 }).then(function (text) {
                     return JSON.parse(text);
@@ -129,15 +131,15 @@
                     const param = {
                         multiLineStrings: multiLineStrings,
                         options: {
-                            textureURL: './nanshan-road2.png',
-                            lineWidth: 23,
-                            speed:1
+                            textureURL: './road2.png',
+                            lineWidth: 15,
+                            speed: 1
                         }
                     }
                     SpriteLinerenderer.add(param)
                 });
 
-                fetch('./road3.json').then(function (res) {
+                fetch('./shroad/road.json').then(function (res) {
                     return res.text();
                 }).then(function (text) {
                     return JSON.parse(text);
@@ -147,13 +149,65 @@
                     const param = {
                         multiLineStrings: multiLineStrings,
                         options: {
-                            textureURL: './nanshan-road3.png',
-                            lineWidth: 23,
-                            speed:1
+                            textureURL: './road3.png',
+                            lineWidth: 20,
+                            speed: 1
                         }
                     }
                     SpriteLinerenderer.add(param)
                 });
+
+
+                fetch('./shroad/street.json').then(function (res) {
+                    return res.text();
+                }).then(function (text) {
+                    return JSON.parse(text);
+                }).then(function (geojson) {
+
+                    let multiLineStrings = maptalks.GeoJSON.toGeometry(geojson);
+                    const param = {
+                        multiLineStrings: multiLineStrings,
+                        options: {
+                            textureURL: './road4.png',
+                            lineWidth: 15,
+                            speed: 1
+                        }
+                    }
+                    SpriteLinerenderer.add(param)
+                });
+
+                const ElectricShieldrenderer = new Plugins.ElectricShieldRenderer(smap.view)
+                const ElectricShieldparam = {
+                    points: [{
+                        x: 0,
+                        y: 0,
+                        radius: 100000,
+                        altitude: 0,
+                    }, {
+                        x: -712.44,
+                        y: -5647.55,
+                        radius: 200,
+                        altitude: 1,
+                    }],
+                    options: {
+                        color: '#FFFF00',
+                        wireframe: false,
+                        speed: 0.01,
+                    }
+                }
+                ElectricShieldrenderer.add(ElectricShieldparam)
+
+               const cloudRenderer = new Plugins.CloudRenderer(smap.view)
+                const cloudparam = {
+                    points: xupoints,
+                    options: {
+                        cloudurl: '../../resources/images/cloud.png',
+                        width: 10000,
+                        height: 10000,
+                        offset: 5
+                    }
+                }
+                cloudRenderer.add(cloudparam)
 
             })
 
