@@ -176,6 +176,39 @@
                     SpriteLinerenderer.add(param)
                 });
 
+                const ElectricShieldrenderer = new Plugins.ElectricShieldRenderer(smap.view)
+                const ElectricShieldparam = {
+                    points: [{
+                        x: 0,
+                        y: 0,
+                        radius: 200000,
+                        altitude: 0,
+                    }, {
+                        x: -712.44,
+                        y: -5647.55,
+                        radius: 200,
+                        altitude: 1,
+                    }],
+                    options: {
+                        color: '#FFFF00',
+                        wireframe: false,
+                        speed: 0.01,
+                    }
+                }
+                ElectricShieldrenderer.add(ElectricShieldparam)
+
+               const cloudRenderer = new Plugins.CloudRenderer(smap.view)
+                const cloudparam = {
+                    points: xupoints,
+                    options: {
+                        cloudurl: '../../resources/images/cloud.png',
+                        width: 10000,
+                        height: 10000,
+                        offset: 5
+                    }
+                }
+                cloudRenderer.add(cloudparam)
+
             })
 
             $("#btnremoveSpriteLine").click(function () {

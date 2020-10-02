@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
-    <title>SpriteLine</title>
+    <title>ArcLine</title>
     <style>
         html,
         body,
@@ -43,10 +43,11 @@
     </style>
     <script src="../../library/common/jquery-2.2.3.min.js"></script>
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
-    <script src="../../library/smap/xuhui/Plugins.min.js"></script>
+     <script src="./Plugins.js"></script>
+    <!-- <script src="../../library/smap/xuhui/Plugins.min.js"></script> -->
     <script src="../../library/common/d3.min.js"></script>
     <script src="./mapking.min.js"></script>
-     <script src="./xudata.js"></script>
+    <script src="./geoutil.js"></script>
     <script src="../../library/common/three109.min.js"></script>
     <script src="../../library/common/meshLine/THREE.MeshLine.js"></script>
 
@@ -102,79 +103,40 @@
             })
 
             $("#btnaSpriteLine").click(function () {
-                SpriteLinerenderer = new Plugins.SpriteLineRenderer(smap.view)
-                fetch('./shroad/cityroad.json').then(function (res) {
-                    return res.text();
-                }).then(function (text) {
-                    return JSON.parse(text);
+                SpriteLinerenderer = new Plugins.ArcLineRenderer(smap.view)
+                fetch('./lines.json').then(function (res) {
+                    return res.json();
                 }).then(function (geojson) {
+                    var lineStrings = geojson.map(function (feature) {
+                        var coordinates = feature.coordinates;
+                        var [from, to] = coordinates;
+                        var lnglats = [
+                            [parseFloat(from[0]), parseFloat(from[1])],
+                            [parseFloat(to[0]), parseFloat(to[1])]
+                        ]
+                        return new mapking.LineString(lnglats);
+                    });
 
-                    let multiLineStrings = mapking.GeoJSON.toGeometry(geojson);
-                    const param = {
-                        multiLineStrings: multiLineStrings,
+                    var list = [];
+                    lineStrings.forEach(lineString => {
+                        list.push({
+                            lineString:lineString,
+                            len: lineLengthwebmercator(lineString)
+                        });
+                    });
+                    list = list.sort(function (a, b) {
+                        return b.len - a.len
+                    });
+
+                    const cloudparam = {
+                        lineStrings: list,
                         options: {
-                            textureURL: './road1.png',
-                            lineWidth: 10,
-                            speed: 1
+                            altitude:0
                         }
                     }
-                    SpriteLinerenderer.add(param)
-                });
+                    SpriteLinerenderer.add(cloudparam)
 
-                fetch('./shroad/el_road.json').then(function (res) {
-                    return res.text();
-                }).then(function (text) {
-                    return JSON.parse(text);
-                }).then(function (geojson) {
-
-                    let multiLineStrings = mapking.GeoJSON.toGeometry(geojson);
-                    const param = {
-                        multiLineStrings: multiLineStrings,
-                        options: {
-                            textureURL: './road2.png',
-                            lineWidth: 15,
-                            speed: 1
-                        }
-                    }
-                    SpriteLinerenderer.add(param)
-                });
-
-                fetch('./shroad/road.json').then(function (res) {
-                    return res.text();
-                }).then(function (text) {
-                    return JSON.parse(text);
-                }).then(function (geojson) {
-
-                    let multiLineStrings = mapking.GeoJSON.toGeometry(geojson);
-                    const param = {
-                        multiLineStrings: multiLineStrings,
-                        options: {
-                            textureURL: './road3.png',
-                            lineWidth: 20,
-                            speed: 1
-                        }
-                    }
-                    SpriteLinerenderer.add(param)
-                });
-
-
-                fetch('./shroad/street.json').then(function (res) {
-                    return res.text();
-                }).then(function (text) {
-                    return JSON.parse(text);
-                }).then(function (geojson) {
-
-                    let multiLineStrings = mapking.GeoJSON.toGeometry(geojson);
-                    const param = {
-                        multiLineStrings: multiLineStrings,
-                        options: {
-                            textureURL: './road4.png',
-                            lineWidth: 15,
-                            speed: 1
-                        }
-                    }
-                    SpriteLinerenderer.add(param)
-                });
+                })
 
             })
 

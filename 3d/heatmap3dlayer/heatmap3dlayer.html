@@ -236,13 +236,13 @@
             })
 
             $("#btna3dheatmap").click(function () {
-                d3.csv('./xuroaddata.txt',
+                d3.csv('./xudata.txt',
                     (error, response) => {
                         let data = response.map(d => {
                             return {
                                 coordinate: [Number(d.x), Number(d.y)],
                                 value: Math.random() * 10,
-                                count: 300 * Math.random(),
+                                count: 30 * Math.random(),
                             };
                         });
                         heatmap3dlayer = new Plugins.HeatMap3dLayer(smap.view)
@@ -258,7 +258,7 @@
                                     1.0: 'rgb(255,0,0)'
                                 },
                                 altitude: 0,
-                                scaleZ: 100,
+                                scaleZ: 500,
                                 opacity: 1,
                                 wireframe: false,
                                 color: 'rgb(255,255,255)'
