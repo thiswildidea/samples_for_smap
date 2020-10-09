@@ -40,6 +40,38 @@
             margin-bottom: 15px;
             float: left;
         }
+
+        #ArcLineSettingcontainerid {
+            position: absolute;
+            margin-right: 10px;
+            height: 300px;
+            width: 400px;
+            margin-top: 10px;
+            display: flex;
+            flex-flow: column;
+
+        }
+
+        .ArcLineSettingcontainer h6 {
+            width: 80px;
+            text-align: center;
+        }
+
+        .ArcLineScalez {
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+
+        .ArcLineScalez .ArcLinescalez {
+            width: 300px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
     </style>
     <script src="../../library/common/jquery-2.2.3.min.js"></script>
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
@@ -61,7 +93,28 @@
             showBuildingBlock: true
         })
         let ArcLineAnimationrenderer = null
-        smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {})
+        smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {
+            smap.view.ui.add('ArcLineSettingcontainerid', "top-right");
+
+            SMap.load(['esri/widgets/Slider']).then(([Slider]) => {
+                const Scalezslider = new Slider({
+                    container: 'ArcLineScalezslider',
+                    min: 1,
+                    max: 2000,
+                    visibleElements: {
+                        labels: true
+                    },
+                    precision: 1,
+                    values: [1]
+                });
+
+                Scalezslider.on("thumb-drag", function (event) {
+                    const value = parseInt(event.value);
+                    if (!ArcLineAnimationrenderer) return;
+                    ArcLineAnimationrenderer.setaltitude(value)
+                });
+            })
+        })
 
         $(function () {
             $("#addlayercontrol").click(function () {
@@ -120,22 +173,23 @@
                     lineStrings.forEach(lineString => {
                         list.push({
                             lineString: lineString,
-                            len: lineLengthwebmercator(lineString)/4
+                            len: lineLengthwebmercator(lineString) / 4
                         });
                     });
-                })
-                const ArcLineparam = {
-                    lineStrings: list,
-                    options: {
-                        textureURL: '../../resources/images/road2.png',
-                        lineWidth: 20,
-                        speed: 0.5
+                    const ArcLineparam = {
+                        lineStrings: list,
+                        options: {
+                            textureURL: '../../resources/images/road2.png',
+                            lineWidth: 20,
+                            speed: 0.5
+                        }
                     }
-                }
-                ArcLineAnimationrenderer.add(ArcLineparam)
+                    ArcLineAnimationrenderer.add(ArcLineparam)
+                })
+
             })
 
-            $("#btnremoveSpriteLine").click(function () {
+            $("#btnremoveArcLine").click(function () {
                 ArcLineAnimationrenderer.remove()
             })
         })
@@ -144,6 +198,14 @@
 
 <body>
     <div id="mapcontainer"></div>
+    <div id="ArcLineSettingcontainerid" class="ArcLineSettingcontainer">
+        <div class='ArcLineScalez'>
+            <h6>设置altitude</h6>
+            <div id='ArcLineScalezslider' class="ArcLinescalez">
+
+            </div>
+        </div>
+    </div>
     <div class="mapbuttoncontainergroup">
         <div class="mapbuttoncontainer">
             <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
