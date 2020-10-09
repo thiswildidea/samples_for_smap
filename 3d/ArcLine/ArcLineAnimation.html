@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
-    <title>SpriteLine</title>
+    <title>ArcLineAnimation</title>
     <style>
         html,
         body,
@@ -46,7 +46,7 @@
     <script src="../../library/smap/xuhui/Plugins.min.js"></script>
     <script src="../../library/common/d3.min.js"></script>
     <script src="../../library/common/mapking.min.js"></script>
-     <script src="./xudata.js"></script>
+    <script src="../../library/common/geoutil.js"></script>
     <script src="../../library/common/three109.min.js"></script>
     <script src="../../library/common/meshLine/THREE.MeshLine.js"></script>
 
@@ -60,7 +60,7 @@
             mapStyle: 'smap://styles/dark',
             showBuildingBlock: true
         })
-        let SpriteLinerenderer = null
+        let ArcLineAnimationrenderer = null
         smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {})
 
         $(function () {
@@ -100,86 +100,43 @@
                 }
                 smap.addLayer(SHCTiledMapServiceLayerparam)
             })
-
-            $("#btnaSpriteLine").click(function () {
-                SpriteLinerenderer = new Plugins.SpriteLineRenderer(smap.view)
-                fetch('./shroad/cityroad.json').then(function (res) {
-                    return res.text();
-                }).then(function (text) {
-                    return JSON.parse(text);
+            const list = [];
+            $("#btnaddArcLine").click(function () {
+                ArcLineAnimationrenderer = new Plugins.ArcLineAnimationRenderer(smap.view)
+                fetch('./lines.json').then(function (res) {
+                    return res.json();
                 }).then(function (geojson) {
+                    var lineStrings = geojson.map(function (feature) {
+                        var coordinates = feature.coordinates;
+                        var [from, to] = coordinates;
+                        var lnglats = [
+                            [parseFloat(from[0]), parseFloat(from[1])],
+                            [parseFloat(to[0]), parseFloat(to[1])]
+                        ]
+                        return new mapking.LineString(lnglats);
+                    });
 
-                    let multiLineStrings = mapking.GeoJSON.toGeometry(geojson);
-                    const param = {
-                        multiLineStrings: multiLineStrings,
-                        options: {
-                            textureURL: '../../resources/images/road1.png',
-                            lineWidth: 10,
-                            speed: 1
-                        }
+
+                    lineStrings.forEach(lineString => {
+                        list.push({
+                            lineString: lineString,
+                            len: lineLengthwebmercator(lineString)/4
+                        });
+                    });
+                })
+                const ArcLineparam = {
+                    lineStrings: list,
+                    options: {
+                        textureURL: '../../resources/images/road2.png',
+                        lineWidth: 20,
+                        speed: 0.5
                     }
-                    SpriteLinerenderer.add(param)
-                });
-
-                fetch('./shroad/el_road.json').then(function (res) {
-                    return res.text();
-                }).then(function (text) {
-                    return JSON.parse(text);
-                }).then(function (geojson) {
-
-                    let multiLineStrings = mapking.GeoJSON.toGeometry(geojson);
-                    const param = {
-                        multiLineStrings: multiLineStrings,
-                        options: {
-                            textureURL: '../../resources/images/road2.png',
-                            lineWidth: 15,
-                            speed: 1
-                        }
-                    }
-                    SpriteLinerenderer.add(param)
-                });
-
-                fetch('./shroad/road.json').then(function (res) {
-                    return res.text();
-                }).then(function (text) {
-                    return JSON.parse(text);
-                }).then(function (geojson) {
-
-                    let multiLineStrings = mapking.GeoJSON.toGeometry(geojson);
-                    const param = {
-                        multiLineStrings: multiLineStrings,
-                        options: {
-                            textureURL: '../../resources/images/road3.png',
-                            lineWidth: 20,
-                            speed: 1
-                        }
-                    }
-                    SpriteLinerenderer.add(param)
-                });
-
-
-                fetch('./shroad/street.json').then(function (res) {
-                    return res.text();
-                }).then(function (text) {
-                    return JSON.parse(text);
-                }).then(function (geojson) {
-
-                    let multiLineStrings = mapking.GeoJSON.toGeometry(geojson);
-                    const param = {
-                        multiLineStrings: multiLineStrings,
-                        options: {
-                            textureURL: '../../resources/images/road4.png',
-                            lineWidth: 15,
-                            speed: 1
-                        }
-                    }
-                    SpriteLinerenderer.add(param)
-                });
-
+                }
+                ArcLineAnimationrenderer.add(ArcLineparam)
             })
 
             $("#btnremoveSpriteLine").click(function () {
-                SpriteLinerenderer.remove()
+                ArcLineAnimationrenderer.remove()
             })
         })
     </script>
@@ -192,8 +149,8 @@
             <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
             <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
             <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
-            <button class="mapbutton" id="btnaSpriteLine"> add SpriteLine</button>
-            <button class="mapbutton" id="btnremoveSpriteLine"> remove SpriteLine</button>
+            <button class="mapbutton" id="btnaddArcLine"> add ArcLine</button>
+            <button class="mapbutton" id="btnremoveArcLine"> remove ArcLine</button>
 
         </div>
     </div>

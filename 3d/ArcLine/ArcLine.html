@@ -45,8 +45,8 @@
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
     <script src="../../library/smap/xuhui/Plugins.min.js"></script>
     <script src="../../library/common/d3.min.js"></script>
-    <script src="./mapking.min.js"></script>
-    <script src="./geoutil.js"></script>
+    <script src="../../library/common/mapking.min.js"></script>
+    <script src="../../library/common/geoutil.js"></script>
     <script src="../../library/common/three109.min.js"></script>
     <script src="../../library/common/meshLine/THREE.MeshLine.js"></script>
 
@@ -60,7 +60,7 @@
             mapStyle: 'smap://styles/dark',
             showBuildingBlock: true
         })
-        let SpriteLinerenderer = null
+        let arcLineRenderer = null
         smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {})
 
         $(function () {
@@ -102,7 +102,7 @@
             })
           const list = [];
             $("#btnaddArcLine").click(function () {
-                SpriteLinerenderer = new Plugins.ArcLineRenderer(smap.view)
+                arcLineRenderer = new Plugins.ArcLineRenderer(smap.view)
                 fetch('./lines.json').then(function (res) {
                     return res.json();
                 }).then(function (geojson) {
@@ -131,11 +131,11 @@
                         color: 'rgb(113,141,255)'
                     }
                 }
-                SpriteLinerenderer.add(ArcLineparam)
+                arcLineRenderer.add(ArcLineparam)
             })
 
             $("#btnremoveSpriteLine").click(function () {
-                SpriteLinerenderer.remove()
+                arcLineRenderer.remove()
             })
         })
     </script>
