@@ -43,8 +43,7 @@
     </style>
     <script src="../../library/common/jquery-2.2.3.min.js"></script>
     <script src="../../library/smap/xuhui/SMap.min.js"></script>
-     <script src="./Plugins.js"></script>
-    <!-- <script src="../../library/smap/xuhui/Plugins.min.js"></script> -->
+    <script src="../../library/smap/xuhui/Plugins.min.js"></script>
     <script src="../../library/common/d3.min.js"></script>
     <script src="./mapking.min.js"></script>
     <script src="./geoutil.js"></script>
@@ -101,8 +100,8 @@
                 }
                 smap.addLayer(SHCTiledMapServiceLayerparam)
             })
-
-            $("#btnaSpriteLine").click(function () {
+          const list = [];
+            $("#btnaddArcLine").click(function () {
                 SpriteLinerenderer = new Plugins.ArcLineRenderer(smap.view)
                 fetch('./lines.json').then(function (res) {
                     return res.json();
@@ -117,27 +116,22 @@
                         return new mapking.LineString(lnglats);
                     });
 
-                    var list = [];
+                
                     lineStrings.forEach(lineString => {
                         list.push({
-                            lineString:lineString,
-                            len: lineLengthwebmercator(lineString)
+                            lineString: lineString,
+                            len: lineLengthwebmercator(lineString)/3
                         });
                     });
-                    list = list.sort(function (a, b) {
-                        return b.len - a.len
-                    });
-
-                    const cloudparam = {
-                        lineStrings: list,
-                        options: {
-                            altitude:0
-                        }
-                    }
-                    SpriteLinerenderer.add(cloudparam)
-
                 })
-
+                const ArcLineparam = {
+                    lineStrings: list,
+                    options: {
+                        altitude: 0,
+                        color: 'rgb(113,141,255)'
+                    }
+                }
+                SpriteLinerenderer.add(ArcLineparam)
             })
 
             $("#btnremoveSpriteLine").click(function () {
@@ -154,8 +148,8 @@
             <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
             <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
             <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
-            <button class="mapbutton" id="btnaSpriteLine"> add SpriteLine</button>
-            <button class="mapbutton" id="btnremoveSpriteLine"> remove SpriteLine</button>
+            <button class="mapbutton" id="btnaddArcLine"> add ArcLine</button>
+            <button class="mapbutton" id="btnremoveArcLine"> remove ArcLine</button>
 
         </div>
     </div>
