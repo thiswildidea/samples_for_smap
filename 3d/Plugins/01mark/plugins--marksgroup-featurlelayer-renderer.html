@@ -357,9 +357,11 @@
         OverlayGroup = new SMap.OverlayGroup([onemarker, twomarker], {
           overlaytype: 'marker',
           datafiled: datafiled,
-          visible:false,
+          visible:true,
           //  elevationInfo:'relative-to-scene',
           renderer: rederer,
+          maxScale:4000,
+          minScale:16000,
           label: label,
           frreduction: featureReduction
         })
