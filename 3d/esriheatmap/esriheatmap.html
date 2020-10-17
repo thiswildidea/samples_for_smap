@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>3dheatmap</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+    </style>
+    <script src="../../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../../library/smap/xuhui/SMap.min.js"></script>
+    <script src="../../library/smap/xuhui/Plugins.min.js"></script>
+    <script src="../../library/common/three109.min.js"></script>
+    <script src="./xudata.js"></script>
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 60,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+
+        smap.on(SMap.MapEvent.click, function (view, eventParamter) {
+            console.log(eventParamter)
+        })
+        let EsriHeatMap3dLayer = null
+        $(function () {
+            $("#addlayercontrol").click(function () {
+                    const layerListControl = new SMap.LayerListControl({
+                        visible: true,
+                        position: 'top-right',
+                        collapse: true
+                    })
+                    smap.addControl(layerListControl)
+                }),
+
+                $("#addbasemaptoggle").click(function () {
+                    const basemapToggle = new SMap.BasemapToggle({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(basemapToggle)
+                }),
+
+                $("#addUndergroundSwitch").click(function () {
+                    const undergroundSwitch = new SMap.UndergroundSwitch({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(undergroundSwitch)
+                })
+
+            $("#btnaddTilelayer").click(function () {
+                const SHCTiledMapServiceLayerparam = {
+                    layerType: 'TileLayer',
+                    layerUrl: "http://10.201.37.222/arcgis/rest/services/maskboundary/xh_maskboundary/MapServer",
+                    layerTitle: "XHGQ",
+                    layerId: "XHGQ",
+                    layerOpacity: 1,
+                    layerVisible: true
+                }
+                smap.addLayer(SHCTiledMapServiceLayerparam)
+            })
+            $("#btnaddEsriHeatMap3dLayer").click(function () {
+                EsriHeatMap3dLayer = new Plugins.EsriHeatMap3dLayer(smap.view);
+                fetch('http://10.201.37.225:8080/smiapi/arcgis/heatmap/xuheatmap.json').then(function (res) {
+                    return res.text();
+                }).then(function (text) {
+                    return JSON.parse(text);
+                }).then(function (json) {
+                const pramter = {
+                   options:{
+                        datas : json.data,
+                        wireframe:true,
+                        absoluteheight:0,
+                        width:0,
+                        height:0,
+                        indexwidth:0,
+                        indexheight:0,
+                        select3D:true,
+                        xmin : -7652.496,
+                        ymin : -14729.428,
+                        xmax : 354.504,
+                        ymax : -1482.890,
+                        minValue :18,
+                        maxValue :100
+                   }
+                }
+                EsriHeatMap3dLayer.add(pramter)
+                });
+               
+            })
+            $("#btnremoveEsriHeatMap3dLayer").click(function () {
+                 smap.view.goTo({
+               
+                 })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+            <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
+            <button class="mapbutton" id="addUndergroundSwitch"> 添加地上地下切换控件</button>
+            <button class="mapbutton" id="btnaddEsriHeatMap3dLayer"> add EsriHeatMap3dLayer</button>
+            <button class="mapbutton" id="btnremoveEsriHeatMap3dLayer"> remove EsriHeatMap3dLayer</button>
+            <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
+        </div>
+    </div>
+</body>
+
+</html>
