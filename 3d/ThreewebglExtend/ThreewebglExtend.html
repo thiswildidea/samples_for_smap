@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>THREEwebglExtend</title>
+    <style>
+        html,
+        body,
+        #mapcontainer {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mapbuttoncontainergroup {
+            width: 40%;
+            height: 50%;
+            position: absolute;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .mapbuttoncontainer {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            top: 5px;
+            left: 10px;
+            display: block;
+        }
+
+
+        .mapbuttoncontainer .mapbutton {
+            width: 100px;
+            height: 40px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            float: left;
+        }
+
+        #SpriteLineSettingcontainerid {
+            position: absolute;
+            margin-right: 10px;
+            height: 300px;
+            width: 400px;
+            margin-top: 10px;
+            display: flex;
+            flex-flow: column;
+
+        }
+
+        .SpriteLineSettingcontainer h6 {
+            width: 80px;
+            text-align: center;
+        }
+
+        .SpriteLineScalez {
+            display: flex;
+            flex-flow: row;
+            width: 400px;
+            height: 25px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+
+        .SpriteLineScalez .SpriteLinescalez {
+            width: 300px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="../../library/common/jquery-2.2.3.min.js"></script>
+    <script src="../../library/smap/xuhui/SMap.min.js"></script>
+    <script src="../../library/smap/xuhui/Plugins.min.js"></script>
+    <script src="../../library/smap/xuhui/SMap.THREE.min.js"></script>
+    <script src="../../library/common/mapking.min.js"></script>
+    <script src="../../library/common/THREE109.min.js"></script>
+    <script src="../../library/common/meshLine/THREE.MeshLine.js"></script>
+
+    <script>
+        const smap = new SMap.Map('mapcontainer', {
+            viewMode: '3D',
+            center: [0, 0],
+            zoom: 3,
+            zooms: [0, 11],
+            pitch: 20,
+            mapStyle: 'smap://styles/dark',
+            showBuildingBlock: true
+        })
+        let SpriteLinerenderer = null
+        let ArcGISWebglExtend= null
+        let object3d = null;
+        let camera = null;
+        let renderer = null;
+        let scene = null;
+        smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {
+            smap.view.ui.add('SpriteLineSettingcontainerid', "top-right");
+
+            SMap.load(['esri/widgets/Slider']).then(([Slider]) => {
+                const Scalezslider = new Slider({
+                    container: 'SpriteLineScalezslider',
+                    min: 1,
+                    max: 2000,
+                    visibleElements: {
+                        labels: true
+                    },
+                    precision: 1,
+                    values: [1]
+                });
+
+                Scalezslider.on("thumb-drag", function (event) {
+                    const value = parseInt(event.value);
+                    if (!SpriteLinerenderer) return;
+                    SpriteLinerenderer.setaltitude(value)
+                });
+            })
+        })
+
+        $(function () {
+            $("#addlayercontrol").click(function () {
+                    const layerListControl = new SMap.LayerListControl({
+                        visible: true,
+                        position: 'top-right',
+                        collapse: true
+                    })
+                    smap.addControl(layerListControl)
+                }),
+
+                $("#addbasemaptoggle").click(function () {
+                    const basemapToggle = new SMap.BasemapToggle({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(basemapToggle)
+                }),
+
+                $("#addUndergroundSwitch").click(function () {
+                    const undergroundSwitch = new SMap.UndergroundSwitch({
+                        visible: true,
+                        position: 'top-right'
+                    })
+                    smap.addControl(undergroundSwitch)
+                })
+
+            $("#btnaddTilelayer").click(function () {
+                const SHCTiledMapServiceLayerparam = {
+                    layerType: 'TileLayer',
+                    layerUrl: "http://10.201.37.222/arcgis/rest/services/maskboundary/xh_maskboundary/MapServer",
+                    layerTitle: "XHGQ",
+                    layerId: "XHGQ",
+                    layerOpacity: 1,
+                    layerVisible: true
+                }
+                smap.addLayer(SHCTiledMapServiceLayerparam)
+            })
+
+            function transparentObject(geometry, material) {
+                var obj = new THREE.Object3D();
+                var mesh = new THREE.Mesh(geometry, material);
+                mesh.material.side = THREE.BackSide;
+                mesh.renderOrder = 0;
+                obj.add(mesh)
+
+                var mesh = new THREE.Mesh(geometry, material.clone());
+                mesh.material.side = THREE.FrontSide;
+                mesh.renderOrder = 1;
+                obj.add(mesh);
+                return obj
+            }
+
+            $("#btnaddarcgiswebgle").click(function () {
+                ArcGISWebglExtend = new SMap.three.ArcGISWebglExtend(smap.view)
+                ArcGISWebglExtend.on('setup', function (context, externalRenderers) {
+                    renderer = new THREE.WebGLRenderer({
+                        context: context.gl,
+                        premultipliedAlpha: false,
+                    });
+                    renderer.setPixelRatio(window
+                        .devicePixelRatio); // 设置设备像素比。通常用于避免HiDPI设备上绘图模糊
+                    renderer.setViewport(0, 0, smap.view.width, smap.view.height); // 视口大小设置
+
+                    renderer.autoClear = false;
+                    renderer.autoClearDepth = false;
+                    renderer.autoClearColor = false;
+                    var originalSetRenderTarget = renderer.setRenderTarget.bind(renderer);
+                    renderer.setRenderTarget = function (target) {
+                        originalSetRenderTarget(target);
+                        if (target == null) {
+                            context.bindRenderTarget();
+                        }
+                    };
+
+                    scene = new THREE.Scene();
+                    camera = new THREE.PerspectiveCamera();
+                    const axesHelper = new THREE.AxesHelper(1);
+                    axesHelper.position.copy(1000000, 100000, 100000);
+                    scene.add(axesHelper);
+
+                    let transform = new THREE.Matrix4(); // 变换矩阵
+                    let transformation = new Array(16);
+
+                    transform.fromArray(
+                        externalRenderers.renderCoordinateTransformAt(
+                            smap.view,
+                            [0, 0, 0], // 坐标在地面上的点[x值, y值, 高度值]
+                            smap.view.spatialReference,
+                            transformation
+                        )
+                    );
+
+                    const textureLoader = new THREE.TextureLoader();
+                    var map = textureLoader.load('./aurora.png');
+                    map.repeat.x = 2;
+                    var geo = new THREE.CylinderGeometry(
+                        400,
+                        400,
+                        600,
+                        50,
+                        1,
+                        true
+                    );
+                    // geo.translate(this.center[1], -this.height / 2, -this.center[0]);
+                    // geo.rotateZ(Math.PI / 2);
+                    // geo.rotateY(-Math.PI / 2);
+                    var material = new THREE.MeshBasicMaterial({
+                        color: 0xFFB400,
+                        map,
+                        opacity: 1,
+                    });
+                    geo.rotateZ(Math.PI / 2); // Move to 0�,0�
+                    geo.rotateY(-Math.PI / 2)
+                    object3d = transparentObject(geo, material);
+                    object3d.position.set(transform.elements[12], transform.elements[
+                        13], transform.elements[14]);
+                    scene.add(object3d);
+                })
+                ArcGISWebglExtend.on('render', function (context, externalRenderers) {
+                    const cam = context.camera;
+                    camera.position.set(cam.eye[0], cam.eye[1], cam.eye[2]);
+                    camera.up.set(cam.up[0], cam.up[1], cam.up[2]);
+                    camera.lookAt(
+                        new THREE.Vector3(cam.center[0], cam.center[1], cam.center[
+                            2])
+                    );
+                    camera.projectionMatrix.fromArray(cam.projectionMatrix);
+                    object3d.scale.x = object3d.scale.x + 0.01
+                    object3d.scale.y = object3d.scale.y + 0.01
+                    if (object3d.scale.x > 2) {
+                        object3d.scale.x = 1
+                        object3d.scale.y = 1
+                    }
+                    // 绘制场景
+                    renderer.state.reset();
+                    renderer.render(scene, camera);
+                    // 请求重绘视图。
+                    externalRenderers.requestRender(smap.view);
+                    // cleanup
+                    context.resetWebGLState();
+                })
+            })
+
+            $("#btnremovearcgiswebgl").click(function () {
+               ArcGISWebglExtend.remove()
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="mapcontainer"></div>
+    <div id="SpriteLineSettingcontainerid" class="SpriteLineSettingcontainer">
+        <div class='SpriteLineScalez'>
+            <h6>设置altitude</h6>
+            <div id='SpriteLineScalezslider' class="SpriteLinescalez">
+
+            </div>
+        </div>
+    </div>
+    <div class="mapbuttoncontainergroup">
+        <div class="mapbuttoncontainer">
+            <button class="mapbutton" id="addlayercontrol"> 添加图层控件</button>
+            <button class="mapbutton" id="addbasemaptoggle"> 添加底图切换按钮</button>
+            <button class="mapbutton" id="btnaddTilelayer"> add Tilelayer</button>
+            <button class="mapbutton" id="btnaddarcgiswebgle"> add arcgiswebgl </button>
+            <button class="mapbutton" id="btnremovearcgiswebgl"> remove arcgiswebgl</button>
+        </div>
+    </div>
+</body>
+
+</html>

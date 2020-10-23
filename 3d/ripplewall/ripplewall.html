@@ -138,7 +138,6 @@
         })
         let ripplewallRenderer = null
         smap.on(SMap.MapEvent.maploaded, function (view, eventParamter) {
-
             smap.view.ui.add('ripplewallSettingcontainerid', "top-right");
             SMap.load(['esri/widgets/Slider']).then(([Slider]) => {
                 const Scalezslider = new Slider({
@@ -180,7 +179,9 @@
                 });
             })
         })
-
+        smap.on(SMap.MapEvent.click, function (view, eventParamter) {
+            console.log(view.camera)
+        })
         $(function () {
             $("#addlayercontrol").click(function () {
                     const layerListControl = new SMap.LayerListControl({
@@ -207,6 +208,7 @@
                     smap.addControl(undergroundSwitch)
                 })
 
+
             $("#btnaddTilelayer").click(function () {
                 const SHCTiledMapServiceLayerparam = {
                     layerType: 'TileLayer',
@@ -221,24 +223,106 @@
 
             $("#btnaripplewall").click(function () {
                 ripplewallRenderer = new Plugins.RipplewallRenderer(smap.view)
-                const param = {
-                    points: [
-                        [0, 0],
-                        [1000, 0],
-                        [1000, 1000],
-                        [0, 1000],
-                         [-1000, 1000],
-                        [0, 0]
-                    ],
-                    // points:datas,
-                    options: {
-                        color: '#DC143C',
-                        height: 800,
-                        altitude: 0,
-                        speed: 1,
-                    }
-                }
-                ripplewallRenderer.add(param)
+
+                fetch('./building.json').then(function (res) {
+                    return res.text();
+                }).then(function (text) {
+                    return JSON.parse(text);
+                }).then(function (jsondata) {
+                    jsondata.features.map((item) => {
+                        let paramter = {
+                            points: item.geometry.paths[0],
+                            options: {
+                                color: '#0000FF',
+                                height: item.attributes.HEIGHT || 100,
+                                altitude: 0,
+                                speed: 0.1,
+                            }
+                        }
+                        ripplewallRenderer.add(paramter)
+                    })
+                });
+
+                fetch('./building1.json').then(function (res) {
+                    return res.text();
+                }).then(function (text) {
+                    return JSON.parse(text);
+                }).then(function (jsondata) {
+                    jsondata.features.map((item) => {
+                        let paramter = {
+                            points: item.geometry.paths[0],
+                            options: {
+                                color: '#FFD700',
+                                height: item.attributes.height || 100,
+                                altitude: 0,
+                                speed: 0.1,
+                            }
+                        }
+                        ripplewallRenderer.add(paramter)
+                    })
+                });
+
+                fetch('./building2.json').then(function (res) {
+                    return res.text();
+                }).then(function (text) {
+                    return JSON.parse(text);
+                }).then(function (jsondata) {
+                    jsondata.features.map((item) => {
+                        let paramter = {
+                            points: item.geometry.paths[0],
+                            options: {
+                                color: '#FF1493',
+                                height: item.attributes.height || 100,
+                                altitude: 0,
+                                speed: 0.1,
+                            }
+                        }
+                        ripplewallRenderer.add(paramter)
+                    })
+                });
+
+                fetch('./building3.json').then(function (res) {
+                    return res.text();
+                }).then(function (text) {
+                    return JSON.parse(text);
+                }).then(function (jsondata) {
+                    jsondata.features.map((item) => {
+                        let paramter = {
+                            points: item.geometry.paths[0],
+                            options: {
+                                color: '#1E90FF',
+                                height: item.attributes.height || 100,
+                                altitude: 0,
+                                speed: 0.1,
+                            }
+                        }
+                        ripplewallRenderer.add(paramter)
+                    })
+                });
+
+                smap.view.goTo({
+                    fov: 55,
+                    heading: 8.415317615986028,
+                    position: {
+                        x: -3559.257660527161,
+                        y: -8518.057041510674,
+                        z: 846.2422610094013,
+                        spatialReference: {
+                            wkid: 102100
+                        }
+                    },
+                    tilt: 45
+                }, {
+                    speedFactor: 2,
+                    duration: 1000,
+                    maxDuration: 1000,
+                    easing: 'in-expo'
+                }).then((a) => {
+                    const model_white_as = smap.getLayer("model_white_as")
+                    model_white_as.opacity = 0.3
+                    //   model_white_as.definitionExpression ="OBJECTID not like '1164801' and OBJECTID not like '1165366'and OBJECTID not like '1163883'"
+                })
+
             })
             $("#btnremoveripplewall").click(function () {
                 ripplewallRenderer.remove()

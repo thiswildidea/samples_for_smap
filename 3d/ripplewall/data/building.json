@@ -1,0 +1,2717 @@
+{
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "OBJECTID_12" : "FID",
+    "OBJECTID_1" : "OBJECTID_1",
+    "OBJECTID" : "OBJECTID",
+    "STRUCTURE" : "STRUCTURE",
+    "FUNCTION" : "FUNCTION",
+    "STORY" : "STORY",
+    "NAME" : "NAME",
+    "OWNER" : "OWNER",
+    "ORIGINNAME" : "ORIGINNAME",
+    "ADDRESS" : "ADDRESS",
+    "FEATURECOD" : "FEATURECOD",
+    "FEATUREGUI" : "FEATUREGUI",
+    "BUILDINGNA" : "BUILDINGNA",
+    "BUILDINGAD" : "BUILDINGAD",
+    "Distance" : "Distance",
+    "SHAPE_Leng" : "SHAPE_Leng",
+    "HEIGHT" : "HEIGHT",
+    "fme_basena" : "fme_basena",
+    "MODEL_ID" : "MODEL_ID",
+    "JWH_NAME" : "JWH_NAME",
+    "JWH_CODE" : "JWH_CODE",
+    "ZJD_NAME" : "ZJD_NAME",
+    "ZJD_CODE" : "ZJD_CODE",
+    "QX_NAME" : "QX_NAME",
+    "QX_CODE" : "QX_CODE",
+    "GNQ_NAME" : "GNQ_NAME",
+    "GNQ_CODE" : "GNQ_CODE",
+    "STRUCTURE_" : "STRUCTURE_",
+    "FUNCTION_C" : "FUNCTION_C",
+    "底面面" : "底面面",
+    "Shape_Le_1" : "Shape_Le_1",
+    "InPoly_FID" : "InPoly_FID",
+    "SimPgnFlag" : "SimPgnFlag",
+    "MaxSimpTol" : "MaxSimpTol",
+    "MinSimpTol" : "MinSimpTol",
+    "ORIG_FID" : "ORIG_FID",
+    "Shape_Length" : "Shape_Length"
+  },
+  "geometryType" : "esriGeometryPolyline",
+  "spatialReference" : {
+    "wkid" : 102100,
+    "latestWkid" : 3857
+  },
+  "fields" : [
+    {
+      "name" : "OBJECTID_12",
+      "type" : "esriFieldTypeOID",
+      "alias" : "FID"
+    },
+    {
+      "name" : "OBJECTID_1",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "OBJECTID_1"
+    },
+    {
+      "name" : "OBJECTID",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "OBJECTID"
+    },
+    {
+      "name" : "STRUCTURE",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "STRUCTURE"
+    },
+    {
+      "name" : "FUNCTION",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "FUNCTION"
+    },
+    {
+      "name" : "STORY",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "STORY"
+    },
+    {
+      "name" : "NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "NAME",
+      "length" : 100
+    },
+    {
+      "name" : "OWNER",
+      "type" : "esriFieldTypeString",
+      "alias" : "OWNER",
+      "length" : 100
+    },
+    {
+      "name" : "ORIGINNAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "ORIGINNAME",
+      "length" : 100
+    },
+    {
+      "name" : "ADDRESS",
+      "type" : "esriFieldTypeString",
+      "alias" : "ADDRESS",
+      "length" : 254
+    },
+    {
+      "name" : "FEATURECOD",
+      "type" : "esriFieldTypeString",
+      "alias" : "FEATURECOD",
+      "length" : 6
+    },
+    {
+      "name" : "FEATUREGUI",
+      "type" : "esriFieldTypeString",
+      "alias" : "FEATUREGUI",
+      "length" : 38
+    },
+    {
+      "name" : "BUILDINGNA",
+      "type" : "esriFieldTypeString",
+      "alias" : "BUILDINGNA",
+      "length" : 254
+    },
+    {
+      "name" : "BUILDINGAD",
+      "type" : "esriFieldTypeString",
+      "alias" : "BUILDINGAD",
+      "length" : 254
+    },
+    {
+      "name" : "Distance",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Distance"
+    },
+    {
+      "name" : "SHAPE_Leng",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "SHAPE_Leng"
+    },
+    {
+      "name" : "HEIGHT",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "HEIGHT"
+    },
+    {
+      "name" : "fme_basena",
+      "type" : "esriFieldTypeString",
+      "alias" : "fme_basena",
+      "length" : 50
+    },
+    {
+      "name" : "MODEL_ID",
+      "type" : "esriFieldTypeString",
+      "alias" : "MODEL_ID",
+      "length" : 50
+    },
+    {
+      "name" : "JWH_NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "JWH_NAME",
+      "length" : 50
+    },
+    {
+      "name" : "JWH_CODE",
+      "type" : "esriFieldTypeString",
+      "alias" : "JWH_CODE",
+      "length" : 50
+    },
+    {
+      "name" : "ZJD_NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "ZJD_NAME",
+      "length" : 50
+    },
+    {
+      "name" : "ZJD_CODE",
+      "type" : "esriFieldTypeString",
+      "alias" : "ZJD_CODE",
+      "length" : 50
+    },
+    {
+      "name" : "QX_NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "QX_NAME",
+      "length" : 50
+    },
+    {
+      "name" : "QX_CODE",
+      "type" : "esriFieldTypeString",
+      "alias" : "QX_CODE",
+      "length" : 50
+    },
+    {
+      "name" : "GNQ_NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "GNQ_NAME",
+      "length" : 50
+    },
+    {
+      "name" : "GNQ_CODE",
+      "type" : "esriFieldTypeString",
+      "alias" : "GNQ_CODE",
+      "length" : 50
+    },
+    {
+      "name" : "STRUCTURE_",
+      "type" : "esriFieldTypeString",
+      "alias" : "STRUCTURE_",
+      "length" : 50
+    },
+    {
+      "name" : "FUNCTION_C",
+      "type" : "esriFieldTypeString",
+      "alias" : "FUNCTION_C",
+      "length" : 50
+    },
+    {
+      "name" : "底面面",
+      "type" : "esriFieldTypeString",
+      "alias" : "底面面",
+      "length" : 254
+    },
+    {
+      "name" : "Shape_Le_1",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Shape_Le_1"
+    },
+    {
+      "name" : "InPoly_FID",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "InPoly_FID"
+    },
+    {
+      "name" : "SimPgnFlag",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "SimPgnFlag"
+    },
+    {
+      "name" : "MaxSimpTol",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "MaxSimpTol"
+    },
+    {
+      "name" : "MinSimpTol",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "MinSimpTol"
+    },
+    {
+      "name" : "ORIG_FID",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "ORIG_FID"
+    },
+    {
+      "name" : "Shape_Length",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Shape_Length"
+    }
+  ],
+  "features" : [
+    {
+      "attributes" : {
+        "OBJECTID_12" : 1,
+        "OBJECTID_1" : 2436,
+        "OBJECTID" : 62438,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 5,
+        "NAME" : "上海市药材医药总公司漕河泾经营部",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "上海市药材医药总公司漕河泾经营部",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{E60C2236-85DD-45EB-BF51-61320660C864}",
+        "BUILDINGNA" : "嘉萱苑",
+        "BUILDINGAD" : "三江路88弄3幢15号",
+        "Distance" : 56.374359918800003,
+        "SHAPE_Leng" : 82.246026035499995,
+        "HEIGHT" : 15,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "274.551850877487",
+        "Shape_Le_1" : 77.420708507900002,
+        "InPoly_FID" : 2436,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 0,
+        "Shape_Length" : 77.420680412788215
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3423.3409999981523,
+              -7534.4869999997318
+            ],
+            [
+              -3415.8150000013411,
+              -7533.3700000010431
+            ],
+            [
+              -3412.6420000009239,
+              -7547.8579999990761
+            ],
+            [
+              -3411.3804999999702,
+              -7562.9415999986231
+            ],
+            [
+              -3420.8568999990821,
+              -7564.6075999997556
+            ],
+            [
+              -3423.3409999981523,
+              -7534.4869999997318
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 2,
+        "OBJECTID_1" : 2437,
+        "OBJECTID" : 61555,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 5,
+        "NAME" : "上海虹桥药业有限公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "上海虹桥药业有限公司",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{5343EA81-1389-4BDE-A37F-74CF0577F322}",
+        "BUILDINGNA" : "嘉萱苑",
+        "BUILDINGAD" : "三江路88弄6幢",
+        "Distance" : 43.106855632299997,
+        "SHAPE_Leng" : 93.065341651500006,
+        "HEIGHT" : 15,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "347.392749970477",
+        "Shape_Le_1" : 91.570741651399999,
+        "InPoly_FID" : 2437,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 1,
+        "Shape_Length" : 91.570681074287521
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3405.7190000005066,
+              -7562.3486000001431
+            ],
+            [
+              -3407.9589999988675,
+              -7547.1140000000596
+            ],
+            [
+              -3399.9609999991953,
+              -7545.8920000009239
+            ],
+            [
+              -3402.1849999986589,
+              -7531.3000000007451
+            ],
+            [
+              -3394.7905000001192,
+              -7530.1770000010729
+            ],
+            [
+              -3390.2549999989569,
+              -7560.0410000011325
+            ],
+            [
+              -3405.7190000005066,
+              -7562.3486000001431
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 3,
+        "OBJECTID_1" : 6957,
+        "OBJECTID" : 264420,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 3,
+        "NAME" : "闵行区供销百货有限总公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "闵行区供销百货有限总公司",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{F49344AE-F637-4004-9146-0F4AADB22178}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 36.810896998799997,
+        "SHAPE_Leng" : 99.255842336499995,
+        "HEIGHT" : 9,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "374.562341948104",
+        "Shape_Le_1" : 99.255842336499995,
+        "InPoly_FID" : 6957,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 2,
+        "Shape_Length" : 99.255873604809125
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3488.7146000005305,
+              -7532.7413000017405
+            ],
+            [
+              -3487.2789999991655,
+              -7532.7690000012517
+            ],
+            [
+              -3488.1772000007331,
+              -7564.6224999986589
+            ],
+            [
+              -3488.2270999997854,
+              -7566.3918999992311
+            ],
+            [
+              -3488.4173000007868,
+              -7573.1376999989152
+            ],
+            [
+              -3497.6979999989271,
+              -7572.8759999983013
+            ],
+            [
+              -3496.5619999989867,
+              -7532.589999999851
+            ],
+            [
+              -3488.7146000005305,
+              -7532.7413000017405
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 4,
+        "OBJECTID_1" : 7075,
+        "OBJECTID" : 265378,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 28,
+        "NAME" : "嘉萱苑",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "嘉萱苑",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{8673F6F2-E5C5-4EA8-AE1B-97F946B0287E}",
+        "BUILDINGNA" : "嘉萱苑",
+        "BUILDINGAD" : "三江路88弄3幢15号",
+        "Distance" : 0,
+        "SHAPE_Leng" : 108.988871274,
+        "HEIGHT" : 80.012,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "370.527325652957",
+        "Shape_Le_1" : 99.042801333,
+        "InPoly_FID" : 7075,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 3,
+        "Shape_Length" : 99.042788574987171
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3431.6110000014305,
+              -7474.1070000007749
+            ],
+            [
+              -3423.3557000011206,
+              -7472.1880000010133
+            ],
+            [
+              -3422.3700999990106,
+              -7467.7688999995589
+            ],
+            [
+              -3416.8007000014186,
+              -7466.0089999996126
+            ],
+            [
+              -3412.1046000011265,
+              -7468.6354999989271
+            ],
+            [
+              -3403.9420000016689,
+              -7465.4600000008941
+            ],
+            [
+              -3399.4930000007153,
+              -7474.8060000017285
+            ],
+            [
+              -3411.5494999997318,
+              -7477.9778999984264
+            ],
+            [
+              -3410.3130000010133,
+              -7481.9549999982119
+            ],
+            [
+              -3413.9479999989271,
+              -7483.4230000004172
+            ],
+            [
+              -3417.7309999987483,
+              -7484.6030000001192
+            ],
+            [
+              -3419.5723999999464,
+              -7478.5311000011861
+            ],
+            [
+              -3419.6851000003517,
+              -7481.2822000011802
+            ],
+            [
+              -3430.7239999994636,
+              -7484.6299999989569
+            ],
+            [
+              -3431.6110000014305,
+              -7474.1070000007749
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 5,
+        "OBJECTID_1" : 7116,
+        "OBJECTID" : 265377,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 8,
+        "NAME" : "嘉萱苑",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "嘉萱苑",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{C0DA8F12-945E-4DD9-B619-5379E8EC326C}",
+        "BUILDINGNA" : "嘉萱苑",
+        "BUILDINGAD" : "三江路88弄2幢8号",
+        "Distance" : 0,
+        "SHAPE_Leng" : 102.747882104,
+        "HEIGHT" : 24.550999999999998,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "263.489358889292",
+        "Shape_Le_1" : 86.976975315199994,
+        "InPoly_FID" : 7116,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 4,
+        "Shape_Length" : 86.977066519958726
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3394.6739999987185,
+              -7410.3880000002682
+            ],
+            [
+              -3400.2118000015616,
+              -7412.916700001806
+            ],
+            [
+              -3399.5287000015378,
+              -7421.0731000006199
+            ],
+            [
+              -3404.8317999988794,
+              -7420.4664999991655
+            ],
+            [
+              -3404.3990000002086,
+              -7425.0720000006258
+            ],
+            [
+              -3412.2129999995232,
+              -7426.0159999988973
+            ],
+            [
+              -3412.6781999990344,
+              -7420.0905999988317
+            ],
+            [
+              -3421.4979999996722,
+              -7424.390000000596
+            ],
+            [
+              -3421.0729999989271,
+              -7411.714999999851
+            ],
+            [
+              -3394.6739999987185,
+              -7410.3880000002682
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 6,
+        "OBJECTID_1" : 9161,
+        "OBJECTID" : 683783,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 3,
+        "NAME" : "闵行区供销百货有限公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "闵行区供销百货有限总公司",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{41C7D58D-5E85-40DD-A835-9E03C030DB8E}",
+        "BUILDINGNA" : "保利星苑",
+        "BUILDINGAD" : "宾阳路28弄3幢",
+        "Distance" : 60.979149528000001,
+        "SHAPE_Leng" : 73.682992679999998,
+        "HEIGHT" : 9,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "238.302645263837",
+        "Shape_Le_1" : 73.682992679999998,
+        "InPoly_FID" : 9161,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 5,
+        "Shape_Length" : 73.683019193565485
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3452.8960000015795,
+              -7572.7939999997616
+            ],
+            [
+              -3454.2060000002384,
+              -7564.0190000012517
+            ],
+            [
+              -3435.2239000014961,
+              -7561.2743000015616
+            ],
+            [
+              -3435.6649999991059,
+              -7558.2239999994636
+            ],
+            [
+              -3430.0480000004172,
+              -7557.3619999997318
+            ],
+            [
+              -3428.2890000008047,
+              -7569.2360000014305
+            ],
+            [
+              -3452.8960000015795,
+              -7572.7939999997616
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 7,
+        "OBJECTID_1" : 9190,
+        "OBJECTID" : 683784,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 3,
+        "NAME" : "闵行区供销百货有限公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "闵行区供销百货有限总公司",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{6F2D834D-0E54-4BA2-A71F-3FACE235082B}",
+        "BUILDINGNA" : "嘉萱苑",
+        "BUILDINGAD" : "三江路88弄3幢15号",
+        "Distance" : 63.981088948999997,
+        "SHAPE_Leng" : 81.184521223299996,
+        "HEIGHT" : 9,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "395.788337999942",
+        "Shape_Le_1" : 81.184521223299996,
+        "InPoly_FID" : 9190,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 6,
+        "Shape_Length" : 81.184521224298635
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3447.5029000006616,
+              -7539.0998999997973
+            ],
+            [
+              -3426.9479999989271,
+              -7540.0229999981821
+            ],
+            [
+              -3427.7230000011623,
+              -7556.3139999993145
+            ],
+            [
+              -3452.0289999991655,
+              -7555.160000000149
+            ],
+            [
+              -3451.2179999984801,
+              -7538.9329999983311
+            ],
+            [
+              -3447.5029000006616,
+              -7539.0998999997973
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 8,
+        "OBJECTID_1" : 9199,
+        "OBJECTID" : 683785,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 4,
+        "NAME" : "闵行区供销百货有限公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "闵行区供销百货有限总公司",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{BA892E35-6BA8-4A64-828C-19D6FA51052B}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 33.213549432699999,
+        "SHAPE_Leng" : 48.405480419100002,
+        "HEIGHT" : 12,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "106.09845752559",
+        "Shape_Le_1" : 48.1076997312,
+        "InPoly_FID" : 9199,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 7,
+        "Shape_Length" : 48.107772676308457
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3472.2197999991477,
+              -7505.904399998486
+            ],
+            [
+              -3471.7219999991357,
+              -7500.1710000000894
+            ],
+            [
+              -3453.3623000010848,
+              -7502.0769000016153
+            ],
+            [
+              -3453.8387999981642,
+              -7507.500300001353
+            ],
+            [
+              -3472.2197999991477,
+              -7505.904399998486
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 9,
+        "OBJECTID_1" : 9245,
+        "OBJECTID" : 684916,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 6,
+        "NAME" : "闵行区供销百货有限公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "闵行区供销百货有限总公司",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{9BB82B2A-DAB0-4C8D-B789-5E4611A682E1}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 38.957031178000001,
+        "SHAPE_Leng" : 73.752409838999995,
+        "HEIGHT" : 18,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "339.963399975658",
+        "Shape_Le_1" : 73.752409838999995,
+        "InPoly_FID" : 9245,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 8,
+        "Shape_Length" : 73.752353539211725
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3473.8130000010133,
+              -7524.2540000006557
+            ],
+            [
+              -3472.2197999991477,
+              -7505.904399998486
+            ],
+            [
+              -3453.8387999981642,
+              -7507.500300001353
+            ],
+            [
+              -3455.4539999999106,
+              -7525.8819999992847
+            ],
+            [
+              -3473.8130000010133,
+              -7524.2540000006557
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 10,
+        "OBJECTID_1" : 10386,
+        "OBJECTID" : 1063574,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 24,
+        "NAME" : "八五嘉苑",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{75C9A882-73D5-478B-A201-CFDFACC5B8F5}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 0,
+        "SHAPE_Leng" : 123.26663064500001,
+        "HEIGHT" : 71.132999999999996,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "467.643500875104",
+        "Shape_Le_1" : 116.011668904,
+        "InPoly_FID" : 10386,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 9,
+        "Shape_Length" : 116.01172542389949
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3452.4483999982476,
+              -7460.5857999995351
+            ],
+            [
+              -3453.0652999989688,
+              -7472.0102999992669
+            ],
+            [
+              -3465.8394999988377,
+              -7468.959399998188
+            ],
+            [
+              -3466.1486000008881,
+              -7474.9508000016212
+            ],
+            [
+              -3477.3920000009239,
+              -7474.8975999988616
+            ],
+            [
+              -3477.0456000007689,
+              -7468.3365999981761
+            ],
+            [
+              -3490.0507000014186,
+              -7470.0102999992669
+            ],
+            [
+              -3489.423900000751,
+              -7458.5747000016272
+            ],
+            [
+              -3475.8817999996245,
+              -7459.264699999243
+            ],
+            [
+              -3475.686700001359,
+              -7455.4360000006855
+            ],
+            [
+              -3470.5082000009716,
+              -7455.6999000012875
+            ],
+            [
+              -3468.3322999998927,
+              -7459.7221000008285
+            ],
+            [
+              -3452.4483999982476,
+              -7460.5857999995351
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 11,
+        "OBJECTID_1" : 10387,
+        "OBJECTID" : 1064317,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 21,
+        "NAME" : "八五嘉苑",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{C1273179-F4A1-4B69-8A7D-F61FFEFF6D4A}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 0,
+        "SHAPE_Leng" : 123.33526396000001,
+        "HEIGHT" : 59.529000000000003,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "468.207935198059",
+        "Shape_Le_1" : 116.082094063,
+        "InPoly_FID" : 10387,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 10,
+        "Shape_Length" : 116.08225917129133
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3496.4959000013769,
+              -7494.8387000001967
+            ],
+            [
+              -3497.1140000000596,
+              -7506.2322000004351
+            ],
+            [
+              -3509.8660000003874,
+              -7503.216099999845
+            ],
+            [
+              -3510.1805000007153,
+              -7509.3553000018001
+            ],
+            [
+              -3517.147199999541,
+              -7509.4380999989808
+            ],
+            [
+              -3521.4184999987483,
+              -7509.1543000005186
+            ],
+            [
+              -3521.0720999985933,
+              -7502.5932999998331
+            ],
+            [
+              -3534.077199999243,
+              -7504.2670000009239
+            ],
+            [
+              -3533.4503999985754,
+              -7492.8315000012517
+            ],
+            [
+              -3519.9083000011742,
+              -7493.5214999988675
+            ],
+            [
+              -3519.7131999991834,
+              -7489.6928000003099
+            ],
+            [
+              -3514.534699998796,
+              -7489.9565999992192
+            ],
+            [
+              -3512.3588000014424,
+              -7493.978900000453
+            ],
+            [
+              -3496.4959000013769,
+              -7494.8387000001967
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 12,
+        "OBJECTID_1" : 10388,
+        "OBJECTID" : 1065015,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 20,
+        "NAME" : "八五嘉苑",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{4826F375-7461-4BBC-8EDD-B6267C038843}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 0,
+        "SHAPE_Leng" : 99.893695651599998,
+        "HEIGHT" : 56.034999999999997,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "404.087721910786",
+        "Shape_Le_1" : 95.308251534999997,
+        "InPoly_FID" : 10388,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 11,
+        "Shape_Length" : 95.308070886500715
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3528.0040000006557,
+              -7435.6550000011921
+            ],
+            [
+              -3497.8066000007093,
+              -7437.3090000003576
+            ],
+            [
+              -3498.4967000000179,
+              -7449.423900000751
+            ],
+            [
+              -3507.8519000001252,
+              -7446.4666999988258
+            ],
+            [
+              -3508.1574999988079,
+              -7452.4567999988794
+            ],
+            [
+              -3519.4008999988437,
+              -7452.3894999995828
+            ],
+            [
+              -3519.1464999988675,
+              -7448.3099999986589
+            ],
+            [
+              -3528.7630000002682,
+              -7447.7912999987602
+            ],
+            [
+              -3528.0040000006557,
+              -7435.6550000011921
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 13,
+        "OBJECTID_1" : 11534,
+        "OBJECTID" : 1169935,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 2,
+        "NAME" : "上海虹桥药业有限公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "上海虹桥药业有限公司",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{49444CF1-1464-417B-9D18-5B3F3A654C41}",
+        "BUILDINGNA" : "嘉萱苑",
+        "BUILDINGAD" : "三江路88弄3幢15号",
+        "Distance" : 36.380397893599998,
+        "SHAPE_Leng" : 55.2991682591,
+        "HEIGHT" : 6,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "119.768147379628",
+        "Shape_Le_1" : 53.853296436100003,
+        "InPoly_FID" : 11534,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 12,
+        "Shape_Length" : 53.853226186875119
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3394.1020000018179,
+              -7506.3359999991953
+            ],
+            [
+              -3394.1075999997556,
+              -7506.0960999988019
+            ],
+            [
+              -3387.4189999997616,
+              -7505.6660000011325
+            ],
+            [
+              -3390.5652999989688,
+              -7526.6090000011027
+            ],
+            [
+              -3395.3004000000656,
+              -7527.2554999999702
+            ],
+            [
+              -3394.1020000018179,
+              -7506.3359999991953
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 14,
+        "OBJECTID_1" : 11535,
+        "OBJECTID" : 1170633,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 2,
+        "NAME" : "上海虹桥药业有限公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "上海虹桥药业有限公司",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{FAF65111-7F5B-412E-BD33-DA63D3F6A925}",
+        "BUILDINGNA" : "嘉萱苑",
+        "BUILDINGAD" : "三江路88弄3幢15号",
+        "Distance" : 22.128054933800001,
+        "SHAPE_Leng" : 81.374717570100003,
+        "HEIGHT" : 6,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "256.330446302054",
+        "Shape_Le_1" : 78.511460324699996,
+        "InPoly_FID" : 11535,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 13,
+        "Shape_Length" : 78.511436198318378
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3394.1020000018179,
+              -7506.3359999991953
+            ],
+            [
+              -3417.9690000005066,
+              -7508.0740000009537
+            ],
+            [
+              -3417.8830000013113,
+              -7499.2859999984503
+            ],
+            [
+              -3387.3570000007749,
+              -7497.3999999985099
+            ],
+            [
+              -3387.4189999997616,
+              -7505.6660000011325
+            ],
+            [
+              -3394.1075999997556,
+              -7506.0960999988019
+            ],
+            [
+              -3394.1020000018179,
+              -7506.3359999991953
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 15,
+        "OBJECTID_1" : 11536,
+        "OBJECTID" : 1170634,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 1,
+        "NAME" : "上海虹桥药业有限公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "上海虹桥药业有限公司",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{71A66870-FB28-4551-B835-FA15AFB8226D}",
+        "BUILDINGNA" : "嘉萱苑",
+        "BUILDINGAD" : "三江路88弄3幢15号",
+        "Distance" : 57.965482240100002,
+        "SHAPE_Leng" : 97.504490841399999,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "163.857686752174",
+        "Shape_Le_1" : 93.647868355400007,
+        "InPoly_FID" : 11536,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 14,
+        "Shape_Length" : 93.64785248749385
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3425.6750000007451,
+              -7569.1440000012517
+            ],
+            [
+              -3423.3409999981523,
+              -7534.4869999997318
+            ],
+            [
+              -3420.8568999990821,
+              -7564.6075999997556
+            ],
+            [
+              -3411.3804999999702,
+              -7562.9415999986231
+            ],
+            [
+              -3410.7879999987781,
+              -7566.9120000004768
+            ],
+            [
+              -3425.6750000007451,
+              -7569.1440000012517
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 16,
+        "OBJECTID_1" : 11617,
+        "OBJECTID" : 1170632,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 1,
+        "NAME" : "闵行区供销百货有限公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "闵行区供销百货有限总公司",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{3A486AEF-A8F8-4770-BF82-67BFD45729A7}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 32.643349069300001,
+        "SHAPE_Leng" : 119.391693809,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "439.242472772929",
+        "Shape_Le_1" : 118.40591851400001,
+        "InPoly_FID" : 11617,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 15,
+        "Shape_Length" : 118.4058594677913
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3477.730000000447,
+              -7515.6039999984205
+            ],
+            [
+              -3479.0927999988198,
+              -7564.8487000018358
+            ],
+            [
+              -3488.1772000007331,
+              -7564.6224999986589
+            ],
+            [
+              -3487.2789999991655,
+              -7532.7690000012517
+            ],
+            [
+              -3488.7146000005305,
+              -7532.7413000017405
+            ],
+            [
+              -3487.915300000459,
+              -7518.5399999991059
+            ],
+            [
+              -3479.0659999996424,
+              -7519.0190000012517
+            ],
+            [
+              -3477.730000000447,
+              -7515.6039999984205
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 17,
+        "OBJECTID_1" : 12459,
+        "OBJECTID" : 1573329,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 7,
+        "STORY" : 3,
+        "NAME" : "解放军八五医院分院",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "解放军八五医院分院",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{0A2B6438-0D0B-421D-92DA-C4E67992E1BA}",
+        "BUILDINGNA" : "嘉萱苑",
+        "BUILDINGAD" : "三江路88弄2幢8号",
+        "Distance" : 23.1020443066,
+        "SHAPE_Leng" : 90.096906494500004,
+        "HEIGHT" : 9,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "医院",
+        "底面面" : "261.922822492166",
+        "Shape_Le_1" : 90.096906494500004,
+        "InPoly_FID" : 12459,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 16,
+        "Shape_Length" : 90.096806237875953
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3435.1790000014007,
+              -7397.1039999984205
+            ],
+            [
+              -3434.8799999989569,
+              -7392.4829999990761
+            ],
+            [
+              -3449.4169999994338,
+              -7391.7100000008941
+            ],
+            [
+              -3448.8850000016391,
+              -7382.7960000000894
+            ],
+            [
+              -3429.1550000011921,
+              -7383.9120000004768
+            ],
+            [
+              -3430.6209999993443,
+              -7409.0865999981761
+            ],
+            [
+              -3435.9329999983311,
+              -7408.7573999986053
+            ],
+            [
+              -3435.1790000014007,
+              -7397.1039999984205
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 18,
+        "OBJECTID_1" : 12460,
+        "OBJECTID" : 1573330,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 7,
+        "STORY" : 3,
+        "NAME" : "解放军八五医院分院",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "解放军八五医院分院",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{862B5647-1F57-4421-BAFD-F7C98F347F3B}",
+        "BUILDINGNA" : "嘉萱苑",
+        "BUILDINGAD" : "三江路88弄2幢8号",
+        "Distance" : 23.362631560699999,
+        "SHAPE_Leng" : 54.683232730999997,
+        "HEIGHT" : 9,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "医院",
+        "底面面" : "167.700506687826",
+        "Shape_Le_1" : 54.683170621000002,
+        "InPoly_FID" : 12460,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 17,
+        "Shape_Length" : 54.683093150919298
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3450.8139999993145,
+              -7417.5740000009537
+            ],
+            [
+              -3432.7261999994516,
+              -7418.5960000008345
+            ],
+            [
+              -3433.3070000000298,
+              -7427.9050000011921
+            ],
+            [
+              -3451.21420000121,
+              -7426.867499999702
+            ],
+            [
+              -3450.8139999993145,
+              -7417.5740000009537
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 19,
+        "OBJECTID_1" : 12461,
+        "OBJECTID" : 1573331,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 7,
+        "STORY" : 2,
+        "NAME" : "解放军八五医院分院",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "解放军八五医院分院",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{5F030287-B07C-424B-8CA6-2EE696587F80}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 52.824988754700001,
+        "SHAPE_Leng" : 51.178986718799997,
+        "HEIGHT" : 6,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "医院",
+        "底面面" : "162.652939144115",
+        "Shape_Le_1" : 51.178986718799997,
+        "InPoly_FID" : 12461,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 18,
+        "Shape_Length" : 51.178948553382881
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3477.9107000008225,
+              -7406.2386000007391
+            ],
+            [
+              -3477.2569999992847,
+              -7394.4880000017583
+            ],
+            [
+              -3463.4519999995828,
+              -7395.2560000009835
+            ],
+            [
+              -3464.1169999986887,
+              -7407.0060000009835
+            ],
+            [
+              -3477.9107000008225,
+              -7406.2386000007391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 20,
+        "OBJECTID_1" : 12626,
+        "OBJECTID" : 1586139,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 7,
+        "STORY" : 2,
+        "NAME" : "解放军八五医院分院",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "解放军八五医院分院",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{76BC6CA5-05BA-4C20-9715-A15ABE956AC2}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 22.708409713000002,
+        "SHAPE_Leng" : 95.7231699652,
+        "HEIGHT" : 6,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "医院",
+        "底面面" : "405.158226500072",
+        "Shape_Le_1" : 95.7231699652,
+        "InPoly_FID" : 12626,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 19,
+        "Shape_Length" : 95.723169963371063
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3502.0819999985397,
+              -7425.6530000008643
+            ],
+            [
+              -3501.4560000002384,
+              -7414.6770000010729
+            ],
+            [
+              -3464.6530000008643,
+              -7416.7659999988973
+            ],
+            [
+              -3465.2549999989569,
+              -7427.7309999987483
+            ],
+            [
+              -3502.0819999985397,
+              -7425.6530000008643
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 21,
+        "OBJECTID_1" : 12627,
+        "OBJECTID" : 1586141,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 7,
+        "STORY" : 1,
+        "NAME" : "解放军八五医院分院",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{A7BC6DA9-E3AD-48DD-9CBC-8B53F8F18D10}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 19.162821728899999,
+        "SHAPE_Leng" : 68.372697622900006,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "医院",
+        "底面面" : "205.709572348304",
+        "Shape_Le_1" : 67.401156706999998,
+        "InPoly_FID" : 12627,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 20,
+        "Shape_Length" : 67.401108051494134
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3512.8209999985993,
+              -7425.1020000018179
+            ],
+            [
+              -3520.6820000000298,
+              -7425.7190000005066
+            ],
+            [
+              -3519.230000000447,
+              -7399.3969999998808
+            ],
+            [
+              -3511.4538000002503,
+              -7399.7701000012457
+            ],
+            [
+              -3512.8209999985993,
+              -7425.1020000018179
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 22,
+        "OBJECTID_1" : 12628,
+        "OBJECTID" : 1586148,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 7,
+        "STORY" : 1,
+        "NAME" : "解放军八五医院分院",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "解放军八五医院分院",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{E6E62696-F4EE-48F9-BDD7-BA5A7CB7FD38}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 20.223486262200002,
+        "SHAPE_Leng" : 64.003248053999997,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "医院",
+        "底面面" : "160.1993181867",
+        "Shape_Le_1" : 64.003248053999997,
+        "InPoly_FID" : 12628,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 21,
+        "Shape_Length" : 64.003225669998713
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3511.2540000006557,
+              -7425.1929999999702
+            ],
+            [
+              -3509.8801999986172,
+              -7399.5758000016212
+            ],
+            [
+              -3503.6656999997795,
+              -7399.6519999988377
+            ],
+            [
+              -3505.0480000004172,
+              -7425.5340000018477
+            ],
+            [
+              -3511.2540000006557,
+              -7425.1929999999702
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 23,
+        "OBJECTID_1" : 12675,
+        "OBJECTID" : 1589330,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 7,
+        "STORY" : 4,
+        "NAME" : "解放军八五医院分院",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "解放军八五医院分院",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{0AA61331-48A2-42D0-BD03-F1BC50BAE540}",
+        "BUILDINGNA" : "嘉萱苑",
+        "BUILDINGAD" : "三江路88弄2幢8号",
+        "Distance" : 49.215299101399999,
+        "SHAPE_Leng" : 189.001152937,
+        "HEIGHT" : 12,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "医院",
+        "底面面" : "1003.4943886054",
+        "Shape_Le_1" : 189.001152529,
+        "InPoly_FID" : 12675,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 22,
+        "Shape_Length" : 189.00117736678618
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3528.8610000014305,
+              -7379.3084000013769
+            ],
+            [
+              -3528.6488000005484,
+              -7375.5031999982893
+            ],
+            [
+              -3499.2159999981523,
+              -7377.0599999986589
+            ],
+            [
+              -3498.9855999983847,
+              -7372.9431999996305
+            ],
+            [
+              -3479.3209999985993,
+              -7374.0439999997616
+            ],
+            [
+              -3479.5568000003695,
+              -7378.257199998945
+            ],
+            [
+              -3450.1200000010431,
+              -7379.9050000011921
+            ],
+            [
+              -3450.7930000014603,
+              -7391.570000000298
+            ],
+            [
+              -3529.3013000003994,
+              -7387.1752999983728
+            ],
+            [
+              -3528.8610000014305,
+              -7379.3084000013769
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 24,
+        "OBJECTID_1" : 17187,
+        "OBJECTID" : 2769779,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 3,
+        "STORY" : 4,
+        "NAME" : "上海海星五金交电有限公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "上海海星五金交电有限公司",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{3DDBED5C-E201-42CA-903D-D510988310CD}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 30.691997562499999,
+        "SHAPE_Leng" : 132.57890036500001,
+        "HEIGHT" : 12,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "商住",
+        "底面面" : "453.557514217041",
+        "Shape_Le_1" : 132.082428282,
+        "InPoly_FID" : 17187,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 23,
+        "Shape_Length" : 132.08237506891874
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3502.0637999996543,
+              -7560.6801999993622
+            ],
+            [
+              -3509.8709999993443,
+              -7559.8000000007451
+            ],
+            [
+              -3508.4149999991059,
+              -7540.8099999986589
+            ],
+            [
+              -3532.4459000006318,
+              -7538.8502000011504
+            ],
+            [
+              -3532.7360000014305,
+              -7542.4600000008941
+            ],
+            [
+              -3535.7919999994338,
+              -7542.1169999986887
+            ],
+            [
+              -3534.4420000016689,
+              -7530.5100000016391
+            ],
+            [
+              -3499.839999999851,
+              -7532.7560000009835
+            ],
+            [
+              -3502.0637999996543,
+              -7560.6801999993622
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 25,
+        "OBJECTID_1" : 17304,
+        "OBJECTID" : 2771624,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 3,
+        "STORY" : 2,
+        "NAME" : "八五嘉苑",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{B7A27E1A-F00D-483F-AD4C-9F6627BD1535}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 22.427972458799999,
+        "SHAPE_Leng" : 174.10003606999999,
+        "HEIGHT" : 6,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "商住",
+        "底面面" : "511.207876507003",
+        "Shape_Le_1" : 174.10003606999999,
+        "InPoly_FID" : 17304,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 24,
+        "Shape_Length" : 174.1000360694741
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3534.5170000009239,
+              -7430.6869999989867
+            ],
+            [
+              -3542.8000000007451,
+              -7510.765000000596
+            ],
+            [
+              -3549.0850000008941,
+              -7510.3379999995232
+            ],
+            [
+              -3540.8350000008941,
+              -7429.8390000015497
+            ],
+            [
+              -3534.5170000009239,
+              -7430.6869999989867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 26,
+        "OBJECTID_1" : 17355,
+        "OBJECTID" : 2772872,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 3,
+        "STORY" : 6,
+        "NAME" : "上海海星五金交电有限公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{D20C4ADF-49A2-45DD-85C4-4B91B82A85B3}",
+        "BUILDINGNA" : "八五嘉苑",
+        "BUILDINGAD" : "沪闵路9555弄八五嘉苑",
+        "Distance" : 50.007218442199999,
+        "SHAPE_Leng" : 137.808802101,
+        "HEIGHT" : 18,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "商住",
+        "底面面" : "794.661904901977",
+        "Shape_Le_1" : 130.93187579600001,
+        "InPoly_FID" : 17355,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 25,
+        "Shape_Length" : 130.93183967382325
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3524.2358999997377,
+              -7563.374699998647
+            ],
+            [
+              -3502.9712999984622,
+              -7565.8031999990344
+            ],
+            [
+              -3504.1000000014901,
+              -7576.1889999993145
+            ],
+            [
+              -3521.8535999991,
+              -7583.1264000013471
+            ],
+            [
+              -3522.1700000017881,
+              -7585.8220000006258
+            ],
+            [
+              -3537.0388999991119,
+              -7581.4457000009716
+            ],
+            [
+              -3540.1609999984503,
+              -7571.756099998951
+            ],
+            [
+              -3537.8700000010431,
+              -7548.5340000018477
+            ],
+            [
+              -3526.4259999990463,
+              -7549.7719999998808
+            ],
+            [
+              -3527.7270000018179,
+              -7562.9759999997914
+            ],
+            [
+              -3524.2358999997377,
+              -7563.374699998647
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 27,
+        "OBJECTID_1" : 21277,
+        "OBJECTID" : 3282104,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 2,
+        "NAME" : "闵行区供销百货有限公司",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "闵行区供销百货有限总公司",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{AB321FE0-9CA4-46C9-AC07-65BB2339A0E1}",
+        "BUILDINGNA" : "保利星苑",
+        "BUILDINGAD" : "宾阳路28弄3幢",
+        "Distance" : 61.434383227700003,
+        "SHAPE_Leng" : 61.017331521199999,
+        "HEIGHT" : 6,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "165.063534286225",
+        "Shape_Le_1" : 60.684857851399997,
+        "InPoly_FID" : 21277,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 26,
+        "Shape_Length" : 60.684830847122939
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3488.2270999997854,
+              -7566.3918999992311
+            ],
+            [
+              -3478.0439999997616,
+              -7566.6790000014007
+            ],
+            [
+              -3478.2879999987781,
+              -7575.9690000005066
+            ],
+            [
+              -3497.7560000009835,
+              -7578.4250000007451
+            ],
+            [
+              -3497.6979999989271,
+              -7572.8759999983013
+            ],
+            [
+              -3488.4173000007868,
+              -7573.1376999989152
+            ],
+            [
+              -3488.2270999997854,
+              -7566.3918999992311
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 28,
+        "OBJECTID_1" : 21857,
+        "OBJECTID" : 3432549,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 7,
+        "STORY" : 2,
+        "NAME" : "解放军八五医院分院",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "解放军八五医院分院",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{A907E0EE-0DF3-4C07-8074-D517247B5531}",
+        "BUILDINGNA" : "嘉萱苑",
+        "BUILDINGAD" : "三江路88弄2幢8号",
+        "Distance" : 22.470043296499998,
+        "SHAPE_Leng" : 54.314235414300001,
+        "HEIGHT" : 6,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "医院",
+        "底面面" : "122.294725859262",
+        "Shape_Le_1" : 54.314148950899998,
+        "InPoly_FID" : 21857,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 27,
+        "Shape_Length" : 54.31412698128738
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3444.089999999851,
+              -7410.3960000015795
+            ],
+            [
+              -3443.2615000009537,
+              -7396.7087000012398
+            ],
+            [
+              -3435.1790000014007,
+              -7397.1039999984205
+            ],
+            [
+              -3435.320300001651,
+              -7399.2873000018299
+            ],
+            [
+              -3435.9329999983311,
+              -7408.7573999986053
+            ],
+            [
+              -3430.6209999993443,
+              -7409.0865999981761
+            ],
+            [
+              -3430.7459999993443,
+              -7411.2230000011623
+            ],
+            [
+              -3444.089999999851,
+              -7410.3960000015795
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 29,
+        "OBJECTID_1" : 22461,
+        "OBJECTID" : 0,
+        "STRUCTURE" : 0,
+        "FUNCTION" : 0,
+        "STORY" : 0,
+        "NAME" : " ",
+        "OWNER" : "上海虹桥药业有限公司",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "215000",
+        "FEATUREGUI" : "{0B5F4917-501A-4BB8-B7AC-4D6A75846AC3}",
+        "BUILDINGNA" : " ",
+        "BUILDINGAD" : " ",
+        "Distance" : 0,
+        "SHAPE_Leng" : 57.101032054299999,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : "2153",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "其他",
+        "底面面" : "203.617884060696",
+        "Shape_Le_1" : 56.210735186299999,
+        "InPoly_FID" : 22461,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 28,
+        "Shape_Length" : 56.210735188733636
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3407.9589999988675,
+              -7547.1140000000596
+            ],
+            [
+              -3412.6420000009239,
+              -7547.8579999990761
+            ],
+            [
+              -3415.8150000013411,
+              -7533.3700000010431
+            ],
+            [
+              -3402.1849999986589,
+              -7531.3000000007451
+            ],
+            [
+              -3399.9609999991953,
+              -7545.8920000009239
+            ],
+            [
+              -3407.9589999988675,
+              -7547.1140000000596
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 30,
+        "OBJECTID_1" : 23518,
+        "OBJECTID" : 0,
+        "STRUCTURE" : 0,
+        "FUNCTION" : 0,
+        "STORY" : 0,
+        "NAME" : " ",
+        "OWNER" : "闵行区供销百货有限公司",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "215000",
+        "FEATUREGUI" : "{1CC22A1A-B659-4876-9E8A-B453E53F78E0}",
+        "BUILDINGNA" : " ",
+        "BUILDINGAD" : " ",
+        "Distance" : 0,
+        "SHAPE_Leng" : 60.819913187799997,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : "202494",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "其他",
+        "底面面" : "154.65104134348",
+        "Shape_Le_1" : 60.819913180900002,
+        "InPoly_FID" : 23518,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 29,
+        "Shape_Length" : 60.819855437484613
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3453.3623000010848,
+              -7502.0769000016153
+            ],
+            [
+              -3448.1491999998689,
+              -7502.4129000008106
+            ],
+            [
+              -3447.7498000003397,
+              -7526.3878999985754
+            ],
+            [
+              -3455.4539999999106,
+              -7525.8819999992847
+            ],
+            [
+              -3453.8387999981642,
+              -7507.500300001353
+            ],
+            [
+              -3453.3623000010848,
+              -7502.0769000016153
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 31,
+        "OBJECTID_1" : 24181,
+        "OBJECTID" : 0,
+        "STRUCTURE" : 0,
+        "FUNCTION" : 0,
+        "STORY" : 0,
+        "NAME" : "-1",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "212000",
+        "FEATUREGUI" : "{7910F882-34AC-4A34-9EDE-A0FE442ABBDB}",
+        "BUILDINGNA" : " ",
+        "BUILDINGAD" : " ",
+        "Distance" : 0,
+        "SHAPE_Leng" : 71.917615356400006,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : "467823",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "其他",
+        "底面面" : "235.972773391243",
+        "Shape_Le_1" : 71.593116492299998,
+        "InPoly_FID" : 24181,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 30,
+        "Shape_Length" : 71.592982470134018
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3448.1491999998689,
+              -7502.4129000008106
+            ],
+            [
+              -3453.3623000010848,
+              -7502.0769000016153
+            ],
+            [
+              -3471.7219999991357,
+              -7500.1710000000894
+            ],
+            [
+              -3475.3368000015616,
+              -7499.8997999988496
+            ],
+            [
+              -3474.7655999995768,
+              -7492.8770000003278
+            ],
+            [
+              -3448.3280000016093,
+              -7491.6411000005901
+            ],
+            [
+              -3448.1491999998689,
+              -7502.4129000008106
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 32,
+        "OBJECTID_1" : 24737,
+        "OBJECTID" : 0,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 0,
+        "STORY" : 1,
+        "NAME" : "八五嘉苑",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "518100",
+        "FEATUREGUI" : "{1C6C6100-79D9-4FA8-BFEA-17C15CBC60A8}",
+        "BUILDINGNA" : " ",
+        "BUILDINGAD" : " ",
+        "Distance" : 0,
+        "SHAPE_Leng" : 43.416452480499999,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "龙漕居委",
+        "JWH_CODE" : "041728",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : "混",
+        "FUNCTION_C" : " ",
+        "底面面" : "114.394000499642",
+        "Shape_Le_1" : 43.416452480499999,
+        "InPoly_FID" : 24737,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 31,
+        "Shape_Length" : 43.416485964049997
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3442.3925999999046,
+              -7438.998900000006
+            ],
+            [
+              -3442.8687999993563,
+              -7447.9715999998152
+            ],
+            [
+              -3455.5395999997854,
+              -7447.311400000006
+            ],
+            [
+              -3455.0905999988317,
+              -7438.2967999987304
+            ],
+            [
+              -3442.3925999999046,
+              -7438.998900000006
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

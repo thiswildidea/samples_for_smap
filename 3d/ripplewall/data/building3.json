@@ -1,0 +1,2393 @@
+{
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "OBJECTID_12" : "FID",
+    "OBJECTID_1" : "OBJECTID_1",
+    "OBJECTID" : "OBJECTID",
+    "STRUCTURE" : "STRUCTURE",
+    "FUNCTION" : "FUNCTION",
+    "STORY" : "STORY",
+    "NAME" : "NAME",
+    "OWNER" : "OWNER",
+    "ORIGINNAME" : "ORIGINNAME",
+    "ADDRESS" : "ADDRESS",
+    "FEATURECOD" : "FEATURECOD",
+    "FEATUREGUI" : "FEATUREGUI",
+    "BUILDINGNA" : "BUILDINGNA",
+    "BUILDINGAD" : "BUILDINGAD",
+    "Distance" : "Distance",
+    "SHAPE_Leng" : "SHAPE_Leng",
+    "HEIGHT" : "HEIGHT",
+    "fme_basena" : "fme_basena",
+    "MODEL_ID" : "MODEL_ID",
+    "JWH_NAME" : "JWH_NAME",
+    "JWH_CODE" : "JWH_CODE",
+    "ZJD_NAME" : "ZJD_NAME",
+    "ZJD_CODE" : "ZJD_CODE",
+    "QX_NAME" : "QX_NAME",
+    "QX_CODE" : "QX_CODE",
+    "GNQ_NAME" : "GNQ_NAME",
+    "GNQ_CODE" : "GNQ_CODE",
+    "STRUCTURE_" : "STRUCTURE_",
+    "FUNCTION_C" : "FUNCTION_C",
+    "底面面" : "底面面",
+    "Shape_Le_1" : "Shape_Le_1",
+    "InPoly_FID" : "InPoly_FID",
+    "SimPgnFlag" : "SimPgnFlag",
+    "MaxSimpTol" : "MaxSimpTol",
+    "MinSimpTol" : "MinSimpTol",
+    "ORIG_FID" : "ORIG_FID",
+    "Shape_Length" : "Shape_Length"
+  },
+  "geometryType" : "esriGeometryPolyline",
+  "spatialReference" : {
+    "wkid" : 102100,
+    "latestWkid" : 3857
+  },
+  "fields" : [
+    {
+      "name" : "OBJECTID_12",
+      "type" : "esriFieldTypeOID",
+      "alias" : "FID"
+    },
+    {
+      "name" : "OBJECTID_1",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "OBJECTID_1"
+    },
+    {
+      "name" : "OBJECTID",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "OBJECTID"
+    },
+    {
+      "name" : "STRUCTURE",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "STRUCTURE"
+    },
+    {
+      "name" : "FUNCTION",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "FUNCTION"
+    },
+    {
+      "name" : "STORY",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "STORY"
+    },
+    {
+      "name" : "NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "NAME",
+      "length" : 100
+    },
+    {
+      "name" : "OWNER",
+      "type" : "esriFieldTypeString",
+      "alias" : "OWNER",
+      "length" : 100
+    },
+    {
+      "name" : "ORIGINNAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "ORIGINNAME",
+      "length" : 100
+    },
+    {
+      "name" : "ADDRESS",
+      "type" : "esriFieldTypeString",
+      "alias" : "ADDRESS",
+      "length" : 254
+    },
+    {
+      "name" : "FEATURECOD",
+      "type" : "esriFieldTypeString",
+      "alias" : "FEATURECOD",
+      "length" : 6
+    },
+    {
+      "name" : "FEATUREGUI",
+      "type" : "esriFieldTypeString",
+      "alias" : "FEATUREGUI",
+      "length" : 38
+    },
+    {
+      "name" : "BUILDINGNA",
+      "type" : "esriFieldTypeString",
+      "alias" : "BUILDINGNA",
+      "length" : 254
+    },
+    {
+      "name" : "BUILDINGAD",
+      "type" : "esriFieldTypeString",
+      "alias" : "BUILDINGAD",
+      "length" : 254
+    },
+    {
+      "name" : "Distance",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Distance"
+    },
+    {
+      "name" : "SHAPE_Leng",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "SHAPE_Leng"
+    },
+    {
+      "name" : "HEIGHT",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "HEIGHT"
+    },
+    {
+      "name" : "fme_basena",
+      "type" : "esriFieldTypeString",
+      "alias" : "fme_basena",
+      "length" : 50
+    },
+    {
+      "name" : "MODEL_ID",
+      "type" : "esriFieldTypeString",
+      "alias" : "MODEL_ID",
+      "length" : 50
+    },
+    {
+      "name" : "JWH_NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "JWH_NAME",
+      "length" : 50
+    },
+    {
+      "name" : "JWH_CODE",
+      "type" : "esriFieldTypeString",
+      "alias" : "JWH_CODE",
+      "length" : 50
+    },
+    {
+      "name" : "ZJD_NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "ZJD_NAME",
+      "length" : 50
+    },
+    {
+      "name" : "ZJD_CODE",
+      "type" : "esriFieldTypeString",
+      "alias" : "ZJD_CODE",
+      "length" : 50
+    },
+    {
+      "name" : "QX_NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "QX_NAME",
+      "length" : 50
+    },
+    {
+      "name" : "QX_CODE",
+      "type" : "esriFieldTypeString",
+      "alias" : "QX_CODE",
+      "length" : 50
+    },
+    {
+      "name" : "GNQ_NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "GNQ_NAME",
+      "length" : 50
+    },
+    {
+      "name" : "GNQ_CODE",
+      "type" : "esriFieldTypeString",
+      "alias" : "GNQ_CODE",
+      "length" : 50
+    },
+    {
+      "name" : "STRUCTURE_",
+      "type" : "esriFieldTypeString",
+      "alias" : "STRUCTURE_",
+      "length" : 50
+    },
+    {
+      "name" : "FUNCTION_C",
+      "type" : "esriFieldTypeString",
+      "alias" : "FUNCTION_C",
+      "length" : 50
+    },
+    {
+      "name" : "底面面",
+      "type" : "esriFieldTypeString",
+      "alias" : "底面面",
+      "length" : 254
+    },
+    {
+      "name" : "Shape_Le_1",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Shape_Le_1"
+    },
+    {
+      "name" : "InPoly_FID",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "InPoly_FID"
+    },
+    {
+      "name" : "SimPgnFlag",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "SimPgnFlag"
+    },
+    {
+      "name" : "MaxSimpTol",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "MaxSimpTol"
+    },
+    {
+      "name" : "MinSimpTol",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "MinSimpTol"
+    },
+    {
+      "name" : "ORIG_FID",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "ORIG_FID"
+    },
+    {
+      "name" : "Shape_Length",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Shape_Length"
+    }
+  ],
+  "features" : [
+    {
+      "attributes" : {
+        "OBJECTID_12" : 1,
+        "OBJECTID_1" : 11088,
+        "OBJECTID" : 1166225,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 2,
+        "STORY" : 11,
+        "NAME" : "上海南站",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "上海南站",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{8B253879-283A-428A-812C-D11129504255}",
+        "BUILDINGNA" : "上海南站",
+        "BUILDINGAD" : "上海南站",
+        "Distance" : 0,
+        "SHAPE_Leng" : 150.459986329,
+        "HEIGHT" : 36.088000000000001,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "937.303362229836",
+        "Shape_Le_1" : 141.33514778200001,
+        "InPoly_FID" : 11088,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 0,
+        "Shape_Length" : 141.33513123234235
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3222.7375000007451,
+              -8028.7564999982715
+            ],
+            [
+              -3184.6334000006318,
+              -8037.9750000014901
+            ],
+            [
+              -3170.1490000002086,
+              -8041.3060000017285
+            ],
+            [
+              -3176.4329999983311,
+              -8057.8700000010431
+            ],
+            [
+              -3226.9959999993443,
+              -8045.8029999993742
+            ],
+            [
+              -3222.7375000007451,
+              -8028.7564999982715
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 2,
+        "OBJECTID_1" : 11089,
+        "OBJECTID" : 1167838,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 4,
+        "NAME" : "上海市军供站",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{53605EC1-B26B-424E-BB2E-C80CD1D1BBF9}",
+        "BUILDINGNA" : "上海南站",
+        "BUILDINGAD" : "上海南站",
+        "Distance" : 38.349387237400002,
+        "SHAPE_Leng" : 99.716956622200001,
+        "HEIGHT" : 12,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "416.40677313364",
+        "Shape_Le_1" : 93.934872190999997,
+        "InPoly_FID" : 11089,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 1,
+        "Shape_Length" : 93.934906760077382
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3252.9274000003934,
+              -8061.0683000013232
+            ],
+            [
+              -3251.8566999994218,
+              -8055.1356999985874
+            ],
+            [
+              -3222.8929999992251,
+              -8070.8289999999106
+            ],
+            [
+              -3229.8229999989271,
+              -8083.4569999985397
+            ],
+            [
+              -3252.5069999992847,
+              -8071.0049999989569
+            ],
+            [
+              -3247.5619999989867,
+              -8064.0170000009239
+            ],
+            [
+              -3252.9274000003934,
+              -8061.0683000013232
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 3,
+        "OBJECTID_1" : 11091,
+        "OBJECTID" : 1166020,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 18,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{15530656-F93E-439A-9212-320A389BFF53}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 118.365172668,
+        "HEIGHT" : 52.305,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "450.40754599398",
+        "Shape_Le_1" : 108.649425725,
+        "InPoly_FID" : 11091,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 2,
+        "Shape_Length" : 108.64942572980266
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3398.0170000009239,
+              -8070.2329999990761
+            ],
+            [
+              -3392.640000000596,
+              -8062.0890000015497
+            ],
+            [
+              -3383.9780000001192,
+              -8070.7320000007749
+            ],
+            [
+              -3397.7390000000596,
+              -8086.7239999994636
+            ],
+            [
+              -3405.7930000014603,
+              -8086.7320000007749
+            ],
+            [
+              -3419.5780000016093,
+              -8070.7729999981821
+            ],
+            [
+              -3410.8979999981821,
+              -8062.0949999988079
+            ],
+            [
+              -3404.2049999982119,
+              -8072.5760000012815
+            ],
+            [
+              -3403.4549999982119,
+              -8070.0340000018477
+            ],
+            [
+              -3400.0929999984801,
+              -8070.0749999992549
+            ],
+            [
+              -3400.0890000015497,
+              -8072.6119999997318
+            ],
+            [
+              -3398.0170000009239,
+              -8070.2329999990761
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 4,
+        "OBJECTID_1" : 11093,
+        "OBJECTID" : 1164441,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 18,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{0F293C11-A05B-4843-8CC5-5013F27068F9}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 118.318129618,
+        "HEIGHT" : 52.311,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "452.276777604643",
+        "Shape_Le_1" : 108.69685552,
+        "InPoly_FID" : 11093,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 3,
+        "Shape_Length" : 108.69687383695779
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3439.0249999985099,
+              -7960.8099999986589
+            ],
+            [
+              -3433.7120000012219,
+              -7952.6889999993145
+            ],
+            [
+              -3425.019999999553,
+              -7961.3590000011027
+            ],
+            [
+              -3438.8130000010133,
+              -7977.3379999995232
+            ],
+            [
+              -3446.8449999988079,
+              -7977.3359999991953
+            ],
+            [
+              -3460.6572999991477,
+              -7961.4219999983907
+            ],
+            [
+              -3451.9349999986589,
+              -7952.6959999985993
+            ],
+            [
+              -3445.2369999997318,
+              -7963.179999999702
+            ],
+            [
+              -3444.5069999992847,
+              -7960.6530000008643
+            ],
+            [
+              -3441.1257000006735,
+              -7960.6642999984324
+            ],
+            [
+              -3441.1341999992728,
+              -7963.1937000006437
+            ],
+            [
+              -3439.0249999985099,
+              -7960.8099999986589
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 5,
+        "OBJECTID_1" : 11156,
+        "OBJECTID" : 1166019,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 18,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{D683DAF1-A5DE-48E1-BD6D-6DCB4F00D89C}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 117.99796222099999,
+        "HEIGHT" : 52.289999999999999,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "451.825975705196",
+        "Shape_Le_1" : 106.85987229,
+        "InPoly_FID" : 11156,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 4,
+        "Shape_Length" : 106.85983538065426
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3421.4679999984801,
+              -8015.5689999982715
+            ],
+            [
+              -3416.1079999990761,
+              -8007.3810000009835
+            ],
+            [
+              -3407.4129999987781,
+              -8016.054999999702
+            ],
+            [
+              -3421.1929999999702,
+              -8032.019999999553
+            ],
+            [
+              -3429.2155000008643,
+              -8032.0709000006318
+            ],
+            [
+              -3443.1149999983609,
+              -8016.0929999984801
+            ],
+            [
+              -3434.3819999992847,
+              -8007.3539999984205
+            ],
+            [
+              -3427.765000000596,
+              -8017.7630000002682
+            ],
+            [
+              -3426.9070000015199,
+              -8015.2890000008047
+            ],
+            [
+              -3423.6015999987721,
+              -8017.7672000005841
+            ],
+            [
+              -3421.4679999984801,
+              -8015.5689999982715
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 6,
+        "OBJECTID_1" : 11167,
+        "OBJECTID" : 1167839,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 2,
+        "STORY" : 1,
+        "NAME" : "上海市军供站",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{2E27256A-4792-4CEE-A19D-6BCE7B39785A}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 41.627756926799997,
+        "SHAPE_Leng" : 44.495070862200002,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "112.023578360968",
+        "Shape_Le_1" : 43.985922910699998,
+        "InPoly_FID" : 11167,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 5,
+        "Shape_Length" : 43.985973781314812
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3258.082499999553,
+              -8067.5104000009596
+            ],
+            [
+              -3265.4479999989271,
+              -8063.3869999982417
+            ],
+            [
+              -3258.6359999999404,
+              -8051.2789999991655
+            ],
+            [
+              -3251.8566999994218,
+              -8055.1356999985874
+            ],
+            [
+              -3258.082499999553,
+              -8067.5104000009596
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 7,
+        "OBJECTID_1" : 11525,
+        "OBJECTID" : 1170483,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 18,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{34A93189-F7BB-4F2C-8F7F-8C6FF7B659DA}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 148.735846122,
+        "HEIGHT" : 52.323999999999998,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "636.633869746644",
+        "Shape_Le_1" : 129.80511298799999,
+        "InPoly_FID" : 11525,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 6,
+        "Shape_Length" : 129.80511298280805
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3316.8889999985695,
+              -8056.3209999985993
+            ],
+            [
+              -3309.9869999997318,
+              -8049.625
+            ],
+            [
+              -3301.2690000012517,
+              -8058.2829999998212
+            ],
+            [
+              -3338.6000000014901,
+              -8095.4479999989271
+            ],
+            [
+              -3347.2309999987483,
+              -8086.7190000005066
+            ],
+            [
+              -3316.8889999985695,
+              -8056.3209999985993
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 8,
+        "OBJECTID_1" : 11526,
+        "OBJECTID" : 1170482,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 17,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{D04606E7-274F-44BD-B9A5-1A264DD8EF26}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 198.463726503,
+        "HEIGHT" : 49.468000000000004,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "793.194407995405",
+        "Shape_Le_1" : 161.224243143,
+        "InPoly_FID" : 11526,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 7,
+        "Shape_Length" : 161.22424314626522
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3318.5529999993742,
+              -8007.9959999993443
+            ],
+            [
+              -3315.3339999988675,
+              -8019.9149999991059
+            ],
+            [
+              -3381.3330000005662,
+              -8037.5500000007451
+            ],
+            [
+              -3384.5060000009835,
+              -8025.6880000010133
+            ],
+            [
+              -3318.5529999993742,
+              -8007.9959999993443
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 9,
+        "OBJECTID_1" : 11527,
+        "OBJECTID" : 1169034,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 17,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{0B1BC1C6-FC8A-4C48-8431-4988C132C30B}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 202.30055656900001,
+        "HEIGHT" : 49.573999999999998,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "797.122356809489",
+        "Shape_Le_1" : 175.42959448400001,
+        "InPoly_FID" : 11527,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 8,
+        "Shape_Length" : 175.42969957677883
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3399.3960000015795,
+              -7979.554999999702
+            ],
+            [
+              -3402.6000000014901,
+              -7967.7100000008941
+            ],
+            [
+              -3394.5095999985933,
+              -7967.5804000012577
+            ],
+            [
+              -3394.015000000596,
+              -7964.1902999989688
+            ],
+            [
+              -3390.0830999985337,
+              -7963.1735000014305
+            ],
+            [
+              -3387.3383000008762,
+              -7965.6365999989212
+            ],
+            [
+              -3374.8770000003278,
+              -7960.2320000007749
+            ],
+            [
+              -3372.8907999992371,
+              -7961.7932000011206
+            ],
+            [
+              -3372.4169999994338,
+              -7958.3770000003278
+            ],
+            [
+              -3368.4868000000715,
+              -7957.353900000453
+            ],
+            [
+              -3365.721400000155,
+              -7959.8808999992907
+            ],
+            [
+              -3364.813299998641,
+              -7957.5148999989033
+            ],
+            [
+              -3350.9074999988079,
+              -7955.8979000002146
+            ],
+            [
+              -3349.7388999983668,
+              -7952.3024999983609
+            ],
+            [
+              -3345.8174999989569,
+              -7951.2509000003338
+            ],
+            [
+              -3343.6975999996066,
+              -7953.9437000006437
+            ],
+            [
+              -3336.679999999702,
+              -7949.9600000008941
+            ],
+            [
+              -3333.4549999982119,
+              -7961.9349999986589
+            ],
+            [
+              -3399.3960000015795,
+              -7979.554999999702
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 10,
+        "OBJECTID_1" : 11528,
+        "OBJECTID" : 1171147,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 15,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{78152BF1-018F-4738-9B44-994A086A0B5B}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 200.963893098,
+        "HEIGHT" : 43.874000000000002,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "794.163729990678",
+        "Shape_Le_1" : 167.99111986,
+        "InPoly_FID" : 11528,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 9,
+        "Shape_Length" : 167.9911770635286
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3414.8700000010431,
+              -7932.0249999985099
+            ],
+            [
+              -3418.0560000017285,
+              -7920.1429999992251
+            ],
+            [
+              -3410.0300000011921,
+              -7919.9596000015736
+            ],
+            [
+              -3405.5130000002682,
+              -7915.6909999996424
+            ],
+            [
+              -3401.3467999994755,
+              -7917.7468999996781
+            ],
+            [
+              -3401.8696000017226,
+              -7915.7956999987364
+            ],
+            [
+              -3388.4195999987423,
+              -7914.179699998349
+            ],
+            [
+              -3387.7439999990165,
+              -7910.8969999998808
+            ],
+            [
+              -3381.2705000005662,
+              -7912.1917000003159
+            ],
+            [
+              -3352.1140000000596,
+              -7902.4629999995232
+            ],
+            [
+              -3348.9549999982119,
+              -7914.3509999997914
+            ],
+            [
+              -3414.8700000010431,
+              -7932.0249999985099
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 11,
+        "OBJECTID_1" : 12500,
+        "OBJECTID" : 1581534,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 15,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{CCAA05E6-E72D-43D5-8BE3-E7D3301EB5EC}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 100.925394553,
+        "HEIGHT" : 45.231000000000002,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "318.125960087817",
+        "Shape_Le_1" : 87.129016528500003,
+        "InPoly_FID" : 12500,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 10,
+        "Shape_Length" : 87.128867831734894
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3250.9314999990165,
+              -7979.195300001651
+            ],
+            [
+              -3253.5333999991417,
+              -7976.1913999989629
+            ],
+            [
+              -3248.6059000007808,
+              -7972.1862000003457
+            ],
+            [
+              -3245.3590999990702,
+              -7973.168299999088
+            ],
+            [
+              -3248.2010000012815,
+              -7968.0412999987602
+            ],
+            [
+              -3241.9433000013232,
+              -7962.8874999992549
+            ],
+            [
+              -3237.4765000008047,
+              -7966.7181999981403
+            ],
+            [
+              -3237.7758999988437,
+              -7963.3533999994397
+            ],
+            [
+              -3233.0269000008702,
+              -7959.4932000003755
+            ],
+            [
+              -3226.929699998349,
+              -7966.7054999992251
+            ],
+            [
+              -3229.08920000121,
+              -7971.8148999996483
+            ],
+            [
+              -3246.221700001508,
+              -7984.9829999990761
+            ],
+            [
+              -3250.9314999990165,
+              -7979.195300001651
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 12,
+        "OBJECTID_1" : 12514,
+        "OBJECTID" : 1581533,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 18,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{907CA426-6F49-489B-8106-1F07171D867F}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 139.40538927200001,
+        "HEIGHT" : 53.560000000000002,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "404.87913241746",
+        "Shape_Le_1" : 122.431873337,
+        "InPoly_FID" : 12514,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 11,
+        "Shape_Length" : 122.4319042921241
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3317.3443000018597,
+              -7912.9857000000775
+            ],
+            [
+              -3310.0036000013351,
+              -7910.6301000006497
+            ],
+            [
+              -3308.7811999991536,
+              -7914.4703000001609
+            ],
+            [
+              -3305.7340000011027,
+              -7914.3502999991179
+            ],
+            [
+              -3295.791400000453,
+              -7908.3242999985814
+            ],
+            [
+              -3292.2485000006855,
+              -7919.4140999987721
+            ],
+            [
+              -3300.3398000001907,
+              -7922.6354999989271
+            ],
+            [
+              -3302.4829000011086,
+              -7919.9910000003874
+            ],
+            [
+              -3301.4450999982655,
+              -7922.9873000010848
+            ],
+            [
+              -3308.1438999995589,
+              -7925.1196999996901
+            ],
+            [
+              -3309.0291999988258,
+              -7922.0747999995947
+            ],
+            [
+              -3311.8211999982595,
+              -7922.9635999985039
+            ],
+            [
+              -3310.7833999991417,
+              -7925.9600000008941
+            ],
+            [
+              -3317.5012000016868,
+              -7928.0984000004828
+            ],
+            [
+              -3319.6444000005722,
+              -7925.4538999982178
+            ],
+            [
+              -3318.6066000014544,
+              -7928.450300000608
+            ],
+            [
+              -3327.1297999992967,
+              -7930.5548000000417
+            ],
+            [
+              -3330.6510999985039,
+              -7919.4211000017822
+            ],
+            [
+              -3319.7861000001431,
+              -7918.8317999988794
+            ],
+            [
+              -3316.5126000009477,
+              -7916.9501999989152
+            ],
+            [
+              -3317.3443000018597,
+              -7912.9857000000775
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 13,
+        "OBJECTID_1" : 12515,
+        "OBJECTID" : 1581532,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 19,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{C1FD2B5E-80B4-48A4-8B0E-3CA8F31225B0}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 132.310148161,
+        "HEIGHT" : 55.161000000000001,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "420.389340790218",
+        "Shape_Le_1" : 123.56673177499999,
+        "InPoly_FID" : 12515,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 12,
+        "Shape_Length" : 123.56681094033647
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3241.8799999989569,
+              -7905.8709000013769
+            ],
+            [
+              -3236.1211999990046,
+              -7915.8520999997854
+            ],
+            [
+              -3243.2373000010848,
+              -7920.7982000000775
+            ],
+            [
+              -3245.8720999993384,
+              -7918.660300001502
+            ],
+            [
+              -3244.215300001204,
+              -7921.3641000017524
+            ],
+            [
+              -3250.3002000004053,
+              -7924.8847999982536
+            ],
+            [
+              -3251.8185000009835,
+              -7922.1009000018239
+            ],
+            [
+              -3254.3460000008345,
+              -7923.563299998641
+            ],
+            [
+              -3252.6891999989748,
+              -7926.2670000009239
+            ],
+            [
+              -3258.7912999987602,
+              -7929.7976999990642
+            ],
+            [
+              -3261.4695000015199,
+              -7927.6849000006914
+            ],
+            [
+              -3259.8126999996603,
+              -7930.3887000009418
+            ],
+            [
+              -3267.6510000005364,
+              -7934.1336000002921
+            ],
+            [
+              -3273.4316000007093,
+              -7924.1264999993145
+            ],
+            [
+              -3267.9785999991,
+              -7920.971400000155
+            ],
+            [
+              -3266.6783999986947,
+              -7923.5579999983311
+            ],
+            [
+              -3267.2342000007629,
+              -7920.5406999997795
+            ],
+            [
+              -3248.0687000006437,
+              -7909.4516999982297
+            ],
+            [
+              -3245.7126000002027,
+              -7911.4272999987006
+            ],
+            [
+              -3247.3071000017226,
+              -7909.0109999999404
+            ],
+            [
+              -3241.8799999989569,
+              -7905.8709000013769
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 14,
+        "OBJECTID_1" : 12546,
+        "OBJECTID" : 1584167,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 12,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{9621B02A-0371-40DE-84D8-A3856715FEB1}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 101.183739487,
+        "HEIGHT" : 35.951999999999998,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "319.66164769243",
+        "Shape_Le_1" : 87.236383777499995,
+        "InPoly_FID" : 12546,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 13,
+        "Shape_Length" : 87.236444911866613
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3226.929699998349,
+              -7966.7054999992251
+            ],
+            [
+              -3233.0269000008702,
+              -7959.4932000003755
+            ],
+            [
+              -3229.3220000006258,
+              -7953.9045000001788
+            ],
+            [
+              -3226.0925000011921,
+              -7954.8876999989152
+            ],
+            [
+              -3228.903599999845,
+              -7949.7170000001788
+            ],
+            [
+              -3222.6473000012338,
+              -7944.5821999981999
+            ],
+            [
+              -3218.1255999989808,
+              -7948.4327999986708
+            ],
+            [
+              -3218.4778999984264,
+              -7945.1081000007689
+            ],
+            [
+              -3213.445799998939,
+              -7941.0179000012577
+            ],
+            [
+              -3210.8520000018179,
+              -7944.1673000007868
+            ],
+            [
+              -3206.3365999981761,
+              -7949.9475999996066
+            ],
+            [
+              -3226.929699998349,
+              -7966.7054999992251
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 15,
+        "OBJECTID_1" : 12677,
+        "OBJECTID" : 1590628,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 1,
+        "STORY" : 2,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{C7AB08E4-255C-4B8C-95D1-BE2AE07ED5B3}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 3.4467766184099999,
+        "SHAPE_Leng" : 183.488038496,
+        "HEIGHT" : 6,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "281.422535442345",
+        "Shape_Le_1" : 155.88015079199999,
+        "InPoly_FID" : 12677,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 14,
+        "Shape_Length" : 155.88006205527327
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3250.9314999990165,
+              -7979.195300001651
+            ],
+            [
+              -3246.221700001508,
+              -7984.9829999990761
+            ],
+            [
+              -3229.08920000121,
+              -7971.8148999996483
+            ],
+            [
+              -3226.929699998349,
+              -7966.7054999992251
+            ],
+            [
+              -3206.3365999981761,
+              -7949.9475999996066
+            ],
+            [
+              -3210.8520000018179,
+              -7944.1673000007868
+            ],
+            [
+              -3207.5826999992132,
+              -7941.4990000016987
+            ],
+            [
+              -3202.2672999985516,
+              -7948.048599999398
+            ],
+            [
+              -3202.8718000017107,
+              -7953.8167999982834
+            ],
+            [
+              -3243.9765999987721,
+              -7987.2276999987662
+            ],
+            [
+              -3249.7316999994218,
+              -7986.6706999987364
+            ],
+            [
+              -3253.7543999999762,
+              -7981.6831000000238
+            ],
+            [
+              -3250.9314999990165,
+              -7979.195300001651
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 16,
+        "OBJECTID_1" : 12686,
+        "OBJECTID" : 1591272,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 18,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{AF0289DD-F523-4F6B-9AAB-FF0E35F8E379}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 130.11533784700001,
+        "HEIGHT" : 53.560000000000002,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "403.53020672021",
+        "Shape_Le_1" : 103.516823557,
+        "InPoly_FID" : 12686,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 15,
+        "Shape_Length" : 103.51683289086252
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3267.2617000006139,
+              -8000.3757000006735
+            ],
+            [
+              -3263.0626000016928,
+              -8003.9365000016987
+            ],
+            [
+              -3282.8586000017822,
+              -8028.3176000006497
+            ],
+            [
+              -3286.472800001502,
+              -8031.6636000014842
+            ],
+            [
+              -3290.7952000014484,
+              -8028.0141999982297
+            ],
+            [
+              -3295.3524000011384,
+              -8024.3804999999702
+            ],
+            [
+              -3285.8324000015855,
+              -8017.5701999999583
+            ],
+            [
+              -3287.5018999986351,
+              -8011.7961000017822
+            ],
+            [
+              -3282.4770999997854,
+              -8005.9008000008762
+            ],
+            [
+              -3279.4125999994576,
+              -8008.487199999392
+            ],
+            [
+              -3276.4461999982595,
+              -8006.4763000011444
+            ],
+            [
+              -3271.7166000008583,
+              -7996.3764999993145
+            ],
+            [
+              -3267.2617000006139,
+              -8000.3757000006735
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 17,
+        "OBJECTID_1" : 12687,
+        "OBJECTID" : 1591273,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 1,
+        "STORY" : 2,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{EBF850B1-BBF8-4A97-9FD5-65158B827A1C}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 4.0753640651899996,
+        "SHAPE_Leng" : 135.621363938,
+        "HEIGHT" : 6,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "232.011224657094",
+        "Shape_Le_1" : 116.257269827,
+        "InPoly_FID" : 12687,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 16,
+        "Shape_Length" : 116.25716983369102
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3259.7012999989092,
+              -8001.3544000014663
+            ],
+            [
+              -3259.2201000005007,
+              -8007.1334000006318
+            ],
+            [
+              -3282.7010000012815,
+              -8034.9233000017703
+            ],
+            [
+              -3288.4756000004709,
+              -8035.4068999998271
+            ],
+            [
+              -3293.2358000017703,
+              -8031.4019999988377
+            ],
+            [
+              -3290.7952000014484,
+              -8028.0141999982297
+            ],
+            [
+              -3286.472800001502,
+              -8031.6636000014842
+            ],
+            [
+              -3282.8586000017822,
+              -8028.3176000006497
+            ],
+            [
+              -3263.0626000016928,
+              -8003.9365000016987
+            ],
+            [
+              -3267.2617000006139,
+              -8000.3757000006735
+            ],
+            [
+              -3264.4417000003159,
+              -7997.3134999983013
+            ],
+            [
+              -3259.7012999989092,
+              -8001.3544000014663
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 18,
+        "OBJECTID_1" : 21196,
+        "OBJECTID" : 3276818,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 2,
+        "STORY" : 2,
+        "NAME" : "上海南站",
+        "OWNER" : "-1",
+        "ORIGINNAME" : "上海南站",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{3799713E-E49A-4237-96F9-A3A390FFDCEA}",
+        "BUILDINGNA" : "上海南站",
+        "BUILDINGAD" : "上海南站",
+        "Distance" : 8.1541824169799995,
+        "SHAPE_Leng" : 84.120595736200002,
+        "HEIGHT" : 6,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "办公",
+        "底面面" : "165.803735914296",
+        "Shape_Le_1" : 82.628144172500001,
+        "InPoly_FID" : 21196,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 17,
+        "Shape_Length" : 82.628257659480141
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3184.6334000006318,
+              -8037.9750000014901
+            ],
+            [
+              -3222.7375000007451,
+              -8028.7564999982715
+            ],
+            [
+              -3198.5375000014901,
+              -8029.3535999991
+            ],
+            [
+              -3183.785000000149,
+              -8034.4750000014901
+            ],
+            [
+              -3184.6334000006318,
+              -8037.9750000014901
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 19,
+        "OBJECTID_1" : 21861,
+        "OBJECTID" : 3434661,
+        "STRUCTURE" : 1,
+        "FUNCTION" : 1,
+        "STORY" : 19,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "211000",
+        "FEATUREGUI" : "{6F2DF23A-71A1-45B6-867C-E99AD16A6A1A}",
+        "BUILDINGNA" : "馨逸公寓",
+        "BUILDINGAD" : "宾南路36弄",
+        "Distance" : 0,
+        "SHAPE_Leng" : 132.923113675,
+        "HEIGHT" : 55.161000000000001,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "住宅",
+        "底面面" : "424.597650314051",
+        "Shape_Le_1" : 124.36595513499999,
+        "InPoly_FID" : 21861,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 18,
+        "Shape_Length" : 124.36597083356379
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3293.6191999986768,
+              -7952.6741999983788
+            ],
+            [
+              -3289.6629000008106,
+              -7951.4138000011444
+            ],
+            [
+              -3288.9475999996066,
+              -7954.2190999984741
+            ],
+            [
+              -3288.8434000015259,
+              -7951.152800001204
+            ],
+            [
+              -3282.7454000003636,
+              -7949.2100999988616
+            ],
+            [
+              -3279.2058000005782,
+              -7960.3370000012219
+            ],
+            [
+              -3287.354699999094,
+              -7963.5687000006437
+            ],
+            [
+              -3289.4983999989927,
+              -7960.924699999392
+            ],
+            [
+              -3288.4598999992013,
+              -7963.9208000004292
+            ],
+            [
+              -3295.1678000018001,
+              -7966.0577000007033
+            ],
+            [
+              -3296.0597999989986,
+              -7962.9939999990165
+            ],
+            [
+              -3298.8420999981463,
+              -7963.8803000003099
+            ],
+            [
+              -3297.797499999404,
+              -7966.8955000005662
+            ],
+            [
+              -3304.4862999990582,
+              -7969.0263999998569
+            ],
+            [
+              -3306.6356999985874,
+              -7966.331700000912
+            ],
+            [
+              -3305.5821000002325,
+              -7969.3755000010133
+            ],
+            [
+              -3314.0817999988794,
+              -7971.4501999989152
+            ],
+            [
+              -3317.6383000016212,
+              -7960.326099999249
+            ],
+            [
+              -3311.568900000304,
+              -7958.3924999982119
+            ],
+            [
+              -3309.6779000014067,
+              -7960.8652000017464
+            ],
+            [
+              -3310.7292999997735,
+              -7958.1251000016928
+            ],
+            [
+              -3293.6191999986768,
+              -7952.6741999983788
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 20,
+        "OBJECTID_1" : 23817,
+        "OBJECTID" : 0,
+        "STRUCTURE" : 0,
+        "FUNCTION" : 0,
+        "STORY" : 0,
+        "NAME" : "上海南站",
+        "OWNER" : "上海南站",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "212000",
+        "FEATUREGUI" : "{59705F1A-A851-4D51-9401-15446FF63910}",
+        "BUILDINGNA" : " ",
+        "BUILDINGAD" : " ",
+        "Distance" : 0,
+        "SHAPE_Leng" : 71.947257164600003,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : "319239",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : " ",
+        "FUNCTION_C" : "其他",
+        "底面面" : "143.278448881043",
+        "Shape_Le_1" : 71.947257164600003,
+        "InPoly_FID" : 23817,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 19,
+        "Shape_Length" : 71.947444187942665
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3209.7435000017285,
+              -8005.3306999988854
+            ],
+            [
+              -3232.7822000011802,
+              -8026.6840000003576
+            ],
+            [
+              -3235.882800001651,
+              -8023.3387000001967
+            ],
+            [
+              -3212.8440999984741,
+              -8001.9853999987245
+            ],
+            [
+              -3209.7435000017285,
+              -8005.3306999988854
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 21,
+        "OBJECTID_1" : 24458,
+        "OBJECTID" : 0,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 0,
+        "STORY" : 1,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "馨逸公寓",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "518100",
+        "FEATUREGUI" : "{679B03D7-3144-494C-AD6B-99349F63EEE4}",
+        "BUILDINGNA" : " ",
+        "BUILDINGAD" : " ",
+        "Distance" : 0,
+        "SHAPE_Leng" : 44.258503973700002,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : "混",
+        "FUNCTION_C" : " ",
+        "底面面" : "118.570684690244",
+        "Shape_Le_1" : 44.258503973700002,
+        "InPoly_FID" : 24458,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 20,
+        "Shape_Length" : 44.258569885767393
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3341.390000000596,
+              -8041.4739999994636
+            ],
+            [
+              -3334.9197999984026,
+              -8047.9455999992788
+            ],
+            [
+              -3344.2120000012219,
+              -8057.1180000007153
+            ],
+            [
+              -3350.5709999985993,
+              -8050.6759999990463
+            ],
+            [
+              -3341.390000000596,
+              -8041.4739999994636
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 22,
+        "OBJECTID_1" : 24459,
+        "OBJECTID" : 0,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 0,
+        "STORY" : 1,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "馨逸公寓",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "518100",
+        "FEATUREGUI" : "{B8C89B2D-E2C0-42AF-A9EF-91B84D7F78D6}",
+        "BUILDINGNA" : " ",
+        "BUILDINGAD" : " ",
+        "Distance" : 0,
+        "SHAPE_Leng" : 44.1957598746,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : "混",
+        "FUNCTION_C" : " ",
+        "底面面" : "118.058360998977",
+        "Shape_Le_1" : 44.1957598746,
+        "InPoly_FID" : 24459,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 21,
+        "Shape_Length" : 44.195759874421832
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3381.7870000004768,
+              -8003.5020000003278
+            ],
+            [
+              -3384.1229999996722,
+              -7994.765000000596
+            ],
+            [
+              -3371.5219999998808,
+              -7991.3559999987483
+            ],
+            [
+              -3369.1860000006855,
+              -8000.0929999984801
+            ],
+            [
+              -3381.7870000004768,
+              -8003.5020000003278
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 23,
+        "OBJECTID_1" : 24467,
+        "OBJECTID" : 0,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 0,
+        "STORY" : 1,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "馨逸公寓",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "518100",
+        "FEATUREGUI" : "{EA4C1939-8FF4-4C2B-AB06-BDDDE199ED0F}",
+        "BUILDINGNA" : " ",
+        "BUILDINGAD" : " ",
+        "Distance" : 0,
+        "SHAPE_Leng" : 44.259956626700003,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : "混",
+        "FUNCTION_C" : " ",
+        "底面面" : "118.466789676509",
+        "Shape_Le_1" : 44.259956626700003,
+        "InPoly_FID" : 24467,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 22,
+        "Shape_Length" : 44.259960630179911
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3355.1235000006855,
+              -7941.7102999985218
+            ],
+            [
+              -3357.4695000015199,
+              -7932.9521000012755
+            ],
+            [
+              -3344.8579999990761,
+              -7929.5590000003576
+            ],
+            [
+              -3342.515000000596,
+              -7938.3310000002384
+            ],
+            [
+              -3355.1235000006855,
+              -7941.7102999985218
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID_12" : 24,
+        "OBJECTID_1" : 24470,
+        "OBJECTID" : 0,
+        "STRUCTURE" : 5,
+        "FUNCTION" : 0,
+        "STORY" : 1,
+        "NAME" : "馨逸公寓",
+        "OWNER" : "-1",
+        "ORIGINNAME" : " ",
+        "ADDRESS" : " ",
+        "FEATURECOD" : "518100",
+        "FEATUREGUI" : "{EE03E83B-93C3-4DDA-B441-5F1F9FA05392}",
+        "BUILDINGNA" : " ",
+        "BUILDINGAD" : " ",
+        "Distance" : 0,
+        "SHAPE_Leng" : 58.571397447000003,
+        "HEIGHT" : 3,
+        "fme_basena" : " ",
+        "MODEL_ID" : " ",
+        "JWH_NAME" : "馨汇南苑居委",
+        "JWH_CODE" : "041749",
+        "ZJD_NAME" : "漕河泾街道",
+        "ZJD_CODE" : "0417",
+        "QX_NAME" : "徐汇区",
+        "QX_CODE" : "04",
+        "GNQ_NAME" : " ",
+        "GNQ_CODE" : " ",
+        "STRUCTURE_" : "混",
+        "FUNCTION_C" : " ",
+        "底面面" : "200.068294574386",
+        "Shape_Le_1" : 58.571397447000003,
+        "InPoly_FID" : 24470,
+        "SimPgnFlag" : 0,
+        "MaxSimpTol" : 2,
+        "MinSimpTol" : 2,
+        "ORIG_FID" : 23,
+        "Shape_Length" : 58.571397445800514
+      },
+      "geometry" : {
+        "paths" : [
+          [
+            [
+              -3286.0194000005722,
+              -7990.3777999989688
+            ],
+            [
+              -3303.5575999990106,
+              -7995.9825000017881
+            ],
+            [
+              -3306.8847999982536,
+              -7985.6392999999225
+            ],
+            [
+              -3289.3059000000358,
+              -7980.0419999994338
+            ],
+            [
+              -3286.0194000005722,
+              -7990.3777999989688
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
