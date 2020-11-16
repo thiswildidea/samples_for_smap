@@ -50,7 +50,7 @@
     </style>
     <script src="../../../library/common/jquery-2.2.3.min.js"></script>
     <script src="../../../library/smap/xuhui/SMap.min.js"></script>
-    <script src="../../../library/smap/xuhui/Plugins.min.js"></script>
+    <script src="../../../library/smap/xuhui/Plugins.js"></script>
     <script>
         const smap = new SMap.Map('mapcontainer', {
             viewMode: '2D',
@@ -116,7 +116,7 @@
                         new SMap.LngLat(-4000, -5500),
                         new SMap.LngLat(-4000, 550),
                         new SMap.LngLat(-6500, 550),
-                        new SMap.LngLat(-6500, -6500)
+                        new SMap.LngLat(-6500, -5500)
                     ]
                 })
 
@@ -127,7 +127,7 @@
                     yoffset: 0.1,
                     horizontalAlignment: 'left',
                     verticalAlignment: 'top',
-                    placement: 'center-right',
+                    placement: 'always-horizontal',
                     minScale: 50000,
                     maxScale: 500,
 
