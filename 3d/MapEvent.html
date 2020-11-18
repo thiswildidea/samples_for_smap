@@ -48,7 +48,7 @@
        smap.on(SMap.MapEvent.maploaded, function(view) {
         console.log('当前缩放级别' + smap.getZoom())
       })
-      smap.on(SMap.MapEvent.extentchanged, function(extent) {
+      smap.on(SMap.MapEvent.popupvisible, function(extent) {
         console.log(extent)
       })
       smap.on(SMap.MapEvent.centerchanged, function(center) {
