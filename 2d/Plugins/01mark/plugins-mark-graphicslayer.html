@@ -125,15 +125,13 @@
                         'type': '点'
                     },
                     symbol: {
-                        type: "simple-marker",
-                        style: "square",
-                        color: [255, 0, 0, 1],
-                        size: "18px",
-                        outline: {
-                            color: [255, 0, 0, 1],
-                            width: 1
-                        }
+                        type: "picture-marker",
+                        url: "../../../resources/images/arrow.png",
+                        width: "64px",
+                        angle: 80,
+                        height: "64px"
                     },
+
                     label: new SMap.Label({
                         text: '点1',
                         color: 'red',
@@ -168,6 +166,13 @@
                     attributes: {
                         'name': '点2',
                         'type': '点'
+                    },
+                    symbol: {
+                        type: "picture-marker",
+                        url: "../../../resources/images/arrow.png",
+                        width: "64px",
+                        angle: 10,
+                        height: "64px"
                     },
                     label: new SMap.Label({
                         text: '点2',
@@ -310,8 +315,8 @@
             $("#btnaddbigmarks").click(function () {
                 const marks = []
                 for (let i = 0; i <= 3000; i++) {
-                   const x = -2863.616790 + Math.ceil(Math.random() * 12000)
-                   const y = -7984.038031 + Math.ceil(Math.random() * 12000)
+                    const x = -2863.616790 + Math.ceil(Math.random() * 12000)
+                    const y = -7984.038031 + Math.ceil(Math.random() * 12000)
                     const onemarker = new SMap.Marker({
                         icon: new SMap.Icon({
                             size: new SMap.Size(40, 40),
