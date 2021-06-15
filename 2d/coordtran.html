@@ -50,22 +50,22 @@
         $(function () {
 
             $("#coordtran").click(function () {
-                const sH2K84BLH = new CoordTran.SH2KTOWGS1984BLH()
+                const sH2K84BLH = new CoordTran.a()
                 console.log(sH2K84BLH.CoordTran(0,0,0))
 
-                const WGS1984BLHTOSH2K = new CoordTran.WGS1984BLHTOSH2K()
+                const WGS1984BLHTOSH2K = new CoordTran.b()
                 console.log(WGS1984BLHTOSH2K.CoordTran(121.46715255700458,31.235441883603723,0))
 
-                const SH2KTOSHCH = new CoordTran.SH2KTOSHCH()
+                const SH2KTOSHCH = new CoordTran.d()
                 console.log(SH2KTOSHCH.CoordTran(0,0,0))
 
-                const SHCHTOSH2K = new CoordTran.SHCHTOSH2K()
+                const SHCHTOSH2K = new CoordTran.c()
                 console.log(SHCHTOSH2K.CoordTran(0,0,0))
 
-                console.log(CoordTran.SH2K_WGS1984BLH(0,0,0))
-                console.log(CoordTran.WGS1984BLH_SH2K(121.46715255700458,31.235441883603723,0))
-                console.log(CoordTran.SH2K_SHCH(0,0,0))
-                console.log(CoordTran.SHCH_SH2K(0,0,0))
+                console.log(CoordTran.h(0,0,0))
+                console.log(CoordTran.g(121.46715255700458,31.235441883603723,0))
+                console.log(CoordTran.e(0,0,0))
+                console.log(CoordTran.f(0,0,0))
 
             })
 
